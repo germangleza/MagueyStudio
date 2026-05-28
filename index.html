@@ -194,7 +194,7 @@
 
   .hero-desc {
     max-width: 460px;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.7;
     color: var(--muted);
     font-weight: 300;
@@ -315,7 +315,7 @@
   }
   .services-intro {
     max-width: 300px;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.8;
     color: var(--muted);
     font-weight: 300;
@@ -371,40 +371,12 @@
   }
 
   .service-desc {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 1.8;
     color: var(--muted);
     font-weight: 300;
-    margin-bottom: 32px;
   }
 
-  .service-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .service-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--green);
-    border: 1px solid rgba(0,255,65,0.3);
-    padding: 4px 10px;
-  }
-
-  .service-arrow {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    font-size: 24px;
-    color: var(--border);
-    transition: all 0.3s;
-  }
-  .service-card:hover .service-arrow {
-    color: var(--green);
-    transform: translate(4px, -4px);
-  }
 
   /* HOW WE WORK */
   .process {
@@ -460,7 +432,7 @@
     margin-bottom: 12px;
   }
   .step-desc {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 1.8;
     color: var(--muted);
     font-weight: 300;
@@ -483,7 +455,7 @@
   }
   .geo-title em { font-style: normal; color: var(--green); }
   .geo-desc {
-    font-size: 15px;
+    font-size: 19px;
     line-height: 1.9;
     color: var(--muted);
     font-weight: 300;
@@ -547,7 +519,7 @@
     margin-bottom: 8px;
   }
   .why-content p {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 1.8;
     color: var(--muted);
     font-weight: 300;
@@ -683,7 +655,20 @@
     .hero-bottom { flex-direction: column; align-items: flex-start; gap: 40px; }
     .hero-actions { align-items: flex-start; }
     .services-header { flex-direction: column; }
-    .services-grid { grid-template-columns: 1fr; }
+    .services-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: none;
+      border: none;
+    }
+    .service-card {
+      position: sticky;
+      border: 1px solid var(--border);
+    }
+    .service-card:nth-child(1) { top: 72px; z-index: 1; }
+    .service-card:nth-child(2) { top: 80px; z-index: 2; }
+    .service-card:nth-child(3) { top: 88px; z-index: 3; }
     .steps { grid-template-columns: 1fr 1fr; }
     .geo-section { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
@@ -768,14 +753,6 @@
       <span class="service-icon">⬡</span>
       <h3 class="service-name">Páginas Web</h3>
       <p class="service-desc">Landing pages y sitios web diseñados para convertir visitas en clientes. Rápidos, optimizados para Google y listos para ser recomendados por ChatGPT.</p>
-      <div class="service-tags">
-        <span class="service-tag">Diseño</span>
-        <span class="service-tag">Código</span>
-        <span class="service-tag">SEO</span>
-        <span class="service-tag">GEO</span>
-        <span class="service-tag">Vercel</span>
-      </div>
-      <div class="service-arrow">↗</div>
     </div>
 
     <div class="service-card reveal">
@@ -783,13 +760,6 @@
       <span class="service-icon">◈</span>
       <h3 class="service-name">Publicidad Digital</h3>
       <p class="service-desc">Campañas en Google Ads y Meta Ads (Facebook + Instagram) que llevan los clientes correctos hacia tu negocio, con el menor gasto posible.</p>
-      <div class="service-tags">
-        <span class="service-tag">Google Ads</span>
-        <span class="service-tag">Facebook Ads</span>
-        <span class="service-tag">Instagram</span>
-        <span class="service-tag">Remarketing</span>
-      </div>
-      <div class="service-arrow">↗</div>
     </div>
 
     <div class="service-card reveal">
@@ -797,13 +767,6 @@
       <span class="service-icon">◉</span>
       <h3 class="service-name">Redes Sociales</h3>
       <p class="service-desc">Contenido estratégico que construye comunidad, posiciona tu marca y convierte seguidores en clientes. Gestión mensual con resultados medibles.</p>
-      <div class="service-tags">
-        <span class="service-tag">Contenido</span>
-        <span class="service-tag">Diseño</span>
-        <span class="service-tag">Estrategia</span>
-        <span class="service-tag">Comunidad</span>
-      </div>
-      <div class="service-arrow">↗</div>
     </div>
   </div>
 </section>
