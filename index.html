@@ -383,6 +383,18 @@
     background: var(--dark);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .process-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
   }
 
   .process-title {
@@ -405,7 +417,13 @@
     top: 28px;
     left: 0; right: 0;
     height: 1px;
-    background: linear-gradient(90deg, var(--green), transparent);
+    background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%);
+    background-size: 200% 100%;
+    animation: scanLine 3s linear infinite;
+  }
+  @keyframes scanLine {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
   }
 
   .step { padding-top: 60px; position: relative; }
@@ -670,6 +688,17 @@
     .service-card:nth-child(2) { top: 80px; z-index: 2; }
     .service-card:nth-child(3) { top: 88px; z-index: 3; }
     .steps { grid-template-columns: 1fr 1fr; }
+    .step:nth-child(3)::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 0;
+      width: calc(200% + 40px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%);
+      background-size: 200% 100%;
+      animation: scanLine 3s linear infinite;
+    }
     .geo-section { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: repeat(2, 1fr); }
@@ -773,6 +802,8 @@
 
 <!-- PROCESS -->
 <section class="process" id="proceso">
+  <div class="process-grid-bg"></div>
+  <div style="position:relative;">
   <div class="section-label reveal">Proceso</div>
   <h2 class="process-title reveal">ASÍ ES COMO<br>TRABAJAMOS</h2>
 
@@ -780,7 +811,7 @@
     <div class="step reveal">
       <div class="step-dot"></div>
       <div class="step-num">01</div>
-      <h3 class="step-title">Brief</h3>
+      <h3 class="step-title">Análisis</h3>
       <p class="step-desc">Entendemos tu negocio, tus clientes y tus objetivos.</p>
     </div>
     <div class="step reveal">
@@ -801,6 +832,7 @@
       <h3 class="step-title">Lanzamiento</h3>
       <p class="step-desc">Desplegamos, medimos y ajustamos. Tu proyecto no termina en la entrega, empieza ahí.</p>
     </div>
+  </div>
   </div>
 </section>
 
