@@ -175,7 +175,11 @@
     line-height: 0.9;
     letter-spacing: -2px;
     margin-bottom: 40px;
-    animation: fadeUp 1s 0.1s ease both;
+    animation: slideFromLeft 1s 0.1s ease both;
+  }
+  @keyframes slideFromLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
   }
   .hero-title em {
     font-style: normal;
@@ -302,10 +306,10 @@
   /* SERVICES */
   .services-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 80px;
-    gap: 40px;
+    gap: 24px;
   }
   .services-title {
     font-family: 'Bebas Neue', sans-serif;
@@ -318,7 +322,6 @@
     color: var(--green);
   }
   .services-intro {
-    max-width: 300px;
     font-size: 18px;
     line-height: 1.8;
     color: var(--muted);
@@ -843,7 +846,7 @@
       <div class="section-label">Servicios</div>
       <h2 class="services-title">LO QUE <em>HACEMOS</em> MEJOR</h2>
     </div>
-    <p class="services-intro">Tres pilares que trabajan juntos para llevar tu negocio al siguiente nivel en el mundo digital.</p>
+    <p class="services-intro">Tres pilares que trabajan para llevar tu negocio al siguiente nivel.</p>
   </div>
 
   <div class="services-grid">
