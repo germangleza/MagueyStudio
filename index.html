@@ -288,8 +288,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     padding: 140px 5% 80px;
     position: relative;
     overflow: hidden;
@@ -345,7 +345,7 @@
     line-height: 0.92;
     letter-spacing: -1px;
     margin-bottom: 0;
-    max-width: 60%;
+    max-width: 80%;
     animation: slideFromLeft 1s 0.1s ease both;
   }
   @keyframes slideFromLeft {
@@ -364,9 +364,9 @@
 
   .hero-content {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
     width: 100%;
     animation: fadeUp 1s 0.15s ease both;
     margin-top: 48px;
@@ -375,10 +375,9 @@
   .hero-bottom {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 32px;
-    max-width: 380px;
-    flex-shrink: 0;
+    max-width: 540px;
   }
 
   .hero-desc {
@@ -386,14 +385,14 @@
     line-height: 1.7;
     color: var(--muted);
     font-weight: 300;
-    text-align: left;
+    text-align: center;
   }
   .hero-desc strong { color: var(--white); font-weight: 500; }
 
   .hero-actions {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
   }
 
