@@ -501,7 +501,7 @@
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
@@ -974,6 +974,7 @@
     .service-card:nth-child(1) { top: 72px; z-index: 1; }
     .service-card:nth-child(2) { top: 80px; z-index: 2; }
     .service-card:nth-child(3) { top: 88px; z-index: 3; }
+    .service-card:nth-child(4) { top: 96px; z-index: 4; }
     .steps { grid-template-columns: 1fr 1fr; }
     .step:nth-child(3)::before {
       content: '';
@@ -1078,29 +1079,36 @@
       <div class="section-label">Servicios</div>
       <h2 class="services-title">LO QUE <em>HACEMOS</em> MEJOR</h2>
     </div>
-    <p class="services-intro">Tres pilares que trabajan para llevar tu negocio al siguiente nivel.</p>
+    <p class="services-intro">Cuatro pilares que trabajan para llevar tu negocio al siguiente nivel.</p>
   </div>
 
   <div class="services-grid">
     <div class="service-card reveal">
-      <div class="service-num">01 / 03</div>
+      <div class="service-num">01 / 04</div>
       <span class="service-icon">⬡</span>
       <h3 class="service-name">Páginas Web</h3>
       <p class="service-desc">Sitios web diseñados para convertir visitas en clientes. Rápidos, optimizados para Google y listos para ser recomendados por ChatGPT.</p>
     </div>
 
     <div class="service-card reveal">
-      <div class="service-num">02 / 03</div>
+      <div class="service-num">02 / 04</div>
       <span class="service-icon">◈</span>
       <h3 class="service-name">Publicidad Digital</h3>
       <p class="service-desc">Campañas en Google Ads y Meta Ads que llevan los clientes correctos hacia tu negocio, con el menor gasto posible.</p>
     </div>
 
     <div class="service-card reveal">
-      <div class="service-num">03 / 03</div>
+      <div class="service-num">03 / 04</div>
       <span class="service-icon">◉</span>
       <h3 class="service-name">Redes Sociales</h3>
       <p class="service-desc">Contenido estratégico que construye comunidad, posiciona tu marca y convierte seguidores en clientes.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">04 / 04</div>
+      <span class="service-icon">⟡</span>
+      <h3 class="service-name">Automatización & IA</h3>
+      <p class="service-desc">Sistemas inteligentes, dashboards y automatizaciones que ahorran tiempo y escalan tu negocio sin contratar más personal.</p>
     </div>
   </div>
 </section>
