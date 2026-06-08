@@ -288,9 +288,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 120px 5% 80px;
+    align-items: flex-start;
+    text-align: left;
+    padding: 140px 5% 80px;
     position: relative;
     overflow: hidden;
   }
@@ -341,10 +341,11 @@
 
   .hero-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(72px, 12vw, 180px);
-    line-height: 0.9;
-    letter-spacing: -2px;
-    margin-bottom: 40px;
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 0.92;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    max-width: 60%;
     animation: slideFromLeft 1s 0.1s ease both;
   }
   @keyframes slideFromLeft {
@@ -361,28 +362,38 @@
     color: transparent;
   }
 
+  .hero-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+    animation: fadeUp 1s 0.15s ease both;
+    margin-top: 48px;
+  }
+
   .hero-bottom {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 32px;
-    animation: fadeUp 1s 0.2s ease both;
+    max-width: 380px;
+    flex-shrink: 0;
   }
 
   .hero-desc {
-    max-width: 520px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
     color: var(--muted);
     font-weight: 300;
-    text-align: center;
+    text-align: left;
   }
   .hero-desc strong { color: var(--white); font-weight: 500; }
 
   .hero-actions {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
   }
 
@@ -955,8 +966,12 @@
     .nav-cta { display: none; }
     .nav-hamburger { display: flex; }
     .mobile-menu { display: flex; }
-    .hero-title { font-size: clamp(56px, 15vw, 100px); }
-    .hero-desc { font-size: 17px; }
+    .hero { align-items: center; text-align: center; }
+    .hero-title { font-size: clamp(52px, 13vw, 90px); max-width: 100%; }
+    .hero-content { flex-direction: column; align-items: center; margin-top: 32px; }
+    .hero-bottom { align-items: center; max-width: 100%; }
+    .hero-desc { font-size: 16px; text-align: center; }
+    .hero-actions { align-items: center; }
     body { cursor: auto; }
     .cursor, .cursor-ring { display: none; }
     .services-header { flex-direction: column; }
@@ -1043,13 +1058,15 @@
     <span class="outline">TU NEGOCIO</span>
   </h1>
 
-  <div class="hero-bottom" style="position:relative;z-index:1;">
-    <p class="hero-desc">
-      <strong>Páginas web, publicidad digital, redes sociales y automatización con IA para hacer crecer tu negocio.</strong>
-    </p>
-    <div class="hero-actions">
-      <a href="https://wa.me/5215560663926" class="btn-primary">Empezar Proyecto</a>
-      <a href="#servicios" class="btn-ghost">Ver servicios</a>
+  <div class="hero-content" style="position:relative;z-index:1;">
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        <strong>Páginas web, publicidad digital, redes sociales y automatización con IA para hacer crecer tu negocio.</strong>
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5215560663926" class="btn-primary">Empezar Proyecto</a>
+        <a href="#servicios" class="btn-ghost">Ver servicios</a>
+      </div>
     </div>
   </div>
 </section>
