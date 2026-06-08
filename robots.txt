@@ -35,4 +35,4 @@ Allow: /
 User-agent: Twitterbot
 Allow: /
 
-Sitemap: https://maguey-studio.vercel.app/sitemap.xml
+Sitemap: https://magueystudio.mx/sitemap.xml
