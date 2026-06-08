@@ -891,6 +891,48 @@
     color: var(--muted);
   }
 
+  /* GLITCH */
+  .glitch { position: relative; }
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    pointer-events: none;
+  }
+  .glitch::before {
+    color: var(--green);
+    animation: glitchTop 4s infinite linear;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+  .glitch::after {
+    color: #fff;
+    animation: glitchBot 4s infinite linear;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+  @keyframes glitchTop {
+    0%, 90%, 100% { transform: translate(0); opacity: 0; }
+    91%            { transform: translate(-3px, -2px); opacity: 0.8; }
+    93%            { transform: translate(3px,  1px); opacity: 0.8; }
+    95%            { transform: translate(-2px, 2px); opacity: 0.8; }
+    97%            { transform: translate(2px, -1px); opacity: 0.8; }
+    99%            { transform: translate(0); opacity: 0; }
+  }
+  @keyframes glitchBot {
+    0%, 90%, 100% { transform: translate(0); opacity: 0; }
+    92%            { transform: translate(3px, 2px);  opacity: 0.6; }
+    94%            { transform: translate(-3px,-1px); opacity: 0.6; }
+    96%            { transform: translate(2px, 1px);  opacity: 0.6; }
+    98%            { transform: translate(-1px,0);    opacity: 0.6; }
+    99%            { transform: translate(0); opacity: 0; }
+  }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -988,18 +1030,19 @@
 
 <!-- HERO -->
 <section class="hero" aria-label="Introducción — Tu marca visible en línea">
+  <canvas id="matrixCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;pointer-events:none;z-index:0;"></canvas>
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
 
-  <div class="hero-tag">Agencia Digital</div>
+  <div class="hero-tag" style="position:relative;z-index:1;">Agencia Digital</div>
 
-  <h1 class="hero-title">
+  <h1 class="hero-title glitch" data-text="SOLUCIONES DIGITALES" style="position:relative;z-index:1;">
     SOLUCIONES DIGITALES<br>
     QUE <em>IMPULSAN</em><br>
     <span class="outline">TU NEGOCIO</span>
   </h1>
 
-  <div class="hero-bottom">
+  <div class="hero-bottom" style="position:relative;z-index:1;">
     <p class="hero-desc">
       <strong>Creamos páginas web de alto rendimiento, campañas de ads que convierten y contenido que construye comunidades.</strong>
     </p>
@@ -1265,6 +1308,39 @@
       document.body.style.overflow = '';
     });
   });
+
+  // MATRIX RAIN
+  (function() {
+    const canvas = document.getElementById('matrixCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ01アBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&';
+    let cols, drops;
+
+    function init() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      cols  = Math.floor(canvas.width / 16);
+      drops = Array(cols).fill(1);
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(3,3,3,0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00FF41';
+      ctx.font = '14px Space Mono, monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const ch = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(ch, i * 16, drops[i] * 16);
+        if (drops[i] * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+
+    init();
+    window.addEventListener('resize', init);
+    setInterval(draw, 50);
+  })();
 
   // REVEAL ON SCROLL
   const observer = new IntersectionObserver((entries) => {
