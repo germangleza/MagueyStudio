@@ -861,6 +861,49 @@
     line-height: 0.9;
     margin-bottom: 48px;
   }
+  .cta-title .glitch-word {
+    font-style: normal;
+    color: var(--green);
+    position: relative;
+    display: inline-block;
+    animation: ctaGlitch 2.5s infinite;
+  }
+  .cta-title .glitch-word::before,
+  .cta-title .glitch-word::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .cta-title .glitch-word::before {
+    color: #ff00c8;
+    animation: ctaGlitchTop 2.5s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  }
+  .cta-title .glitch-word::after {
+    color: #00eeff;
+    animation: ctaGlitchBot 2.5s infinite;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  }
+  @keyframes ctaGlitch {
+    0%, 90%, 100% { transform: none; }
+    91% { transform: skewX(-2deg); }
+    93% { transform: skewX(2deg); }
+    95% { transform: skewX(0deg); }
+  }
+  @keyframes ctaGlitchTop {
+    0%, 90%, 100% { transform: none; opacity: 0; }
+    91% { transform: translate(-3px, -2px); opacity: 1; }
+    93% { transform: translate(3px, 0px); opacity: 1; }
+    95% { transform: none; opacity: 0; }
+  }
+  @keyframes ctaGlitchBot {
+    0%, 90%, 100% { transform: none; opacity: 0; }
+    91% { transform: translate(3px, 2px); opacity: 1; }
+    93% { transform: translate(-3px, 0px); opacity: 1; }
+    95% { transform: none; opacity: 0; }
+  }
 
   .cta-actions {
     display: flex;
@@ -1230,7 +1273,7 @@
 <section class="cta-section" aria-label="Contacto — Cotizar proyecto">
   <div class="cta-grid-bg"></div>
   <div class="cta-eyebrow reveal">¿Listo para crecer?</div>
-  <h2 class="cta-title reveal">HAGAMOS<br><em style="color: var(--green);">ALGO</em><br>GRANDE</h2>
+  <h2 class="cta-title reveal">CONSTRUYAMOS UN<br><span class="glitch-word" data-text="SISTEMA">SISTEMA</span><br>QUE VENDA</h2>
   <div class="cta-actions reveal">
     <a href="https://wa.me/5215560663926" class="btn-primary">Cotizar por WhatsApp</a>
   </div>
