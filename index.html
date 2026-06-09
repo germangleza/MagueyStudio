@@ -974,29 +974,29 @@
   }
   .glitch::before {
     color: var(--green);
-    animation: glitchTop 4s infinite linear;
+    animation: glitchTop 2s infinite linear;
     clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
   }
   .glitch::after {
     color: #fff;
-    animation: glitchBot 4s infinite linear;
+    animation: glitchBot 2s infinite linear;
     clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
   }
   @keyframes glitchTop {
-    0%, 90%, 100% { transform: translate(0); opacity: 0; }
-    91%            { transform: translate(-3px, -2px); opacity: 0.8; }
-    93%            { transform: translate(3px,  1px); opacity: 0.8; }
-    95%            { transform: translate(-2px, 2px); opacity: 0.8; }
-    97%            { transform: translate(2px, -1px); opacity: 0.8; }
-    99%            { transform: translate(0); opacity: 0; }
+    0%, 75%, 100% { transform: translate(0); opacity: 0; }
+    76%            { transform: translate(-3px, -2px); opacity: 0.8; }
+    79%            { transform: translate(3px,  1px); opacity: 0.8; }
+    82%            { transform: translate(-2px, 2px); opacity: 0.8; }
+    85%            { transform: translate(2px, -1px); opacity: 0.8; }
+    88%            { transform: translate(0); opacity: 0; }
   }
   @keyframes glitchBot {
-    0%, 90%, 100% { transform: translate(0); opacity: 0; }
-    92%            { transform: translate(3px, 2px);  opacity: 0.6; }
-    94%            { transform: translate(-3px,-1px); opacity: 0.6; }
-    96%            { transform: translate(2px, 1px);  opacity: 0.6; }
-    98%            { transform: translate(-1px,0);    opacity: 0.6; }
-    99%            { transform: translate(0); opacity: 0; }
+    0%, 75%, 100% { transform: translate(0); opacity: 0; }
+    77%            { transform: translate(3px, 2px);  opacity: 0.6; }
+    80%            { transform: translate(-3px,-1px); opacity: 0.6; }
+    83%            { transform: translate(2px, 1px);  opacity: 0.6; }
+    86%            { transform: translate(-1px,0);    opacity: 0.6; }
+    88%            { transform: translate(0); opacity: 0; }
   }
 
   /* ANIMATIONS */
@@ -1107,9 +1107,9 @@
 
   <div class="hero-tag" style="position:relative;z-index:1;">Agencia Digital</div>
 
-  <h1 class="hero-title glitch" data-text="SOLUCIONES DIGITALES" style="position:relative;z-index:1;">
+  <h1 class="hero-title" style="position:relative;z-index:1;">
     SOLUCIONES DIGITALES<br>
-    QUE <em>IMPULSAN</em><br>
+    QUE <em class="glitch" data-text="IMPULSAN">IMPULSAN</em><br>
     <span class="outline">TU NEGOCIO</span>
   </h1>
 
