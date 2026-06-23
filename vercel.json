@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/paginas-web", "destination": "/paginas-web.html" }
+  ]
+}
