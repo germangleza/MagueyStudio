@@ -1,5 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/paginas-web", "destination": "/paginas-web.html" }
-  ]
+  "cleanUrls": true
 }
