@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<title>Maguey Studio® — Agencia Digital | Páginas Web, Ads, Redes Sociales & IA</title>
+<meta name="description" content="Agencia digital. Páginas web de alto rendimiento, Google Ads, Meta Ads, redes sociales y automatización con IA. Optimizados para SEO y recomendados por ChatGPT (GEO).">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Maguey Studio">
+<link rel="canonical" href="https://magueystudio.mx/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maguey Studio® — Agencia Digital">
+<meta property="og:description" content="Páginas web, publicidad digital, redes sociales y automatización con IA para negocios en Chiapas y México.">
+<meta property="og:url" content="https://magueystudio.mx/">
+<meta property="og:image" content="https://magueystudio.mx/logo.png">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Maguey Studio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maguey Studio® — Agencia Digital">
+<meta name="twitter:description" content="Páginas web, publicidad digital, redes sociales y automatización con IA para negocios en Chiapas y México.">
+<meta name="twitter:image" content="https://magueystudio.mx/logo.png">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Maguey Studio",
+  "alternateName": "Maguey Studio®",
+  "description": "Agencia digital especializada en páginas web de alto rendimiento, publicidad digital (Google Ads y Meta Ads), gestión de redes sociales y automatización con inteligencia artificial. Optimización GEO para que tu negocio sea recomendado por ChatGPT.",
+  "url": "https://magueystudio.mx/",
+  "logo": "https://magueystudio.mx/logo.png",
+  "image": "https://magueystudio.mx/logo.png",
+  "telephone": "+525560663926",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tuxtla Gutiérrez",
+    "addressRegion": "Chiapas",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "16.7521",
+    "longitude": "-93.1152"
+  },
+  "areaServed": [
+    {"@type": "State", "name": "Chiapas"},
+    {"@type": "Country", "name": "México"}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios Digitales",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Páginas Web",
+          "description": "Sitios web diseñados para convertir visitas en clientes. Rápidos, optimizados para Google y listos para ser recomendados por ChatGPT."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Publicidad Digital",
+          "description": "Campañas en Google Ads y Meta Ads que llevan los clientes correctos hacia tu negocio con el menor gasto posible."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Redes Sociales",
+          "description": "Contenido estratégico que construye comunidad, posiciona tu marca y convierte seguidores en clientes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automatización & IA",
+          "description": "Sistemas inteligentes, dashboards y automatizaciones que ahorran tiempo y escalan tu negocio sin contratar más personal."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GEO — Generative Engine Optimization",
+          "description": "Optimización para que los motores de inteligencia artificial como ChatGPT recomienden tu negocio cuando alguien busca servicios como el tuyo."
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://wa.me/5215560663926"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+525560663926",
+    "contactType": "customer service",
+    "areaServed": "MX",
+    "availableLanguage": "Spanish"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo.png">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-dim: #00CC33;
+    --black: #030303;
+    --dark: #0A0A0A;
+    --card: #111111;
+    --border: #1E1E1E;
+    --white: #F5F5F5;
+    --muted: #666;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CURSOR */
+  .cursor {
+    width: 12px; height: 12px;
+    background: var(--green);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid var(--green);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.15s ease;
+    opacity: 0.5;
+  }
+
+  /* NAV */
+  header nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 5%;
+    backdrop-filter: blur(20px);
+    background: rgba(3,3,3,0.8);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo img { width: 32px; height: 32px; object-fit: contain; }
+  .nav-logo span { color: var(--green); }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green); }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px; height: 36px;
+    background: none;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    padding: 8px;
+    z-index: 200;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 100%; height: 1.5px;
+    background: var(--white);
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-hamburger.open span:nth-child(2) {
+    opacity: 0; transform: scaleX(0);
+  }
+  .nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* MOBILE MENU OVERLAY */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(3,3,3,0.97);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .mobile-menu a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--green); }
+  .mobile-menu .mobile-cta {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--green);
+    padding: 14px 32px;
+    margin-top: 20px;
+  }
+
+  .nav-cta {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--green);
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--white); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+  }
+  @keyframes gridshift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(60px, 60px); }
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,255,65,0.08) 0%, transparent 70%);
+    top: 10%; right: -100px;
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite alternate;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 1; }
+  }
+
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    animation: fadeUp 1s ease both;
+  }
+  .hero-tag::before {
+    display: none;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 0.92;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    max-width: 80%;
+    animation: slideFromLeft 1s 0.1s ease both;
+  }
+  @keyframes slideFromLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--green);
+    -webkit-text-stroke: 0px;
+  }
+  .hero-title .outline {
+    -webkit-text-stroke: 1px var(--white);
+    color: transparent;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    animation: fadeUp 1s 0.15s ease both;
+    margin-top: 48px;
+  }
+
+  .hero-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    max-width: 540px;
+  }
+
+  .hero-desc {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--white);
+    font-weight: 300;
+    text-align: center;
+  }
+  .hero-desc strong { color: var(--white); font-weight: 500; }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .btn-primary {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--black);
+    background: var(--green);
+    padding: 16px 40px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 var(--green);
+  }
+
+  .btn-ghost {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--white); }
+  .btn-ghost::after {
+    content: '↓';
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  .btn-ghost:hover::after { transform: translateY(4px); }
+
+  /* TICKER */
+  .ticker {
+    background: var(--green);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-flex;
+    animation: ticker 20s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: var(--black);
+    padding: 0 40px;
+  }
+  .ticker-sep {
+    font-size: 18px;
+    color: rgba(0,0,0,0.3);
+    padding: 0 10px;
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* SECTION BASE */
+  section { padding: 120px 5%; }
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--green);
+    display: inline-block;
+  }
+
+  /* SERVICES */
+  .services-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 80px;
+    gap: 24px;
+  }
+  .services-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 100px);
+    line-height: 0.95;
+    max-width: 600px;
+  }
+  .services-title em {
+    font-style: normal;
+    color: var(--green);
+  }
+  .services-intro {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--white);
+    font-weight: 300;
+    text-align: left;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--dark);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,255,65,0.04) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .service-card:hover { background: #0D0D0D; }
+  .service-card:hover::before { opacity: 1; }
+
+  .service-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--green);
+    margin-bottom: 40px;
+    opacity: 0.6;
+  }
+
+  .service-icon {
+    font-size: 36px;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .service-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .service-desc {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--white);
+    font-weight: 300;
+  }
+
+
+  /* HOW WE WORK */
+  .process {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .process-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
+  }
+
+  .process-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.95;
+    margin-bottom: 80px;
+    max-width: 700px;
+  }
+  .process-title em { font-style: normal; color: var(--green); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%);
+    background-size: 200% 100%;
+    animation: scanLine 3s linear infinite;
+  }
+  @keyframes scanLine {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .step { padding-top: 60px; position: relative; }
+  .step-dot {
+    position: absolute;
+    top: 20px; left: 0;
+    width: 16px; height: 16px;
+    background: var(--green);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .step-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--green);
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+  .step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .step-desc {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--white);
+    font-weight: 300;
+  }
+
+  /* GEO SECTION */
+  .geo-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .geo-left {}
+  .geo-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.95;
+    margin-bottom: 32px;
+  }
+  .geo-title em { font-style: normal; color: var(--green); }
+  .geo-desc {
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--white);
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  .geo-desc strong { color: var(--white); font-weight: 500; }
+
+  .geo-right {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    position: relative;
+  }
+  .geo-right::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 40px; right: 40px;
+    height: 2px;
+    background: var(--green);
+  }
+
+  .geo-terminal {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    line-height: 2;
+    color: var(--muted);
+  }
+  .geo-terminal .prompt { color: var(--green); }
+  .geo-terminal .highlight { color: var(--white); }
+  .geo-terminal .comment { color: #444; }
+
+  /* WHY */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 80px;
+  }
+  .why-item {
+    background: var(--dark);
+    padding: 48px 40px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-item::before,
+  .why-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    pointer-events: none;
+  }
+  .why-item::before {
+    border-image: linear-gradient(90deg, var(--green), transparent, var(--green)) 1;
+    animation: borderScan 3s linear infinite;
+  }
+  .why-item::after {
+    border-image: linear-gradient(180deg, transparent, var(--green), transparent) 1;
+    animation: borderScan 3s linear infinite reverse;
+  }
+  @keyframes borderScan {
+    0%   { clip-path: inset(0 100% 0 0); }
+    25%  { clip-path: inset(0 0 0 0); }
+    50%  { clip-path: inset(0 0 0 100%); }
+    75%  { clip-path: inset(0 0 0 0); }
+    100% { clip-path: inset(0 100% 0 0); }
+  }
+  .why-item-border {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .why-item-border span {
+    position: absolute;
+    display: block;
+  }
+  .why-item-border span:nth-child(1) {
+    top: 0; left: -100%;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green));
+    animation: borderTop 4.5s linear infinite;
+  }
+  .why-item-border span:nth-child(2) {
+    top: -100%; right: 0;
+    width: 2px; height: 100%;
+    background: linear-gradient(180deg, transparent, var(--green));
+    animation: borderRight 4.5s linear infinite 1.125s;
+  }
+  .why-item-border span:nth-child(3) {
+    bottom: 0; right: -100%;
+    width: 100%; height: 2px;
+    background: linear-gradient(270deg, transparent, var(--green));
+    animation: borderBottom 4.5s linear infinite 2.25s;
+  }
+  .why-item-border span:nth-child(4) {
+    bottom: -100%; left: 0;
+    width: 2px; height: 100%;
+    background: linear-gradient(360deg, transparent, var(--green));
+    animation: borderLeft 4.5s linear infinite 3.375s;
+  }
+  @keyframes borderTop    { 0%{left:-100%} 100%{left:100%} }
+  @keyframes borderRight  { 0%{top:-100%}  100%{top:100%}  }
+  @keyframes borderBottom { 0%{right:-100%}100%{right:100%}}
+  @keyframes borderLeft   { 0%{bottom:-100%}100%{bottom:100%}}
+  .why-content h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .why-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--white);
+    font-weight: 300;
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--green);
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 80px);
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.6);
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 160px 5%;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
+  }
+  .cta-section::before {
+    content: 'MAGUEY';
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38vw;
+    color: rgba(0,255,65,0.08);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: -5px;
+  }
+
+  .cta-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 24px;
+  }
+
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 9vw, 130px);
+    line-height: 0.9;
+    margin-bottom: 48px;
+  }
+  .cta-title .glitch-word {
+    font-style: normal;
+    color: var(--green);
+    position: relative;
+    display: inline-block;
+    animation: ctaGlitch 2.5s infinite;
+  }
+  .cta-title .glitch-word::before,
+  .cta-title .glitch-word::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .cta-title .glitch-word::before {
+    color: #ff00c8;
+    animation: ctaGlitchTop 2.5s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  }
+  .cta-title .glitch-word::after {
+    color: #00eeff;
+    animation: ctaGlitchBot 2.5s infinite;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  }
+  @keyframes ctaGlitch {
+    0%, 90%, 100% { transform: none; }
+    91% { transform: skewX(-2deg); }
+    93% { transform: skewX(2deg); }
+    95% { transform: skewX(0deg); }
+  }
+  @keyframes ctaGlitchTop {
+    0%, 90%, 100% { transform: none; opacity: 0; }
+    91% { transform: translate(-3px, -2px); opacity: 1; }
+    93% { transform: translate(3px, 0px); opacity: 1; }
+    95% { transform: none; opacity: 0; }
+  }
+  @keyframes ctaGlitchBot {
+    0%, 90%, 100% { transform: none; opacity: 0; }
+    91% { transform: translate(3px, 2px); opacity: 1; }
+    93% { transform: translate(-3px, 0px); opacity: 1; }
+    95% { transform: none; opacity: 0; }
+  }
+
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .section-cta {
+    margin-top: 64px;
+    text-align: center;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    padding: 60px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
+  .footer-logo span { color: var(--green); }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--green); }
+
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--muted);
+  }
+
+  /* GLITCH */
+  .glitch { position: relative; }
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    pointer-events: none;
+  }
+  .glitch::before {
+    color: var(--green);
+    animation: glitchTop 2s infinite linear;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+  .glitch::after {
+    color: #fff;
+    animation: glitchBot 2s infinite linear;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+  @keyframes glitchTop {
+    0%, 75%, 100% { transform: translate(0); opacity: 0; }
+    76%            { transform: translate(-3px, -2px); opacity: 0.8; }
+    79%            { transform: translate(3px,  1px); opacity: 0.8; }
+    82%            { transform: translate(-2px, 2px); opacity: 0.8; }
+    85%            { transform: translate(2px, -1px); opacity: 0.8; }
+    88%            { transform: translate(0); opacity: 0; }
+  }
+  @keyframes glitchBot {
+    0%, 75%, 100% { transform: translate(0); opacity: 0; }
+    77%            { transform: translate(3px, 2px);  opacity: 0.6; }
+    80%            { transform: translate(-3px,-1px); opacity: 0.6; }
+    83%            { transform: translate(2px, 1px);  opacity: 0.6; }
+    86%            { transform: translate(-1px,0);    opacity: 0.6; }
+    88%            { transform: translate(0); opacity: 0; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    header nav .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .mobile-menu { display: flex; }
+    .hero { align-items: center; text-align: center; }
+    .hero-title { font-size: clamp(52px, 13vw, 90px); max-width: 100%; }
+    .hero-content { flex-direction: column; align-items: center; margin-top: 32px; }
+    .hero-bottom { align-items: center; max-width: 100%; }
+    .hero-desc { font-size: 16px; text-align: center; }
+    .hero-actions { align-items: center; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+    .services-header { flex-direction: column; }
+    .services-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: none;
+      border: none;
+    }
+    .service-card {
+      position: sticky;
+      border: 1px solid var(--border);
+    }
+    .service-card:nth-child(1) { top: 72px; z-index: 1; }
+    .service-card:nth-child(2) { top: 80px; z-index: 2; }
+    .service-card:nth-child(3) { top: 88px; z-index: 3; }
+    .service-card:nth-child(4) { top: 96px; z-index: 4; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .step:nth-child(3)::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 0;
+      width: calc(200% + 40px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%);
+      background-size: 200% 100%;
+      animation: scanLine 3s linear infinite;
+    }
+    .geo-section { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; gap: 16px; }
+    .why-item { min-height: 180px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    footer { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- HEADER / NAV -->
+<header role="banner">
+  <nav aria-label="Navegación principal">
+    <a href="#" class="nav-logo"><img src="logo.png" alt="Logo Maguey Studio"> MAGUEY STUDIO<sup style="font-size:10px; margin-left:2px; color: var(--muted);">®</sup></a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#geo">GEO</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+    </ul>
+    <a href="https://wa.me/5215560663926" class="nav-cta" aria-label="Cotizar proyecto por WhatsApp">Solicitar Diagnóstico</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú de navegación">
+  <a href="#servicios" class="mobile-link">Servicios</a>
+  <a href="#proceso" class="mobile-link">Proceso</a>
+  <a href="#geo" class="mobile-link">GEO</a>
+  <a href="#nosotros" class="mobile-link">Nosotros</a>
+  <a href="https://wa.me/5215560663926" class="mobile-cta" aria-label="Cotizar proyecto por WhatsApp">Solicitar Diagnóstico</a>
+</div>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" aria-label="Introducción — Tu marca visible en línea">
+  <canvas id="matrixCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;pointer-events:none;z-index:0;"></canvas>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-tag" style="position:relative;z-index:1;">Agencia Digital</div>
+
+  <h1 class="hero-title" style="position:relative;z-index:1;">
+    SOLUCIONES DIGITALES<br>
+    QUE <em class="glitch" data-text="IMPULSAN">IMPULSAN</em><br>
+    <span class="outline">TU NEGOCIO</span>
+  </h1>
+
+  <div class="hero-content" style="position:relative;z-index:1;">
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        <strong>Creamos sistemas digitales que ayudan a las empresas a atraer clientes, generar oportunidades de negocio y vender más.</strong>
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico</a>
+        <a href="#servicios" class="btn-ghost">Ver servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Páginas Web</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Google Ads</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Facebook Ads</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Redes Sociales</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">SEO</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">GEO</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Páginas Web</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Google Ads</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Facebook Ads</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Redes Sociales</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">SEO</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">GEO</span><span class="ticker-sep">✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="servicios" aria-label="Servicios de Maguey Studio">
+  <div class="services-header reveal">
+    <div>
+      <div class="section-label">Servicios</div>
+      <h2 class="services-title">LAS HERRAMIENTAS DETRÁS<br>DEL <em>CRECIMIENTO</em></h2>
+    </div>
+    <p class="services-intro">Cuatro pilares que trabajan para llevar tu negocio al siguiente nivel.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-num">01 / 04</div>
+      <span class="service-icon">⬡</span>
+      <h3 class="service-name">Páginas Web</h3>
+      <p class="service-desc">Sitios web diseñados para convertir visitas en clientes. Rápidos, optimizados para Google y listos para ser recomendados por ChatGPT.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">02 / 04</div>
+      <span class="service-icon">⟡</span>
+      <h3 class="service-name">Automatización & IA</h3>
+      <p class="service-desc">Sistemas inteligentes, dashboards y automatizaciones que ahorran tiempo y escalan tu negocio sin contratar más personal.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">03 / 04</div>
+      <span class="service-icon">◈</span>
+      <h3 class="service-name">Publicidad Digital</h3>
+      <p class="service-desc">Campañas en Google Ads y Meta Ads que llevan los clientes correctos hacia tu negocio, con el menor gasto posible.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">04 / 04</div>
+      <span class="service-icon">◉</span>
+      <h3 class="service-name">Redes Sociales</h3>
+      <p class="service-desc">Contenido estratégico que construye comunidad, posiciona tu marca y convierte seguidores en clientes.</p>
+    </div>
+  </div>
+  <div class="section-cta reveal">
+    <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico</a>
+  </div>
+</section>
+
+<!-- GEO -->
+<section id="geo" aria-label="GEO — Generative Engine Optimization">
+  <div class="geo-section" style="grid-template-columns: 1fr;">
+    <div class="geo-left reveal">
+      <div class="section-label">Diferenciador</div>
+      <h2 class="geo-title">PREPARAMOS TU NEGOCIO<br>PARA LA ERA<br>DE LA <em>IA</em></h2>
+      <p class="geo-desc">
+        Las personas ya no solo buscan en Google. Ahora también le preguntan a la inteligencia artificial qué empresas, productos o servicios les recomiendan.
+      </p>
+      <p class="geo-desc">
+        Optimizamos tu página para que motores de IA como <strong>ChatGPT, Gemini</strong> y otros entiendan, interpreten y recomienden tu negocio.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="proceso" aria-label="Proceso de trabajo">
+  <div class="process-grid-bg"></div>
+  <div style="position:relative;">
+  <div class="section-label reveal">Proceso</div>
+  <h2 class="process-title reveal">CÓMO CONSTRUIMOS<br>TU MOTOR DE <em>CRECIMIENTO</em></h2>
+
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-dot"></div>
+      <div class="step-num">01</div>
+      <h3 class="step-title">Diagnóstico</h3>
+      <p class="step-desc">Entendemos tu negocio, mercado y oportunidades.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot"></div>
+      <div class="step-num">02</div>
+      <h3 class="step-title">Estrategia</h3>
+      <p class="step-desc">Diseñamos el sistema que atraerá clientes y generará oportunidades.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot"></div>
+      <div class="step-num">03</div>
+      <h3 class="step-title">Implementación</h3>
+      <p class="step-desc">Construimos páginas web, campañas y activos digitales enfocados en resultados.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot"></div>
+      <div class="step-num">04</div>
+      <h3 class="step-title">Optimización</h3>
+      <p class="step-desc">Medimos, mejoramos y ajustamos continuamente para maximizar el crecimiento.</p>
+    </div>
+  </div>
+  <div class="section-cta reveal">
+    <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico</a>
+  </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="nosotros" aria-label="Por qué elegir Maguey Studio">
+  <div class="section-label reveal">Por qué nosotros</div>
+  <h2 class="services-title reveal" style="margin-bottom: 0;">RESULTADOS<br><em>REALES</em></h2>
+
+  <div class="why-grid">
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Orientados a Conversión</h3>
+        <p>Diseñamos cada proyecto para convertir visitantes en prospectos y prospectos en clientes.</p>
+      </div>
+    </div>
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Preparados para IA</h3>
+        <p>Optimizamos tu presencia digital para que motores como ChatGPT y Gemini comprendan mejor tu negocio.</p>
+      </div>
+    </div>
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Enfocados en Crecimiento</h3>
+        <p>Cada estrategia tiene un objetivo claro: atraer clientes, generar oportunidades y aumentar ventas.</p>
+      </div>
+    </div>
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Acompañamiento Continuo</h3>
+        <p>Te acompañamos después del lanzamiento para optimizar, mejorar y seguir creciendo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" aria-label="Contacto — Cotizar proyecto">
+  <div class="cta-grid-bg"></div>
+  <div class="cta-eyebrow reveal">¿Listo para crecer?</div>
+  <h2 class="cta-title reveal">CONSTRUYAMOS UN<br><span class="glitch-word" data-text="SISTEMA">SISTEMA</span><br>QUE VENDA</h2>
+  <div class="cta-actions reveal">
+    <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+</main><!-- end main -->
+
+<footer role="contentinfo" aria-label="Pie de página Maguey Studio">
+  <div class="footer-logo">MAGUEY <span>STUDIO</span><sup style="font-size:12px;">®</sup></div>
+  <nav aria-label="Navegación pie de página">
+    <ul class="footer-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#geo">GEO</a></li>
+      <li><a href="https://wa.me/5215560663926" aria-label="Contactar por WhatsApp">WhatsApp</a></li>
+    </ul>
+  </nav>
+  <div class="footer-copy">© 2026 Maguey Studio® — Chiapas, México</div>
+</footer>
+
+<script>
+  // CURSOR
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx - 6 + 'px';
+    cursor.style.top = my - 6 + 'px';
+  });
+
+  function animateRing() {
+    rx += (mx - rx - 18) * 0.12;
+    ry += (my - ry - 18) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(2.5)';
+      ring.style.transform = 'scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      ring.style.transform = 'scale(1)';
+    });
+  });
+
+  // HAMBURGER MENU
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function toggleMenu() {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+
+  document.querySelectorAll('.mobile-link, .mobile-cta').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // MATRIX RAIN
+  (function() {
+    const canvas = document.getElementById('matrixCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ01アBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&';
+    let cols, drops;
+
+    function init() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      cols  = Math.floor(canvas.width / 16);
+      drops = Array(cols).fill(1);
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(3,3,3,0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00FF41';
+      ctx.font = '14px Space Mono, monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const ch = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(ch, i * 16, drops[i] * 16);
+        if (drops[i] * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+
+    init();
+    window.addEventListener('resize', init);
+    setInterval(draw, 50);
+  })();
+
+  // REVEAL ON SCROLL
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 100);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
