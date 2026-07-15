@@ -551,6 +551,30 @@ h1.con-aureola,h2.con-aureola{padding-top:.4em;}
 }
 @media(min-width:860px){.testimonios{grid-template-columns:repeat(3,1fr);}}
 
+/* ============ UBICACIÓN ============ */
+.ubicacion__grid{
+  display:grid;
+  gap:2.4rem;
+  margin-top:2.6em;
+}
+@media(min-width:760px){.ubicacion__grid{grid-template-columns:1fr 1fr;align-items:start;}}
+.ubicacion__datos{display:flex;flex-direction:column;gap:1.4rem;}
+.ubicacion__bloque{display:flex;gap:.9rem;align-items:flex-start;}
+.ubicacion__icono{
+  flex-shrink:0;
+  width:2.4rem;height:2.4rem;
+  border-radius:50%;
+  background:rgba(111,181,209,.15);
+  display:grid;place-items:center;
+  color:var(--azul);
+  font-size:1rem;
+}
+.ubicacion__texto strong{display:block;font-family:var(--etiqueta);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pizarra);margin-bottom:.25rem;}
+.ubicacion__texto p,.ubicacion__texto a{color:var(--tinta-suave);font-size:.97rem;line-height:1.55;text-decoration:none;}
+.ubicacion__texto a:hover{color:var(--azul);}
+.ubicacion__mapa{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sombra-media);aspect-ratio:4/3;}
+.ubicacion__mapa iframe{width:100%;height:100%;border:0;display:block;}
+
 /* ============ FAQ ============ */
 .faq__lista{
   max-width:800px;
@@ -962,6 +986,64 @@ h1.con-aureola,h2.con-aureola{padding-top:.4em;}
   </div>
 </section>
 
+<!-- ══════════ UBICACIÓN ══════════ -->
+<section class="seccion seccion--hueso" id="ubicacion">
+  <div class="contenedor">
+    <div class="medida">
+      <p class="eyebrow rev">Cómo llegar</p>
+      <h2 class="rev con-aureola">Estamos en el <span class="aureola">oriente de Tuxtla</span></h2>
+    </div>
+
+    <div class="ubicacion__grid">
+      <div class="ubicacion__datos">
+
+        <div class="ubicacion__bloque rev">
+          <div class="ubicacion__icono" aria-hidden="true">📍</div>
+          <div class="ubicacion__texto">
+            <strong>Dirección</strong>
+            <p>Av. Juan Sabines 245, Col. Las Palmas<br>C.P. 29040, Tuxtla Gutiérrez, Chiapas</p>
+          </div>
+        </div>
+
+        <div class="ubicacion__bloque rev" data-d="1">
+          <div class="ubicacion__icono" aria-hidden="true">🕘</div>
+          <div class="ubicacion__texto">
+            <strong>Horario</strong>
+            <p>Lunes a viernes · 9:00 a 19:00<br>Sábado · 9:00 a 14:00</p>
+          </div>
+        </div>
+
+        <div class="ubicacion__bloque rev" data-d="2">
+          <div class="ubicacion__icono" aria-hidden="true">📞</div>
+          <div class="ubicacion__texto">
+            <strong>Teléfono</strong>
+            <a href="tel:+529612624766">961 262 4766</a>
+          </div>
+        </div>
+
+        <div class="ubicacion__bloque rev" data-d="3">
+          <div class="ubicacion__icono" aria-hidden="true">💬</div>
+          <div class="ubicacion__texto">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/529612624766?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita">Escríbenos para agendar</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ubicacion__mapa rev" data-d="1">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.5!2d-93.1050!3d16.7530!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAv.+Juan+Sabines+245%2C+Col.+Las+Palmas%2C+Tuxtla+Guti%C3%A9rrez!5e0!3m2!1ses!2smx!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación Santos Consultorio Dental">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════ FAQ ══════════ -->
 <section class="seccion seccion--hueso" id="faq">
   <div class="contenedor">
@@ -1071,6 +1153,7 @@ h1.con-aureola,h2.con-aureola{padding-top:.4em;}
       <div>
         <h4>Consultorio</h4>
         <ul>
+          <li><a href="#ubicacion">Ubicación</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#contacto">Ubicación y horarios</a></li>
           <li><a href="https://maps.google.com/?q=Santos+Consultorio+Dental+Tuxtla+Guti%C3%A9rrez" target="_blank" rel="noopener">Google Maps</a></li>
