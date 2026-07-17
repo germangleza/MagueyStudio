@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>¿Qué es GEO y por qué importa más que el SEO? | Maguey Studio®</title>
+<meta name="description" content="GEO (Generative Engine Optimization) es la optimización para que ChatGPT, Gemini y Perplexity citen y recomienden tu negocio. Descubre por qué es un juego distinto al SEO y qué hacer hoy.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Maguey Studio">
+<link rel="canonical" href="https://magueystudio.mx/blog/que-es-geo">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="¿Qué es GEO y por qué importa más que el SEO?">
+<meta property="og:description" content="Menos del 10% de las fuentes que cita la IA está en el top 10 de Google. GEO es el nuevo juego — y así se juega.">
+<meta property="og:url" content="https://magueystudio.mx/blog/que-es-geo">
+<meta property="og:image" content="https://magueystudio.mx/logo.png">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Maguey Studio">
+<meta property="article:published_time" content="2026-07-17">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¿Qué es GEO y por qué importa más que el SEO?">
+<meta name="twitter:description" content="Menos del 10% de las fuentes que cita la IA está en el top 10 de Google. GEO es el nuevo juego — y así se juega.">
+<meta name="twitter:image" content="https://magueystudio.mx/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Qué es GEO y por qué importa más que el SEO?",
+  "description": "GEO (Generative Engine Optimization) es la optimización para que los motores de IA como ChatGPT, Gemini y Perplexity citen y recomienden tu negocio.",
+  "image": "https://magueystudio.mx/logo.png",
+  "inLanguage": "es-MX",
+  "datePublished": "2026-07-17",
+  "dateModified": "2026-07-17",
+  "author": {
+    "@type": "Organization",
+    "name": "Maguey Studio",
+    "url": "https://magueystudio.mx/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Maguey Studio",
+    "url": "https://magueystudio.mx/",
+    "logo": {"@type": "ImageObject", "url": "https://magueystudio.mx/logo.png"}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://magueystudio.mx/blog/que-es-geo"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://magueystudio.mx/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://magueystudio.mx/blog"},
+    {"@type": "ListItem", "position": 3, "name": "¿Qué es GEO y por qué importa más que el SEO?", "item": "https://magueystudio.mx/blog/que-es-geo"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/logo.png">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-dim: #00CC33;
+    --black: #030303;
+    --dark: #0A0A0A;
+    --card: #111111;
+    --border: #1E1E1E;
+    --white: #F5F5F5;
+    --muted: #666;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  header nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 5%;
+    backdrop-filter: blur(20px);
+    background: rgba(3,3,3,0.8);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo img { width: 32px; height: 32px; object-fit: contain; }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--green);
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--white); }
+
+  /* ARTICLE HERO */
+  .article-hero {
+    padding: 170px 5% 60px;
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .breadcrumbs {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .breadcrumbs a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .breadcrumbs a:hover { color: var(--green); }
+  .article-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-cat {
+    color: var(--green);
+    border: 1px solid rgba(0,255,65,0.3);
+    padding: 4px 10px;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 6.5vw, 84px);
+    line-height: 0.95;
+    letter-spacing: 0.5px;
+  }
+  h1 em { font-style: normal; color: var(--green); }
+  .article-intro {
+    font-size: 20px;
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--white);
+    margin-top: 28px;
+    max-width: 70ch;
+  }
+
+  /* ARTICLE BODY */
+  .article-body {
+    max-width: 70ch;
+    margin: 0 auto;
+    padding: 20px 5% 80px;
+    font-size: 17px;
+    line-height: 1.9;
+    font-weight: 300;
+  }
+  .article-body h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1.5px;
+    line-height: 1.05;
+    margin: 64px 0 20px;
+    color: var(--white);
+  }
+  .article-body h2::before {
+    content: '// ';
+    color: var(--green);
+  }
+  .article-body h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    margin: 40px 0 14px;
+  }
+  .article-body p { margin-bottom: 22px; }
+  .article-body a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--white); }
+  .article-body strong { font-weight: 500; color: var(--white); }
+  .article-body ul, .article-body ol { margin: 0 0 24px 22px; }
+  .article-body li { margin-bottom: 12px; }
+  .article-body li::marker { color: var(--green); }
+
+  .highlight-box {
+    background: var(--dark);
+    border-left: 3px solid var(--green);
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .highlight-box .stat {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--green);
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .highlight-box p { margin: 0; font-size: 16px; }
+
+  .table-wrap { overflow-x: auto; margin: 36px 0; border: 1px solid var(--border); }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; }
+  caption {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 14px 18px;
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+  }
+  th, td { padding: 14px 18px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--dark);
+    font-weight: 700;
+  }
+  td { font-size: 15px; line-height: 1.7; background: #080808; }
+  tr:last-child td { border-bottom: none; }
+
+  .checklist { list-style: none; margin-left: 0 !important; }
+  .checklist li {
+    padding-left: 30px;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '▸';
+    color: var(--green);
+    position: absolute;
+    left: 0;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 100px 5%;
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes gridshift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(60px,60px); }
+  }
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 7vw, 90px);
+    line-height: 0.95;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .cta-title em { font-style: normal; color: var(--green); }
+  .btn-primary {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--black);
+    background: var(--green);
+    padding: 16px 40px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translate(-3px,-3px);
+    box-shadow: 6px 6px 0 var(--green);
+  }
+
+  /* RELATED */
+  .related {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 5% 100px;
+  }
+  .related-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .related-label::before { content: ''; width: 30px; height: 1px; background: var(--green); }
+  .related-card {
+    display: block;
+    background: var(--dark);
+    border: 1px solid var(--border);
+    padding: 32px 36px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .related-card:hover { background: #0D0D0D; }
+  .related-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .related-card:hover h3 { color: var(--green); }
+  .related-card p { color: var(--muted); font-size: 15px; font-weight: 300; line-height: 1.7; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    padding: 60px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 4px; }
+  .footer-logo span { color: var(--green); }
+  .footer-links { display: flex; gap: 32px; list-style: none; }
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--green); }
+  .footer-copy { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .article-body { font-size: 16px; }
+    footer { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <nav aria-label="Navegación principal">
+    <a href="/" class="nav-logo"><img src="/logo.png" alt="Logo Maguey Studio"> MAGUEY STUDIO<sup style="font-size:10px; margin-left:2px; color: var(--muted);">®</sup></a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/geo">GEO</a></li>
+    </ul>
+    <a href="https://wa.me/5215560663926" class="nav-cta" aria-label="Solicitar diagnóstico por WhatsApp">Solicitar Diagnóstico</a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+<article>
+  <div class="article-hero">
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <a href="/">Inicio</a> / <a href="/blog">Blog</a> / <span aria-current="page">¿Qué es GEO?</span>
+    </nav>
+    <div class="article-meta">
+      <span class="article-cat">GEO</span>
+      <time datetime="2026-07-17">17 julio 2026</time>
+      <span>Maguey Studio</span>
+    </div>
+    <h1>¿QUÉ ES GEO Y POR QUÉ IMPORTA<br>MÁS QUE EL <em>SEO</em>?</h1>
+    <p class="article-intro">Durante veinte años, aparecer en internet significaba una sola cosa: salir en la primera página de Google. Ese juego sigue existiendo, pero ya no es el único — y para muchos negocios, ya ni siquiera es el más importante.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>GEO: la optimización para motores generativos</h2>
+    <p><strong>GEO significa Generative Engine Optimization</strong>: el conjunto de prácticas para que los motores de inteligencia artificial — ChatGPT, Gemini, Perplexity, Copilot, Claude — encuentren tu negocio, lo entiendan y lo <strong>citen o recomienden</strong> cuando alguien les pregunta algo relacionado con lo que vendes.</p>
+    <p>Si el SEO buscaba que Google te pusiera en la lista de diez ligas azules, el GEO busca algo más directo: que la IA, al dar <em>una sola respuesta</em>, mencione tu nombre. No hay página dos. No hay posición siete. O estás en la respuesta, o no existes para ese cliente.</p>
+    <p>En Maguey Studio lo trabajamos como un servicio completo — puedes ver el detalle en nuestra página de <a href="/geo">optimización GEO</a> — pero este artículo te explica lo esencial para que entiendas el terreno.</p>
+
+    <h2>La gente ya no busca: pregunta</h2>
+    <p>Piensa en cómo ha cambiado tu propio comportamiento. Antes escribías "dentista Tuxtla Gutiérrez" en Google, abrías cinco pestañas, comparabas y decidías. Hoy, cada vez más personas simplemente le preguntan a ChatGPT: <em>"¿Qué dentista me recomiendas en Tuxtla? Busco algo de buena calidad y que atienda fines de semana."</em></p>
+    <p>La IA no devuelve diez ligas: devuelve una recomendación conversada, con dos o tres nombres, sus fortalezas y a veces hasta el teléfono. El usuario ya no compara — <strong>confía</strong>. Y quien no aparece en esa respuesta ni se entera de que perdió al cliente.</p>
+    <p>Esto no es una moda futura. Los buscadores tradicionales ya integraron respuestas de IA (los AI Overviews de Google, Bing con Copilot), y una parte creciente de las decisiones de compra empieza en una conversación con un chatbot, no en una lista de resultados.</p>
+
+    <h2>El dato que lo cambia todo</h2>
+    <div class="highlight-box">
+      <span class="stat">&lt; 10%</span>
+      <p>Menos del 10% de las fuentes que citan los motores de IA en sus respuestas aparece en el top 10 de resultados de Google para la misma consulta.</p>
+    </div>
+    <p>Lee eso otra vez. Los estudios que comparan las fuentes citadas por motores generativos contra los resultados clásicos de Google coinciden en algo incómodo para quien invirtió años en SEO: <strong>hay muy poca superposición entre ambos</strong>. Estar en el top de Google no te garantiza que la IA te cite, y no estar en el top de Google no te impide que te cite.</p>
+    <p>La conclusión práctica es contundente: <strong>SEO y GEO son dos juegos distintos, con reglas distintas</strong>. Puedes ir ganando uno y estar completamente ausente del otro. Y el segundo juego apenas empieza, lo cual es una ventaja enorme para los negocios que se muevan primero — sobre todo los locales, donde casi nadie está compitiendo todavía.</p>
+
+    <h2>¿Cómo decide la IA a quién citar?</h2>
+    <p>Los motores generativos no "posicionan" páginas: buscan fuentes confiables para construir una respuesta. Estos son los factores que más pesan:</p>
+
+    <h3>1. El índice de Bing (y otros índices de búsqueda)</h3>
+    <p>ChatGPT consulta la web principalmente a través de Bing. Si tu sitio no está indexado en Bing, para ChatGPT prácticamente no existes, aunque Google te adore. Darse de alta en Bing Webmaster Tools es de los pasos más rentables y menos conocidos.</p>
+
+    <h3>2. Datos estructurados (schema.org)</h3>
+    <p>La IA necesita <em>entender</em> qué eres, no solo leerte. El marcado schema.org — LocalBusiness, ProfessionalService, FAQPage, Article — convierte tu página en datos que una máquina puede citar con confianza: quién eres, qué haces, dónde estás, cuánto cuestas, qué opinan de ti.</p>
+
+    <h3>3. llms.txt</h3>
+    <p>Un estándar emergente: un archivo de texto en la raíz de tu sitio que resume, en lenguaje claro, qué es tu negocio y qué contiene tu sitio, pensado específicamente para que los modelos de lenguaje lo lean. Es el equivalente del robots.txt, pero para darle contexto a la IA en lugar de restringirla.</p>
+
+    <h3>4. Contenido fresco que responde preguntas reales</h3>
+    <p>Los motores generativos prefieren fuentes vivas y específicas. Un sitio que publica contenido útil con regularidad — que responde las preguntas exactas que la gente hace — tiene muchas más probabilidades de ser citado que un sitio-folleto que no cambia desde 2022.</p>
+
+    <h3>5. Menciones de terceros</h3>
+    <p>La IA triangula. Si tu negocio aparece mencionado en directorios, notas de prensa, blogs del sector y reseñas — con datos consistentes de nombre, dirección y teléfono — el modelo gana confianza para recomendarte. Una sola fuente (tu propio sitio) rara vez basta.</p>
+
+    <h2>SEO vs GEO: la comparación honesta</h2>
+    <div class="table-wrap">
+      <table>
+        <caption>SEO vs GEO — dos juegos distintos</caption>
+        <thead>
+          <tr>
+            <th scope="col">Aspecto</th>
+            <th scope="col">SEO</th>
+            <th scope="col">GEO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Objetivo</strong></td>
+            <td>Aparecer en el top 10 de Google</td>
+            <td>Ser citado en la respuesta de la IA</td>
+          </tr>
+          <tr>
+            <td><strong>Resultado</strong></td>
+            <td>Lista de ligas; el usuario compara</td>
+            <td>Una respuesta; la IA ya comparó por él</td>
+          </tr>
+          <tr>
+            <td><strong>Señales clave</strong></td>
+            <td>Backlinks, palabras clave, autoridad de dominio</td>
+            <td>Datos estructurados, menciones consistentes, contenido citable, índice de Bing</td>
+          </tr>
+          <tr>
+            <td><strong>Métrica</strong></td>
+            <td>Posición y clics</td>
+            <td>Frecuencia de citación y recomendación</td>
+          </tr>
+          <tr>
+            <td><strong>Competencia</strong></td>
+            <td>Saturada tras 20 años</td>
+            <td>Casi vacía, especialmente en lo local</td>
+          </tr>
+          <tr>
+            <td><strong>Tiempo de resultados</strong></td>
+            <td>Meses o años</td>
+            <td>Semanas o pocos meses</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ojo: <strong>GEO no reemplaza al SEO — lo desborda</strong>. Un sitio técnicamente sano ayuda en ambos juegos. Pero si tu presupuesto y tiempo son limitados, hoy el retorno marginal de cada peso invertido en GEO es mucho mayor, simplemente porque casi nadie está jugando.</p>
+
+    <h2>Qué hacer hoy: checklist GEO</h2>
+    <ul class="checklist">
+      <li><strong>Verifica tu punto de partida:</strong> pregúntale a ChatGPT y Perplexity "¿cuál es el mejor [tu giro] en [tu ciudad]?" y anota si apareces y qué dicen de ti.</li>
+      <li><strong>Ten un sitio propio, rápido y claro:</strong> dominio propio, carga en menos de 2 segundos, y textos que digan sin rodeos qué haces, dónde y para quién.</li>
+      <li><strong>Implementa schema.org completo:</strong> LocalBusiness o ProfessionalService, más FAQPage con las preguntas que tus clientes hacen de verdad.</li>
+      <li><strong>Publica un llms.txt</strong> en la raíz de tu dominio con el resumen de tu negocio para los modelos de lenguaje.</li>
+      <li><strong>Regístrate en Bing Webmaster Tools</strong> y envía tu sitemap. ChatGPT busca a través de Bing.</li>
+      <li><strong>Publica contenido fresco cada mes</strong> que responda preguntas reales de tus clientes, con datos concretos y lenguaje directo.</li>
+      <li><strong>Consigue menciones externas:</strong> directorios locales, reseñas en Google con respuesta, notas en medios y blogs del sector, siempre con tus datos consistentes.</li>
+    </ul>
+    <p>Si quieres el paso a paso detallado de cada punto, escribimos una guía completa: <a href="/blog/chatgpt-recomiende-mi-negocio">Cómo hacer que ChatGPT recomiende mi negocio</a>.</p>
+
+    <h2>Conclusión: el que llega primero, se queda con la respuesta</h2>
+    <p>Cada cambio de plataforma en internet ha premiado a los que se movieron antes: los primeros en tener página web, los primeros en hacer SEO, los primeros en anunciarse en redes. GEO es esa ventana, abierta ahora mismo. La diferencia es que aquí no compites por diez lugares — compites por <strong>ser la respuesta</strong>.</p>
+    <p>En Maguey Studio hacemos <a href="/geo">diagnósticos GEO</a> para negocios en México: revisamos si la IA te encuentra, qué dice de ti y exactamente qué te falta para que te recomiende. Sin costo y sin compromiso.</p>
+
+  </div>
+</article>
+
+<section class="cta-section" aria-label="Solicitar diagnóstico gratuito">
+  <div class="cta-grid-bg"></div>
+  <h2 class="cta-title">¿LA IA YA<br><em>TE RECOMIENDA</em>?</h2>
+  <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+</section>
+
+<aside class="related" aria-label="Artículo relacionado">
+  <div class="related-label">Sigue leyendo</div>
+  <a class="related-card" href="/blog/chatgpt-recomiende-mi-negocio">
+    <h3>Cómo hacer que ChatGPT recomiende mi negocio</h3>
+    <p>Los 7 pasos concretos — del schema.org al llms.txt — para que los motores de IA encuentren tu negocio y lo recomienden.</p>
+  </a>
+</aside>
+
+</main>
+
+<footer role="contentinfo" aria-label="Pie de página Maguey Studio">
+  <div class="footer-logo">MAGUEY <span>STUDIO</span><sup style="font-size:12px;">®</sup></div>
+  <nav aria-label="Navegación pie de página">
+    <ul class="footer-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/#servicios">Servicios</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://wa.me/5215560663926" aria-label="Contactar por WhatsApp">WhatsApp</a></li>
+    </ul>
+  </nav>
+  <div class="footer-copy">© 2026 Maguey Studio® — México</div>
+</footer>
+
+</body>
+</html>

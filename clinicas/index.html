@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sitios web para clínicas y consultorios | Maguey Studio</title>
 <meta name="description" content="Construimos el sitio de su clínica para que Google y la IA lo recomienden a usted. Capa GEO completa, blog gestionado y reporte de citaciones. Diagnóstico gratis en 15 minutos.">
-<link rel="canonical" href="https://magueystudio.com/clinicas">
+<link rel="canonical" href="https://magueystudio.mx/clinicas">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sitios web para clínicas y consultorios | Maguey Studio">
 <meta property="og:description" content="Sus pacientes ya le preguntaron a la IA quién es el mejor especialista de su ciudad. ¿Salió usted?">
-<meta property="og:url" content="https://magueystudio.com/clinicas">
-<meta property="og:image" content="https://magueystudio.com/og-clinicas.jpg">
+<meta property="og:url" content="https://magueystudio.mx/clinicas">
+<meta property="og:image" content="https://magueystudio.mx/logo.png">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -25,9 +25,9 @@
   "@graph": [
     {
       "@type": "ProfessionalService",
-      "@id": "https://magueystudio.com/#organizacion",
+      "@id": "https://magueystudio.mx/#organizacion",
       "name": "Maguey Studio",
-      "url": "https://magueystudio.com",
+      "url": "https://magueystudio.mx",
       "description": "Estudio digital especializado en GEO (Generative Engine Optimization): construimos sitios web para que los motores de IA como ChatGPT, Perplexity y Gemini recomienden a nuestros clientes.",
       "areaServed": { "@type": "Country", "name": "México" },
       "knowsAbout": ["Generative Engine Optimization", "SEO", "Schema.org", "Diseño web para clínicas", "Google Ads", "Meta Ads"],
@@ -35,22 +35,22 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://magueystudio.com/clinicas#pagina",
-      "url": "https://magueystudio.com/clinicas",
+      "@id": "https://magueystudio.mx/clinicas#pagina",
+      "url": "https://magueystudio.mx/clinicas",
       "name": "Sitios web para clínicas y consultorios",
-      "isPartOf": { "@id": "https://magueystudio.com/#organizacion" },
+      "isPartOf": { "@id": "https://magueystudio.mx/#organizacion" },
       "inLanguage": "es-MX"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://magueystudio.com" },
-        { "@type": "ListItem", "position": 2, "name": "Clínicas", "item": "https://magueystudio.com/clinicas" }
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://magueystudio.mx" },
+        { "@type": "ListItem", "position": 2, "name": "Clínicas", "item": "https://magueystudio.mx/clinicas" }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://magueystudio.com/clinicas#faq",
+      "@id": "https://magueystudio.mx/clinicas#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -220,114 +220,76 @@
     outline:2px solid var(--fosfo);outline-offset:3px;
   }
 
-  /* ════ FIRMA: el expediente impreso ════ */
-  .exp-zona{margin-top:clamp(3rem,7vw,4.5rem);position:relative}
-  .exp{
-    background:var(--papel);
-    color:var(--papel-tinta);
-    max-width:640px;
-    margin-inline:auto;
-    border-radius:3px;
-    box-shadow:
-      0 1px 0 rgba(255,255,255,.06) inset,
-      0 40px 90px -30px rgba(0,0,0,.85),
-      0 12px 30px -12px rgba(0,0,0,.6);
-    transform:rotate(-.5deg);
-    font-family:var(--mono);
-    font-size:.8125rem;
-    line-height:1.6;
+  /* ════ FIRMA: consulta a la IA en pantalla ════ */
+  .sim-zona{margin-top:clamp(3rem,7vw,4.5rem);max-width:640px;margin-inline:auto}
+  .sim{
+    background:var(--tinta-2);
+    border:1px solid var(--linea);
+    border-radius:4px;
     overflow:hidden;
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.9);
   }
-  @media(min-width:900px){.exp{transform:rotate(-.75deg)}}
-  .exp:hover{transform:rotate(0)}
-  .exp{transition:transform .35s ease}
+  .sim__bar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.65rem .9rem;
+    border-bottom:1px solid var(--linea-suave);
+    background:var(--tinta);
+  }
+  .sim__dots{display:flex;gap:.35rem}
+  .sim__dots i{width:8px;height:8px;border-radius:50%;background:var(--linea);display:block}
+  .sim__tag{font-family:var(--mono);font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-2)}
+  .sim__body{padding:1.25rem 1.1rem 1.4rem;font-family:var(--mono);font-size:.8125rem;line-height:1.75}
+  .sim__q{color:var(--hueso);margin-bottom:1.1rem;display:flex;gap:.6rem}
+  .sim__q b{color:var(--fosfo);font-weight:400;flex:none}
+  .sim__a{color:var(--gris);min-height:9.5rem}
+  .sim__a ol{margin:.55rem 0 0;padding-left:1.35rem}
+  .sim__a li{margin-bottom:.15rem;color:var(--hueso)}
+  .cursor{
+    display:inline-block;width:.5em;height:1em;background:var(--fosfo);
+    vertical-align:-.14em;margin-left:.12em;
+  }
+  .cursor.blink{animation:blink 1s steps(2) infinite}
+  @keyframes blink{50%{opacity:0}}
 
-  .exp__cab{
-    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
-    padding:1.1rem 1.4rem .9rem;
-    border-bottom:2px solid var(--papel-tinta);
-  }
-  .exp__cab h2{
-    font-family:var(--mono);font-size:.8125rem;font-weight:600;
-    letter-spacing:.1em;text-transform:uppercase;margin:0;line-height:1.4;
-  }
-  .exp__cab span{font-size:.6875rem;color:var(--papel-gris);white-space:nowrap}
-
-  .exp__meta{
-    display:grid;grid-template-columns:1fr 1fr;gap:.2rem 1.5rem;
-    padding:1rem 1.4rem;
-    border-bottom:1px solid var(--papel-linea);
-    font-size:.75rem;
-  }
-  .exp__meta dt{color:var(--papel-gris);text-transform:uppercase;letter-spacing:.08em;font-size:.625rem}
-  .exp__meta dd{margin-bottom:.55rem}
-
-  .exp__tabla{width:100%;border-collapse:collapse}
-  .exp__tabla th,.exp__tabla td{
-    text-align:left;padding:.7rem 1.4rem;
-    border-bottom:1px solid var(--papel-linea);
-    font-size:.75rem;vertical-align:top;
-  }
-  .exp__tabla th{
-    font-weight:600;text-transform:uppercase;letter-spacing:.08em;
-    font-size:.625rem;color:var(--papel-gris);
-  }
-  .exp__tabla td:last-child,.exp__tabla th:last-child{text-align:right;white-space:nowrap}
-  .ok{color:var(--maguey);font-weight:600}
-  .falta{
-    color:var(--alerta);font-weight:600;
-    background:linear-gradient(transparent 55%,rgba(179,64,30,.14) 55%);
-  }
-
-  .exp__dx{
-    padding:1.05rem 1.4rem;
-    display:flex;gap:.9rem;align-items:baseline;
-    background:repeating-linear-gradient(-45deg,transparent 0 10px,rgba(23,26,22,.025) 10px 20px);
-  }
-  .exp__dx b{
-    font-size:.625rem;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--papel-gris);flex:none;
-  }
-  .exp__dx p{
-    font-family:var(--display);font-style:italic;font-size:1.1rem;line-height:1.35;
+  .verdict{
+    border-top:1px solid var(--linea-suave);
+    padding:1rem 1.1rem;
+    font-family:var(--display);
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--fosfo);
     letter-spacing:-.01em;
+    background:linear-gradient(90deg,rgba(198,255,74,.07),transparent);
+    opacity:0;transform:translateY(6px);
+    transition:opacity .5s ease,transform .5s ease;
   }
-  .exp__sello{
-    display:inline-block;margin:.4rem 1.4rem 1.2rem;
-    border:2px solid var(--alerta);color:var(--alerta);
-    font-size:.625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-    padding:.35rem .7rem;border-radius:2px;
-    transform:rotate(-3deg);
-    opacity:0;transition:opacity .4s ease .3s;
-  }
-  .exp.on .exp__sello{opacity:.85}
-  .exp__pie{
-    padding:.7rem 1.4rem .9rem;border-top:1px solid var(--papel-linea);
-    font-size:.625rem;color:var(--papel-gris);
-  }
+  .verdict.on{opacity:1;transform:none}
 
-  /* orden de estudio (la sonda) */
-  .orden{
-    max-width:640px;margin:1.75rem auto 0;
-    border:1px solid var(--linea);border-radius:3px;
-    padding:1.1rem 1.2rem 1.25rem;background:var(--tinta-2);
+  .probe{
+    border-top:1px solid var(--linea-suave);
+    padding:1rem 1.1rem 1.15rem;
+    background:var(--tinta);
   }
-  .orden p{font-family:var(--mono);font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);margin-bottom:.7rem}
-  .orden__fila{display:flex;flex-wrap:wrap;gap:.5rem}
-  .orden input{
-    flex:1 1 8rem;min-width:0;background:var(--tinta);
-    border:1px solid var(--linea);color:var(--hueso);
-    font-family:var(--body);font-size:.875rem;padding:.65rem .75rem;border-radius:2px;
+  .probe__label{
+    font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;
+    color:var(--gris);margin-bottom:.65rem;text-transform:uppercase;
   }
-  .orden input::placeholder{color:var(--gris-2)}
-  .orden input:focus{border-color:var(--maguey);outline:none}
-  .orden button{
-    flex:none;background:transparent;border:1px solid var(--fosfo);color:var(--fosfo);
-    font-family:var(--mono);font-size:.75rem;letter-spacing:.04em;
-    padding:.65rem 1rem;border-radius:2px;cursor:pointer;transition:background .2s,color .2s;
+  .probe__row{display:flex;flex-wrap:wrap;gap:.5rem}
+  .probe input{
+    flex:1 1 7.5rem;min-width:0;
+    background:var(--tinta);border:1px solid var(--linea);
+    color:var(--hueso);font-family:var(--body);font-size:.875rem;
+    padding:.6rem .7rem;border-radius:2px;
   }
-  .orden button:hover{background:var(--fosfo);color:var(--tinta)}
-  @media(max-width:430px){.orden button{flex:1 1 100%}}
+  .probe input::placeholder{color:var(--gris-2)}
+  .probe input:focus{border-color:var(--maguey);outline:none}
+  .probe button{
+    flex:none;background:transparent;border:1px solid var(--fosfo);
+    color:var(--fosfo);font-family:var(--mono);font-size:.75rem;letter-spacing:.04em;
+    padding:.6rem .9rem;border-radius:2px;cursor:pointer;transition:background .2s,color .2s;
+  }
+  .probe button:hover{background:var(--fosfo);color:var(--tinta)}
+  @media(max-width:420px){.probe button{flex:1 1 100%}}
 
   /* ── prueba social ── */
   .social{border-block:1px solid var(--linea-suave);padding-block:1.75rem}
@@ -449,7 +411,6 @@
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
     .rv{opacity:1;transform:none}
-    .exp{transform:none}
   }
 </style>
 </head>
@@ -474,49 +435,28 @@
       <span class="btn__nota">Sin costo · Sin compromiso</span>
     </div>
 
-    <!-- FIRMA: el expediente -->
-    <div class="exp-zona">
-      <article class="exp rv" id="exp" aria-label="Ejemplo de expediente de visibilidad">
-        <div class="exp__cab">
-          <h2>Expediente de visibilidad</h2>
-          <span>Folio MG-2026-0147 · Ejemplo</span>
+    <!-- FIRMA: la consulta a la IA -->
+    <div class="sim-zona">
+      <div class="sim rv">
+        <div class="sim__bar">
+          <div class="sim__dots"><i></i><i></i><i></i></div>
+          <span class="sim__tag">Ejemplo ilustrativo</span>
         </div>
 
-        <dl class="exp__meta">
-          <div><dt>Paciente</dt><dd>Clínica dental (nombre reservado)</dd></div>
-          <div><dt>Estudio solicitado</dt><dd>Presencia en motores de IA</dd></div>
-          <div><dt>Plaza</dt><dd>Tuxtla Gutiérrez, Chis.</dd></div>
-          <div><dt>Consulta evaluada</dt><dd>"¿mejor dentista en la ciudad?"</dd></div>
-        </dl>
-
-        <table class="exp__tabla">
-          <thead>
-            <tr><th scope="col">Parámetro</th><th scope="col">Referencia</th><th scope="col">Resultado</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Google · perfil de negocio</td><td>Presente</td><td class="ok">PRESENTE</td></tr>
-            <tr><td>Recomendación en ChatGPT</td><td>Citado</td><td class="falta">NO DETECTADO</td></tr>
-            <tr><td>Índice de Bing</td><td>Indexado</td><td class="falta">NO DETECTADO</td></tr>
-            <tr><td>Schema / datos estructurados</td><td>Completo</td><td class="falta">AUSENTE</td></tr>
-            <tr><td>Contenido fresco (90 días)</td><td>Activo</td><td class="falta">SIN ACTIVIDAD</td></tr>
-          </tbody>
-        </table>
-
-        <div class="exp__dx">
-          <b>Impresión dx</b>
-          <p>La clínica existe para sus pacientes, pero no para la IA que los aconseja.</p>
+        <div class="sim__body">
+          <p class="sim__q"><b>&gt;</b> <span id="q"></span></p>
+          <div class="sim__a" id="a"></div>
         </div>
-        <span class="exp__sello">Requiere atención</span>
 
-        <p class="exp__pie">Documento ilustrativo. Su expediente real se levanta en la llamada de diagnóstico, con su especialidad y su plaza.</p>
-      </article>
+        <p class="verdict" id="verdict">Su clínica no está en esa lista.</p>
 
-      <div class="orden rv">
-        <p>Ordene el estudio de su propia clínica</p>
-        <div class="orden__fila">
-          <input id="esp" type="text" placeholder="Su especialidad" aria-label="Su especialidad" autocomplete="off">
-          <input id="ciu" type="text" placeholder="Su ciudad" aria-label="Su ciudad" autocomplete="off">
-          <button id="go" type="button">Preguntarle a ChatGPT ↗</button>
+        <div class="probe">
+          <p class="probe__label">Compruébelo con su clínica</p>
+          <div class="probe__row">
+            <input id="esp" type="text" placeholder="Su especialidad" aria-label="Su especialidad" autocomplete="off">
+            <input id="ciu" type="text" placeholder="Su ciudad" aria-label="Su ciudad" autocomplete="off">
+            <button id="go" type="button">Abrir en ChatGPT ↗</button>
+          </div>
         </div>
       </div>
     </div>
@@ -526,7 +466,7 @@
 <section class="social">
   <div class="wrap social__in">
     <b>Clínicas y marcas que ya construyen con nosotros</b>
-    <ul><li>Ópticas Jarmar</li><li>LifeAgent</li><li>[Cliente]</li></ul>
+    <ul><li>Ópticas Jarmar</li><li>LifeAgent</li><li>Santos Consultorio Dental</li></ul>
   </div>
 </section>
 
@@ -695,7 +635,7 @@
     <div class="cierre rv">
       <h2>Le muestro en vivo qué está pasando <em>con su nombre.</em></h2>
       <p class="lede">Abrimos ChatGPT y Google juntos, en su especialidad y su ciudad. Le digo qué haría yo. Si no le sirve, se queda con el diagnóstico y no me debe nada.</p>
-      <a href="[LINK-AGENDA]" class="btn btn--p">Agendar mis 15 minutos</a>
+      <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20de%2015%20minutos%20para%20mi%20cl%C3%ADnica." class="btn btn--p">Agendar mis 15 minutos</a>
       <p class="cierre__riesgo">Sin costo · Sin compromiso · 15 minutos reales</p>
     </div>
   </div>
@@ -704,11 +644,11 @@
 <footer class="pie">
   <div class="wrap pie__in">
     <p>Maguey Studio · GEO y sitios web para clínicas en México</p>
-    <p><a href="https://wa.me/52[NUMERO]">WhatsApp</a> · <a href="mailto:[CORREO]">Correo</a> · <a href="/aviso-de-privacidad">Aviso de privacidad</a></p>
+    <p><a href="https://wa.me/5215560663926">WhatsApp</a> · <a href="mailto:hola@magueystudio.mx">Correo</a> · <a href="/aviso-de-privacidad">Aviso de privacidad</a></p>
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/52[NUMERO]?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20cl%C3%ADnicas%20y%20quiero%20mi%20diagn%C3%B3stico." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+<a class="wa" href="https://wa.me/5215560663926?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20cl%C3%ADnicas%20y%20quiero%20mi%20diagn%C3%B3stico." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.36 9.36 0 0 1-1.44-5.01c0-5.18 4.23-9.4 9.42-9.4a9.36 9.36 0 0 1 6.65 2.76 9.32 9.32 0 0 1 2.76 6.65c0 5.18-4.23 9.41-9.42 9.41zM20.5 3.49A11.8 11.8 0 0 0 12.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L.08 24l6.36-1.67a11.83 11.83 0 0 0 5.6 1.43h.01c6.53 0 11.85-5.32 11.86-11.86a11.8 11.8 0 0 0-3.41-8.41z"/></svg>
 </a>
 
@@ -751,7 +691,62 @@
     cob.observe(cifra);
   }
 
-  /* ordenar el estudio: abre ChatGPT real */
+  /* simulación de consulta a IA */
+  var QUERY = '¿Cuál es el mejor dentista en Tuxtla Gutiérrez?';
+  var qEl = document.getElementById('q');
+  var aEl = document.getElementById('a');
+  var vEl = document.getElementById('verdict');
+
+  var ANSWER = '<p>Con base en reseñas y presencia en línea, estas son las opciones mejor valoradas:</p>'
+    + '<ol><li>Clínica Dental Sonrisa Integral</li><li>Centro Odontológico del Valle</li><li>Dr. Ramírez — Odontología Avanzada</li></ol>';
+
+  function typeQuery(){
+    var i = 0;
+    var cur = document.createElement('span');
+    cur.className = 'cursor blink';
+    qEl.appendChild(cur);
+    var t = setInterval(function(){
+      if(i >= QUERY.length){
+        clearInterval(t);
+        cur.remove();
+        setTimeout(thinking, 420);
+        return;
+      }
+      cur.insertAdjacentText('beforebegin', QUERY.charAt(i));
+      i++;
+    }, 38);
+  }
+
+  function thinking(){
+    aEl.innerHTML = '<span style="color:var(--gris-2)">Buscando</span><span class="cursor blink"></span>';
+    setTimeout(function(){
+      aEl.innerHTML = ANSWER;
+      setTimeout(function(){ vEl.classList.add('on'); }, 500);
+    }, 1100);
+  }
+
+  function runSim(){
+    if(reduce){
+      qEl.textContent = QUERY;
+      aEl.innerHTML = ANSWER;
+      vEl.classList.add('on');
+      return;
+    }
+    typeQuery();
+  }
+
+  if(!('IntersectionObserver' in window)){
+    runSim();
+  } else {
+    var sob = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ runSim(); sob.disconnect(); }
+      });
+    },{threshold:.5});
+    sob.observe(document.querySelector('.sim'));
+  }
+
+  /* compruébelo usted mismo: abre ChatGPT real */
   var go = document.getElementById('go');
   var esp = document.getElementById('esp');
   var ciu = document.getElementById('ciu');

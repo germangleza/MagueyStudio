@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog de Maguey Studio® | GEO, SEO y Marketing Digital</title>
+<meta name="description" content="Artículos sobre GEO, SEO y presencia digital para negocios en México. Aprende cómo hacer que ChatGPT y los motores de IA recomienden tu negocio.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Maguey Studio">
+<link rel="canonical" href="https://magueystudio.mx/blog">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog de Maguey Studio®">
+<meta property="og:description" content="Artículos sobre GEO, SEO y presencia digital para negocios en México.">
+<meta property="og:url" content="https://magueystudio.mx/blog">
+<meta property="og:image" content="https://magueystudio.mx/logo.png">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Maguey Studio">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog de Maguey Studio®">
+<meta name="twitter:description" content="Artículos sobre GEO, SEO y presencia digital para negocios en México.">
+<meta name="twitter:image" content="https://magueystudio.mx/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog de Maguey Studio",
+  "url": "https://magueystudio.mx/blog",
+  "description": "Artículos sobre GEO, SEO y presencia digital para negocios en México.",
+  "inLanguage": "es-MX",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Maguey Studio",
+    "url": "https://magueystudio.mx/",
+    "logo": {"@type": "ImageObject", "url": "https://magueystudio.mx/logo.png"}
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "¿Qué es GEO y por qué importa más que el SEO?",
+      "url": "https://magueystudio.mx/blog/que-es-geo",
+      "datePublished": "2026-07-17",
+      "author": {"@type": "Organization", "name": "Maguey Studio"}
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Cómo hacer que ChatGPT recomiende mi negocio",
+      "url": "https://magueystudio.mx/blog/chatgpt-recomiende-mi-negocio",
+      "datePublished": "2026-07-17",
+      "author": {"@type": "Organization", "name": "Maguey Studio"}
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/logo.png">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-dim: #00CC33;
+    --black: #030303;
+    --dark: #0A0A0A;
+    --card: #111111;
+    --border: #1E1E1E;
+    --white: #F5F5F5;
+    --muted: #666;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  header nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 5%;
+    backdrop-filter: blur(20px);
+    background: rgba(3,3,3,0.8);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo img { width: 32px; height: 32px; object-fit: contain; }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--green); }
+  .nav-cta {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--green);
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--white); }
+
+  /* HERO */
+  .hero {
+    padding: 180px 5% 80px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes gridshift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(60px,60px); }
+  }
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 8vw, 110px);
+    line-height: 0.92;
+    position: relative;
+  }
+  .hero-title em { font-style: normal; color: var(--green); }
+  .hero-desc {
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 540px;
+    margin: 32px auto 0;
+    position: relative;
+  }
+
+  /* GRID DE ARTÍCULOS */
+  .posts {
+    padding: 100px 5% 120px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--green);
+  }
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .post-card {
+    background: var(--dark);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .post-card:hover { background: #0D0D0D; }
+  .post-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,255,65,0.04) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .post-card:hover::before { opacity: 1; }
+  .post-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .post-cat {
+    color: var(--green);
+    border: 1px solid rgba(0,255,65,0.3);
+    padding: 4px 10px;
+  }
+  .post-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    letter-spacing: 1px;
+    line-height: 1.05;
+  }
+  .post-title a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .post-title a::after { content: ''; position: absolute; inset: 0; }
+  .post-title a:hover { color: var(--green); }
+  .post-excerpt {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 300;
+    color: var(--white);
+  }
+  .post-more {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-top: auto;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 120px 5%;
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 7vw, 90px);
+    line-height: 0.95;
+    margin-bottom: 40px;
+  }
+  .cta-title em { font-style: normal; color: var(--green); }
+  .btn-primary {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--black);
+    background: var(--green);
+    padding: 16px 40px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translate(-3px,-3px);
+    box-shadow: 6px 6px 0 var(--green);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    padding: 60px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
+  .footer-logo span { color: var(--green); }
+  .footer-links { display: flex; gap: 32px; list-style: none; }
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--green); }
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .posts-grid { grid-template-columns: 1fr; }
+    .post-card { padding: 36px 28px; }
+    footer { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <nav aria-label="Navegación principal">
+    <a href="/" class="nav-logo"><img src="/logo.png" alt="Logo Maguey Studio"> MAGUEY STUDIO<sup style="font-size:10px; margin-left:2px; color: var(--muted);">®</sup></a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/blog" aria-current="page">Blog</a></li>
+      <li><a href="/geo">GEO</a></li>
+    </ul>
+    <a href="https://wa.me/5215560663926" class="nav-cta" aria-label="Solicitar diagnóstico por WhatsApp">Solicitar Diagnóstico</a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+<section class="hero" aria-label="Blog de Maguey Studio">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-tag">Blog</div>
+  <h1 class="hero-title">BLOG DE<br><em>MAGUEY STUDIO</em></h1>
+  <p class="hero-desc">Ideas claras sobre GEO, SEO y presencia digital para que tu negocio aparezca donde tus clientes ya están buscando: Google y la IA.</p>
+</section>
+
+<section class="posts" aria-label="Artículos del blog">
+  <div class="section-label">Últimos artículos</div>
+  <div class="posts-grid">
+
+    <article class="post-card">
+      <div class="post-meta">
+        <span class="post-cat">GEO</span>
+        <time datetime="2026-07-17">17 julio 2026</time>
+      </div>
+      <h2 class="post-title"><a href="/blog/que-es-geo">¿Qué es GEO y por qué importa más que el SEO?</a></h2>
+      <p class="post-excerpt">La gente ya no solo busca en Google: le pregunta a ChatGPT, Gemini y Perplexity. Y menos del 10% de las fuentes que cita la IA está en el top 10 de Google. Te explicamos qué es Generative Engine Optimization y por qué es el juego que tu negocio debe empezar a jugar hoy.</p>
+      <span class="post-more">Leer artículo →</span>
+    </article>
+
+    <article class="post-card">
+      <div class="post-meta">
+        <span class="post-cat">GEO</span>
+        <time datetime="2026-07-17">17 julio 2026</time>
+      </div>
+      <h2 class="post-title"><a href="/blog/chatgpt-recomiende-mi-negocio">Cómo hacer que ChatGPT recomiende mi negocio</a></h2>
+      <p class="post-excerpt">Pregúntale a ChatGPT cuál es el mejor negocio de tu giro en tu ciudad. Si no apareces, estás perdiendo clientes que ni siquiera sabías que existían. Estos son los 7 pasos concretos para que los motores de IA te encuentren, te entiendan y te recomienden.</p>
+      <span class="post-more">Leer artículo →</span>
+    </article>
+
+  </div>
+</section>
+
+<section class="cta-section" aria-label="Solicitar diagnóstico gratuito">
+  <h2 class="cta-title">¿TU NEGOCIO APARECE<br>EN LA <em>IA</em>?</h2>
+  <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+</section>
+
+</main>
+
+<footer role="contentinfo" aria-label="Pie de página Maguey Studio">
+  <div class="footer-logo">MAGUEY <span>STUDIO</span><sup style="font-size:12px;">®</sup></div>
+  <nav aria-label="Navegación pie de página">
+    <ul class="footer-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/#servicios">Servicios</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://wa.me/5215560663926" aria-label="Contactar por WhatsApp">WhatsApp</a></li>
+    </ul>
+  </nav>
+  <div class="footer-copy">© 2026 Maguey Studio® — México</div>
+</footer>
+
+</body>
+</html>
