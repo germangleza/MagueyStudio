@@ -535,6 +535,7 @@
     content: '';
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background: linear-gradient(135deg, rgba(0,255,65,0.04) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.3s;
@@ -542,6 +543,7 @@
   .service-card:hover { background: #0D0D0D; }
   .service-card:hover::before { opacity: 1; }
 
+  .service-link { position: relative; z-index: 2; }
   .service-num {
     font-family: 'Space Mono', monospace;
     font-size: 10px;
