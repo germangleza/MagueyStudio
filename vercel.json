@@ -1,3 +1,7 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/fable", "destination": "/clinicas", "permanent": true },
+    { "source": "/fable/:path*", "destination": "/clinicas/:path*", "permanent": true }
+  ]
 }
