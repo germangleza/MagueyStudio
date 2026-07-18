@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem("mg-theme");if(!t){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SEO para clínicas y consultorios: cómo aparecer primero en Google (guía 2026) | Maguey Studio®</title>
@@ -77,6 +78,9 @@
     --border: #1E1E1E;
     --white: #F5F5F5;
     --muted: #666;
+    --nav-bg: rgba(3,3,3,0.8);
+    --menu-bg: rgba(3,3,3,0.97);
+    --matrix-fade: rgba(3,3,3,0.05);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -97,7 +101,7 @@
     justify-content: space-between;
     padding: 24px 5%;
     backdrop-filter: blur(20px);
-    background: rgba(3,3,3,0.8);
+    background: var(--nav-bg);
     border-bottom: 1px solid var(--border);
   }
   .nav-logo {
@@ -347,7 +351,7 @@
     text-decoration: none;
     transition: background 0.3s;
   }
-  .related-card:hover { background: #0D0D0D; }
+  .related-card:hover { background: var(--dark); }
   .related-card h3 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;
@@ -394,6 +398,15 @@
     footer { flex-direction: column; gap: 24px; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
+
+  :root[data-theme="light"]{
+    --green:#00932B; --green-dim:#007A22;
+    --black:#FFFFFF; --dark:#F4F5F4; --card:#FFFFFF;
+    --border:#E3E6E3; --white:#0B0D0B; --muted:#5A625A;
+    --nav-bg:rgba(255,255,255,0.85); --menu-bg:rgba(255,255,255,0.97);
+    --matrix-fade:rgba(244,245,244,0.10);
+  }
+  :root[data-theme="light"] body{background:var(--black);color:var(--white);}
 </style>
 </head>
 <body>
@@ -575,5 +588,19 @@
   <div class="footer-copy">© 2026 Maguey Studio® — México</div>
 </footer>
 
+
+<button id="mgTheme" class="mg-theme-toggle" type="button" aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">
+  <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+<style>
+.mg-theme-toggle{position:fixed;left:1.1rem;bottom:1.1rem;z-index:70;width:2.9rem;height:2.9rem;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--green);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px -10px rgba(0,0,0,.5);transition:transform .2s,background .2s,color .2s;}
+.mg-theme-toggle:hover{transform:scale(1.08);}
+.mg-theme-toggle svg{width:1.35rem;height:1.35rem;}
+.mg-theme-toggle .sun{display:none;}
+:root[data-theme="light"] .mg-theme-toggle .sun{display:block;}
+:root[data-theme="light"] .mg-theme-toggle .moon{display:none;}
+</style>
+<script>(function(){var b=document.getElementById("mgTheme");if(!b)return;b.addEventListener("click",function(){var cur=document.documentElement.getAttribute("data-theme")==="light"?"light":"dark";var nx=cur==="light"?"dark":"light";document.documentElement.setAttribute("data-theme",nx);try{localStorage.setItem("mg-theme",nx);}catch(e){}});})();</script>
 </body>
 </html>
