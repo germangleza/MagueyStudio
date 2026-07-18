@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cómo lograr que ChatGPT recomiende tu clínica | Maguey Studio®</title>
+<meta name="description" content="Cada vez más pacientes eligen doctor preguntándole a la IA. Guía para clínicas y consultorios: schema MedicalClinic, llms.txt, Bing, Google Business y reseñas para que ChatGPT te recomiende.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Maguey Studio">
+<link rel="canonical" href="https://magueystudio.mx/blog/chatgpt-recomiende-mi-clinica">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cómo lograr que ChatGPT recomiende tu clínica cuando alguien busca un doctor">
+<meta property="og:description" content="Los pacientes ya le preguntan a la IA a qué doctor ir. Así logras que ChatGPT recomiende tu clínica.">
+<meta property="og:url" content="https://magueystudio.mx/blog/chatgpt-recomiende-mi-clinica">
+<meta property="og:image" content="https://magueystudio.mx/logo.png">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Maguey Studio">
+<meta property="article:published_time" content="2026-07-18">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cómo lograr que ChatGPT recomiende tu clínica">
+<meta name="twitter:description" content="Los pacientes ya le preguntan a la IA a qué doctor ir. Así logras que ChatGPT recomiende tu clínica.">
+<meta name="twitter:image" content="https://magueystudio.mx/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cómo lograr que ChatGPT recomiende tu clínica cuando alguien busca un doctor",
+  "description": "Guía para clínicas y consultorios sobre GEO en salud: cómo lograr que ChatGPT y otros motores de IA recomienden tu clínica con schema MedicalClinic/Physician/FAQPage, llms.txt, Bing, Google Business Profile y reseñas.",
+  "image": "https://magueystudio.mx/logo.png",
+  "inLanguage": "es-MX",
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "author": {
+    "@type": "Organization",
+    "name": "Maguey Studio",
+    "url": "https://magueystudio.mx/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Maguey Studio",
+    "url": "https://magueystudio.mx/",
+    "logo": {"@type": "ImageObject", "url": "https://magueystudio.mx/logo.png"}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://magueystudio.mx/blog/chatgpt-recomiende-mi-clinica"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://magueystudio.mx/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://magueystudio.mx/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Cómo lograr que ChatGPT recomiende tu clínica", "item": "https://magueystudio.mx/blog/chatgpt-recomiende-mi-clinica"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/logo.png">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-dim: #00CC33;
+    --black: #030303;
+    --dark: #0A0A0A;
+    --card: #111111;
+    --border: #1E1E1E;
+    --white: #F5F5F5;
+    --muted: #666;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  header nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 5%;
+    backdrop-filter: blur(20px);
+    background: rgba(3,3,3,0.8);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo img { width: 32px; height: 32px; object-fit: contain; }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--green);
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--white); }
+
+  /* ARTICLE HERO */
+  .article-hero {
+    padding: 170px 5% 60px;
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .breadcrumbs {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .breadcrumbs a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .breadcrumbs a:hover { color: var(--green); }
+  .article-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-cat {
+    color: var(--green);
+    border: 1px solid rgba(0,255,65,0.3);
+    padding: 4px 10px;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 6.5vw, 84px);
+    line-height: 0.95;
+    letter-spacing: 0.5px;
+  }
+  h1 em { font-style: normal; color: var(--green); }
+  .article-intro {
+    font-size: 20px;
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--white);
+    margin-top: 28px;
+    max-width: 70ch;
+  }
+
+  /* ARTICLE BODY */
+  .article-body {
+    max-width: 70ch;
+    margin: 0 auto;
+    padding: 20px 5% 80px;
+    font-size: 17px;
+    line-height: 1.9;
+    font-weight: 300;
+  }
+  .article-body h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1.5px;
+    line-height: 1.05;
+    margin: 64px 0 20px;
+    color: var(--white);
+  }
+  .article-body h2::before { content: '// '; color: var(--green); }
+  .article-body h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    margin: 40px 0 14px;
+  }
+  .article-body h3 .step-n {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--green);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .article-body p { margin-bottom: 22px; }
+  .article-body a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--white); }
+  .article-body strong { font-weight: 500; color: var(--white); }
+  .article-body ul, .article-body ol { margin: 0 0 24px 22px; }
+  .article-body li { margin-bottom: 12px; }
+  .article-body li::marker { color: var(--green); }
+
+  .prompt-box {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    padding: 24px 28px;
+    margin: 32px 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--green);
+    overflow-x: auto;
+  }
+  .prompt-box .prompt-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .highlight-box {
+    background: var(--dark);
+    border-left: 3px solid var(--green);
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .highlight-box .stat {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--green);
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .highlight-box p { margin: 0; font-size: 16px; }
+
+  .checklist { list-style: none; margin-left: 0 !important; }
+  .checklist li {
+    padding-left: 30px;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '▸';
+    color: var(--green);
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 100px 5%;
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes gridshift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(60px,60px); }
+  }
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 7vw, 90px);
+    line-height: 0.95;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .cta-title em { font-style: normal; color: var(--green); }
+  .btn-primary {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--black);
+    background: var(--green);
+    padding: 16px 40px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translate(-3px,-3px);
+    box-shadow: 6px 6px 0 var(--green);
+  }
+
+  /* RELATED */
+  .related {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 5% 100px;
+  }
+  .related-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .related-label::before { content: ''; width: 30px; height: 1px; background: var(--green); pointer-events: none; }
+  .related-grid { display: grid; gap: 16px; }
+  .related-card {
+    display: block;
+    background: var(--dark);
+    border: 1px solid var(--border);
+    padding: 32px 36px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .related-card:hover { background: #0D0D0D; }
+  .related-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .related-card:hover h3 { color: var(--green); }
+  .related-card p { color: var(--muted); font-size: 15px; font-weight: 300; line-height: 1.7; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    padding: 60px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 4px; }
+  .footer-logo span { color: var(--green); }
+  .footer-links { display: flex; gap: 32px; list-style: none; }
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--green); }
+  .footer-copy { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .article-body { font-size: 16px; }
+    footer { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <nav aria-label="Navegación principal">
+    <a href="/" class="nav-logo"><img src="/logo.png" alt="Logo Maguey Studio"> MAGUEY STUDIO<sup style="font-size:10px; margin-left:2px; color: var(--muted);">®</sup></a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/geo">GEO</a></li>
+    </ul>
+    <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20que%20la%20IA%20recomiende%20mi%20cl%C3%ADnica" class="nav-cta" aria-label="Solicitar diagnóstico por WhatsApp">Solicitar Diagnóstico</a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+<article>
+  <div class="article-hero">
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <a href="/">Inicio</a> / <a href="/blog">Blog</a> / <span aria-current="page">Cómo lograr que ChatGPT recomiende tu clínica</span>
+    </nav>
+    <div class="article-meta">
+      <span class="article-cat">GEO · SALUD</span>
+      <time datetime="2026-07-18">18 julio 2026</time>
+      <span>Maguey Studio</span>
+    </div>
+    <h1>CÓMO LOGRAR QUE CHATGPT<br><em>RECOMIENDE</em> TU CLÍNICA</h1>
+    <p class="article-intro">Antes, un paciente que buscaba doctor abría Google y comparaba. Hoy, cada vez más gente simplemente le pregunta a ChatGPT "¿quién es el mejor especialista para lo que tengo?" — y confía en la respuesta. Si tu clínica no aparece ahí, ese paciente se va con quien sí aparece. Esta guía te explica cómo entrar a esa conversación.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>El paciente ya no busca doctor: le pregunta a la IA</h2>
+    <p>El comportamiento cambió más rápido de lo que la mayoría de los consultorios alcanzó a notar. Una persona con una molestia ya no escribe solo "dentista cerca de mí" en el buscador: abre ChatGPT y escribe algo como <em>"tengo un diente muy dañado, ¿quién es el mejor dentista de implantes en Tijuana y qué debería preguntar antes de tratarme?"</em>. La IA no le devuelve diez enlaces azules: le da una respuesta conversada, con uno o dos nombres, sus fortalezas y a veces hasta cómo pedir cita.</p>
+    <p>Lo mismo pasa con <em>"¿alergólogo en Tuxtla Gutiérrez que atienda niños?"</em> o <em>"¿mejor clínica dental en CDMX para ortodoncia invisible?"</em>. El paciente ya no compara cinco pestañas: recibe una recomendación y actúa sobre ella. Para tu consultorio esto significa algo incómodo y a la vez lleno de oportunidad: <strong>si no estás en esa respuesta, no perdiste una posición en una lista — desapareciste de la decisión</strong>, y ni te enteras.</p>
+    <p>Esto es GEO (Generative Engine Optimization) aplicado a la salud. Si quieres el panorama general del tema, lo explicamos en <a href="/blog/que-es-geo">¿Qué es GEO y por qué importa más que el SEO?</a>. Aquí nos enfocamos en lo que aplica específicamente a clínicas y consultorios.</p>
+
+    <h2>Compruébalo con tu propia clínica</h2>
+    <p>Antes de seguir, haz una prueba rápida. Abre ChatGPT (o Perplexity, o Gemini) y pregunta como lo haría un paciente:</p>
+    <div class="prompt-box">
+      <span class="prompt-label">Prompt de prueba</span>
+      "¿Cuál es la mejor clínica de &lt;tu especialidad&gt; en &lt;tu ciudad&gt;?"<br><br>
+      Ejemplos:<br>
+      "¿Quién es el mejor dentista de implantes en Tijuana?"<br>
+      "¿Alergólogo confiable en Tuxtla Gutiérrez?"<br>
+      "¿Mejor clínica dental en CDMX para ortodoncia?"
+    </div>
+    <p>Fíjate en tres cosas: <strong>¿apareces tú?</strong>, <strong>¿aparece tu competencia?</strong> y <strong>¿qué dice exactamente de cada quién?</strong>. Repite con variantes que usan los pacientes reales: "que acepte mi seguro", "con buenos precios", "que atienda urgencias el fin de semana". Eso te da tu punto de partida honesto: no lo que crees de tu presencia digital, sino lo que la IA le está diciendo hoy a quien busca un doctor como tú.</p>
+
+    <h2>Por qué la IA (no) menciona tu clínica</h2>
+    <p>ChatGPT no inventa recomendaciones médicas: las arma con lo que puede encontrar y verificar. Y en salud es todavía más cauto, porque una recomendación equivocada tiene consecuencias serias. Si tu clínica no aparece, casi siempre es por una combinación de estas causas:</p>
+    <ul>
+      <li><strong>No tienes un sitio propio, o dependes de redes sociales.</strong> Un perfil de Facebook o Instagram no es una fuente sólida para la IA. Necesita un sitio con dominio propio que pueda leer y citar.</li>
+      <li><strong>No estás en el índice de Bing.</strong> ChatGPT consulta la web principalmente a través de Bing. Si Bing no tiene tu sitio, para ChatGPT no existes, aunque Google te posicione.</li>
+      <li><strong>Tu sitio no es legible para máquinas.</strong> Sin datos estructurados, la IA no puede afirmar con confianza que eres un médico certificado, tu especialidad, tu dirección o tus servicios. Y no recomienda lo que no puede verificar.</li>
+      <li><strong>Nadie más habla de ti.</strong> Los modelos triangulan entre fuentes. Si tu único rastro es tu página, faltan señales externas —directorios de salud, reseñas— que confirmen que eres una opción real y confiable.</li>
+      <li><strong>Tu contenido no responde dudas médicas.</strong> Un sitio que solo dice "atención de calidad" no le da a la IA nada citable. Uno que responde "¿duele un implante?", "¿cuánto cuesta?", "¿cuánto dura el tratamiento?" sí.</li>
+    </ul>
+
+    <h2>Los pasos concretos para tu clínica</h2>
+
+    <h3><span class="step-n">Paso 01</span>Un sitio propio con schema médico</h3>
+    <p>La base de todo es tu propio dominio con un sitio rápido, claro y —esto es lo diferencial en salud— con <strong>datos estructurados médicos</strong> en JSON-LD. Implementa al menos <strong>MedicalClinic</strong> (o <strong>MedicalBusiness</strong>) con nombre, dirección, teléfono, horarios y zona de servicio; <strong>Physician</strong> para cada doctor, con su especialidad y credenciales; y <strong>FAQPage</strong> con las preguntas que tus pacientes hacen de verdad. Con esto la IA deja de "interpretar" tu página y pasa a leer datos verificables: quién eres, qué tratas y dónde. Es exactamente lo que necesita para mencionarte sin miedo a equivocarse.</p>
+
+    <h3><span class="step-n">Paso 02</span>Publica un llms.txt</h3>
+    <p>Es un archivo de texto en la raíz de tu dominio (tuclinica.mx/llms.txt) que resume, en lenguaje claro, qué es tu clínica, qué especialidades ofreces, dónde estás y qué páginas importan. Es un estándar emergente pensado para modelos de lenguaje: les entregas el contexto masticado en vez de obligarlos a deducirlo. Toma una hora hacerlo bien y hoy te diferencia de prácticamente toda tu competencia médica local.</p>
+
+    <h3><span class="step-n">Paso 03</span>Indéxate en Bing (ChatGPT usa Bing)</h3>
+    <p>El paso más ignorado y de los más rentables. <strong>ChatGPT busca en la web a través de Bing.</strong> Date de alta gratis en Bing Webmaster Tools, verifica tu dominio, envía tu sitemap y confirma que tus páginas queden indexadas. Puedes importar la configuración directamente desde Google Search Console en minutos. Sin este paso, todo lo demás pierde fuerza frente a ChatGPT.</p>
+
+    <h3><span class="step-n">Paso 04</span>Google Business Profile impecable</h3>
+    <p>Tu ficha de Google Business (el antiguo Google My Business) sigue siendo una de las fuentes locales más citadas por los motores de IA. Complétala al 100%: categoría médica correcta, dirección exacta, horarios reales, teléfono, sitio web, servicios, fotos del consultorio y del equipo. La consistencia importa: mismo nombre, dirección y teléfono que en tu sitio y tus directorios. Una ficha viva y coherente le dice a la IA que la clínica es real y está operando.</p>
+
+    <h3><span class="step-n">Paso 05</span>Reseñas de pacientes — y respóndelas</h3>
+    <p>En salud, las reseñas son de las señales de confianza más poderosas que existen, tanto para el paciente como para la IA. Pide reseñas de forma sistemática a tus pacientes satisfechos (un QR en recepción, un mensaje después de la consulta) y <strong>responde todas con tacto</strong>, cuidando siempre la confidencialidad: agradece sin confirmar diagnósticos ni datos clínicos. Un perfil con reseñas recientes, abundantes y bien respondidas le indica a la IA que la clínica está viva, es real y trata bien a su gente.</p>
+
+    <h3><span class="step-n">Paso 06</span>Contenido que responde dudas médicas frecuentes</h3>
+    <p>Los motores de IA prefieren fuentes vivas y específicas. Publica con regularidad contenido que responda literalmente lo que tus pacientes preguntan: "¿duele colocar un implante dental?", "¿cómo saber si mi hijo tiene alergia o resfriado?", "¿cuánto dura un tratamiento de ortodoncia?". Usa la pregunta como título, responde en los primeros dos párrafos con información clara y responsable, y evita promesas de resultados. Ese formato es exactamente lo que la IA puede citar cuando un paciente pregunta algo parecido.</p>
+
+    <h3><span class="step-n">Paso 07</span>Menciones en directorios de salud</h3>
+    <p>La IA no confía en una sola fuente: triangula. Consigue presencia en directorios médicos y de salud, colegios y asociaciones de tu especialidad, agregadores de doctores y notas en medios locales. La clave es la <strong>consistencia absoluta</strong>: mismo nombre del médico o la clínica, misma dirección, mismo teléfono en todos lados. Cada mención coherente es un voto de confianza que el modelo suma antes de recomendarte a un paciente.</p>
+
+    <h2>Cómo medir el avance</h2>
+    <p>El GEO en salud no se mide con posiciones de Google, sino con cuántas veces te menciona la IA. Sigue estas señales:</p>
+    <ul class="checklist">
+      <li><strong>Monitorea las respuestas cada mes:</strong> repite las mismas preguntas de la prueba inicial en ChatGPT, Perplexity y Gemini, y registra si apareces, en qué lugar y qué dicen de tu clínica.</li>
+      <li><strong>Revisa Bing Webmaster Tools:</strong> páginas indexadas, impresiones y consultas por las que apareces.</li>
+      <li><strong>Detecta tráfico de IA en tu analítica:</strong> visitas referidas desde chatgpt.com, perplexity.ai o gemini.google.com, y bots como GPTBot en los registros del servidor.</li>
+      <li><strong>Pregunta a cada paciente nuevo cómo te encontró.</strong> Cada vez más van a decir "le pregunté a ChatGPT" — y ese es el dato que confirma que la inversión funciona.</li>
+    </ul>
+
+    <h2>El siguiente paso</h2>
+    <p>Puedes ejecutar esta guía por tu cuenta: está completa a propósito. Pero si prefieres que lo hagamos por ti, en Maguey Studio trabajamos <a href="/salud">marketing digital para clínicas y consultorios</a> y el servicio completo de <a href="/geo">optimización GEO</a>: auditamos qué dice la IA de tu clínica hoy, implementamos el schema médico, el llms.txt, la indexación en Bing, tu ficha de Google y el contenido, y te reportamos el avance mes a mes. El diagnóstico inicial es <strong>gratis y sin compromiso</strong>: te decimos exactamente dónde estás parado y qué te falta para que la IA te recomiende.</p>
+
+  </div>
+</article>
+
+<section class="cta-section" aria-label="Solicitar diagnóstico gratuito">
+  <div class="cta-grid-bg"></div>
+  <h2 class="cta-title">¿LA IA YA<br><em>RECOMIENDA</em> TU CLÍNICA?</h2>
+  <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20GEO%20para%20mi%20cl%C3%ADnica" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+</section>
+
+<aside class="related" aria-label="Artículos relacionados">
+  <div class="related-label">Sigue leyendo</div>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/agente-whatsapp-citas-consultorio">
+      <h3>Agente de IA en WhatsApp para consultorios</h3>
+      <p>Cómo funciona un agente que responde 24/7, agenda, confirma y recuerda citas — y cuántas citas puede recuperar tu consultorio.</p>
+    </a>
+    <a class="related-card" href="/blog/como-conseguir-pacientes-internet">
+      <h3>Cómo conseguir pacientes por internet</h3>
+      <p>La estrategia digital completa para llenar la agenda de tu consultorio, del sitio web a las reseñas.</p>
+    </a>
+    <a class="related-card" href="/salud">
+      <h3>Marketing digital para clínicas</h3>
+      <p>Todo lo que hacemos en Maguey Studio para que tu clínica crezca: web, GEO, reseñas y agentes de IA.</p>
+    </a>
+  </div>
+</aside>
+
+</main>
+
+<footer role="contentinfo" aria-label="Pie de página Maguey Studio">
+  <div class="footer-logo">MAGUEY <span>STUDIO</span><sup style="font-size:12px;">®</sup></div>
+  <nav aria-label="Navegación pie de página">
+    <ul class="footer-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/#servicios">Servicios</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://wa.me/5215560663926" aria-label="Contactar por WhatsApp">WhatsApp</a></li>
+    </ul>
+  </nav>
+  <div class="footer-copy">© 2026 Maguey Studio® — México</div>
+</footer>
+
+</body>
+</html>
