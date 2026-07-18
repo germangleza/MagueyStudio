@@ -194,7 +194,7 @@
   }
   .nav-hamburger span {
     display: block;
-    width: 100%; height: 1.5px;
+    width: 100%; height: 2px;
     background: var(--white);
     transition: all 0.3s ease;
     transform-origin: center;
@@ -933,6 +933,13 @@
     --matrix-fade:rgba(244,245,244,0.10);
   }
   :root[data-theme="light"] body{background:var(--black);color:var(--white);}
+
+  .nav-theme{background:none;border:1px solid var(--border);color:var(--white);width:38px;height:38px;border-radius:50%;display:inline-grid;place-items:center;cursor:pointer;transition:color .2s,border-color .2s;vertical-align:middle;flex:none;}
+  .nav-theme:hover{color:var(--green);border-color:var(--green);}
+  .nav-theme svg{width:18px;height:18px;}
+  .nav-theme .sun{display:none;}
+  :root[data-theme="light"] .nav-theme .sun{display:block;}
+  :root[data-theme="light"] .nav-theme .moon{display:none;}
 </style>
 </head>
 <body>
@@ -952,6 +959,10 @@
       <li><a href="/">Inicio</a></li>
     </ul>
     <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20lanzar%20campa%C3%B1as%20de%20publicidad%20digital%20para%20mi%20negocio.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F" class="nav-cta" aria-label="Solicitar diagnóstico de publicidad digital por WhatsApp">Solicitar Diagnóstico</a>
+    <button id="mgTheme" class="nav-theme" type="button" aria-label="Cambiar tema claro u oscuro" title="Cambiar tema">
+  <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
     <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -1279,18 +1290,6 @@
   }
 </script>
 
-<button id="mgTheme" class="mg-theme-toggle" type="button" aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">
-  <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-<style>
-.mg-theme-toggle{position:fixed;left:1.1rem;bottom:1.1rem;z-index:70;width:2.9rem;height:2.9rem;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--green);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px -10px rgba(0,0,0,.5);transition:transform .2s,background .2s,color .2s;}
-.mg-theme-toggle:hover{transform:scale(1.08);}
-.mg-theme-toggle svg{width:1.35rem;height:1.35rem;}
-.mg-theme-toggle .sun{display:none;}
-:root[data-theme="light"] .mg-theme-toggle .sun{display:block;}
-:root[data-theme="light"] .mg-theme-toggle .moon{display:none;}
-</style>
 <script>(function(){var b=document.getElementById("mgTheme");if(!b)return;b.addEventListener("click",function(){var cur=document.documentElement.getAttribute("data-theme")==="light"?"light":"dark";var nx=cur==="light"?"dark":"light";document.documentElement.setAttribute("data-theme",nx);try{localStorage.setItem("mg-theme",nx);}catch(e){}});})();</script>
 </body>
 </html>
