@@ -1239,6 +1239,41 @@
   </div>
 </section>
 
+<!-- SECTOR SALUD -->
+<style>
+  .salud-band{padding:40px 5% 90px;}
+  .salud-card{position:relative;overflow:hidden;border:1px solid var(--border);background:var(--card);border-radius:2px;padding:clamp(32px,5vw,60px);display:grid;gap:28px;}
+  @media(min-width:900px){.salud-card{grid-template-columns:1.15fr .85fr;align-items:center;gap:56px;}}
+  .salud-card::before{content:'';position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 100% 0%, rgba(0,255,65,0.10), transparent 55%);}
+  :root[data-theme="light"] .salud-card::before{background:radial-gradient(120% 90% at 100% 0%, rgba(0,147,43,0.10), transparent 55%);}
+  .salud-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4.5vw,52px);line-height:1;letter-spacing:1px;margin:14px 0 18px;}
+  .salud-title em{font-style:normal;color:var(--green);}
+  .salud-desc{color:var(--muted);font-size:16px;line-height:1.7;max-width:52ch;}
+  .salud-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .salud-chips span{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;
+    color:var(--white);border:1px solid var(--border);border-radius:999px;padding:8px 14px;}
+  .salud-side{display:flex;flex-direction:column;gap:16px;}
+  .salud-side .btn-primary{align-self:flex-start;}
+  .salud-note{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.5px;color:var(--muted);line-height:1.6;}
+</style>
+<section class="salud-band" aria-label="Soluciones para el sector salud">
+  <div class="salud-card reveal">
+    <div>
+      <div class="section-label">Sector Salud</div>
+      <h2 class="salud-title">¿TIENES UNA CLÍNICA O CONSULTORIO?<br>TENEMOS UN CAMINO <em>HECHO PARA TI</em></h2>
+      <p class="salud-desc">Del registro de publicidad ante COFEPRIS hasta pacientes que agendan solos por WhatsApp. Acompañamos a dentistas, médicos, clínicas, spas y clínicas de belleza en todo su marketing digital — contrata el plan completo o solo el módulo que necesitas hoy.</p>
+      <div class="salud-chips">
+        <span>Dentistas</span><span>Médicos</span><span>Clínicas</span><span>Spas</span><span>Clínicas de belleza</span><span>Ópticas</span>
+      </div>
+    </div>
+    <div class="salud-side">
+      <a href="/salud" class="btn-primary">Ver soluciones para el sector salud →</a>
+      <p class="salud-note">COFEPRIS · Google Maps · Sitio web · SEO/GEO · Redes · Agente de citas por WhatsApp · Ads</p>
+    </div>
+  </div>
+</section>
+
 <!-- PROCESS -->
 <section class="process" id="proceso" aria-label="Proceso de trabajo">
   <div class="process-grid-bg"></div>
