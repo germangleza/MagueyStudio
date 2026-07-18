@@ -16,7 +16,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Maguey Studio® — Agencia Digital">
-<meta property="og:description" content="Páginas web, publicidad digital, redes sociales y automatización con IA para negocios en Chiapas y México.">
+<meta property="og:description" content="Páginas web, publicidad digital, redes sociales y automatización con IA para negocios en todo México.">
 <meta property="og:url" content="https://magueystudio.mx/">
 <meta property="og:image" content="https://magueystudio.mx/logo.png">
 <meta property="og:locale" content="es_MX">
@@ -25,7 +25,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Maguey Studio® — Agencia Digital">
-<meta name="twitter:description" content="Páginas web, publicidad digital, redes sociales y automatización con IA para negocios en Chiapas y México.">
+<meta name="twitter:description" content="Páginas web, publicidad digital, redes sociales y automatización con IA para negocios en todo México.">
 <meta name="twitter:image" content="https://magueystudio.mx/logo.png">
 
 <!-- Schema.org JSON-LD -->
@@ -40,23 +40,17 @@
   "logo": "https://magueystudio.mx/logo.png",
   "image": "https://magueystudio.mx/logo.png",
   "telephone": "+525560663926",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Tuxtla Gutiérrez",
-    "addressRegion": "Chiapas",
-    "addressCountry": "MX"
-  },
+  "address": [
+    {"@type": "PostalAddress", "addressLocality": "Tuxtla Gutiérrez", "addressRegion": "Chiapas", "addressCountry": "MX"},
+    {"@type": "PostalAddress", "addressLocality": "Tijuana", "addressRegion": "Baja California", "addressCountry": "MX"},
+    {"@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressCountry": "MX"}
+  ],
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": "16.7521",
     "longitude": "-93.1152"
   },
-  "areaServed": [
-    {"@type": "City", "name": "Tijuana"},
-    {"@type": "City", "name": "Tuxtla Gutiérrez"},
-    {"@type": "City", "name": "Ciudad de México"},
-    {"@type": "Country", "name": "México"}
-  ],
+  "areaServed": "MX",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Servicios Digitales",
@@ -1191,6 +1185,70 @@
   </div>
 </section>
 
+<!-- DEMO CHATGPT -->
+<style>
+  .demo-section{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;position:relative;overflow:hidden;padding:90px 5%;}
+  .demo-section .section-label{justify-content:center;}
+  .demo-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:1px;margin:14px 0 18px;}
+  .demo-title em{font-style:italic;color:var(--green);}
+  .demo-intro{color:var(--muted);font-size:16px;line-height:1.7;max-width:600px;margin:0 auto;}
+  .demo-box{max-width:640px;margin:48px auto 0;background:var(--card);border:1px solid var(--border);padding:clamp(28px,4vw,48px) clamp(24px,3vw,40px);position:relative;text-align:left;}
+  .demo-box::before{content:'> PRUEBA_EN_VIVO';font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--green);display:block;margin-bottom:28px;}
+  .demo-field{margin-bottom:22px;}
+  .demo-field label{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+  .demo-field input,.demo-field select{width:100%;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Space Mono',monospace;font-size:15px;padding:14px 16px;outline:none;transition:border-color .2s;border-radius:0;}
+  .demo-field input:focus,.demo-field select:focus{border-color:var(--green);}
+  .demo-field input::placeholder{color:var(--muted);}
+  .demo-preview{font-family:'Space Mono',monospace;font-size:12px;line-height:1.8;color:var(--green);background:var(--black);border-left:2px solid var(--green);padding:16px 20px;margin-bottom:28px;word-break:break-word;}
+  .demo-note{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;color:var(--muted);margin-top:22px;line-height:1.8;}
+  .demo-note a{color:var(--green);text-decoration:none;}
+  .demo-note a:hover{text-decoration:underline;}
+</style>
+<section class="demo-section" id="demo" aria-label="Comprueba si la IA recomienda tu negocio">
+  <div class="section-label reveal">Compruébalo en 30 segundos</div>
+  <h2 class="demo-title reveal">¿LA IA YA RECOMIENDA <em>TU NEGOCIO?</em></h2>
+  <p class="demo-intro reveal">Escribe tu giro y tu ciudad. Te abrimos la pregunta directo en ChatGPT para que veas quién aparece en la respuesta — y quién no.</p>
+
+  <div class="demo-box reveal">
+    <div class="demo-field">
+      <label for="demoGiro">Tu giro</label>
+      <input type="text" id="demoGiro" placeholder="ej. restaurante de mariscos" autocomplete="off">
+    </div>
+    <div class="demo-field">
+      <label for="demoCiudad">Tu ciudad</label>
+      <input type="text" id="demoCiudad" placeholder="ej. Tuxtla Gutiérrez" autocomplete="off">
+    </div>
+    <p class="demo-preview" id="demoPreview" aria-live="polite">&gt; ¿Cuál es el mejor [tu giro] en [tu ciudad]? Recomiéndame tres opciones.</p>
+    <button type="button" class="btn-primary" id="demoBtn" style="width:100%; text-align:center;">Preguntarle a ChatGPT</button>
+    <p class="demo-note">Si tu negocio no aparece, <a href="https://wa.me/5215560663926?text=Hola%2C%20hice%20la%20prueba%20en%20ChatGPT%20y%20mi%20negocio%20no%20aparece.%20Quiero%20un%20diagn%C3%B3stico%20gratuito.">hablemos</a>.</p>
+  </div>
+</section>
+<script>
+  (function() {
+    var giro = document.getElementById('demoGiro');
+    var ciudad = document.getElementById('demoCiudad');
+    var preview = document.getElementById('demoPreview');
+    var btn = document.getElementById('demoBtn');
+    if (!giro || !btn) return;
+    function buildQuestion(){
+      var g = giro.value.trim() || '[tu giro]';
+      var c = ciudad.value.trim() || '[tu ciudad]';
+      return '¿Cuál es el mejor ' + g + ' en ' + c + '? Recomiéndame tres opciones.';
+    }
+    function updatePreview(){ preview.textContent = '> ' + buildQuestion(); }
+    giro.addEventListener('input', updatePreview);
+    ciudad.addEventListener('input', updatePreview);
+    btn.addEventListener('click', function(){
+      if (!giro.value.trim()) { giro.focus(); return; }
+      if (!ciudad.value.trim()) { ciudad.focus(); return; }
+      window.open('https://chatgpt.com/?q=' + encodeURIComponent(buildQuestion()), '_blank', 'noopener');
+    });
+    [giro, ciudad].forEach(function(input){
+      input.addEventListener('keydown', function(e){ if (e.key === 'Enter') btn.click(); });
+    });
+  })();
+</script>
+
 <!-- SERVICES -->
 <section id="servicios" aria-label="Servicios de Maguey Studio">
   <div class="services-header reveal">
@@ -1374,7 +1432,7 @@
       <li><a href="https://wa.me/5215560663926" aria-label="Contactar por WhatsApp">WhatsApp</a></li>
     </ul>
   </nav>
-  <div class="footer-copy">© 2026 Maguey Studio® — Chiapas, México</div>
+  <div class="footer-copy">© 2026 Maguey Studio® — Tuxtla Gutiérrez · Tijuana · CDMX</div>
 </footer>
 
 <script>
