@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agente de IA en WhatsApp para consultorios: cómo funciona y cuántas citas recupera | Maguey Studio®</title>
+<meta name="description" content="Cómo automatizar las citas de tu consultorio con un agente de IA en WhatsApp que responde 24/7, agenda, confirma y recuerda citas para reducir inasistencias. Cómo funciona y cuánto puede recuperar.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Maguey Studio">
+<link rel="canonical" href="https://magueystudio.mx/blog/agente-whatsapp-citas-consultorio">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Agente de IA en WhatsApp para consultorios: cómo funciona y cuántas citas recupera">
+<meta property="og:description" content="Un agente de IA en WhatsApp responde al instante, agenda, confirma y recuerda citas. Así funciona y cuánto puede recuperar tu consultorio.">
+<meta property="og:url" content="https://magueystudio.mx/blog/agente-whatsapp-citas-consultorio">
+<meta property="og:image" content="https://magueystudio.mx/logo.png">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Maguey Studio">
+<meta property="article:published_time" content="2026-07-18">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agente de IA en WhatsApp para consultorios">
+<meta name="twitter:description" content="Un agente de IA en WhatsApp responde al instante, agenda, confirma y recuerda citas. Así funciona y cuánto puede recuperar tu consultorio.">
+<meta name="twitter:image" content="https://magueystudio.mx/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Agente de IA en WhatsApp para consultorios: cómo funciona y cuántas citas recupera",
+  "description": "Cómo automatizar las citas de tu consultorio con un agente de IA en WhatsApp que responde 24/7, agenda, confirma y recuerda citas para reducir inasistencias.",
+  "image": "https://magueystudio.mx/logo.png",
+  "inLanguage": "es-MX",
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "author": {
+    "@type": "Organization",
+    "name": "Maguey Studio",
+    "url": "https://magueystudio.mx/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Maguey Studio",
+    "url": "https://magueystudio.mx/",
+    "logo": {"@type": "ImageObject", "url": "https://magueystudio.mx/logo.png"}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://magueystudio.mx/blog/agente-whatsapp-citas-consultorio"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://magueystudio.mx/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://magueystudio.mx/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Agente de IA en WhatsApp para consultorios", "item": "https://magueystudio.mx/blog/agente-whatsapp-citas-consultorio"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/logo.png">
+<style>
+  :root {
+    --green: #00FF41;
+    --green-dim: #00CC33;
+    --black: #030303;
+    --dark: #0A0A0A;
+    --card: #111111;
+    --border: #1E1E1E;
+    --white: #F5F5F5;
+    --muted: #666;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  header nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 5%;
+    backdrop-filter: blur(20px);
+    background: rgba(3,3,3,0.8);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo img { width: 32px; height: 32px; object-fit: contain; }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--green);
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--white); }
+
+  /* ARTICLE HERO */
+  .article-hero {
+    padding: 170px 5% 60px;
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .breadcrumbs {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .breadcrumbs a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .breadcrumbs a:hover { color: var(--green); }
+  .article-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-cat {
+    color: var(--green);
+    border: 1px solid rgba(0,255,65,0.3);
+    padding: 4px 10px;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 6.5vw, 84px);
+    line-height: 0.95;
+    letter-spacing: 0.5px;
+  }
+  h1 em { font-style: normal; color: var(--green); }
+  .article-intro {
+    font-size: 20px;
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--white);
+    margin-top: 28px;
+    max-width: 70ch;
+  }
+
+  /* ARTICLE BODY */
+  .article-body {
+    max-width: 70ch;
+    margin: 0 auto;
+    padding: 20px 5% 80px;
+    font-size: 17px;
+    line-height: 1.9;
+    font-weight: 300;
+  }
+  .article-body h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1.5px;
+    line-height: 1.05;
+    margin: 64px 0 20px;
+    color: var(--white);
+  }
+  .article-body h2::before { content: '// '; color: var(--green); }
+  .article-body h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    margin: 40px 0 14px;
+  }
+  .article-body h3 .step-n {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--green);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .article-body p { margin-bottom: 22px; }
+  .article-body a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--white); }
+  .article-body strong { font-weight: 500; color: var(--white); }
+  .article-body ul, .article-body ol { margin: 0 0 24px 22px; }
+  .article-body li { margin-bottom: 12px; }
+  .article-body li::marker { color: var(--green); }
+
+  .highlight-box {
+    background: var(--dark);
+    border-left: 3px solid var(--green);
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .highlight-box .stat {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    color: var(--green);
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .highlight-box p { margin: 0; font-size: 16px; }
+
+  .note-box {
+    background: #080808;
+    border: 1px dashed var(--border);
+    padding: 20px 26px;
+    margin: 32px 0;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .note-box strong { color: var(--white); }
+
+  .table-wrap { overflow-x: auto; margin: 36px 0; border: 1px solid var(--border); }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; }
+  caption {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 14px 18px;
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+  }
+  th, td { padding: 14px 18px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--dark);
+    font-weight: 700;
+  }
+  td { font-size: 15px; line-height: 1.7; background: #080808; }
+  tr:last-child td { border-bottom: none; }
+
+  .checklist { list-style: none; margin-left: 0 !important; }
+  .checklist li {
+    padding-left: 30px;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '▸';
+    color: var(--green);
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 100px 5%;
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes gridshift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(60px,60px); }
+  }
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 7vw, 90px);
+    line-height: 0.95;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .cta-title em { font-style: normal; color: var(--green); }
+  .btn-primary {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--black);
+    background: var(--green);
+    padding: 16px 40px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translate(-3px,-3px);
+    box-shadow: 6px 6px 0 var(--green);
+  }
+
+  /* RELATED */
+  .related {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 5% 100px;
+  }
+  .related-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .related-label::before { content: ''; width: 30px; height: 1px; background: var(--green); pointer-events: none; }
+  .related-grid { display: grid; gap: 16px; }
+  .related-card {
+    display: block;
+    background: var(--dark);
+    border: 1px solid var(--border);
+    padding: 32px 36px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .related-card:hover { background: #0D0D0D; }
+  .related-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .related-card:hover h3 { color: var(--green); }
+  .related-card p { color: var(--muted); font-size: 15px; font-weight: 300; line-height: 1.7; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    padding: 60px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 4px; }
+  .footer-logo span { color: var(--green); }
+  .footer-links { display: flex; gap: 32px; list-style: none; }
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--green); }
+  .footer-copy { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .article-body { font-size: 16px; }
+    footer { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <nav aria-label="Navegación principal">
+    <a href="/" class="nav-logo"><img src="/logo.png" alt="Logo Maguey Studio"> MAGUEY STUDIO<sup style="font-size:10px; margin-left:2px; color: var(--muted);">®</sup></a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/geo">GEO</a></li>
+    </ul>
+    <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20agente%20de%20IA%20en%20WhatsApp%20para%20mi%20consultorio" class="nav-cta" aria-label="Solicitar diagnóstico por WhatsApp">Solicitar Diagnóstico</a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+<article>
+  <div class="article-hero">
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <a href="/">Inicio</a> / <a href="/blog">Blog</a> / <span aria-current="page">Agente de IA en WhatsApp para consultorios</span>
+    </nav>
+    <div class="article-meta">
+      <span class="article-cat">AUTOMATIZACIÓN · SALUD</span>
+      <time datetime="2026-07-18">18 julio 2026</time>
+      <span>Maguey Studio</span>
+    </div>
+    <h1>AGENTE DE IA EN WHATSAPP<br>PARA <em>CONSULTORIOS</em></h1>
+    <p class="article-intro">Un paciente escribe a las 10 de la noche pidiendo cita. Nadie contesta hasta mañana. Para entonces, ya buscó a otro doctor. Un agente de IA en WhatsApp le habría respondido al instante, ofrecido un horario y confirmado la cita — mientras tú dormías. Así funciona, y esto es lo que puede recuperar.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>¿Cómo automatizar las citas de mi consultorio?</h2>
+    <p>Es la pregunta que se hacen cada vez más médicos que ven cómo su recepción se satura de mensajes o cómo pierden pacientes fuera del horario. La respuesta corta: conectando WhatsApp —el canal por el que ya te escriben tus pacientes— a un <strong>agente de inteligencia artificial</strong> que atiende las conversaciones de agenda de principio a fin, sin que nadie tenga que estar frente al teléfono.</p>
+    <p>No hablamos del clásico chatbot de botones rígidos que frustra a todo el mundo. Un agente de IA entiende el lenguaje natural: si el paciente escribe "necesito ver al doctor esta semana, de preferencia en la tarde", el agente comprende la intención, revisa la agenda y ofrece opciones reales. Es la diferencia entre un menú telefónico y alguien que de verdad te atiende.</p>
+
+    <h2>¿Un chatbot puede agendar solo?</h2>
+    <p>Sí, y esa es justamente la parte que cambia el juego. Un agente bien configurado no solo responde dudas: <strong>ejecuta el flujo completo de la cita</strong>. Toma los datos del paciente, consulta los espacios disponibles, aparta el horario, confirma y hasta envía recordatorios después. La recepción deja de ser el cuello de botella y pasa a supervisar solo los casos que de verdad necesitan criterio humano.</p>
+    <p>La clave está en la palabra <em>agente</em>: no es un guion cerrado, sino un sistema que razona sobre lo que pide el paciente y actúa sobre tu agenda. Cuando algo se sale de lo que puede resolver —una urgencia médica, una consulta clínica delicada, un caso especial— lo detecta y lo canaliza a una persona. Esa combinación de autonomía y límites claros es lo que lo hace confiable en un entorno de salud.</p>
+
+    <h2>Cómo funciona, paso a paso</h2>
+
+    <h3><span class="step-n">Paso 01</span>Responde al instante, 24/7</h3>
+    <p>El agente contesta el primer mensaje en segundos, a cualquier hora y cualquier día. Ese primer minuto es decisivo: un paciente que recibe respuesta inmediata rara vez sigue buscando, mientras que uno que espera horas se va con la competencia. La atención deja de depender de si la recepcionista está libre, comiendo o ya se fue a casa.</p>
+
+    <h3><span class="step-n">Paso 02</span>Ofrece horarios reales</h3>
+    <p>Conectado a tu agenda, el agente muestra únicamente los espacios que de verdad están libres. Nada de "déjame checo y te aviso": propone opciones concretas ("tengo martes 4:00 pm o miércoles 11:00 am, ¿cuál te acomoda?") y deja que el paciente elija en la misma conversación.</p>
+
+    <h3><span class="step-n">Paso 03</span>Confirma y registra la cita</h3>
+    <p>Una vez que el paciente elige, el agente aparta el horario, registra sus datos y manda la confirmación con la dirección, la fecha y cualquier indicación previa (llegar en ayunas, traer estudios, etc.). Todo queda asentado sin que nadie transcriba nada a mano.</p>
+
+    <h3><span class="step-n">Paso 04</span>Recuerda y reduce inasistencias</h3>
+    <p>Aquí está uno de los mayores ahorros. El agente envía recordatorios automáticos —por ejemplo 24 horas antes y de nuevo unas horas antes— y permite reagendar con un mensaje si el paciente no puede. Un espacio que se libera con tiempo se puede volver a ocupar; una inasistencia sorpresa es dinero perdido que ya no vuelve.</p>
+
+    <h2>¿Qué pasa con los mensajes fuera de horario?</h2>
+    <p>Esta suele ser la fuga más grande y la menos visible. Buena parte de los mensajes a consultorios llega de noche, temprano en la mañana, en fin de semana o en días festivos — justo cuando no hay nadie para responder. Sin agente, esos mensajes esperan hasta el siguiente día hábil, y una parte de esos pacientes ya no regresa.</p>
+    <p>Con un agente de IA, cada uno de esos mensajes recibe respuesta al momento. El paciente que escribe el domingo a mediodía sale de la conversación con una cita agendada para el lunes, en lugar de con la duda de si le contestarán. Recuperar aunque sea una fracción de esos contactos nocturnos y de fin de semana suele ser, por sí solo, la razón que justifica el sistema.</p>
+
+    <h2>Integración con tu agenda</h2>
+    <p>Para que el agente ofrezca horarios reales y no genere empalmes, se conecta a la herramienta que ya usas para agendar —un calendario compartido, un software de gestión de citas o tu sistema de expediente— y trabaja como una capa de conversación encima de ella. Tú y tu equipo siguen viendo la agenda de siempre; simplemente se llena con menos trabajo manual. Cuando un caso requiere criterio humano, el agente lo pasa a tu recepción con todo el contexto de la conversación, para que nadie tenga que preguntar dos veces lo mismo.</p>
+
+    <h2>¿Cuánto se recupera? (ejemplos ilustrativos)</h2>
+    <p>Aquí vale la pena ser muy honesto: los números que siguen son <strong>ilustrativos</strong>, para mostrar el tipo de impacto y cómo se calcula. No son cifras garantizadas: el resultado real depende de tu especialidad, tu volumen de mensajes, tus precios y qué tan bien se implemente todo. Aun así, el ejercicio ayuda a dimensionar la oportunidad.</p>
+
+    <div class="highlight-box">
+      <span class="stat">Ejemplo</span>
+      <p>Imagina un consultorio con 20 citas por semana y un valor promedio de consulta de $800. Los números de abajo son un escenario ilustrativo, no una promesa.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Escenario ilustrativo — impacto de un agente en WhatsApp</caption>
+        <thead>
+          <tr>
+            <th scope="col">Concepto</th>
+            <th scope="col">Sin agente</th>
+            <th scope="col">Con agente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Inasistencias</strong></td>
+            <td>~20% de las citas (recordatorios manuales o inexistentes)</td>
+            <td>~8-10% con recordatorios automáticos y opción de reagendar</td>
+          </tr>
+          <tr>
+            <td><strong>Mensajes nocturnos / fin de semana</strong></td>
+            <td>Se responden al día siguiente; parte se pierde</td>
+            <td>Respuesta inmediata; se captan citas que antes se fugaban</td>
+          </tr>
+          <tr>
+            <td><strong>Citas nuevas de noche/finde</strong></td>
+            <td>Difícil de saber; muchas nunca vuelven</td>
+            <td>Ej.: 2-4 citas por semana rescatadas fuera de horario</td>
+          </tr>
+          <tr>
+            <td><strong>Carga de recepción</strong></td>
+            <td>Alta: responde cada mensaje a mano</td>
+            <td>Baja: supervisa solo casos que requieren criterio</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>En este escenario, bajar las inasistencias del 20% al 10% en 20 citas semanales significa recuperar unas 2 citas por semana; sumar otras 2-4 citas rescatadas fuera de horario da un rango de 4 a 6 citas semanales adicionales. A $800 cada una, eso ronda los <strong>$3,200-$4,800 por semana</strong> en el ejemplo. De nuevo: es una ilustración del método, no una garantía — pero muestra por qué, incluso siendo conservador, el sistema suele pagarse rápido.</p>
+
+    <div class="note-box">
+      <strong>Cómo medirlo de verdad:</strong> antes de arrancar, anota tu porcentaje real de inasistencias y cuántos mensajes te llegan fuera de horario un mes cualquiera. Después de instalar el agente, vuelve a medir a las 4-8 semanas. Ese antes-y-después con tus propios números es el único cálculo que importa.
+    </div>
+
+    <h2>Sé honesto contigo mismo antes de automatizar</h2>
+    <p>Un agente de IA no reemplaza el trato humano ni la atención clínica: automatiza la parte repetitiva —agendar, confirmar, recordar— para que tu equipo dedique su tiempo a lo que sí necesita una persona. Tampoco es "instalar y olvidar": requiere configurarlo bien con la información de tu consultorio, tus horarios y tus reglas, y afinarlo las primeras semanas. Hecho con cuidado, es de las automatizaciones con retorno más claro para un consultorio.</p>
+
+    <h2>El siguiente paso</h2>
+    <p>En Maguey Studio implementamos <a href="/automatizacion-ia">agentes de IA y automatización</a> pensados para el día a día real de un consultorio, como parte de nuestro trabajo de <a href="/salud">marketing y tecnología para clínicas</a>. Configuramos el agente en tu WhatsApp, lo conectamos a tu agenda y lo dejamos funcionando con tus reglas. El diagnóstico inicial es <strong>gratis y sin compromiso</strong>: revisamos cuántos mensajes estás dejando sin responder y cuánto podrías estar recuperando.</p>
+
+  </div>
+</article>
+
+<section class="cta-section" aria-label="Solicitar diagnóstico gratuito">
+  <div class="cta-grid-bg"></div>
+  <h2 class="cta-title">DEJA DE PERDER<br><em>CITAS</em> DE NOCHE</h2>
+  <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20automatizar%20las%20citas%20de%20mi%20consultorio%20con%20un%20agente%20de%20IA" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+</section>
+
+<aside class="related" aria-label="Artículos relacionados">
+  <div class="related-label">Sigue leyendo</div>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/chatgpt-recomiende-mi-clinica">
+      <h3>Cómo lograr que ChatGPT recomiende tu clínica</h3>
+      <p>Los pacientes ya eligen doctor preguntándole a la IA. Así logras que ChatGPT recomiende tu consultorio.</p>
+    </a>
+    <a class="related-card" href="/blog/como-conseguir-pacientes-internet">
+      <h3>Cómo conseguir pacientes por internet</h3>
+      <p>La estrategia digital completa para llenar la agenda de tu consultorio, del sitio web a las reseñas.</p>
+    </a>
+    <a class="related-card" href="/salud">
+      <h3>Marketing digital para clínicas</h3>
+      <p>Todo lo que hacemos en Maguey Studio para que tu clínica crezca: web, GEO, reseñas y agentes de IA.</p>
+    </a>
+  </div>
+</aside>
+
+</main>
+
+<footer role="contentinfo" aria-label="Pie de página Maguey Studio">
+  <div class="footer-logo">MAGUEY <span>STUDIO</span><sup style="font-size:12px;">®</sup></div>
+  <nav aria-label="Navegación pie de página">
+    <ul class="footer-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/#servicios">Servicios</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="https://wa.me/5215560663926" aria-label="Contactar por WhatsApp">WhatsApp</a></li>
+    </ul>
+  </nav>
+  <div class="footer-copy">© 2026 Maguey Studio® — México</div>
+</footer>
+
+</body>
+</html>
