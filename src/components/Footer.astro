@@ -1,0 +1,22 @@
+---
+export interface FooterLink { href: string; label: string; aria?: string; }
+interface Props { links?: FooterLink[]; }
+const {
+  links = [
+    { href: '#servicios', label: 'Servicios' },
+    { href: '#proceso', label: 'Proceso' },
+    { href: '/geo', label: 'GEO' },
+    { href: '/blog', label: 'Blog' },
+    { href: 'https://wa.me/5215560663926', label: 'WhatsApp', aria: 'Contactar por WhatsApp' },
+  ],
+} = Astro.props;
+---
+<footer role="contentinfo" aria-label="Pie de página Maguey Studio">
+  <div class="footer-logo">MAGUEY <span>STUDIO</span><sup style="font-size:12px;">®</sup></div>
+  <nav aria-label="Navegación pie de página">
+    <ul class="footer-links">
+      {links.map((l) => <li><a href={l.href} aria-label={l.aria}>{l.label}</a></li>)}
+    </ul>
+  </nav>
+  <div class="footer-copy">© 2026 Maguey Studio® — Tuxtla Gutiérrez · Tijuana · CDMX</div>
+</footer>

@@ -1,0 +1,156 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import '../styles/blog.css';
+
+interface RelatedPost {
+  slug: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  seoTitle?: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  category: string;
+  slug: string;
+  related?: RelatedPost[];
+}
+
+const {
+  title,
+  seoTitle,
+  description,
+  pubDate,
+  updatedDate,
+  category,
+  slug,
+  related = [],
+} = Astro.props;
+
+const seo = seoTitle ?? `${title} | Maguey Studio®`;
+const canonical = `https://magueystudio.mx/blog/${slug}`;
+
+const MESES = [
+  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre',
+];
+
+function isoDate(d: Date): string {
+  return d.toISOString().slice(0, 10);
+}
+function fechaEs(d: Date): string {
+  return `${d.getUTCDate()} ${MESES[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+}
+
+const publishedISO = isoDate(pubDate);
+const modifiedISO = updatedDate ? isoDate(updatedDate) : publishedISO;
+
+const navProps = {
+  links: [
+    { href: '/', label: 'Inicio' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/geo', label: 'GEO' },
+  ],
+  mobileLinks: [
+    { href: '/', label: 'Inicio' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/geo', label: 'GEO' },
+  ],
+  ctaHref: 'https://wa.me/5215560663926',
+  ctaLabel: 'Solicitar Diagnóstico',
+  ctaAria: 'Solicitar diagnóstico por WhatsApp',
+};
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  image: 'https://magueystudio.mx/logo.png',
+  inLanguage: 'es-MX',
+  datePublished: publishedISO,
+  dateModified: modifiedISO,
+  author: {
+    '@type': 'Organization',
+    name: 'Maguey Studio',
+    url: 'https://magueystudio.mx/',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Maguey Studio',
+    url: 'https://magueystudio.mx/',
+    logo: { '@type': 'ImageObject', url: 'https://magueystudio.mx/logo.png' },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonical,
+  },
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://magueystudio.mx/' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://magueystudio.mx/blog' },
+    { '@type': 'ListItem', position: 3, name: title, item: canonical },
+  ],
+};
+---
+<BaseLayout
+  title={seo}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  ogTitle={title}
+  ogDescription={description}
+  nav={navProps}
+>
+  <Fragment slot="head">
+    <meta property="article:published_time" content={publishedISO}>
+    <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+
+  <main id="main-content">
+    <article>
+      <div class="article-hero">
+        <nav class="breadcrumbs" aria-label="Migas de pan">
+          <a href="/">Inicio</a> / <a href="/blog">Blog</a> / <span aria-current="page">{title}</span>
+        </nav>
+        <div class="article-meta">
+          <span class="article-cat">{category}</span>
+          <time datetime={publishedISO}>{fechaEs(pubDate)}</time>
+          <span>Maguey Studio</span>
+        </div>
+        <h1>{title}</h1>
+        <p class="article-intro">{description}</p>
+      </div>
+
+      <div class="article-body">
+        <slot />
+      </div>
+    </article>
+
+    <section class="cta-section" aria-label="Solicitar diagnóstico gratuito">
+      <div class="cta-grid-bg" aria-hidden="true"></div>
+      <h2 class="cta-title">¿LA IA YA<br><em>TE RECOMIENDA</em>?</h2>
+      <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+    </section>
+
+    {related.length > 0 && (
+      <aside class="related" aria-label="Artículos relacionados">
+        <div class="related-label">Sigue leyendo</div>
+        {related.map((r) => (
+          <a class="related-card" href={`/blog/${r.slug}`}>
+            <h3>{r.title}</h3>
+            <p>{r.description}</p>
+          </a>
+        ))}
+      </aside>
+    )}
+  </main>
+</BaseLayout>

@@ -1,0 +1,262 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog'))
+  .filter((p) => p.data.draft !== true)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const MESES = [
+  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre',
+];
+function isoDate(d: Date): string {
+  return d.toISOString().slice(0, 10);
+}
+function fechaEs(d: Date): string {
+  return `${d.getUTCDate()} ${MESES[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+}
+
+const navProps = {
+  links: [
+    { href: '/', label: 'Inicio' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/geo', label: 'GEO' },
+  ],
+  mobileLinks: [
+    { href: '/', label: 'Inicio' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/geo', label: 'GEO' },
+  ],
+  ctaHref: 'https://wa.me/5215560663926',
+  ctaLabel: 'Solicitar Diagnóstico',
+  ctaAria: 'Solicitar diagnóstico por WhatsApp',
+};
+
+const blogLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Blog de Maguey Studio',
+  url: 'https://magueystudio.mx/blog',
+  description: 'Artículos sobre GEO, SEO y presencia digital para negocios en México.',
+  inLanguage: 'es-MX',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Maguey Studio',
+    url: 'https://magueystudio.mx/',
+    logo: { '@type': 'ImageObject', url: 'https://magueystudio.mx/logo.png' },
+  },
+  blogPost: posts.map((p) => ({
+    '@type': 'BlogPosting',
+    headline: p.data.title,
+    url: `https://magueystudio.mx/blog/${p.id}`,
+    datePublished: isoDate(p.data.pubDate),
+    author: { '@type': 'Organization', name: 'Maguey Studio' },
+  })),
+};
+---
+<BaseLayout
+  title="Blog de Maguey Studio® | GEO, SEO y Marketing Digital"
+  description="Artículos sobre GEO, SEO y presencia digital para negocios en México. Aprende cómo hacer que ChatGPT y los motores de IA recomienden tu negocio."
+  canonical="https://magueystudio.mx/blog"
+  ogTitle="Blog de Maguey Studio®"
+  ogDescription="Artículos sobre GEO, SEO y presencia digital para negocios en México."
+  nav={navProps}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(blogLd)} />
+  </Fragment>
+
+  <main id="main-content">
+    <section class="hero" aria-label="Blog de Maguey Studio">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-tag">Blog</div>
+      <h1 class="hero-title">BLOG DE<br><em>MAGUEY STUDIO</em></h1>
+      <p class="hero-desc">Ideas claras sobre GEO, SEO y presencia digital para que tu negocio aparezca donde tus clientes ya están buscando: Google y la IA.</p>
+    </section>
+
+    <section class="posts" aria-label="Artículos del blog">
+      <div class="section-label">Últimos artículos</div>
+      <div class="posts-grid">
+        {posts.map((p) => (
+          <article class="post-card">
+            <div class="post-meta">
+              <span class="post-cat">{p.data.category}</span>
+              <time datetime={isoDate(p.data.pubDate)}>{fechaEs(p.data.pubDate)}</time>
+            </div>
+            <h2 class="post-title"><a href={`/blog/${p.id}`}>{p.data.title}</a></h2>
+            <p class="post-excerpt">{p.data.description}</p>
+            <span class="post-more">Leer artículo →</span>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="cta-section" aria-label="Solicitar diagnóstico gratuito">
+      <h2 class="cta-title">¿TU NEGOCIO APARECE<br>EN LA <em>IA</em>?</h2>
+      <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .hero {
+    padding: 180px 5% 80px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes gridshift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(60px,60px); }
+  }
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 8vw, 110px);
+    line-height: 0.92;
+    position: relative;
+  }
+  .hero-title em { font-style: normal; color: var(--green); }
+  .hero-desc {
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 540px;
+    margin: 32px auto 0;
+    position: relative;
+  }
+
+  /* GRID DE ARTÍCULOS */
+  .posts {
+    padding: 100px 5% 120px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--green);
+  }
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .post-card {
+    background: var(--dark);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .post-card:hover { background: var(--dark); }
+  .post-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,255,65,0.04) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .post-card:hover::before { opacity: 1; }
+  .post-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .post-cat {
+    color: var(--green);
+    border: 1px solid rgba(0,255,65,0.3);
+    padding: 4px 10px;
+  }
+  .post-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    letter-spacing: 1px;
+    line-height: 1.05;
+  }
+  .post-title a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .post-title a::after { content: ''; position: absolute; inset: 0; }
+  .post-title a:hover { color: var(--green); }
+  .post-excerpt {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 300;
+    color: var(--white);
+  }
+  .post-more {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-top: auto;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 120px 5%;
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 7vw, 90px);
+    line-height: 0.95;
+    margin-bottom: 40px;
+  }
+  .cta-title em { font-style: normal; color: var(--green); }
+
+  @media (max-width: 900px) {
+    .posts-grid { grid-template-columns: 1fr; }
+    .post-card { padding: 36px 28px; }
+  }
+</style>

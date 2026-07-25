@@ -1,0 +1,9 @@
+{
+  "nombre": "Maguey Studio",
+  "vertical": "general",
+  "dominio": "https://magueystudio.mx",
+  "estatus": "activo",
+  "inicio": "2026-05-29",
+  "tipo": "sitio-astro",
+  "notas": "Sitio propio de la agencia (no cliente externo). Migrado de HTML estático a Astro conservando todas las URLs y el SEO trabajado (schema ProfessionalService con 3 ciudades, sitemap, canonicals, llms.txt, robots con bots de IA, verificación de Bing). Sub-vertical fuerte de salud en /salud y en el blog. Landings de clientes servidas como estáticas en public/ (agente, promotoria, santos, dentista, clinicas, opus)."
+}

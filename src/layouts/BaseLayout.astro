@@ -1,0 +1,170 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  image?: string;
+  ogType?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  bodyClass?: string;
+  isHome?: boolean;
+  nav?: Record<string, any>;
+  footer?: Record<string, any>;
+  wa?: Record<string, any>;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image = 'https://magueystudio.mx/logo.png',
+  ogType = 'website',
+  ogTitle,
+  ogDescription,
+  twitterTitle,
+  twitterDescription,
+  bodyClass,
+  isHome = false,
+  nav = {},
+  footer = {},
+  wa = {},
+} = Astro.props;
+
+const _ogTitle = ogTitle ?? title;
+const _ogDescription = ogDescription ?? description;
+const _twTitle = twitterTitle ?? _ogTitle;
+const _twDescription = twitterDescription ?? _ogDescription;
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script is:inline>(function(){try{var t=localStorage.getItem("mg-theme");if(!t){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="robots" content="index, follow">
+<meta name="author" content="Maguey Studio">
+{isHome && <meta name="msvalidate.01" content="7BC48F9D0740327D02EED2218E21311A" />}
+<link rel="canonical" href={canonical}>
+
+<meta property="og:type" content={ogType}>
+<meta property="og:title" content={_ogTitle}>
+<meta property="og:description" content={_ogDescription}>
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={image}>
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Maguey Studio">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={_twTitle}>
+<meta name="twitter:description" content={_twDescription}>
+<meta name="twitter:image" content={image}>
+
+<slot name="head" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/logo.png">
+</head>
+<body class={bodyClass}>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<Nav {...nav} />
+
+<slot />
+
+<WhatsAppFloat {...wa} />
+
+<Footer {...footer} />
+
+<script>
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // CURSOR
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  if (cursor && ring && !reducedMotion) {
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx - 6 + 'px';
+      cursor.style.top = my - 6 + 'px';
+    });
+    function animateRing() {
+      rx += (mx - rx - 18) * 0.12;
+      ry += (my - ry - 18) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+    document.querySelectorAll('a, button, input, select').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'scale(2.5)';
+        ring.style.transform = 'scale(1.5)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'scale(1)';
+        ring.style.transform = 'scale(1)';
+      });
+    });
+  }
+
+  // HAMBURGER MENU
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    function toggleMenu() {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    document.querySelectorAll('.mobile-link, .mobile-cta').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // REVEAL ON SCROLL
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 100);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // THEME TOGGLE
+  const themeBtn = document.getElementById('mgTheme');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      const nx = cur === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', nx);
+      try { localStorage.setItem('mg-theme', nx); } catch (e) {}
+    });
+  }
+</script>
+</body>
+</html>
