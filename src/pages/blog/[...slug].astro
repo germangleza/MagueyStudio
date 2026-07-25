@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog')).filter((p) => p.data.draft !== true);
+
+  return posts.map((entry, index) => {
+    // Elegir 2 posts relacionados: los 2 siguientes en el arreglo (circular).
+    const related = [
+      posts[(index + 1) % posts.length],
+      posts[(index + 2) % posts.length],
+    ].map((p) => ({
+      slug: p.id,
+      title: p.data.title,
+      description: p.data.description,
+    }));
+
+    return {
+      params: { slug: entry.id },
+      props: { entry, related },
+    };
+  });
+}
+
+const { entry, related } = Astro.props;
+const { Content } = await render(entry);
+const { title, seoTitle, description, pubDate, updatedDate, category } = entry.data;
+---
+<BlogPost
+  title={title}
+  seoTitle={seoTitle}
+  description={description}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  category={category}
+  slug={entry.id}
+  related={related}
+>
+  <Content />
+</BlogPost>
