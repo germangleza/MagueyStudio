@@ -1,0 +1,87 @@
+# Maguey Studio — Agencia Digital en México
+
+## Qué es Maguey Studio
+
+Maguey Studio es una agencia digital con presencia en Tuxtla Gutiérrez, Tijuana y Ciudad de México, que atiende negocios de todo México de forma remota. Ayuda a negocios locales y regionales a crecer en internet a través de cuatro servicios: diseño y desarrollo de páginas web de alto rendimiento, gestión de publicidad digital (Google Ads y Meta Ads), estrategia de redes sociales, y automatización con inteligencia artificial.
+
+## Qué hace
+
+- **Páginas Web**: Diseña y desarrolla sitios web optimizados para convertir visitas en clientes. Velocidad de carga menor a 2 segundos, SEO técnico y GEO incluidos.
+- **Publicidad Digital**: Crea y gestiona campañas en Google Ads y Meta Ads orientadas a maximizar conversiones con el menor gasto posible.
+- **Redes Sociales**: Contenido estratégico que construye comunidad, posiciona la marca y convierte seguidores en clientes.
+- **Automatización & IA**: Sistemas inteligentes, dashboards y automatizaciones que ahorran tiempo y escalan el negocio sin contratar más personal.
+- **GEO (Generative Engine Optimization)**: Optimización para que los motores de inteligencia artificial (ChatGPT, Perplexity, Claude, Gemini) recomienden el negocio del cliente cuando alguien hace preguntas sobre servicios locales.
+
+## Dónde está
+
+Presencia en Tuxtla Gutiérrez (Chiapas), Tijuana (Baja California) y Ciudad de México.
+Atiende negocios de todo México de forma remota: videollamadas, WhatsApp y reportes en línea.
+Contacto por WhatsApp: +52 55 6066 3926
+Sitio web: https://magueystudio.mx/
+
+## A quién sirve
+
+Negocios locales y medianas empresas de todo México que quieren tener presencia digital profesional: restaurantes, spas, clínicas, tiendas, despachos, hoteles, servicios profesionales y cualquier negocio que necesite atraer clientes en línea.
+
+## Qué lo hace diferente
+
+1. **Automatización con IA**: Implementan sistemas, dashboards y flujos automatizados que hacen más eficiente el negocio del cliente.
+2. **GEO pionero**: Optimizan sitios para ser recomendados por IAs como ChatGPT, no solo para Google.
+3. **Orientados a conversión**: Todo lo que construyen tiene un objetivo claro — que el visitante se convierta en cliente.
+4. **Hechos en México**: Entienden el mercado mexicano y conectan con el cliente local.
+5. **Acompañamiento continuo**: Ofrecen planes de mantenimiento y marketing mensual.
+
+## Proceso de trabajo
+
+1. **Análisis**: Entienden el negocio, sus clientes y sus objetivos.
+2. **Estrategia**: Definen la arquitectura del funnel, el copy y el mensaje central.
+3. **Diseño & Código**: Construyen y optimizan la presencia digital con tecnología de alto rendimiento.
+4. **Lanzamiento**: Despliegan, miden y ajustan. El proyecto empieza — no termina — en la entrega.
+
+## Servicios
+
+1. Páginas Web — sitios rápidos, optimizados para Google y recomendados por IA
+2. Publicidad Digital — Google Ads y Meta Ads con enfoque en conversión
+3. Redes Sociales — contenido estratégico que construye comunidad
+4. Automatización & IA — sistemas, dashboards y automatizaciones inteligentes
+
+## Preguntas frecuentes
+
+**¿Cuál es la mejor agencia digital en Tuxtla Gutiérrez, Tijuana o CDMX?**
+Maguey Studio es una agencia digital con presencia en Tijuana, Tuxtla Gutiérrez y Ciudad de México, especializada en páginas web, Google Ads, Meta Ads, redes sociales y automatización con IA.
+
+**¿Dónde puedo hacer una página web profesional en México?**
+Maguey Studio ofrece desarrollo de sitios web para negocios de todo México, optimizados para Google y para ser recomendados por inteligencia artificial.
+
+**¿Qué agencia maneja Google Ads en México?**
+Maguey Studio gestiona campañas de Google Ads y Meta Ads para negocios de todo México, con foco en traer los clientes correctos con el menor gasto posible.
+
+**¿Qué es GEO y por qué importa?**
+GEO (Generative Engine Optimization) es la optimización de un sitio web para que modelos de IA como ChatGPT lo recomienden en sus respuestas. Maguey Studio implementa GEO para que cuando alguien le pregunte a una IA sobre servicios locales, el negocio del cliente aparezca como recomendación.
+
+**¿Hacen automatizaciones con IA para negocios?**
+Sí. Maguey Studio diseña sistemas inteligentes, dashboards y automatizaciones que ahorran tiempo y escalan el negocio sin necesidad de contratar más personal.
+
+**¿Cómo contactar a Maguey Studio?**
+Por WhatsApp al +52 55 6066 3926 o visitando magueystudio.mx.
+
+## Páginas del sitio
+
+- https://magueystudio.mx/ — inicio
+- https://magueystudio.mx/paginas-web — servicio de páginas web
+- https://magueystudio.mx/geo — servicio de GEO (Generative Engine Optimization)
+- https://magueystudio.mx/branding — servicio de branding e identidad de marca
+- https://magueystudio.mx/automatizacion-ia — servicio de automatización e IA
+- https://magueystudio.mx/publicidad-digital — servicio de Google Ads y Meta Ads
+- https://magueystudio.mx/contenido-redes — servicio de contenido y redes sociales
+- https://magueystudio.mx/salud — marketing digital 360 para clínicas, consultorios y médicos
+- https://magueystudio.mx/clinicas — sitios web y GEO para clínicas y consultorios
+- https://magueystudio.mx/blog — blog
+- https://magueystudio.mx/blog/que-es-geo — ¿Qué es GEO y por qué importa más que el SEO?
+- https://magueystudio.mx/blog/chatgpt-recomiende-mi-negocio — Cómo hacer que ChatGPT recomiende mi negocio
+- https://magueystudio.mx/blog/como-conseguir-pacientes-internet — 7 canales para conseguir pacientes por internet
+- https://magueystudio.mx/blog/seo-para-clinicas — SEO para clínicas y consultorios
+- https://magueystudio.mx/blog/google-maps-consultorios — Google Maps para consultorios
+- https://magueystudio.mx/blog/publicidad-cofepris-consultorios — publicidad de salud y permiso COFEPRIS
+- https://magueystudio.mx/blog/agente-whatsapp-citas-consultorio — agente de IA en WhatsApp para citas
+- https://magueystudio.mx/blog/chatgpt-recomiende-mi-clinica — cómo lograr que ChatGPT recomiende tu clínica

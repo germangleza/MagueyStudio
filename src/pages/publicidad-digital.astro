@@ -1,0 +1,864 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const nav = {
+  links: [
+    { href: '#que-incluye', label: 'Qué incluye' },
+    { href: '#proceso', label: 'Proceso' },
+    { href: '#faq', label: 'Preguntas' },
+    { href: '/#servicios', label: 'Servicios' },
+    { href: '/', label: 'Inicio' },
+  ],
+  mobileLinks: [
+    { href: '#que-incluye', label: 'Qué incluye' },
+    { href: '#proceso', label: 'Proceso' },
+    { href: '#faq', label: 'Preguntas' },
+    { href: '/#servicios', label: 'Servicios' },
+    { href: '/', label: 'Inicio' },
+  ],
+  ctaHref: 'https://wa.me/5215560663926?text=Hola%2C%20quiero%20lanzar%20campa%C3%B1as%20de%20publicidad%20digital%20para%20mi%20negocio.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F',
+  ctaLabel: 'Solicitar Diagnóstico',
+  ctaAria: 'Solicitar diagnóstico de publicidad digital por WhatsApp',
+};
+
+const footer = {
+  links: [
+    { href: '/', label: 'Inicio' },
+    { href: '/#servicios', label: 'Servicios' },
+    { href: '/#proceso', label: 'Proceso' },
+    { href: 'https://wa.me/5215560663926', label: 'WhatsApp', aria: 'Contactar por WhatsApp' },
+  ],
+};
+
+const wa = {
+  href: 'https://wa.me/5215560663926?text=Hola%2C%20quiero%20lanzar%20campa%C3%B1as%20de%20publicidad%20digital%20para%20mi%20negocio.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F',
+  aria: 'Escríbenos por WhatsApp sobre Publicidad Digital',
+};
+
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Publicidad Digital",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Maguey Studio",
+    "url": "https://magueystudio.mx/",
+    "telephone": "+525560663926"
+  },
+  "description": "Campañas de Google Ads y Meta Ads orientadas a conversión que llevan los clientes correctos a tu negocio con el menor gasto posible, con medición real y landing pages que convierten.",
+  "url": "https://magueystudio.mx/publicidad-digital",
+  "areaServed": {"@type": "Country", "name": "México"}
+};
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto necesito invertir en publicidad para ver resultados?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Depende de tu industria y tu mercado, pero no necesitas presupuestos enormes. Definimos juntos una inversión inicial realista, la optimizamos semana a semana y solo escalamos lo que ya demostró traer clientes. Tu dinero trabaja, no se quema."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es mejor para mi negocio: Google Ads o Meta Ads?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Google Ads captura a quien ya está buscando tu servicio; Meta Ads (Facebook e Instagram) genera demanda mostrándote a quien tiene el perfil de tu cliente ideal. En el diagnóstico analizamos tu negocio y te decimos dónde está tu cliente y por dónde conviene empezar."}
+    },
+    {
+      "@type": "Question",
+      "name": "Ya invertí en anuncios antes y no funcionó. ¿Qué harían diferente?",
+      "acceptedAnswer": {"@type": "Answer", "text": "La mayoría de las campañas fallan por tres razones: mala segmentación, anuncios que no venden y páginas de destino que no convierten. Nosotros atacamos las tres: estrategia de audiencias, creativos orientados a conversión y landing pages diseñadas para cerrar — todo medido con datos reales."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo mido si la publicidad realmente me está dejando clientes?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Instalamos medición de conversiones desde el día uno: cuántas personas te escribieron, llamaron o compraron gracias a cada campaña, y cuánto te costó cada cliente. Recibes reportes claros en lenguaje de negocio, no en tecnicismos."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿En cuánto tiempo empiezo a ver resultados?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Las campañas empiezan a generar tráfico y contactos desde los primeros días. La optimización fina — bajar el costo por cliente y escalar lo que funciona — toma entre 4 y 8 semanas. Es un motor que mejora mes a mes, no un volado."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito una página web para hacer publicidad digital?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Para obtener los mejores resultados, sí: mandar tráfico pagado a una página lenta o confusa es tirar dinero. Por eso también diseñamos landing pages orientadas a conversión. Si ya tienes sitio, lo auditamos; si no, lo construimos como parte de la estrategia."}
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Publicidad Digital que Convierte | Maguey Studio®"
+  description="Campañas de Google Ads y Meta Ads enfocadas en conversión, no en likes. Los clientes correctos con el menor gasto posible, medición real y landing pages que convierten. Diagnóstico gratuito."
+  canonical="https://magueystudio.mx/publicidad-digital"
+  ogType="website"
+  ogTitle="Publicidad Digital que Convierte | Maguey Studio®"
+  ogDescription="Campañas de Google Ads y Meta Ads que traen los clientes correctos con el menor gasto posible. Conversión, no likes."
+  twitterTitle="Publicidad Digital que Convierte | Maguey Studio®"
+  twitterDescription="Campañas de Google Ads y Meta Ads que traen los clientes correctos con el menor gasto posible. Conversión, no likes."
+  nav={nav}
+  footer={footer}
+  wa={wa}
+>
+<script type="application/ld+json" slot="head" set:html={JSON.stringify(serviceLd)} />
+<script type="application/ld+json" slot="head" set:html={JSON.stringify(faqLd)} />
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" aria-label="Publicidad digital que trae clientes, no likes">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-tag" style="position:relative;z-index:1;">Publicidad Digital</div>
+
+  <h1 class="hero-title" style="position:relative;z-index:1;">
+    ANUNCIOS QUE TRAEN<br>
+    <em class="glitch" data-text="CLIENTES">CLIENTES</em><br>
+    <span class="outline">NO SOLO LIKES</span>
+  </h1>
+
+  <div class="hero-content" style="position:relative;z-index:1;">
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        Campañas de Google Ads y Meta Ads diseñadas para una sola cosa: llevar los clientes correctos a tu negocio con el menor gasto posible. Cada peso invertido, medido.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20lanzar%20campa%C3%B1as%20de%20publicidad%20digital%20para%20mi%20negocio.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+        <a href="#que-incluye" class="btn-ghost">Ver qué incluye</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">Google Ads</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Meta Ads</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Conversión</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Medición Real</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Landing Pages</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Menor Costo por Cliente</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Google Ads</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Meta Ads</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Conversión</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Medición Real</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Landing Pages</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Menor Costo por Cliente</span><span class="ticker-sep">✦</span>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="problem-section" aria-label="El problema con la mayoría de la publicidad digital">
+  <div class="section-label reveal" style="justify-content:center;">El problema</div>
+  <h2 class="problem-title reveal">
+    MUCHOS NEGOCIOS PAGAN ANUNCIOS.<br>
+    <em style="font-style:normal; color:var(--green);">POCOS SABEN SI LES DEJAN DINERO.</em>
+  </h2>
+  <p class="problem-desc reveal">
+    Likes, alcance e impresiones no pagan la renta. Si no sabes cuánto te cuesta conseguir un cliente con tus anuncios, no estás haciendo publicidad — estás donando dinero a las plataformas.
+  </p>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section id="que-incluye" aria-label="Qué incluye la publicidad digital de Maguey Studio">
+  <div class="section-label reveal">Lo que construimos</div>
+  <h2 class="features-title reveal">CAMPAÑAS HECHAS<br>PARA <em>VENDER</em></h2>
+
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <span class="feature-icon">◈</span>
+      <h3 class="feature-name">Google Ads</h3>
+      <p class="feature-desc">Aparece justo cuando tu cliente te está buscando. Capturamos la demanda que ya existe con campañas de búsqueda afinadas por intención.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">◉</span>
+      <h3 class="feature-name">Meta Ads</h3>
+      <p class="feature-desc">Facebook e Instagram con segmentación quirúrgica: tu anuncio frente al perfil exacto de tu cliente ideal, no frente a curiosos.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">⚡</span>
+      <h3 class="feature-name">Enfoque en Conversión</h3>
+      <p class="feature-desc">Optimizamos por mensajes, llamadas y ventas — no por likes. Cada campaña tiene un objetivo de negocio, no de vanidad.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">⬡</span>
+      <h3 class="feature-name">Medición Real</h3>
+      <p class="feature-desc">Conversiones rastreadas desde el clic hasta el contacto. Sabes exactamente cuánto te cuesta cada cliente y qué campaña lo trajo.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">⟡</span>
+      <h3 class="feature-name">Landing Pages que Convierten</h3>
+      <p class="feature-desc">El anuncio atrae; la página cierra. Diseñamos <a href="/paginas-web">páginas de destino</a> rápidas y persuasivas para que el tráfico pagado se convierta en clientes.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">✦</span>
+      <h3 class="feature-name">Potenciado con GEO</h3>
+      <p class="feature-desc">Tus campañas se apoyan en <a href="/geo">GEO</a>: mientras los anuncios traen clientes hoy, tu negocio se posiciona para ser recomendado por ChatGPT y Gemini mañana.</p>
+    </div>
+  </div>
+
+  <div class="section-cta reveal">
+    <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20lanzar%20campa%C3%B1as%20de%20publicidad%20digital%20para%20mi%20negocio.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="process" id="proceso" aria-label="Proceso de campañas de publicidad digital">
+  <div class="process-grid-bg"></div>
+  <div style="position:relative;">
+    <div class="section-label reveal">Proceso</div>
+    <h2 class="process-title reveal">ASÍ CONSTRUIMOS<br>TUS <em>CAMPAÑAS</em></h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">01</div>
+        <h3 class="step-title">Diagnóstico</h3>
+        <p class="step-desc">Analizamos tu negocio, tu cliente ideal y lo que hace tu competencia con su publicidad.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">02</div>
+        <h3 class="step-title">Estrategia & Creativos</h3>
+        <p class="step-desc">Definimos plataformas, audiencias, mensajes y las piezas que van a detener el scroll.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">03</div>
+        <h3 class="step-title">Lanzamiento & Medición</h3>
+        <p class="step-desc">Activamos campañas con medición de conversiones desde el día uno. Nada se mueve sin datos.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">04</div>
+        <h3 class="step-title">Optimización & Escala</h3>
+        <p class="step-desc">Apagamos lo que no funciona, escalamos lo que sí, y bajamos tu costo por cliente mes a mes.</p>
+      </div>
+    </div>
+
+    <div class="section-cta reveal">
+      <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20lanzar%20campa%C3%B1as%20de%20publicidad%20digital%20para%20mi%20negocio.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section id="para-quien" aria-label="Para qué tipo de negocio es ideal la publicidad digital">
+  <div class="section-label reveal">Ideal para</div>
+  <h2 class="forwho-title reveal">¿ES PARA<br>TU <em>NEGOCIO</em>?</h2>
+
+  <div class="forwho-grid">
+    <div class="forwho-item reveal">
+      <div class="forwho-dot"></div>
+      <span>Negocios que necesitan clientes nuevos este mes, no el próximo año</span>
+    </div>
+    <div class="forwho-item reveal">
+      <div class="forwho-dot"></div>
+      <span>Clínicas, consultorios y servicios de salud</span>
+    </div>
+    <div class="forwho-item reveal">
+      <div class="forwho-dot"></div>
+      <span>Restaurantes, hoteles y servicios turísticos</span>
+    </div>
+    <div class="forwho-item reveal">
+      <div class="forwho-dot"></div>
+      <span>Despachos y servicios profesionales</span>
+    </div>
+    <div class="forwho-item reveal">
+      <div class="forwho-dot"></div>
+      <span>Comercios locales que quieren dominar su zona</span>
+    </div>
+    <div class="forwho-item reveal">
+      <div class="forwho-dot"></div>
+      <span>Empresas cansadas de pagar anuncios sin ver resultados claros</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq" aria-label="Preguntas frecuentes sobre publicidad digital">
+  <div class="section-label reveal">Preguntas frecuentes</div>
+  <h2 class="faq-title reveal">LO QUE TODOS<br>NOS <em>PREGUNTAN</em></h2>
+
+  <div class="faq-list">
+    <details class="faq-item reveal">
+      <summary>¿Cuánto necesito invertir en publicidad para ver resultados?</summary>
+      <p class="faq-answer">Depende de tu industria y tu mercado, pero no necesitas presupuestos enormes. Definimos juntos una inversión inicial realista, la optimizamos semana a semana y solo escalamos lo que ya demostró traer clientes. Tu dinero trabaja, no se quema.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>¿Qué es mejor para mi negocio: Google Ads o Meta Ads?</summary>
+      <p class="faq-answer">Google Ads captura a quien ya está buscando tu servicio; Meta Ads (Facebook e Instagram) genera demanda mostrándote a quien tiene el perfil de tu cliente ideal. En el diagnóstico analizamos tu negocio y te decimos dónde está tu cliente y por dónde conviene empezar.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Ya invertí en anuncios antes y no funcionó. ¿Qué harían diferente?</summary>
+      <p class="faq-answer">La mayoría de las campañas fallan por tres razones: mala segmentación, anuncios que no venden y páginas de destino que no convierten. Nosotros atacamos las tres: estrategia de audiencias, creativos orientados a conversión y landing pages diseñadas para cerrar — todo medido con datos reales.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>¿Cómo mido si la publicidad realmente me está dejando clientes?</summary>
+      <p class="faq-answer">Instalamos medición de conversiones desde el día uno: cuántas personas te escribieron, llamaron o compraron gracias a cada campaña, y cuánto te costó cada cliente. Recibes reportes claros en lenguaje de negocio, no en tecnicismos.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>¿En cuánto tiempo empiezo a ver resultados?</summary>
+      <p class="faq-answer">Las campañas empiezan a generar tráfico y contactos desde los primeros días. La optimización fina — bajar el costo por cliente y escalar lo que funciona — toma entre 4 y 8 semanas. Es un motor que mejora mes a mes, no un volado.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>¿Necesito una página web para hacer publicidad digital?</summary>
+      <p class="faq-answer">Para obtener los mejores resultados, sí: mandar tráfico pagado a una página lenta o confusa es tirar dinero. Por eso también diseñamos <a href="/paginas-web" style="color:var(--green);">landing pages orientadas a conversión</a>. Si ya tienes sitio, lo auditamos; si no, lo construimos como parte de la estrategia.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" aria-label="Solicitar diagnóstico gratuito de publicidad digital">
+  <div class="cta-grid-bg"></div>
+  <div class="cta-eyebrow reveal">Sin compromiso. Sin costo.</div>
+  <h2 class="cta-title reveal">CADA PESO<br><span class="glitch-word" data-text="INVERTIDO">INVERTIDO</span><br>TRABAJANDO</h2>
+  <div style="position:relative;z-index:1;">
+    <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20lanzar%20campa%C3%B1as%20de%20publicidad%20digital%20para%20mi%20negocio.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+    <p class="cta-sub">Analizamos tu mercado y te decimos dónde está tu cliente y cuánto cuesta traerlo.</p>
+  </div>
+</section>
+
+</main>
+
+<style is:global>
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+  }
+  @keyframes gridshift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(60px,60px); }
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,255,65,0.08) 0%, transparent 70%);
+    top: 10%; right: -100px;
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite alternate;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 1; }
+  }
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    animation: fadeUp 1s ease both;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 0.92;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    max-width: 80%;
+    animation: slideFromLeft 1s 0.1s ease both;
+  }
+  @keyframes slideFromLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .hero-title em { font-style: normal; color: var(--green); }
+  .hero-title .outline {
+    -webkit-text-stroke: 1px var(--white);
+    color: transparent;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    animation: fadeUp 1s 0.15s ease both;
+    margin-top: 48px;
+  }
+  .hero-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    max-width: 540px;
+  }
+  .hero-desc {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--white);
+    font-weight: 300;
+    text-align: center;
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* TICKER */
+  .ticker {
+    background: var(--green);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner { display: inline-flex; animation: ticker 20s linear infinite; }
+  .ticker-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: var(--black);
+    padding: 0 40px;
+  }
+  .ticker-sep { font-size: 18px; color: rgba(0,0,0,0.3); padding: 0 10px; }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* PROBLEM SECTION */
+  .problem-section {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .problem-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    margin-bottom: 32px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .problem-desc {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--white);
+    font-weight: 300;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* FEATURES GRID */
+  .features-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 100px);
+    line-height: 0.95;
+    margin-bottom: 80px;
+    max-width: 700px;
+  }
+  .features-title em { font-style: normal; color: var(--green); }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .feature-card {
+    background: var(--dark);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,255,65,0.04) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .feature-card:hover { background: var(--dark); }
+  .feature-card:hover::before { opacity: 1; }
+  .feature-icon {
+    font-size: 32px;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .feature-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    line-height: 1;
+    color: var(--white);
+  }
+  .feature-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--white);
+    font-weight: 300;
+  }
+  .feature-desc a { color: var(--green); text-decoration: none; border-bottom: 1px solid rgba(0,255,65,0.4); }
+  .feature-desc a:hover { border-bottom-color: var(--green); }
+
+  /* PROCESS */
+  .process {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .process-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
+  }
+  .process-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.95;
+    margin-bottom: 80px;
+    max-width: 700px;
+  }
+  .process-title em { font-style: normal; color: var(--green); }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%);
+    background-size: 200% 100%;
+    animation: scanLine 3s linear infinite;
+  }
+  @keyframes scanLine {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .step { padding-top: 60px; position: relative; }
+  .step-dot {
+    position: absolute;
+    top: 20px; left: 0;
+    width: 16px; height: 16px;
+    background: var(--green);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  .step-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--green);
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+  .step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .step-desc {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--white);
+    font-weight: 300;
+  }
+
+  /* CASOS / FOR WHO */
+  .forwho-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 100px);
+    line-height: 0.95;
+    margin-bottom: 64px;
+    max-width: 700px;
+  }
+  .forwho-title em { font-style: normal; color: var(--green); }
+  .forwho-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 80px;
+  }
+  .forwho-item {
+    background: var(--dark);
+    padding: 32px 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: background 0.2s;
+  }
+  .forwho-item:hover { background: var(--dark); }
+  .forwho-dot {
+    width: 8px; height: 8px;
+    background: var(--green);
+    flex-shrink: 0;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  .forwho-item span {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--white);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.95;
+    margin-bottom: 64px;
+    max-width: 700px;
+  }
+  .faq-title em { font-style: normal; color: var(--green); }
+  .faq-list { max-width: 860px; }
+  .faq-item {
+    border: 1px solid var(--border);
+    background: var(--black);
+    margin-bottom: 12px;
+  }
+  .faq-item summary {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    padding: 24px 28px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: color 0.2s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    color: var(--green);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary { color: var(--green); }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item summary:hover { color: var(--green); }
+  .faq-answer {
+    padding: 0 28px 28px;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 300;
+    color: var(--white);
+    max-width: 720px;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 160px 5%;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+    pointer-events: none;
+  }
+  .cta-section::before {
+    content: 'MAGUEY';
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38vw;
+    color: rgba(0,255,65,0.08);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: -5px;
+  }
+  .cta-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 24px;
+  }
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 9vw, 130px);
+    line-height: 0.9;
+    margin-bottom: 48px;
+  }
+  .cta-title .glitch-word {
+    font-style: normal;
+    color: var(--green);
+    position: relative;
+    display: inline-block;
+    animation: ctaGlitch 2.5s infinite;
+  }
+  .cta-title .glitch-word::before,
+  .cta-title .glitch-word::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+  }
+  .cta-title .glitch-word::before {
+    color: #ff00c8;
+    animation: ctaGlitchTop 2.5s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  }
+  .cta-title .glitch-word::after {
+    color: #00eeff;
+    animation: ctaGlitchBot 2.5s infinite;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  }
+  @keyframes ctaGlitch {
+    0%, 90%, 100% { transform: none; }
+    91% { transform: skewX(-2deg); }
+    93% { transform: skewX(2deg); }
+    95% { transform: skewX(0deg); }
+  }
+  @keyframes ctaGlitchTop {
+    0%, 90%, 100% { transform: none; opacity: 0; }
+    91% { transform: translate(-3px, -2px); opacity: 1; }
+    93% { transform: translate(3px, 0px); opacity: 1; }
+    95% { transform: none; opacity: 0; }
+  }
+  @keyframes ctaGlitchBot {
+    0%, 90%, 100% { transform: none; opacity: 0; }
+    91% { transform: translate(3px, 2px); opacity: 1; }
+    93% { transform: translate(-3px, 0px); opacity: 1; }
+    95% { transform: none; opacity: 0; }
+  }
+  .cta-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-top: 24px;
+    text-transform: uppercase;
+  }
+
+  .section-cta {
+    margin-top: 64px;
+    text-align: center;
+  }
+
+  /* GLITCH */
+  .glitch { position: relative; }
+  .glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    pointer-events: none;
+  }
+  .glitch::before {
+    color: var(--green);
+    animation: glitchTop 2s infinite linear;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+  .glitch::after {
+    color: #fff;
+    animation: glitchBot 2s infinite linear;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+  @keyframes glitchTop {
+    0%, 75%, 100% { transform: translate(0); opacity: 0; }
+    76% { transform: translate(-3px, -2px); opacity: 0.8; }
+    79% { transform: translate(3px, 1px); opacity: 0.8; }
+    82% { transform: translate(-2px, 2px); opacity: 0.8; }
+    85% { transform: translate(2px, -1px); opacity: 0.8; }
+    88% { transform: translate(0); opacity: 0; }
+  }
+  @keyframes glitchBot {
+    0%, 75%, 100% { transform: translate(0); opacity: 0; }
+    77% { transform: translate(3px, 2px); opacity: 0.6; }
+    80% { transform: translate(-3px, -1px); opacity: 0.6; }
+    83% { transform: translate(2px, 1px); opacity: 0.6; }
+    86% { transform: translate(-1px, 0); opacity: 0.6; }
+    88% { transform: translate(0); opacity: 0; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .hero { align-items: center; text-align: center; }
+    .hero-title { font-size: clamp(52px, 13vw, 90px); max-width: 100%; }
+    .hero-content { flex-direction: column; align-items: center; margin-top: 32px; }
+    .hero-bottom { align-items: center; max-width: 100%; }
+    .hero-desc { font-size: 16px; text-align: center; }
+    .hero-actions { align-items: center; }
+    .features-grid { grid-template-columns: 1fr; }
+    .forwho-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .step:nth-child(3)::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 0;
+      width: calc(200% + 40px); height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%);
+      background-size: 200% 100%;
+      animation: scanLine 3s linear infinite;
+    }
+    .faq-item summary { font-size: 19px; padding: 20px 20px; }
+    .faq-answer { padding: 0 20px 24px; }
+  }
+</style>
+</BaseLayout>

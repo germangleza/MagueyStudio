@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Promotoría de Seguros en México | Nexo Protección Financiera</title>
+<meta name="description" content="Asesoría en seguros de vida, PPR, gastos médicos, autos y soluciones empresariales. Atención personalizada en todo México.">
+<meta property="og:title" content="Promotoría de Seguros en México | Nexo Protección Financiera">
+<meta property="og:description" content="Asesoría en seguros de vida, PPR, gastos médicos, autos y soluciones empresariales. Atención personalizada en todo México.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --primary-dark:#102f46;
+  --primary:#1f5b7a;
+  --primary-light:#eaf3f7;
+  --accent:#4d8b73;
+  --gold:#c1a16b;
+  --text:#162a35;
+  --muted:#62717a;
+  --bg:#ffffff;
+  --bg-alt:#f5f8f9;
+  --border:#dce5e9;
+  --wa:#25D366;
+  --r:12px;
+  --r-lg:20px;
+  --max:1280px;
+  --shadow:0 4px 24px rgba(16,47,70,.08);
+  --shadow-lg:0 8px 40px rgba(16,47,70,.14);
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;line-height:1.2;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+button{cursor:pointer;font-family:inherit;}
+
+.contenedor{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px;}
+.seccion{padding:80px 0;}
+.seccion--alt{background:var(--bg-alt);}
+.seccion--dark{background:var(--primary-dark);color:#fff;}
+.eyebrow{font-family:'Manrope',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+.medida{max-width:660px;margin:0 auto;text-align:center;}
+.medida h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:1rem;}
+.medida p{color:var(--muted);font-size:1.05rem;}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.6rem;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .2s;border:none;cursor:pointer;}
+.btn--primary{background:var(--primary);color:#fff;}
+.btn--primary:hover{background:var(--primary-dark);}
+.btn--accent{background:var(--accent);color:#fff;}
+.btn--wa{background:var(--wa);color:#fff;}
+.btn--wa:hover{filter:brightness(1.08);}
+.btn--outline{background:transparent;color:var(--primary);border:2px solid var(--primary);}
+.btn--outline:hover{background:var(--primary);color:#fff;}
+.btn--outline-light{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);}
+.btn--outline-light:hover{background:rgba(255,255,255,.1);}
+.btn--lg{padding:.9rem 2rem;font-size:1rem;}
+.btn--gold{background:var(--gold);color:#fff;}
+.btn--gold:hover{filter:brightness(1.08);}
+
+/* HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);transition:box-shadow .3s;}
+.header.scrolled{box-shadow:0 1px 0 var(--border);}
+.header__inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem;}
+.header__brand{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.05rem;color:var(--primary-dark);display:flex;flex-direction:column;line-height:1.1;}
+.header__brand span{font-size:.65rem;font-weight:500;color:var(--muted);letter-spacing:.04em;}
+.header__nav{display:flex;align-items:center;gap:.1rem;}
+.header__nav a{padding:.4rem .65rem;font-size:.85rem;font-weight:500;color:var(--muted);border-radius:8px;transition:color .2s,background .2s;}
+.header__nav a:hover{color:var(--primary);background:var(--primary-light);}
+.header__cta{display:flex;align-items:center;gap:.75rem;}
+.header__menu-btn{display:none;background:none;border:none;padding:.4rem;color:var(--text);}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:#fff;z-index:99;padding:1.5rem;overflow-y:auto;}
+.mobile-menu.open{display:flex;flex-direction:column;gap:.25rem;}
+.mobile-menu a{padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--text);border-radius:10px;display:block;}
+.mobile-menu a:hover{background:var(--bg-alt);}
+.mobile-menu .btn{margin-top:1rem;justify-content:center;}
+
+/* HERO */
+.hero{padding:140px 0 80px;background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);color:#fff;overflow:hidden;}
+.hero__grid{display:grid;gap:3rem;align-items:center;}
+@media(min-width:900px){.hero__grid{grid-template-columns:1fr 1fr;}}
+.hero__eyebrow{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+.hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.1;margin-bottom:1.2rem;}
+.hero__sub{font-size:1.05rem;color:rgba(255,255,255,.8);margin-bottom:2rem;max-width:50ch;line-height:1.7;}
+.hero__btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.4rem;}
+.hero__trust{display:flex;flex-wrap:wrap;gap:1rem;}
+.hero__trust-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem;color:rgba(255,255,255,.75);}
+.hero__trust-item svg{color:var(--gold);flex-shrink:0;}
+.hero__stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15);}
+@media(min-width:500px){.hero__stats{grid-template-columns:repeat(4,1fr);}}
+.hero__stat b{display:block;font-family:'Manrope',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;}
+.hero__stat span{font-size:.78rem;color:rgba(255,255,255,.6);}
+.hero__img{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);font-size:4rem;}
+.hero__img img{width:100%;height:100%;object-fit:cover;}
+
+/* TRUST BAR */
+.trust-bar{background:#fff;border-bottom:1px solid var(--border);padding:28px 0;}
+.trust-bar__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+@media(min-width:760px){.trust-bar__grid{grid-template-columns:repeat(4,1fr);}}
+.trust-bar__item{display:flex;align-items:flex-start;gap:.75rem;}
+.trust-bar__icon{width:36px;height:36px;border-radius:8px;background:var(--primary-light);display:grid;place-items:center;flex-shrink:0;color:var(--primary);}
+.trust-bar__item b{display:block;font-size:.9rem;font-weight:700;color:var(--primary-dark);}
+.trust-bar__item span{font-size:.8rem;color:var(--muted);}
+
+/* NECESIDADES */
+.nec__grid{display:grid;gap:1.2rem;margin-top:3rem;}
+@media(min-width:600px){.nec__grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1000px){.nec__grid{grid-template-columns:repeat(5,1fr);}}
+.nec-card{border:1.5px solid var(--border);border-radius:var(--r-lg);padding:1.4rem;transition:border-color .2s,box-shadow .2s;}
+.nec-card:hover{border-color:var(--primary);box-shadow:var(--shadow);}
+.nec-card__icon{width:44px;height:44px;border-radius:10px;background:var(--primary-light);display:grid;place-items:center;color:var(--primary);margin-bottom:.9rem;}
+.nec-card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;color:var(--primary-dark);}
+.nec-card p{font-size:.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.5;}
+.nec-card .btn{font-size:.78rem;padding:.45rem .9rem;}
+
+/* SOLUCIONES PERSONALES */
+.srv__grid{display:grid;gap:1.2rem;margin-top:3rem;}
+@media(min-width:600px){.srv__grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:960px){.srv__grid{grid-template-columns:repeat(4,1fr);}}
+.srv-card{background:#fff;border-radius:var(--r-lg);padding:1.6rem;border:1.5px solid var(--border);transition:box-shadow .2s,border-color .2s;}
+.srv-card:hover{box-shadow:var(--shadow-lg);border-color:var(--primary);}
+.srv-card__icon{width:48px;height:48px;border-radius:12px;background:var(--primary-light);display:grid;place-items:center;color:var(--primary);margin-bottom:1rem;}
+.srv-card h3{font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:.3rem;}
+.srv-card__hl{font-size:.85rem;font-weight:600;color:var(--primary);margin-bottom:.6rem;}
+.srv-card p{font-size:.85rem;color:var(--muted);margin-bottom:1rem;line-height:1.55;}
+.srv-card__tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem;}
+.srv-card__tag{font-size:.7rem;font-weight:600;background:var(--primary-light);color:var(--primary);padding:.2rem .55rem;border-radius:50px;}
+.srv-card .btn{font-size:.8rem;padding:.5rem 1rem;width:100%;justify-content:center;}
+
+/* DIAGNÓSTICO */
+.diagnostico{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;}
+.diag__wrap{max-width:700px;margin:0 auto;}
+.diag__wrap h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.75rem;}
+.diag__wrap>p{color:rgba(255,255,255,.75);margin-bottom:2.5rem;}
+.diag__progress{background:rgba(255,255,255,.2);border-radius:50px;height:6px;margin-bottom:2rem;}
+.diag__bar{background:var(--gold);height:100%;border-radius:50px;transition:width .4s;}
+.diag__step{display:none;}
+.diag__step.active{display:block;}
+.diag__q{font-family:'Manrope',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:1.2rem;}
+.diag__opts{display:grid;gap:.6rem;}
+.diag__opt{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);border-radius:10px;padding:.8rem 1rem;font-size:.92rem;color:#fff;cursor:pointer;transition:all .2s;text-align:left;}
+.diag__opt:hover,.diag__opt.sel{background:rgba(255,255,255,.2);border-color:var(--gold);}
+.diag__nav{display:flex;justify-content:space-between;margin-top:1.5rem;gap:1rem;}
+.diag__field{margin-bottom:1rem;}
+.diag__field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.4rem;color:rgba(255,255,255,.85);}
+.diag__field input,.diag__field select{width:100%;padding:.75rem 1rem;border-radius:10px;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:.92rem;font-family:inherit;}
+.diag__field input::placeholder{color:rgba(255,255,255,.4);}
+.diag__field select option{color:var(--text);background:#fff;}
+.diag__aviso{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:1.5rem;line-height:1.5;}
+
+/* SOBRE LA PROMOTORÍA */
+.sobre__grid{display:grid;gap:3rem;align-items:center;}
+@media(min-width:860px){.sobre__grid{grid-template-columns:1fr 1fr;}}
+.sobre__foto{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;background:var(--primary-light);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:4rem;}
+.sobre__foto img{width:100%;height:100%;object-fit:cover;}
+.sobre__stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.5rem 0 2rem;}
+.sobre__stat{background:var(--bg-alt);border-radius:var(--r);padding:1rem;}
+.sobre__stat b{display:block;font-family:'Manrope',sans-serif;font-size:1.6rem;font-weight:800;color:var(--primary);}
+.sobre__stat span{font-size:.8rem;color:var(--muted);}
+
+/* PROCESO */
+.proceso__steps{max-width:660px;margin:3rem auto 0;display:flex;flex-direction:column;gap:1.5rem;}
+.proceso__step{display:flex;gap:1.2rem;align-items:flex-start;}
+.proceso__num{width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;font-family:'Manrope',sans-serif;font-weight:800;font-size:.95rem;display:grid;place-items:center;flex-shrink:0;}
+.proceso__step h3{font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:.25rem;}
+.proceso__step p{font-size:.9rem;color:var(--muted);}
+.proceso__cta{text-align:center;margin-top:2.5rem;}
+
+/* ASEGURADORAS */
+.aseg__grid{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2.5rem;}
+.aseg__item{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.5rem;font-family:'Manrope',sans-serif;font-weight:700;font-size:.88rem;color:var(--primary-dark);min-width:120px;text-align:center;}
+.aseg__nota{text-align:center;font-size:.8rem;color:var(--muted);margin-top:1.5rem;max-width:520px;margin-left:auto;margin-right:auto;}
+
+/* DIFERENCIADORES */
+.difs__grid{display:grid;gap:1.2rem;margin-top:3rem;}
+@media(min-width:600px){.difs__grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:960px){.difs__grid{grid-template-columns:repeat(3,1fr);}}
+.dif-card{padding:1.5rem;border-radius:var(--r-lg);background:#fff;border:1.5px solid var(--border);}
+.dif-card__icon{width:44px;height:44px;border-radius:10px;background:var(--primary-light);display:grid;place-items:center;color:var(--primary);margin-bottom:.9rem;}
+.dif-card h3{font-size:.97rem;font-weight:700;color:var(--primary-dark);margin-bottom:.4rem;}
+.dif-card p{font-size:.85rem;color:var(--muted);line-height:1.55;}
+
+/* EMPRESAS */
+.empresas{background:linear-gradient(135deg,var(--primary-dark),#1a4a63);color:#fff;}
+.empresas h2{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:.75rem;}
+.empresas>div>p{color:rgba(255,255,255,.75);margin-bottom:2.5rem;}
+.emp__grid{display:grid;gap:1.2rem;margin-bottom:2.5rem;}
+@media(min-width:600px){.emp__grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:960px){.emp__grid{grid-template-columns:repeat(3,1fr);}}
+.emp-card{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:var(--r-lg);padding:1.4rem;transition:background .2s,border-color .2s;}
+.emp-card:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3);}
+.emp-card__icon{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.12);display:grid;place-items:center;color:var(--gold);margin-bottom:.85rem;}
+.emp-card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;}
+.emp-card p{font-size:.83rem;color:rgba(255,255,255,.7);line-height:1.55;}
+.empresas__cta{text-align:center;}
+
+/* EQUIPO */
+.equipo__grid{display:grid;gap:1.2rem;margin-top:3rem;}
+@media(min-width:600px){.equipo__grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:800px){.equipo__grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:1100px){.equipo__grid{grid-template-columns:repeat(4,1fr);}}
+.asesor-card{border-radius:var(--r-lg);border:1.5px solid var(--border);overflow:hidden;transition:box-shadow .2s;}
+.asesor-card:hover{box-shadow:var(--shadow-lg);}
+.asesor-card__foto{aspect-ratio:1;background:var(--primary-light);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:3rem;}
+.asesor-card__foto img{width:100%;height:100%;object-fit:cover;}
+.asesor-card__info{padding:1.2rem;}
+.asesor-card h3{font-size:.95rem;font-weight:700;color:var(--primary-dark);margin-bottom:.15rem;}
+.asesor-card__rol{font-size:.8rem;color:var(--primary);font-weight:600;margin-bottom:.5rem;}
+.asesor-card__tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1rem;}
+.asesor-card__tag{font-size:.68rem;font-weight:600;background:var(--primary-light);color:var(--primary);padding:.18rem .5rem;border-radius:50px;}
+.asesor-card .btn{font-size:.78rem;padding:.4rem .9rem;width:100%;justify-content:center;}
+
+/* TESTIMONIOS */
+.testi__grid{display:grid;gap:1.2rem;margin-top:3rem;}
+@media(min-width:700px){.testi__grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1000px){.testi__grid{grid-template-columns:repeat(3,1fr);}}
+.testi-card{background:#fff;border-radius:var(--r-lg);padding:1.6rem;border:1.5px solid var(--border);}
+.testi-card blockquote{font-size:.92rem;color:var(--text);line-height:1.65;margin-bottom:1rem;font-style:italic;}
+.testi-card__quien{font-size:.8rem;font-weight:600;color:var(--muted);}
+
+/* FAQ */
+.faq__lista{max-width:740px;margin:2.5rem auto 0;border-top:1px solid var(--border);}
+.faq__item{border-bottom:1px solid var(--border);}
+.faq__btn{width:100%;background:none;border:none;text-align:left;padding:1.1rem 2.5rem 1.1rem 0;font-family:'Manrope',sans-serif;font-size:.97rem;font-weight:600;color:var(--primary-dark);cursor:pointer;position:relative;line-height:1.4;}
+.faq__btn::after,.faq__btn::before{content:'';position:absolute;right:4px;top:50%;background:var(--primary);border-radius:2px;transition:transform .3s,opacity .3s;}
+.faq__btn::before{width:12px;height:2px;margin-top:-1px;}
+.faq__btn::after{width:2px;height:12px;margin-top:-6px;margin-right:5px;}
+.faq__btn[aria-expanded="true"]::after{transform:rotate(90deg);opacity:0;}
+.faq__resp{display:none;padding:0 2.5rem .9rem 0;}
+.faq__resp.open{display:block;}
+.faq__resp p{font-size:.9rem;color:var(--muted);line-height:1.65;}
+
+/* FORMULARIO */
+.form-wrap{max-width:700px;margin:0 auto;}
+.form-grid{display:grid;gap:1rem;}
+@media(min-width:600px){.form-grid{grid-template-columns:1fr 1fr;}}
+.form-field{display:flex;flex-direction:column;gap:.35rem;}
+.form-field.full{grid-column:1/-1;}
+.form-field label{font-size:.85rem;font-weight:600;color:var(--primary-dark);}
+.form-field input,.form-field select,.form-field textarea{padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-size:.93rem;font-family:inherit;color:var(--text);background:#fff;transition:border-color .2s;}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--primary);}
+.form-field textarea{resize:vertical;min-height:100px;}
+.form-check{display:flex;align-items:flex-start;gap:.6rem;font-size:.83rem;color:var(--muted);}
+.form-check input{margin-top:3px;flex-shrink:0;}
+.form-aviso{font-size:.78rem;color:var(--muted);text-align:center;margin-top:.75rem;}
+.form-success{text-align:center;padding:2rem;background:var(--primary-light);border-radius:var(--r-lg);display:none;}
+.form-success h3{font-size:1.1rem;font-weight:700;color:var(--primary-dark);margin-bottom:.5rem;}
+.form-success p{font-size:.9rem;color:var(--muted);}
+
+/* CTA FINAL */
+.cta-final{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;}
+.cta-final h2{font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:1rem;}
+.cta-final p{color:rgba(255,255,255,.75);font-size:1.05rem;max-width:54ch;margin:0 auto 2rem;}
+.cta-final__btns{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;}
+
+/* FOOTER */
+.footer{background:var(--primary-dark);color:rgba(255,255,255,.65);padding:56px 0 32px;}
+.footer__grid{display:grid;gap:2.5rem;margin-bottom:2.5rem;}
+@media(min-width:760px){.footer__grid{grid-template-columns:2fr 1fr 1fr;}}
+.footer__brand{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;margin-bottom:.3rem;}
+.footer__sub{font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:1rem;font-weight:500;letter-spacing:.04em;}
+.footer__aviso{font-size:.73rem;line-height:1.6;color:rgba(255,255,255,.38);}
+.footer h4{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.75rem;}
+.footer ul li{margin-bottom:.5rem;}
+.footer ul li a{font-size:.87rem;color:rgba(255,255,255,.55);transition:color .2s;}
+.footer ul li a:hover{color:#fff;}
+.footer__legal{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;font-size:.76rem;color:rgba(255,255,255,.3);}
+.footer__legal a{color:rgba(255,255,255,.3);text-decoration:underline;}
+.footer__legal a:hover{color:rgba(255,255,255,.65);}
+
+/* FLOTANTE */
+.flotante{position:fixed;bottom:96px;right:20px;z-index:90;background:var(--wa);color:#fff;border-radius:50px;padding:.75rem 1.2rem;display:flex;align-items:center;gap:.5rem;box-shadow:0 4px 20px rgba(37,211,102,.4);font-weight:600;font-size:.88rem;transition:transform .2s;}
+.flotante:hover{transform:translateY(-2px);}
+@media(max-width:639px){.flotante{bottom:76px;padding:.65rem 1rem;font-size:.8rem;}}
+
+/* BARRA MÓVIL */
+.barra-movil{display:none;position:fixed;bottom:0;left:0;right:0;z-index:91;background:#fff;border-top:1px solid var(--border);padding:.5rem .75rem;padding-bottom:max(.5rem,env(safe-area-inset-bottom));display:flex;gap:.5rem;}
+@media(min-width:640px){.barra-movil{display:none!important;}}
+.barra-movil a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;padding:.4rem;border-radius:8px;font-size:.7rem;font-weight:600;color:var(--muted);}
+.barra-movil a.wa{background:var(--wa);color:#fff;}
+.barra-movil a.tel{background:var(--primary);color:#fff;}
+
+/* SCROLL REVEAL */
+.rev{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.rev.visible{opacity:1;transform:none;}
+
+@media(max-width:760px){
+  .header__nav,.header__cta .btn--outline{display:none;}
+  .header__menu-btn{display:flex;}
+  .seccion{padding:56px 0;}
+  .hero{padding:110px 0 56px;}
+}
+
+/* WA SVG reutilizable */
+.wa-svg{flex-shrink:0;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="contenedor">
+    <div class="header__inner">
+      <a href="#inicio" class="header__brand">Nexo Protección Financiera<span>Monterrey · Todo México</span></a>
+      <nav class="header__nav" aria-label="Navegación principal">
+        <a href="#soluciones">Soluciones</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="header__cta">
+        <a class="btn btn--outline" href="#contacto" style="padding:.55rem 1.1rem;font-size:.85rem;">Hablar con un asesor</a>
+        <button class="header__menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#soluciones">Soluciones</a>
+  <a href="#proceso">Cómo funciona</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#empresas">Empresas</a>
+  <a href="#equipo">Equipo</a>
+  <a href="#faq">Preguntas frecuentes</a>
+  <a href="#contacto">Contacto</a>
+  <a class="btn btn--wa" href="https://wa.me/528100000000?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Nexo%20Protecci%C3%B3n%20Financiera%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa." target="_blank" rel="noopener">
+    <svg class="wa-svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+    Hablar con un asesor
+  </a>
+</div>
+
+<main id="inicio">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="contenedor">
+    <div class="hero__grid">
+      <div class="rev">
+        <p class="hero__eyebrow">Seguros y Protección Financiera</p>
+        <h1>Protección para lo que has construido y lo que viene</h1>
+        <p class="hero__sub">Nuestro equipo te ayuda a comparar opciones de seguros de vida, retiro, gastos médicos y autos para encontrar una solución adecuada para ti, tu familia o tu empresa.</p>
+        <div class="hero__btns">
+          <a class="btn btn--wa btn--lg" href="https://wa.me/528100000000?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Nexo%20Protecci%C3%B3n%20Financiera%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa." target="_blank" rel="noopener">
+            <svg class="wa-svg" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+            Hablar con un asesor
+          </a>
+          <a class="btn btn--outline-light btn--lg" href="#soluciones">Conocer soluciones</a>
+        </div>
+        <div class="hero__trust">
+          <div class="hero__trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Equipo especializado</div>
+          <div class="hero__trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Opciones de distintas aseguradoras</div>
+          <div class="hero__trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Atención en todo México</div>
+          <div class="hero__trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Acompañamiento continuo</div>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat"><b>16+</b><span>años de experiencia</span></div>
+          <div class="hero__stat"><b>1,850+</b><span>clientes asesorados</span></div>
+          <div class="hero__stat"><b>1,250+</b><span>familias protegidas</span></div>
+          <div class="hero__stat"><b>28</b><span>asesores especializados</span></div>
+        </div>
+      </div>
+      <div class="hero__img rev" data-d="1" aria-label="Equipo de asesores de Nexo Protección Financiera">
+        <span aria-hidden="true" style="font-size:5rem;">👥</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="contenedor">
+    <div class="trust-bar__grid">
+      <div class="trust-bar__item rev"><div class="trust-bar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><b>Asesoría sin tecnicismos</b><span>Explicamos con claridad cada opción</span></div></div>
+      <div class="trust-bar__item rev" data-d="1"><div class="trust-bar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></div><div><b>Comparación de alternativas</b><span>Distintas opciones según tu perfil</span></div></div>
+      <div class="trust-bar__item rev" data-d="2"><div class="trust-bar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><b>Seguimiento de renovaciones</b><span>Te avisamos antes del vencimiento</span></div></div>
+      <div class="trust-bar__item rev" data-d="3"><div class="trust-bar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><b>Acompañamiento en siniestros</b><span>Estamos contigo cuando lo necesitas</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NECESIDADES -->
+<section class="seccion seccion--alt">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Empieza aquí</p>
+      <h2>¿Qué quieres proteger o planear?</h2>
+      <p>Selecciona tu prioridad y conoce las soluciones que nuestro equipo puede ayudarte a evaluar.</p>
+    </div>
+    <div class="nec__grid">
+      <div class="nec-card rev"><div class="nec-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>El futuro de mi familia</h3><p>Estabilidad económica para los tuyos ante cualquier eventualidad.</p><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20quiero%20conocer%20opciones%20para%20proteger%20a%20mi%20familia." target="_blank" rel="noopener">Proteger a mi familia</a></div>
+      <div class="nec-card rev" data-d="1"><div class="nec-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Mi retiro</h3><p>Comienza a construir un patrimonio para tu retiro con tranquilidad.</p><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20me%20interesa%20planear%20mi%20retiro." target="_blank" rel="noopener">Planear mi retiro</a></div>
+      <div class="nec-card rev" data-d="2"><div class="nec-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Mi salud y patrimonio</h3><p>Atención médica privada sin poner en riesgo lo que has construido.</p><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20quiero%20cotizar%20gastos%20m%C3%A9dicos." target="_blank" rel="noopener">Proteger mi salud</a></div>
+      <div class="nec-card rev" data-d="3"><div class="nec-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Mi automóvil</h3><p>Respaldo ante accidentes, daños y robo en todo México.</p><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20quiero%20cotizar%20mi%20auto." target="_blank" rel="noopener">Asegurar mi auto</a></div>
+      <div class="nec-card rev" data-d="4"><div class="nec-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div><h3>Mi empresa</h3><p>Beneficios y protección para tu equipo y tus activos.</p><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20me%20interesa%20asesor%C3%ADa%20empresarial." target="_blank" rel="noopener">Proteger mi empresa</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUCIONES PERSONALES -->
+<section class="seccion" id="soluciones">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Soluciones Personales</p>
+      <h2>Protección para cada etapa de tu vida</h2>
+      <p>Conoce opciones para cuidar a tu familia, tu salud, tu patrimonio y tu retiro.</p>
+    </div>
+    <div class="srv__grid">
+      <div class="srv-card rev"><div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Seguro de vida</h3><p class="srv-card__hl">Protección financiera para quienes más te importan</p><p>Ayuda a mantener la estabilidad económica de tu familia ante fallecimiento, invalidez u otras situaciones cubiertas.</p><div class="srv-card__tags"><span class="srv-card__tag">Fallecimiento</span><span class="srv-card__tag">Invalidez</span><span class="srv-card__tag">Enfermedades graves</span></div><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20quiero%20conocer%20opciones%20de%20seguro%20de%20vida." target="_blank" rel="noopener">Conocer seguro de vida</a></div>
+      <div class="srv-card rev" data-d="1"><div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><h3>Plan Personal de Retiro</h3><p class="srv-card__hl">Construye desde hoy el retiro que quieres</p><p>Crea un ahorro de largo plazo y prepara una fuente de ingresos para el futuro.</p><div class="srv-card__tags"><span class="srv-card__tag">Ahorro</span><span class="srv-card__tag">Proyección</span><span class="srv-card__tag">Beneficios fiscales</span></div><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20me%20interesa%20un%20plan%20de%20retiro." target="_blank" rel="noopener">Proyectar mi retiro</a></div>
+      <div class="srv-card rev" data-d="2"><div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Gastos médicos mayores</h3><p class="srv-card__hl">Cuida tu salud sin poner en riesgo tu patrimonio</p><p>Obtén respaldo ante enfermedades, accidentes, hospitalizaciones y procedimientos médicos cubiertos.</p><div class="srv-card__tags"><span class="srv-card__tag">Hospitalización</span><span class="srv-card__tag">Cirugías</span><span class="srv-card__tag">Emergencias</span></div><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20quiero%20cotizar%20gastos%20m%C3%A9dicos." target="_blank" rel="noopener">Cotizar gastos médicos</a></div>
+      <div class="srv-card rev" data-d="3"><div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Seguro de auto</h3><p class="srv-card__hl">Conduce con respaldo ante cualquier imprevisto</p><p>Protege tu automóvil ante accidentes, daños, robo y responsabilidad frente a terceros.</p><div class="srv-card__tags"><span class="srv-card__tag">Responsabilidad civil</span><span class="srv-card__tag">Robo</span><span class="srv-card__tag">Asistencia vial</span></div><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20quiero%20cotizar%20mi%20auto." target="_blank" rel="noopener">Cotizar mi auto</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section class="seccion diagnostico" id="diagnostico">
+  <div class="contenedor">
+    <div class="diag__wrap">
+      <p class="eyebrow" style="text-align:center;">Orientación gratuita</p>
+      <h2 class="rev" style="text-align:center;">Descubre qué protección necesitas</h2>
+      <p class="rev" data-d="1" style="text-align:center;">Responde seis preguntas y uno de nuestros asesores se comunicará contigo con orientación personalizada.</p>
+      <div class="diag__progress rev" data-d="1"><div class="diag__bar" id="diagBar" style="width:14%"></div></div>
+      <form id="diagForm">
+        <div class="diag__step active" id="s1"><p class="diag__q">1 de 6 · ¿Qué deseas proteger?</p><div class="diag__opts"><button type="button" class="diag__opt" data-q="1">A mi familia si llegara a faltarme</button><button type="button" class="diag__opt" data-q="1">Mi retiro y ahorro</button><button type="button" class="diag__opt" data-q="1">Mi salud y la de mi familia</button><button type="button" class="diag__opt" data-q="1">Mi automóvil</button><button type="button" class="diag__opt" data-q="1">Mi empresa o negocio</button></div><div class="diag__nav"><span></span><button type="button" class="btn btn--outline-light" id="n1" disabled>Siguiente →</button></div></div>
+        <div class="diag__step" id="s2"><p class="diag__q">2 de 6 · ¿Tienes dependientes económicos?</p><div class="diag__opts"><button type="button" class="diag__opt" data-q="2">Sí, dependen de mis ingresos</button><button type="button" class="diag__opt" data-q="2">No por ahora</button><button type="button" class="diag__opt" data-q="2">No actualmente, pero lo planeo</button></div><div class="diag__nav"><button type="button" class="btn btn--outline-light" id="p2">← Anterior</button><button type="button" class="btn btn--outline-light" id="n2" disabled>Siguiente →</button></div></div>
+        <div class="diag__step" id="s3"><p class="diag__q">3 de 6 · ¿Cuál es tu rango de edad?</p><div class="diag__opts"><button type="button" class="diag__opt" data-q="3">18 a 29 años</button><button type="button" class="diag__opt" data-q="3">30 a 45 años</button><button type="button" class="diag__opt" data-q="3">46 a 60 años</button><button type="button" class="diag__opt" data-q="3">Más de 60 años</button></div><div class="diag__nav"><button type="button" class="btn btn--outline-light" id="p3">← Anterior</button><button type="button" class="btn btn--outline-light" id="n3" disabled>Siguiente →</button></div></div>
+        <div class="diag__step" id="s4"><p class="diag__q">4 de 6 · ¿Ya cuentas con algún seguro?</p><div class="diag__opts"><button type="button" class="diag__opt" data-q="4">No tengo ninguno</button><button type="button" class="diag__opt" data-q="4">Tengo seguro de vida</button><button type="button" class="diag__opt" data-q="4">Tengo gastos médicos</button><button type="button" class="diag__opt" data-q="4">Tengo varios seguros</button></div><div class="diag__nav"><button type="button" class="btn btn--outline-light" id="p4">← Anterior</button><button type="button" class="btn btn--outline-light" id="n4" disabled>Siguiente →</button></div></div>
+        <div class="diag__step" id="s5"><p class="diag__q">5 de 6 · ¿Qué te interesa principalmente?</p><div class="diag__opts"><button type="button" class="diag__opt" data-q="5">Protección para mi familia</button><button type="button" class="diag__opt" data-q="5">Ahorro y acumulación</button><button type="button" class="diag__opt" data-q="5">Beneficios fiscales</button><button type="button" class="diag__opt" data-q="5">Atención médica privada</button></div><div class="diag__nav"><button type="button" class="btn btn--outline-light" id="p5">← Anterior</button><button type="button" class="btn btn--outline-light" id="n5" disabled>Siguiente →</button></div></div>
+        <div class="diag__step" id="s6"><p class="diag__q">6 de 6 · ¿Prefieres atención presencial o videollamada?</p><div class="diag__opts"><button type="button" class="diag__opt" data-q="6">Presencial (Monterrey y área metropolitana)</button><button type="button" class="diag__opt" data-q="6">Videollamada</button><button type="button" class="diag__opt" data-q="6">WhatsApp o chat</button><button type="button" class="diag__opt" data-q="6">Sin preferencia</button></div><div class="diag__nav"><button type="button" class="btn btn--outline-light" id="p6">← Anterior</button><button type="button" class="btn btn--outline-light" id="n6" disabled>Siguiente →</button></div></div>
+        <div class="diag__step" id="s7"><p class="diag__q">¡Casi listo! ¿A quién le enviamos tu orientación?</p>
+          <div class="diag__field"><label>Nombre *</label><input type="text" placeholder="Tu nombre completo" required></div>
+          <div class="diag__field"><label>WhatsApp *</label><input type="tel" placeholder="+52 81 0000 0000" required></div>
+          <div class="diag__field"><label>Correo</label><input type="email" placeholder="correo@ejemplo.com"></div>
+          <div class="diag__field"><label>Ciudad</label><input type="text" placeholder="Ciudad de México, Monterrey…"></div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="p7">← Anterior</button><button type="submit" class="btn btn--gold">Recibir orientación</button></div>
+          <p class="diag__aviso">Gracias. Uno de nuestros asesores revisará tus respuestas y se comunicará contigo. El resultado es orientativo y no constituye cotización ni aceptación por parte de una aseguradora.</p>
+        </div>
+        <div class="diag__step" id="sOk" style="text-align:center;padding:2rem 0;"><div style="font-size:3rem;margin-bottom:1rem;">✅</div><h3 style="font-family:'Manrope',sans-serif;font-size:1.3rem;margin-bottom:.75rem;">¡Solicitud recibida!</h3><p style="color:rgba(255,255,255,.75);">Uno de nuestros asesores revisará tus respuestas y se comunicará contigo pronto.</p></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE LA PROMOTORÍA -->
+<section class="seccion" id="nosotros">
+  <div class="contenedor">
+    <div class="sobre__grid">
+      <div class="sobre__foto rev"><span aria-hidden="true" style="font-size:5rem;">🏢</span></div>
+      <div class="rev" data-d="1">
+        <p class="eyebrow">Conoce Nexo</p>
+        <h2>Un equipo que te acompaña cuando realmente lo necesitas</h2>
+        <p style="color:var(--muted);line-height:1.75;margin-bottom:1.2rem;">En Nexo Protección Financiera ayudamos a personas, familias y empresas a tomar mejores decisiones de protección.</p>
+        <p style="color:var(--muted);line-height:1.75;margin-bottom:1.2rem;">Nuestro equipo analiza tus necesidades, compara alternativas y te explica de forma clara las coberturas, costos y condiciones de cada opción.</p>
+        <p style="color:var(--muted);line-height:1.75;margin-bottom:1.5rem;">El acompañamiento no termina con la contratación. Damos seguimiento a renovaciones, actualizaciones y procesos relacionados con el uso de tu seguro.</p>
+        <div class="sobre__stats">
+          <div class="sobre__stat"><b>16+</b><span>años de experiencia</span></div>
+          <div class="sobre__stat"><b>1,850+</b><span>clientes asesorados</span></div>
+          <div class="sobre__stat"><b>1,250+</b><span>familias protegidas</span></div>
+          <div class="sobre__stat"><b>28</b><span>asesores especializados</span></div>
+        </div>
+        <a class="btn btn--wa" href="https://wa.me/528100000000?text=Hola%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20Nexo%20Protecci%C3%B3n%20Financiera." target="_blank" rel="noopener">
+          <svg class="wa-svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+          Conocer al equipo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="seccion seccion--alt" id="proceso">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Proceso</p>
+      <h2>Así te ayudamos a elegir una mejor protección</h2>
+    </div>
+    <div class="proceso__steps">
+      <div class="proceso__step rev"><div class="proceso__num">1</div><div><h3>Conocemos tus necesidades</h3><p>Conversamos sobre tu situación, prioridades, objetivos y presupuesto.</p></div></div>
+      <div class="proceso__step rev" data-d="1"><div class="proceso__num">2</div><div><h3>Analizamos alternativas</h3><p>Revisamos opciones de diferentes aseguradoras según tu perfil.</p></div></div>
+      <div class="proceso__step rev" data-d="2"><div class="proceso__num">3</div><div><h3>Te explicamos coberturas, costos y condiciones</h3><p>Sin tecnicismos. Cada exclusión, deducible y coaseguro queda claro.</p></div></div>
+      <div class="proceso__step rev" data-d="3"><div class="proceso__num">4</div><div><h3>Te acompañamos en la contratación</h3><p>Gestionamos la solicitud y te orientamos con la documentación.</p></div></div>
+      <div class="proceso__step rev" data-d="4"><div class="proceso__num">5</div><div><h3>Seguimos contigo en renovaciones y siniestros</h3><p>Tu protección evoluciona contigo. Estamos disponibles cuando lo necesitas.</p></div></div>
+    </div>
+    <div class="proceso__cta rev"><a class="btn btn--primary btn--lg" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20quiero%20comenzar%20mi%20asesor%C3%ADa." target="_blank" rel="noopener">Comenzar mi asesoría</a></div>
+  </div>
+</section>
+
+<!-- ASEGURADORAS -->
+<section class="seccion">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Respaldo</p>
+      <h2>Opciones respaldadas por compañías reconocidas</h2>
+      <p>Trabajamos con diferentes aseguradoras para ayudarte a conocer alternativas y encontrar una solución adecuada para tus necesidades.</p>
+    </div>
+    <div class="aseg__grid rev" data-d="1">
+      <div class="aseg__item">GNP Seguros</div>
+      <div class="aseg__item">Mapfre</div>
+      <div class="aseg__item">AXA</div>
+      <div class="aseg__item">Metlife</div>
+      <div class="aseg__item">Allianz</div>
+      <div class="aseg__item">Seguros BBVA</div>
+      <div class="aseg__item">HDI Seguros</div>
+    </div>
+    <p class="aseg__nota rev" data-d="2">Los productos y coberturas disponibles dependen de cada aseguradora. La contratación está sujeta a aceptación por parte de la compañía correspondiente. Los logotipos solo deben usarse cuando exista autorización o relación comercial vigente.</p>
+  </div>
+</section>
+
+<!-- DIFERENCIADORES -->
+<section class="seccion seccion--alt">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Por qué Nexo</p>
+      <h2>Más que una cotización, recibes el respaldo de un equipo</h2>
+    </div>
+    <div class="difs__grid">
+      <div class="dif-card rev"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Equipo especializado</h3><p>28 asesores con experiencia en distintos productos y perfiles de clientes.</p></div>
+      <div class="dif-card rev" data-d="1"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Explicaciones claras</h3><p>Sin jerga técnica. Coberturas, exclusiones y condiciones en lenguaje sencillo.</p></div>
+      <div class="dif-card rev" data-d="2"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Comparación de alternativas</h3><p>Revisamos opciones de distintas aseguradoras para darte un panorama más amplio.</p></div>
+      <div class="dif-card rev" data-d="3"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3>Seguimiento de renovaciones</h3><p>Te avisamos antes de que venza tu póliza para mantener tu protección activa.</p></div>
+      <div class="dif-card rev" data-d="4"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Apoyo en trámites</h3><p>Te acompañamos con documentación y gestiones durante todo el proceso.</p></div>
+      <div class="dif-card rev" data-d="5"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Acompañamiento en siniestros</h3><p>Cuando más lo necesitas, estamos contigo para orientarte en el proceso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPRESAS -->
+<section class="seccion empresas" id="empresas">
+  <div class="contenedor">
+    <div style="max-width:700px;margin:0 auto;text-align:center;">
+      <p class="eyebrow rev" style="text-align:center;">Soluciones Empresariales</p>
+      <h2 class="rev">Protección para tu empresa y tus colaboradores</h2>
+      <p class="rev" data-d="1">Diseñamos alternativas de protección para fortalecer los beneficios de tu equipo, cuidar activos y reducir el impacto de ciertos riesgos.</p>
+    </div>
+    <div class="emp__grid" style="margin-top:2.5rem;">
+      <div class="emp-card rev"><div class="emp-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Vida colectivo</h3><p>Protección para colaboradores y familias conforme a las condiciones contratadas.</p></div>
+      <div class="emp-card rev" data-d="1"><div class="emp-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Gastos médicos colectivos</h3><p>Beneficio de salud para atraer, proteger y retener talento en tu organización.</p></div>
+      <div class="emp-card rev" data-d="2"><div class="emp-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Seguro de flotillas</h3><p>Protección para los vehículos utilizados dentro de la operación de tu empresa.</p></div>
+      <div class="emp-card rev" data-d="3"><div class="emp-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Hombre clave</h3><p>Ayuda a reducir el impacto financiero por la ausencia de una persona estratégica.</p></div>
+      <div class="emp-card rev" data-d="4"><div class="emp-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div><h3>Beneficios para colaboradores</h3><p>Esquemas de protección y previsión según las necesidades de tu empresa.</p></div>
+    </div>
+    <div class="empresas__cta rev" data-d="2">
+      <a class="btn btn--gold btn--lg" href="https://wa.me/528100000000?text=Hola%20Nexo%2C%20me%20interesa%20recibir%20asesor%C3%ADa%20sobre%20seguros%20y%20beneficios%20para%20mi%20empresa." target="_blank" rel="noopener">Solicitar asesoría empresarial</a>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="seccion" id="equipo">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Nuestro equipo</p>
+      <h2>Conoce al equipo que te acompaña</h2>
+      <p>Asesores especializados listos para ayudarte a encontrar la solución adecuada.</p>
+    </div>
+    <div class="equipo__grid">
+      <div class="asesor-card rev"><div class="asesor-card__foto"><span aria-hidden="true">👤</span></div><div class="asesor-card__info"><h3>Ana González</h3><p class="asesor-card__rol">Directora de Asesoría</p><div class="asesor-card__tags"><span class="asesor-card__tag">Vida</span><span class="asesor-card__tag">PPR</span><span class="asesor-card__tag">GMM</span></div><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%2C%20quisiera%20hablar%20con%20Ana%20González." target="_blank" rel="noopener">Contactar</a></div></div>
+      <div class="asesor-card rev" data-d="1"><div class="asesor-card__foto"><span aria-hidden="true">👤</span></div><div class="asesor-card__info"><h3>Carlos Mendoza</h3><p class="asesor-card__rol">Asesor Empresarial</p><div class="asesor-card__tags"><span class="asesor-card__tag">Empresas</span><span class="asesor-card__tag">Flotillas</span><span class="asesor-card__tag">GMM Colectivo</span></div><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%2C%20quisiera%20hablar%20con%20Carlos%20Mendoza." target="_blank" rel="noopener">Contactar</a></div></div>
+      <div class="asesor-card rev" data-d="2"><div class="asesor-card__foto"><span aria-hidden="true">👤</span></div><div class="asesor-card__info"><h3>Laura Ramírez</h3><p class="asesor-card__rol">Asesora de Protección Personal</p><div class="asesor-card__tags"><span class="asesor-card__tag">Vida</span><span class="asesor-card__tag">GMM</span><span class="asesor-card__tag">Auto</span></div><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%2C%20quisiera%20hablar%20con%20Laura%20Ram%C3%ADrez." target="_blank" rel="noopener">Contactar</a></div></div>
+      <div class="asesor-card rev" data-d="3"><div class="asesor-card__foto"><span aria-hidden="true">👤</span></div><div class="asesor-card__info"><h3>Roberto Soto</h3><p class="asesor-card__rol">Asesor de Retiro y PPR</p><div class="asesor-card__tags"><span class="asesor-card__tag">PPR</span><span class="asesor-card__tag">Vida</span><span class="asesor-card__tag">Fiscal</span></div><a class="btn btn--primary" href="https://wa.me/528100000000?text=Hola%2C%20quisiera%20hablar%20con%20Roberto%20Soto." target="_blank" rel="noopener">Contactar</a></div></div>
+    </div>
+    <p style="text-align:center;font-size:.8rem;color:var(--muted);margin-top:1.5rem;">Sustituir por perfiles reales del equipo con fotografías y datos autorizados.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="seccion seccion--alt" id="testimonios">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Opiniones</p>
+      <h2>Confianza construida con asesoría y acompañamiento</h2>
+      <p>Sustituir por testimonios reales con autorización del cliente.</p>
+    </div>
+    <div class="testi__grid">
+      <div class="testi-card rev"><blockquote>"Nos explicaron las opciones con claridad y pudimos elegir una solución adecuada para nuestra familia."</blockquote><p class="testi-card__quien">— Cliente · Seguro de vida y GMM</p></div>
+      <div class="testi-card rev" data-d="1"><blockquote>"El equipo nos ha acompañado en renovaciones y siempre responde cuando tenemos dudas."</blockquote><p class="testi-card__quien">— Cliente · Plan Personal de Retiro</p></div>
+      <div class="testi-card rev" data-d="2"><blockquote>"Contratamos GMM colectivo para nuestra empresa. El proceso fue claro y el seguimiento ha sido excelente."</blockquote><p class="testi-card__quien">— Cliente · Soluciones empresariales</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="seccion" id="faq">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Resuelve tus dudas antes de comenzar</h2>
+    </div>
+    <div class="faq__lista">
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f1" id="fb1">¿La asesoría tiene costo?</button><div class="faq__resp" id="f1"><p>No. La asesoría es gratuita. Nuestra compensación la recibimos de las aseguradoras en caso de contratación. Puedes recibir orientación y comparar opciones sin ningún compromiso.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f2" id="fb2">¿Trabajan con diferentes aseguradoras?</button><div class="faq__resp" id="f2"><p>Sí. Trabajamos con varias aseguradoras reconocidas para poder mostrarte alternativas. No trabajamos con todas las compañías del mercado, pero revisamos distintas opciones según tu perfil y presupuesto.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f3" id="fb3">¿Qué información necesito para cotizar?</button><div class="faq__resp" id="f3"><p>Depende del producto. Para gastos médicos o vida generalmente necesitamos edad, estado de salud general y suma asegurada aproximada. Para auto, los datos del vehículo. En la primera llamada te orientamos sobre qué necesitamos.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f4" id="fb4">¿Puedo contratar en línea?</button><div class="faq__resp" id="f4"><p>Sí. La asesoría y la contratación pueden realizarse por videollamada, WhatsApp o de forma presencial en Monterrey, según lo que prefieras.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f5" id="fb5">¿Qué beneficios fiscales puede tener un PPR?</button><div class="faq__resp" id="f5"><p>Los Planes Personales de Retiro pueden ser deducibles de impuestos según los requisitos de la Ley del ISR. Los beneficios dependen de la situación fiscal de cada persona. Se recomienda consultar a un especialista fiscal.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f6" id="fb6">¿Me ayudan en caso de siniestro?</button><div class="faq__resp" id="f6"><p>Sí. Te orientamos sobre los pasos a seguir, la documentación necesaria y hacemos seguimiento del proceso con la aseguradora. No resolvemos directamente los siniestros, pero estamos contigo durante el proceso.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f7" id="fb7">¿Atienden empresas?</button><div class="faq__resp" id="f7"><p>Sí. Contamos con asesores especializados en soluciones empresariales: vida colectivo, gastos médicos colectivos, flotillas, hombre clave y beneficios para colaboradores. Contáctanos para una asesoría sin costo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO -->
+<section class="seccion seccion--alt" id="contacto">
+  <div class="contenedor">
+    <div class="medida rev" style="margin-bottom:2.5rem;">
+      <p class="eyebrow">Contacto</p>
+      <h2>Recibe una asesoría personalizada</h2>
+    </div>
+    <div class="form-wrap">
+      <form id="contactForm" class="form-grid rev" data-d="1">
+        <div class="form-field"><label for="cN">Nombre *</label><input type="text" id="cN" required placeholder="Tu nombre completo"></div>
+        <div class="form-field"><label for="cW">WhatsApp *</label><input type="tel" id="cW" required placeholder="+52 81 0000 0000"></div>
+        <div class="form-field"><label for="cE">Correo *</label><input type="email" id="cE" required placeholder="correo@ejemplo.com"></div>
+        <div class="form-field"><label for="cC">Ciudad</label><input type="text" id="cC" placeholder="Monterrey, CDMX…"></div>
+        <div class="form-field full"><label for="cT">Tipo de cliente</label>
+          <select id="cT"><option value="">Selecciona una opción</option><option>Persona</option><option>Familia</option><option>Profesionista independiente</option><option>Empresa</option></select>
+        </div>
+        <div class="form-field full"><label for="cP">Producto de interés</label>
+          <select id="cP"><option value="">Selecciona una opción</option><option>Seguro de vida</option><option>Plan Personal de Retiro</option><option>Gastos médicos mayores</option><option>Seguro de auto</option><option>Soluciones empresariales</option><option>No estoy seguro</option></select>
+        </div>
+        <div class="form-field full"><label for="cH">Horario preferido</label>
+          <select id="cH"><option value="">Selecciona una opción</option><option>Mañana (9:00 – 12:00)</option><option>Mediodía (12:00 – 15:00)</option><option>Tarde (15:00 – 18:00)</option></select>
+        </div>
+        <div class="form-field full"><label for="cM">Mensaje (opcional)</label><textarea id="cM" placeholder="Cuéntanos brevemente qué quieres proteger o planear."></textarea></div>
+        <div class="form-field full"><label class="form-check"><input type="checkbox" required> He leído y acepto el <a href="#" style="color:var(--primary);text-decoration:underline;">aviso de privacidad</a>.</label></div>
+        <div class="form-field full" style="text-align:center;">
+          <button type="submit" class="btn btn--primary btn--lg" style="width:100%;max-width:320px;justify-content:center;">Enviar solicitud</button>
+          <p class="form-aviso" style="margin-top:.75rem;">Recibimos tu solicitud. Uno de nuestros asesores se comunicará contigo para conocer tus necesidades y explicar los siguientes pasos.<br>El envío no representa contratación, aprobación ni emisión de póliza.</p>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess"><h3>¡Solicitud recibida!</h3><p>Uno de nuestros asesores se comunicará contigo pronto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="seccion cta-final">
+  <div class="contenedor">
+    <h2 class="rev">La mejor protección comienza con una buena decisión</h2>
+    <p class="rev" data-d="1">Recibe asesoría personalizada y conoce opciones para proteger a tu familia, tu salud, tu patrimonio, tu empresa y tu futuro.</p>
+    <div class="cta-final__btns rev" data-d="2">
+      <a class="btn btn--wa btn--lg" href="https://wa.me/528100000000?text=Hola%2C%20quiero%20hablar%20con%20un%20asesor%20de%20Nexo." target="_blank" rel="noopener">
+        <svg class="wa-svg" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+        Hablar con un asesor
+      </a>
+      <a class="btn btn--outline-light btn--lg" href="#contacto">Agendar una reunión</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="contenedor">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__brand">Nexo Protección Financiera</p>
+        <p class="footer__sub">Monterrey, Nuevo León · Atención en todo México</p>
+        <p class="footer__aviso">La información presentada es de carácter informativo. Las coberturas, costos, deducibles, coaseguros, exclusiones, periodos de espera y demás condiciones dependen de cada aseguradora y producto. La contratación está sujeta a evaluación, aceptación y emisión por parte de la aseguradora correspondiente.<br><br>Los beneficios fiscales dependen de las características del producto, del cumplimiento de los requisitos legales aplicables y de la situación particular de cada persona. Se recomienda consultar a un especialista fiscal.</p>
+      </div>
+      <div>
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="#soluciones">Seguro de vida</a></li>
+          <li><a href="#soluciones">Plan de Retiro</a></li>
+          <li><a href="#soluciones">Gastos médicos</a></li>
+          <li><a href="#soluciones">Seguro de auto</a></li>
+          <li><a href="#empresas">Soluciones empresariales</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+528100000000">+52 81 0000 0000</a></li>
+          <li><a href="mailto:contacto@nexoproteccion.mx">contacto@nexoproteccion.mx</a></li>
+          <li><a href="https://wa.me/528100000000" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#equipo">Conocer al equipo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© <span id="anio"></span> Nexo Protección Financiera. Monterrey, Nuevo León.</span>
+      <span>Sitio desarrollado por <a href="https://magueystudio.mx" target="_blank" rel="noopener">Maguey Studio</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOTANTE -->
+<a class="flotante" href="https://wa.me/528100000000?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Nexo%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa." target="_blank" rel="noopener" aria-label="WhatsApp Nexo">
+  <svg class="wa-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+  WhatsApp
+</a>
+
+<!-- BARRA MÓVIL -->
+<div class="barra-movil">
+  <a href="tel:+528100000000" class="tel">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Llamar
+  </a>
+  <a href="https://wa.me/528100000000?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Nexo%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa." target="_blank" rel="noopener" class="wa">
+    <svg class="wa-svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"InsuranceAgency","@id":"#nexo","name":"Nexo Protección Financiera","description":"Asesoría en seguros de vida, PPR, gastos médicos, autos y soluciones empresariales en México.","address":{"@type":"PostalAddress","addressLocality":"Monterrey","addressRegion":"Nuevo León","addressCountry":"MX"},"telephone":"+528100000000","email":"contacto@nexoproteccion.mx","areaServed":"MX"},
+  {"@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"¿La asesoría tiene costo?","acceptedAnswer":{"@type":"Answer","text":"No. La asesoría es gratuita."}},
+    {"@type":"Question","name":"¿Trabajan con diferentes aseguradoras?","acceptedAnswer":{"@type":"Answer","text":"Sí, trabajamos con varias aseguradoras reconocidas para mostrarte alternativas."}},
+    {"@type":"Question","name":"¿Atienden empresas?","acceptedAnswer":{"@type":"Answer","text":"Sí. Contamos con asesores especializados en soluciones empresariales."}}
+  ]}
+]}
+</script>
+
+<script>
+document.getElementById('anio').textContent = new Date().getFullYear();
+
+// Header scroll
+var hdr = document.getElementById('header');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+
+// Menú móvil
+var mBtn=document.getElementById('menuBtn'),mMenu=document.getElementById('mobileMenu'),mOpen=false;
+function toggleMenu(o){mOpen=o;mMenu.classList.toggle('open',o);mBtn.setAttribute('aria-expanded',o);mBtn.innerHTML=o?'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>':'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';}
+mBtn.addEventListener('click',function(){toggleMenu(!mOpen);});
+mMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false);});});
+
+// Scroll reveal
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var d=x.target.dataset.d?parseFloat(x.target.dataset.d)*80:0;setTimeout(function(){x.target.classList.add('visible');},d);io.unobserve(x.target);}});},{threshold:.12});document.querySelectorAll('.rev').forEach(function(el){io.observe(el);});}
+
+// FAQ
+document.querySelectorAll('.faq__btn').forEach(function(btn){btn.addEventListener('click',function(){var exp=this.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq__btn').forEach(function(b){b.setAttribute('aria-expanded','false');document.getElementById(b.getAttribute('aria-controls')).classList.remove('open');});if(!exp){this.setAttribute('aria-expanded','true');document.getElementById(this.getAttribute('aria-controls')).classList.add('open');}});});
+
+// Diagnóstico
+(function(){
+  var steps=['s1','s2','s3','s4','s5','s6','s7','sOk'];
+  var cur=0;
+  var bar=document.getElementById('diagBar');
+  function show(n){steps.forEach(function(id){document.getElementById(id).classList.remove('active');});document.getElementById(steps[n]).classList.add('active');cur=n;if(bar)bar.style.width=Math.round(((n+1)/steps.length)*100)+'%';}
+  function setupQ(q,nId){document.querySelectorAll('.diag__opt[data-q="'+q+'"]').forEach(function(o){o.addEventListener('click',function(){document.querySelectorAll('.diag__opt[data-q="'+q+'"]').forEach(function(x){x.classList.remove('sel');});this.classList.add('sel');var b=document.getElementById(nId);if(b)b.removeAttribute('disabled');});});}
+  setupQ('1','n1');setupQ('2','n2');setupQ('3','n3');setupQ('4','n4');setupQ('5','n5');setupQ('6','n6');
+  ['n1','n2','n3','n4','n5','n6'].forEach(function(id,i){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){show(i+1);});});
+  ['p2','p3','p4','p5','p6','p7'].forEach(function(id,i){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){show(i);});});
+  var df=document.getElementById('diagForm');
+  if(df)df.addEventListener('submit',function(e){e.preventDefault();show(7);});
+})();
+
+// Formulario contacto
+var cf=document.getElementById('contactForm');
+if(cf){cf.addEventListener('submit',function(e){e.preventDefault();cf.style.display='none';document.getElementById('formSuccess').style.display='block';});}
+</script>
+</body>
+</html>

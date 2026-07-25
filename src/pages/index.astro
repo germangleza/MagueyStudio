@@ -1,0 +1,590 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Maguey Studio® — Agencia Digital | Páginas Web, Ads, Redes Sociales & IA"
+  description="Agencia digital. Páginas web de alto rendimiento, Google Ads, Meta Ads, redes sociales y automatización con IA. Optimizados para SEO y recomendados por ChatGPT (GEO)."
+  canonical="https://magueystudio.mx/"
+  ogTitle="Maguey Studio® — Agencia Digital"
+  ogDescription="Páginas web, publicidad digital, redes sociales y automatización con IA para negocios en todo México."
+  isHome={true}
+>
+<script type="application/ld+json" slot="head" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Maguey Studio",
+  "alternateName": "Maguey Studio®",
+  "description": "Agencia digital especializada en páginas web de alto rendimiento, publicidad digital (Google Ads y Meta Ads), gestión de redes sociales y automatización con inteligencia artificial. Optimización GEO para que tu negocio sea recomendado por ChatGPT.",
+  "url": "https://magueystudio.mx/",
+  "logo": "https://magueystudio.mx/logo.png",
+  "image": "https://magueystudio.mx/logo.png",
+  "telephone": "+525560663926",
+  "address": [
+    {"@type": "PostalAddress", "addressLocality": "Tuxtla Gutiérrez", "addressRegion": "Chiapas", "addressCountry": "MX"},
+    {"@type": "PostalAddress", "addressLocality": "Tijuana", "addressRegion": "Baja California", "addressCountry": "MX"},
+    {"@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressCountry": "MX"}
+  ],
+  "geo": { "@type": "GeoCoordinates", "latitude": "16.7521", "longitude": "-93.1152" },
+  "areaServed": "MX",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios Digitales",
+    "itemListElement": [
+      {"@type": "Offer","itemOffered": {"@type": "Service","name": "Branding e Identidad","description": "Logotipo, identidad visual, paleta de colores y tipografías para una marca profesional y consistente."}},
+      {"@type": "Offer","itemOffered": {"@type": "Service","name": "Páginas Web","description": "Sitios web diseñados para convertir visitas en clientes. Rápidos, optimizados para Google y listos para ser recomendados por ChatGPT."}},
+      {"@type": "Offer","itemOffered": {"@type": "Service","name": "Publicidad Digital","description": "Campañas en Google Ads y Meta Ads que llevan los clientes correctos hacia tu negocio con el menor gasto posible."}},
+      {"@type": "Offer","itemOffered": {"@type": "Service","name": "Contenido & Redes","description": "Contenido estratégico, imágenes y videos con IA para posicionar tu marca y convertir seguidores en clientes."}},
+      {"@type": "Offer","itemOffered": {"@type": "Service","name": "Automatización & IA","description": "Sistemas inteligentes, dashboards y automatizaciones que ahorran tiempo y escalan tu negocio sin contratar más personal."}},
+      {"@type": "Offer","itemOffered": {"@type": "Service","name": "GEO — Generative Engine Optimization","description": "Optimización para que los motores de inteligencia artificial como ChatGPT recomienden tu negocio cuando alguien busca servicios como el tuyo."}}
+    ]
+  },
+  "sameAs": ["https://wa.me/5215560663926"],
+  "contactPoint": {"@type": "ContactPoint","telephone": "+525560663926","contactType": "customer service","areaServed": "MX","availableLanguage": "Spanish"}
+})} />
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" aria-label="Introducción — Tu marca visible en línea">
+  <canvas id="matrixCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;pointer-events:none;z-index:0;"></canvas>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-tag" style="position:relative;z-index:1;">Crecimiento Digital & IA</div>
+
+  <h1 class="hero-title" style="position:relative;z-index:1;">
+    SOLUCIONES DIGITALES<br>
+    QUE <em class="glitch" data-text="IMPULSAN">IMPULSAN</em><br>
+    <span class="outline">TU NEGOCIO</span>
+  </h1>
+
+  <div class="hero-content" style="position:relative;z-index:1;">
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        <strong>Creamos sistemas digitales, automatizaciones y soluciones con IA para que tu negocio atraiga más clientes, venda más y opere con mayor eficiencia.</strong>
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico</a>
+        <a href="#servicios" class="btn-ghost">Ver servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Branding</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">Páginas Web</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">Google Ads</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">Facebook Ads</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">Redes Sociales</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">SEO</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">GEO</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">Branding</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">Páginas Web</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">Google Ads</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">Facebook Ads</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">Redes Sociales</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">SEO</span><span class="ticker-sep">❖</span>
+    <span class="ticker-item">GEO</span><span class="ticker-sep">❖</span>
+  </div>
+</div>
+
+<!-- GEO -->
+<section id="geo" aria-label="GEO — Generative Engine Optimization" style="padding: 80px 5% 60px;">
+  <div class="geo-section" style="grid-template-columns: 1fr;">
+    <div class="geo-left reveal">
+      <div class="section-label">Diferenciador</div>
+      <h2 class="geo-title">PREPARAMOS TU NEGOCIO<br>PARA LA ERA<br>DE LA <em>IA</em></h2>
+      <p class="geo-desc">
+        La inteligencia artificial está transformando la forma en que los clientes descubren negocios y la manera en que las empresas venden y operan.
+      </p>
+      <p class="geo-desc">
+        En Maguey Studio buscamos convertirnos en tu aliado estratégico para integrar IA de forma útil y alineada a tus objetivos de negocio.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO CHATGPT -->
+<section class="demo-section" id="demo" aria-label="Comprueba si la IA recomienda tu negocio">
+  <div class="section-label reveal">Compruébalo en 30 segundos</div>
+  <h2 class="demo-title reveal">¿LA IA YA RECOMIENDA <em>TU NEGOCIO?</em></h2>
+  <p class="demo-intro reveal">Escribe tu giro y tu ciudad. Te abrimos la pregunta directo en ChatGPT para que veas quién aparece en la respuesta — y quién no.</p>
+
+  <div class="demo-box reveal">
+    <div class="demo-field">
+      <label for="demoGiro">Tu giro</label>
+      <input type="text" id="demoGiro" placeholder="ej. restaurante de mariscos" autocomplete="off">
+    </div>
+    <div class="demo-field">
+      <label for="demoCiudad">Tu ciudad</label>
+      <input type="text" id="demoCiudad" placeholder="ej. Tuxtla Gutiérrez" autocomplete="off">
+    </div>
+    <p class="demo-preview" id="demoPreview" aria-live="polite">&gt; ¿Cuál es el mejor [tu giro] en [tu ciudad]? Recomiéndame tres opciones.</p>
+    <button type="button" class="btn-primary" id="demoBtn" style="width:100%; text-align:center;">Preguntarle a ChatGPT</button>
+    <p class="demo-note">Si tu negocio no aparece, <a href="https://wa.me/5215560663926?text=Hola%2C%20hice%20la%20prueba%20en%20ChatGPT%20y%20mi%20negocio%20no%20aparece.%20Quiero%20un%20diagn%C3%B3stico%20gratuito.">hablemos</a>.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios" aria-label="Servicios de Maguey Studio">
+  <div class="services-header reveal">
+    <div>
+      <div class="section-label">Servicios</div>
+      <h2 class="services-title">LAS HERRAMIENTAS DETRÁS<br>DEL <em>CRECIMIENTO</em></h2>
+    </div>
+    <p class="services-intro">Cinco pilares que trabajan para llevar tu negocio al siguiente nivel.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-num">01 / 05</div>
+      <span class="service-icon">❖</span>
+      <h3 class="service-name">Branding & Identidad</h3>
+      <p class="service-desc">Logotipo, identidad visual, paleta de colores y tipografías. Una marca profesional y consistente que transmite confianza en todos tus canales.</p>
+      <a class="service-link" href="/branding" style="font-family:'Space Mono',monospace;font-size:13px;color:var(--green);text-decoration:none;display:inline-block;margin-top:14px;">Ver servicio →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">02 / 05</div>
+      <span class="service-icon">⬡</span>
+      <h3 class="service-name">Páginas Web</h3>
+      <p class="service-desc">Sitios web diseñados para convertir visitas en clientes. Rápidos, optimizados para Google y listos para ser recomendados por ChatGPT.</p>
+      <a class="service-link" href="/paginas-web" style="font-family:'Space Mono',monospace;font-size:13px;color:var(--green);text-decoration:none;display:inline-block;margin-top:14px;">Ver servicio →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">03 / 05</div>
+      <span class="service-icon">⟡</span>
+      <h3 class="service-name">Automatización & IA</h3>
+      <p class="service-desc">Automatizaciones, dashboards y agentes de IA que atienden por WhatsApp al instante, 24/7, ayudándote a vender, dar seguimiento y operar mejor sin contratar más personal.</p>
+      <a class="service-link" href="/automatizacion-ia" style="font-family:'Space Mono',monospace;font-size:13px;color:var(--green);text-decoration:none;display:inline-block;margin-top:14px;">Ver servicio →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">04 / 05</div>
+      <span class="service-icon">◈</span>
+      <h3 class="service-name">Publicidad Digital</h3>
+      <p class="service-desc">Campañas en Google Ads y Meta Ads que llevan los clientes correctos hacia tu negocio, con el menor gasto posible.</p>
+      <a class="service-link" href="/publicidad-digital" style="font-family:'Space Mono',monospace;font-size:13px;color:var(--green);text-decoration:none;display:inline-block;margin-top:14px;">Ver servicio →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">05 / 05</div>
+      <span class="service-icon">◉</span>
+      <h3 class="service-name">Contenido & Redes</h3>
+      <p class="service-desc">Contenido estratégico, imágenes y videos con IA para posicionar tu marca y convertir seguidores en clientes.</p>
+      <a class="service-link" href="/contenido-redes" style="font-family:'Space Mono',monospace;font-size:13px;color:var(--green);text-decoration:none;display:inline-block;margin-top:14px;">Ver servicio →</a>
+    </div>
+  </div>
+  <div class="section-cta reveal">
+    <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico</a>
+  </div>
+</section>
+
+<!-- SECTOR SALUD -->
+<section class="salud-band" aria-label="Soluciones para el sector salud">
+  <div class="salud-card reveal">
+    <div>
+      <div class="section-label">Sector Salud</div>
+      <h2 class="salud-title">¿TIENES UNA CLÍNICA O CONSULTORIO?<br>TENEMOS UN CAMINO <em>HECHO PARA TI</em></h2>
+      <p class="salud-desc">De COFEPRIS a pacientes que agendan solos por WhatsApp. Marketing digital para dentistas, médicos, clínicas, spas y clínicas de belleza — contrata el plan completo o solo el módulo que necesitas hoy.</p>
+      <div class="salud-chips">
+        <span>Dentistas</span><span>Médicos</span><span>Clínicas</span><span>Spas</span><span>Clínicas de belleza</span><span>Ópticas</span>
+      </div>
+    </div>
+    <div class="salud-side">
+      <a href="/salud" class="btn-primary">Ver soluciones para el sector salud →</a>
+      <p class="salud-note">COFEPRIS · Branding · Google Maps · Sitio web · SEO/GEO · Redes · Agente de citas por WhatsApp · Ads</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="proceso" aria-label="Proceso de trabajo">
+  <div class="process-grid-bg"></div>
+  <div style="position:relative;">
+  <div class="section-label reveal">Proceso</div>
+  <h2 class="process-title reveal">CÓMO CONSTRUIMOS<br>TU MOTOR DE <em>CRECIMIENTO</em></h2>
+
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-dot"></div>
+      <div class="step-num">01</div>
+      <h3 class="step-title">Diagnóstico</h3>
+      <p class="step-desc">Entendemos tu negocio, mercado y oportunidades.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot"></div>
+      <div class="step-num">02</div>
+      <h3 class="step-title">Estrategia</h3>
+      <p class="step-desc">Diseñamos el sistema que atraerá clientes y generará oportunidades.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot"></div>
+      <div class="step-num">03</div>
+      <h3 class="step-title">Implementación</h3>
+      <p class="step-desc">Construimos páginas web, automatizaciones, campañas y activos digitales enfocados en resultados.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot"></div>
+      <div class="step-num">04</div>
+      <h3 class="step-title">Optimización</h3>
+      <p class="step-desc">Medimos, mejoramos y ajustamos continuamente para maximizar el crecimiento.</p>
+    </div>
+  </div>
+  <div class="section-cta reveal">
+    <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico</a>
+  </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="nosotros" aria-label="Por qué elegir Maguey Studio">
+  <div class="section-label reveal">Por qué nosotros</div>
+  <h2 class="services-title reveal" style="margin-bottom: 0;">RESULTADOS<br><em>REALES</em></h2>
+
+  <div class="why-grid">
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Orientados a Conversión</h3>
+        <p>Diseñamos cada proyecto para convertir visitantes en prospectos y prospectos en clientes.</p>
+      </div>
+    </div>
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>IA Aplicada al Negocio</h3>
+        <p>Preparamos tu presencia digital para la nueva forma de buscar y te ayudamos a implementar soluciones con IA para vender, atender y operar mejor.</p>
+      </div>
+    </div>
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Enfocados en Crecimiento</h3>
+        <p>Cada estrategia tiene un objetivo claro: atraer clientes, generar oportunidades, aumentar ventas y ser más eficientes.</p>
+      </div>
+    </div>
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Acompañamiento Continuo</h3>
+        <p>Te acompañamos después del lanzamiento para optimizar, mejorar y seguir creciendo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" aria-label="Contacto — Cotizar proyecto">
+  <div class="cta-grid-bg"></div>
+  <div class="cta-eyebrow reveal">¿Listo para crecer?</div>
+  <h2 class="cta-title reveal">CONSTRUYAMOS UN<br><span class="glitch-word" data-text="SISTEMA DIGITAL">SISTEMA DIGITAL</span><br>QUE VENDA</h2>
+  <div class="cta-actions reveal">
+    <a href="https://wa.me/5215560663926" class="btn-primary">Solicitar Diagnóstico</a>
+  </div>
+</section>
+
+</main>
+
+<script is:inline>
+  // DEMO CHATGPT
+  (function() {
+    var giro = document.getElementById('demoGiro');
+    var ciudad = document.getElementById('demoCiudad');
+    var preview = document.getElementById('demoPreview');
+    var btn = document.getElementById('demoBtn');
+    if (!giro || !btn) return;
+    function buildQuestion(){
+      var g = giro.value.trim() || '[tu giro]';
+      var c = ciudad.value.trim() || '[tu ciudad]';
+      return '¿Cuál es el mejor ' + g + ' en ' + c + '? Recomiéndame tres opciones.';
+    }
+    function updatePreview(){ preview.textContent = '> ' + buildQuestion(); }
+    giro.addEventListener('input', updatePreview);
+    ciudad.addEventListener('input', updatePreview);
+    btn.addEventListener('click', function(){
+      if (!giro.value.trim()) { giro.focus(); return; }
+      if (!ciudad.value.trim()) { ciudad.focus(); return; }
+      window.open('https://chatgpt.com/?q=' + encodeURIComponent(buildQuestion()), '_blank', 'noopener');
+    });
+    [giro, ciudad].forEach(function(input){
+      input.addEventListener('keydown', function(e){ if (e.key === 'Enter') btn.click(); });
+    });
+  })();
+
+  // MATRIX RAIN
+  (function() {
+    var canvas = document.getElementById('matrixCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ01アBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&';
+    var cols, drops;
+    function init() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      cols  = Math.floor(canvas.width / 16);
+      drops = Array(cols).fill(1);
+    }
+    function draw() {
+      ctx.fillStyle = (getComputedStyle(document.documentElement).getPropertyValue('--matrix-fade')||'rgba(3,3,3,0.05)');
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00FF41';
+      ctx.font = '14px Space Mono, monospace';
+      for (var i = 0; i < drops.length; i++) {
+        var ch = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(ch, i * 16, drops[i] * 16);
+        if (drops[i] * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    init();
+    window.addEventListener('resize', init);
+    setInterval(draw, 50);
+  })();
+</script>
+
+<style is:global>
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridshift 20s linear infinite;
+  }
+  @keyframes gridshift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(60px, 60px); }
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,255,65,0.08) 0%, transparent 70%);
+    top: 10%; right: -100px;
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite alternate;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 1; }
+  }
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    animation: fadeUp 1s ease both;
+  }
+  .hero-tag::before { display: none; }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 0.92;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    max-width: 80%;
+    animation: slideFromLeft 1s 0.1s ease both;
+  }
+  @keyframes slideFromLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .hero-title em { font-style: normal; color: var(--green); -webkit-text-stroke: 0px; }
+  .hero-title .outline { -webkit-text-stroke: 1px var(--white); color: transparent; }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    animation: fadeUp 1s 0.15s ease both;
+    margin-top: 48px;
+  }
+  .hero-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    max-width: 540px;
+  }
+  .hero-desc {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--white);
+    font-weight: 300;
+    text-align: center;
+  }
+  .hero-desc strong { color: var(--white); font-weight: 500; }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* TICKER */
+  .ticker { background: var(--green); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+  .ticker-inner { display: inline-flex; animation: ticker 20s linear infinite; }
+  .ticker-item { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 4px; color: var(--black); padding: 0 40px; }
+  .ticker-sep { font-size: 18px; color: rgba(0,0,0,0.3); padding: 0 10px; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* SERVICES */
+  .services-header { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 80px; gap: 24px; }
+  .services-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 100px); line-height: 0.95; max-width: 600px; }
+  .services-title em { font-style: normal; color: var(--green); }
+  .services-intro { font-size: 18px; line-height: 1.8; color: var(--white); font-weight: 300; text-align: left; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .service-card { background: var(--dark); padding: 48px 40px; position: relative; overflow: hidden; transition: background 0.3s; }
+  .service-card::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(0,255,65,0.04) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; }
+  .service-card:hover { background: var(--dark); }
+  .service-card:hover::before { opacity: 1; }
+  .service-link { position: relative; z-index: 2; }
+  .service-num { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--green); margin-bottom: 40px; opacity: 0.6; }
+  .service-icon { font-size: 36px; margin-bottom: 24px; display: block; }
+  .service-name { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 2px; margin-bottom: 16px; line-height: 1; }
+  .service-desc { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
+
+  /* HOW WE WORK */
+  .process { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+  .process-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: gridshift 20s linear infinite; pointer-events: none; }
+  .process-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 6vw, 88px); line-height: 0.95; margin-bottom: 80px; max-width: 700px; }
+  .process-title em { font-style: normal; color: var(--green); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; position: relative; }
+  .steps::before { content: ''; position: absolute; top: 28px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%); background-size: 200% 100%; animation: scanLine 3s linear infinite; }
+  @keyframes scanLine { 0% { background-position: -100% 0; } 100% { background-position: 200% 0; } }
+  .step { padding-top: 60px; position: relative; }
+  .step-dot { position: absolute; top: 20px; left: 0; width: 16px; height: 16px; background: var(--green); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+  .step-num { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--green); margin-bottom: 16px; opacity: 0.6; }
+  .step-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; margin-bottom: 12px; }
+  .step-desc { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
+
+  /* GEO SECTION */
+  .geo-section { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .geo-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 6vw, 88px); line-height: 0.95; margin-bottom: 32px; }
+  .geo-title em { font-style: normal; color: var(--green); }
+  .geo-desc { font-size: 18px; line-height: 1.9; color: var(--white); font-weight: 300; margin-bottom: 40px; }
+  .geo-desc strong { color: var(--white); font-weight: 500; }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 80px; }
+  .why-item { background: var(--dark); padding: 48px 40px; min-height: 220px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+  .why-item-border { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .why-item-border span { position: absolute; display: block; }
+  .why-item-border span:nth-child(1) { top: 0; left: -100%; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--green)); animation: borderTop 4.5s linear infinite; }
+  .why-item-border span:nth-child(2) { top: -100%; right: 0; width: 2px; height: 100%; background: linear-gradient(180deg, transparent, var(--green)); animation: borderRight 4.5s linear infinite 1.125s; }
+  .why-item-border span:nth-child(3) { bottom: 0; right: -100%; width: 100%; height: 2px; background: linear-gradient(270deg, transparent, var(--green)); animation: borderBottom 4.5s linear infinite 2.25s; }
+  .why-item-border span:nth-child(4) { bottom: -100%; left: 0; width: 2px; height: 100%; background: linear-gradient(360deg, transparent, var(--green)); animation: borderLeft 4.5s linear infinite 3.375s; }
+  @keyframes borderTop    { 0%{left:-100%} 100%{left:100%} }
+  @keyframes borderRight  { 0%{top:-100%}  100%{top:100%}  }
+  @keyframes borderBottom { 0%{right:-100%}100%{right:100%}}
+  @keyframes borderLeft   { 0%{bottom:-100%}100%{bottom:100%}}
+  .why-content h3 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; margin-bottom: 8px; }
+  .why-content p { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
+
+  /* CTA */
+  .cta-section { text-align: center; padding: 160px 5%; position: relative; overflow: hidden; }
+  .cta-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: gridshift 20s linear infinite; pointer-events: none; }
+  .cta-section::before { content: 'MAGUEY'; position: absolute; font-family: 'Bebas Neue', sans-serif; font-size: 38vw; color: rgba(0,255,65,0.08); top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none; letter-spacing: -5px; }
+  .cta-eyebrow { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 24px; }
+  .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 9vw, 130px); line-height: 0.9; margin-bottom: 48px; }
+  .cta-title .glitch-word { font-style: normal; color: var(--green); position: relative; display: inline-block; animation: ctaGlitch 2.5s infinite; }
+  .cta-title .glitch-word::before, .cta-title .glitch-word::after { content: attr(data-text); position: absolute; left: 0; top: 0; width: 100%; }
+  .cta-title .glitch-word::before { color: #ff00c8; animation: ctaGlitchTop 2.5s infinite; clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%); }
+  .cta-title .glitch-word::after { color: #00eeff; animation: ctaGlitchBot 2.5s infinite; clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%); }
+  @keyframes ctaGlitch { 0%, 90%, 100% { transform: none; } 91% { transform: skewX(-2deg); } 93% { transform: skewX(2deg); } 95% { transform: skewX(0deg); } }
+  @keyframes ctaGlitchTop { 0%, 90%, 100% { transform: none; opacity: 0; } 91% { transform: translate(-3px, -2px); opacity: 1; } 93% { transform: translate(3px, 0px); opacity: 1; } 95% { transform: none; opacity: 0; } }
+  @keyframes ctaGlitchBot { 0%, 90%, 100% { transform: none; opacity: 0; } 91% { transform: translate(3px, 2px); opacity: 1; } 93% { transform: translate(-3px, 0px); opacity: 1; } 95% { transform: none; opacity: 0; } }
+  .cta-actions { display: flex; align-items: center; justify-content: center; gap: 32px; }
+  .section-cta { margin-top: 64px; text-align: center; }
+
+  /* GLITCH */
+  .glitch { position: relative; }
+  .glitch::before, .glitch::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; font-family: inherit; font-size: inherit; line-height: inherit; letter-spacing: inherit; color: inherit; pointer-events: none; }
+  .glitch::before { color: var(--green); animation: glitchTop 2s infinite linear; clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); }
+  .glitch::after { color: #fff; animation: glitchBot 2s infinite linear; clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%); }
+  @keyframes glitchTop { 0%, 75%, 100% { transform: translate(0); opacity: 0; } 76% { transform: translate(-3px, -2px); opacity: 0.8; } 79% { transform: translate(3px,  1px); opacity: 0.8; } 82% { transform: translate(-2px, 2px); opacity: 0.8; } 85% { transform: translate(2px, -1px); opacity: 0.8; } 88% { transform: translate(0); opacity: 0; } }
+  @keyframes glitchBot { 0%, 75%, 100% { transform: translate(0); opacity: 0; } 77% { transform: translate(3px, 2px);  opacity: 0.6; } 80% { transform: translate(-3px,-1px); opacity: 0.6; } 83% { transform: translate(2px, 1px);  opacity: 0.6; } 86% { transform: translate(-1px,0);    opacity: 0.6; } 88% { transform: translate(0); opacity: 0; } }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* DEMO CHATGPT */
+  .demo-section{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;position:relative;overflow:hidden;padding:90px 5%;}
+  .demo-section .section-label{justify-content:center;}
+  .demo-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:1px;margin:14px 0 18px;}
+  .demo-title em{font-style:italic;color:var(--green);}
+  .demo-intro{color:var(--muted);font-size:16px;line-height:1.7;max-width:600px;margin:0 auto;}
+  .demo-box{max-width:640px;margin:48px auto 0;background:var(--card);border:1px solid var(--border);padding:clamp(28px,4vw,48px) clamp(24px,3vw,40px);position:relative;text-align:left;}
+  .demo-box::before{content:'> PRUEBA_EN_VIVO';font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--green);display:block;margin-bottom:28px;}
+  .demo-field{margin-bottom:22px;}
+  .demo-field label{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+  .demo-field input,.demo-field select{width:100%;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Space Mono',monospace;font-size:15px;padding:14px 16px;outline:none;transition:border-color .2s;border-radius:0;}
+  .demo-field input:focus,.demo-field select:focus{border-color:var(--green);}
+  .demo-field input::placeholder{color:var(--muted);}
+  .demo-preview{font-family:'Space Mono',monospace;font-size:12px;line-height:1.8;color:var(--green);background:var(--black);border-left:2px solid var(--green);padding:16px 20px;margin-bottom:28px;word-break:break-word;}
+  .demo-note{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;color:var(--muted);margin-top:22px;line-height:1.8;}
+  .demo-note a{color:var(--green);text-decoration:none;}
+  .demo-note a:hover{text-decoration:underline;}
+
+  /* SECTOR SALUD */
+  .salud-band{padding:40px 5% 90px;}
+  .salud-card{position:relative;overflow:hidden;border:1px solid var(--border);background:var(--card);border-radius:2px;padding:clamp(32px,5vw,60px);display:grid;gap:28px;}
+  @media(min-width:900px){.salud-card{grid-template-columns:1.15fr .85fr;align-items:center;gap:56px;}}
+  .salud-card::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 100% 0%, rgba(0,255,65,0.10), transparent 55%);}
+  :root[data-theme="light"] .salud-card::before{background:radial-gradient(120% 90% at 100% 0%, rgba(0,147,43,0.10), transparent 55%);}
+  .salud-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4.5vw,52px);line-height:1;letter-spacing:1px;margin:14px 0 18px;}
+  .salud-title em{font-style:normal;color:var(--green);}
+  .salud-desc{color:var(--muted);font-size:16px;line-height:1.7;max-width:52ch;}
+  .salud-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .salud-chips span{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--white);border:1px solid var(--border);border-radius:999px;padding:8px 14px;}
+  .salud-side{display:flex;flex-direction:column;gap:16px;}
+  .salud-side .btn-primary{align-self:flex-start;}
+  .salud-note{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.5px;color:var(--muted);line-height:1.6;}
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .hero { align-items: center; text-align: center; }
+    .hero-title { font-size: clamp(52px, 13vw, 90px); max-width: 100%; }
+    .hero-content { flex-direction: column; align-items: center; margin-top: 32px; }
+    .hero-bottom { align-items: center; max-width: 100%; }
+    .hero-desc { font-size: 16px; text-align: center; }
+    .hero-actions { align-items: center; }
+    .services-header { flex-direction: column; }
+    .services-grid { display: flex; flex-direction: column; gap: 0; background: none; border: none; }
+    .service-card { position: sticky; border: 1px solid var(--border); }
+    .service-card:nth-child(1) { top: 72px; z-index: 1; }
+    .service-card:nth-child(2) { top: 80px; z-index: 2; }
+    .service-card:nth-child(3) { top: 88px; z-index: 3; }
+    .service-card:nth-child(4) { top: 96px; z-index: 4; }
+    .service-card:nth-child(5) { top: 104px; z-index: 5; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .step:nth-child(3)::before { content: ''; position: absolute; top: 28px; left: 0; width: calc(200% + 40px); height: 1px; background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%); background-size: 200% 100%; animation: scanLine 3s linear infinite; }
+    .geo-section { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+</style>
+</BaseLayout>
