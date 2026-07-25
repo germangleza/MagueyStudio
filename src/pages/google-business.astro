@@ -1,0 +1,639 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const nav = {
+  links: [
+    { href: '#que-incluye', label: 'Qué incluye' },
+    { href: '#por-que', label: 'Por qué importa' },
+    { href: '#proceso', label: 'Proceso' },
+    { href: '#demo', label: 'Pruébalo' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '/', label: 'Inicio' },
+  ],
+  mobileLinks: [
+    { href: '#que-incluye', label: 'Qué incluye' },
+    { href: '#por-que', label: 'Por qué importa' },
+    { href: '#proceso', label: 'Proceso' },
+    { href: '#demo', label: 'Pruébalo' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '/', label: 'Inicio' },
+  ],
+  ctaHref: 'https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20de%20mi%20Google%20Maps%20para%20mi%20consultorio.',
+  ctaLabel: 'Solicitar Diagnóstico',
+  ctaAria: 'Solicitar diagnóstico de Google Business por WhatsApp',
+};
+
+const footer = {
+  links: [
+    { href: '/', label: 'Inicio' },
+    { href: '/salud', label: 'Salud' },
+    { href: '/geo', label: 'GEO' },
+    { href: '/#servicios', label: 'Servicios' },
+    { href: 'https://wa.me/5215560663926?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Google%20Business%20Profile.', label: 'WhatsApp', aria: 'Contactar por WhatsApp' },
+  ],
+};
+
+const wa = {
+  href: 'https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20de%20mi%20Google%20Maps%20para%20mi%20consultorio.',
+  aria: 'Contactar por WhatsApp',
+};
+---
+<BaseLayout
+  title="Google Business Profile y Google Maps para consultorios | Maguey Studio®"
+  description="Registramos y optimizamos tu Google Business Profile para que tu consultorio aparezca primero en Google Maps cuando buscan un doctor cerca."
+  canonical="https://magueystudio.mx/google-business"
+  ogTitle="Google Business Profile y Google Maps para consultorios | Maguey Studio®"
+  ogDescription="Cuando un paciente busca un doctor cerca, ¿apareces tú o tu competencia? Optimizamos tu Google Business Profile para dominar el mapa de Google."
+  twitterTitle="Google Business Profile y Google Maps para consultorios | Maguey Studio®"
+  twitterDescription="Cuando un paciente busca un doctor cerca, ¿apareces tú o tu competencia? Optimizamos tu Google Business Profile para dominar el mapa de Google."
+  nav={nav}
+  footer={footer}
+  wa={wa}
+>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Google Business Profile y Google Maps para consultorios",
+    "serviceType": "Optimización de Google Business Profile y posicionamiento local en Google Maps",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Maguey Studio",
+      "url": "https://magueystudio.mx/",
+      "telephone": "+525560663926",
+      "address": [
+        {"@type": "PostalAddress", "addressLocality": "Tuxtla Gutiérrez", "addressRegion": "Chiapas", "addressCountry": "MX"},
+        {"@type": "PostalAddress", "addressLocality": "Tijuana", "addressRegion": "Baja California", "addressCountry": "MX"},
+        {"@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressCountry": "MX"}
+      ]
+    },
+    "description": "Creación, reclamo y optimización de Google Business Profile para clínicas, consultorios, dentistas y médicos: categorías y servicios correctos, fotos profesionales, datos NAP y horarios consistentes, estrategia de reseñas, publicaciones, optimización del ranking local (relevancia, distancia y prominencia) y gestión mensual para aparecer primero en Google Maps.",
+    "url": "https://magueystudio.mx/google-business",
+    "areaServed": "MX"
+  })} />
+
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ya tengo perfil pero no aparezco en Google Maps, ¿por qué?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casi siempre es porque el perfil está incompleto o mal configurado: categoría equivocada, pocos datos, sin fotos, horarios desactualizados, pocas reseñas o información inconsistente entre Google, tu web y directorios. Google premia los perfiles completos, activos y coherentes. En el diagnóstico gratuito revisamos qué te está frenando y cómo corregirlo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tarda en mejorar el ranking en Google Maps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El posicionamiento local se construye: los ajustes técnicos y de datos se aplican en las primeras semanas, y la mejora en el ranking suele notarse de algunas semanas a varios meses, según tu competencia y tu ciudad. Las reseñas nuevas, las publicaciones constantes y la consistencia de datos aceleran el proceso."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Pueden conseguirme reseñas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No compramos ni inventamos reseñas: es contra las políticas de Google y en salud puede costarte el perfil. Lo que hacemos es ayudarte a pedirlas de forma correcta a tus pacientes reales (con el momento y el mensaje adecuados) y a responderlas todas de manera profesional, que es justo lo que Google valora."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Esto sirve si tengo varias sucursales o consultorios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Cada sucursal necesita su propio perfil bien optimizado y coherente con las demás. Gestionamos varias ubicaciones cuidando que la información sea consistente y que cada consultorio compita bien en su propia zona dentro de Google Maps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta optimizar mi Google Business Profile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Se cotiza según el estado de tu perfil, tu giro y si buscas solo la optimización inicial o también la gestión mensual. El primer paso es un diagnóstico gratuito por WhatsApp donde revisamos tu perfil actual y te damos una propuesta clara, sin sorpresas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Esto ayuda a que ChatGPT me recomiende?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Los datos de tu Google Business Profile también alimentan a los motores de IA como ChatGPT y Gemini. Un perfil completo, consistente y con buenas reseñas mejora tu visibilidad tanto en Google Maps como en las respuestas de la IA. Ese trabajo se potencia con nuestro servicio de GEO."
+        }
+      }
+    ]
+  })} />
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" aria-label="Google Business Profile y Google Maps para consultorios">
+  <canvas id="matrixCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;pointer-events:none;z-index:0;"></canvas>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-tag" style="position:relative;z-index:1;">Google Business Profile &amp; Google Maps</div>
+
+  <h1 class="hero-title" style="position:relative;z-index:1;">
+    UN PACIENTE BUSCA<br>
+    <span class="outline">"DENTISTA CERCA DE MÍ".</span><br>
+    ¿APARECES <em>TÚ</em> O TU COMPETENCIA?
+  </h1>
+
+  <div class="hero-content" style="position:relative;z-index:1;">
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        Cada día, decenas de pacientes eligen consultorio desde el mapa de Google — el de los tres resultados con estrellas, fotos y horarios. Si no estás bien listado ahí, para ese paciente simplemente no existes.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20de%20mi%20Google%20Maps%20para%20mi%20consultorio." class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+        <a href="#demo" class="btn-ghost">Comprueba si apareces en el mapa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">Google Maps</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Reseñas</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Fotos</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Horarios</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Ranking Local</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Datos NAP</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Google Maps</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Reseñas</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Fotos</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Horarios</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Ranking Local</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Datos NAP</span><span class="ticker-sep">✦</span>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="problem-section" aria-label="Por qué el paquete de mapas de Google decide">
+  <div class="section-label reveal" style="justify-content:center;">El momento de la decisión</div>
+  <h2 class="problem-title reveal">
+    EL PACIENTE NO BAJA HASTA EL RESULTADO 20.<br>
+    <em style="font-style:normal; color:var(--green);">ELIGE ENTRE LOS TRES DEL MAPA.</em>
+  </h2>
+  <p class="problem-desc reveal">
+    Cuando alguien busca "ginecólogo cerca de mí" o "clínica dental en mi ciudad", Google muestra primero un paquete de tres consultorios con estrellas, fotos y botón de llamar. Ahí se toma la decisión. Si no estás en ese paquete, no compites: ni te ven.
+  </p>
+  <div class="stat-big reveal" aria-hidden="true">3</div>
+  <p class="stat-caption reveal">Los tres resultados del "local pack" de Google se llevan la mayoría de los clics y llamadas. Estar bien listado ahí no es opcional para un consultorio.</p>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section id="que-incluye" aria-label="Qué incluye el servicio de Google Business Profile de Maguey Studio">
+  <div class="section-label reveal">Lo que hacemos</div>
+  <h2 class="features-title reveal">TODO PARA QUE<br>DOMINES EL <em>MAPA</em></h2>
+
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <span class="feature-icon">◈</span>
+      <h3 class="feature-name">Crear o Reclamar el Perfil</h3>
+      <p class="feature-desc">Damos de alta tu Google Business Profile desde cero o reclamamos y verificamos el que ya existe, incluso si alguien más lo creó por ti.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">⬡</span>
+      <h3 class="feature-name">Categoría y Servicios Correctos</h3>
+      <p class="feature-desc">Elegimos la categoría exacta (dentista, ginecólogo, clínica) y cargamos tus servicios para que Google te muestre en las búsquedas que importan.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">◉</span>
+      <h3 class="feature-name">Fotos Profesionales</h3>
+      <p class="feature-desc">Un consultorio con fotos reales y cuidadas transmite confianza y recibe más clics. Ordenamos y optimizamos las imágenes de tu perfil.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">▣</span>
+      <h3 class="feature-name">Horarios y Datos NAP Consistentes</h3>
+      <p class="feature-desc">Nombre, dirección y teléfono idénticos en Google, tu web y los directorios. La consistencia NAP es una de las señales que más pesa en el ranking local.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">✦</span>
+      <h3 class="feature-name">Estrategia de Reseñas</h3>
+      <p class="feature-desc">Te enseñamos a pedir reseñas a tus pacientes de forma correcta y respondemos todas con profesionalismo. Nunca compramos ni inventamos reseñas.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">⚡</span>
+      <h3 class="feature-name">Publicaciones y Novedades</h3>
+      <p class="feature-desc">Un perfil activo rankea mejor. Publicamos novedades, promociones y avisos que mantienen tu consultorio vivo a los ojos de Google y del paciente.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">◎</span>
+      <h3 class="feature-name">Optimización del Ranking Local</h3>
+      <p class="feature-desc">Trabajamos las tres señales que Google usa para ordenar el mapa: relevancia, distancia y prominencia, para subirte en tu zona.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">↺</span>
+      <h3 class="feature-name">Gestión Mensual</h3>
+      <p class="feature-desc">El posicionamiento local se mantiene. Gestionamos tu perfil mes a mes: reseñas, publicaciones, datos y reportes de cómo evolucionas.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">⟡</span>
+      <h3 class="feature-name">Varias Sucursales</h3>
+      <p class="feature-desc">¿Más de un consultorio? Configuramos y optimizamos cada ubicación para que compita bien en su propia zona, sin canibalizarse entre sí.</p>
+    </div>
+  </div>
+
+  <div class="section-cta reveal">
+    <a href="https://wa.me/5215560663926?text=Hola%2C%20me%20interesa%20optimizar%20mi%20Google%20Business%20Profile.%20Quiero%20mi%20diagn%C3%B3stico%20gratuito." class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+  </div>
+</section>
+
+<!-- BONUS GEO -->
+<section class="bonus-section" id="bonus-geo" aria-label="Tu perfil de Google también alimenta a la IA">
+  <div class="bonus-grid-bg"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="section-label reveal">Bonus · Visibilidad en IA</div>
+    <h2 class="features-title reveal">GOOGLE NO ES<br>EL <em>ÚNICO</em> QUE MIRA</h2>
+    <p class="bonus-desc reveal">
+      Los datos de tu Google Business Profile — categoría, reseñas, ubicación, horarios — también alimentan a los motores de IA como ChatGPT y Gemini. Cuando un paciente le pregunta a la IA "¿qué dentista me recomiendas en mi ciudad?", esa respuesta se apoya, en parte, en lo bien construido que esté tu perfil.
+    </p>
+    <p class="bonus-desc reveal">
+      Es decir: un perfil optimizado no solo te sube en Google Maps, también mejora tu visibilidad en las respuestas de la IA. Ese trabajo lo llevamos más lejos con nuestro <a href="/geo">servicio de GEO</a>, pensado justo para que la IA recomiende tu negocio.
+    </p>
+    <div class="section-cta reveal">
+      <a href="/geo" class="btn-ghost">Conoce el servicio de GEO</a>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ IMPORTA -->
+<section id="por-que" aria-label="Por qué importa aparecer en Google Maps">
+  <div class="section-label reveal">Por qué importa</div>
+  <h2 class="features-title reveal">APARECER PRIMERO<br>TE LLENA LA <em>AGENDA</em></h2>
+
+  <div class="why-grid">
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Es donde te buscan hoy</h3>
+        <p>El paciente ya no pide recomendaciones por teléfono: busca en Google "cerca de mí" y elige en segundos desde el mapa. Ahí tienes que estar.</p>
+      </div>
+    </div>
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Las reseñas generan confianza</h3>
+        <p>En salud, la confianza lo es todo. Un perfil con reseñas reales y bien respondidas convierte curiosos en citas agendadas.</p>
+      </div>
+    </div>
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Llamadas y rutas directas</h3>
+        <p>Un buen perfil pone tu teléfono, tu WhatsApp y cómo llegar a un toque. Menos fricción, más pacientes que sí llegan a la puerta.</p>
+      </div>
+    </div>
+    <div class="why-item reveal">
+      <div class="why-item-border"><span></span><span></span><span></span><span></span></div>
+      <div class="why-content">
+        <h3>Ganas sin pagar por clic</h3>
+        <p>El mapa de Google es tráfico orgánico local: bien optimizado, atrae pacientes de tu zona sin depender de anuncios pagados.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="why-note reveal">
+    Aparecer en el mapa es parte de una presencia digital sólida en salud. Si aún estás construyendo la tuya, empieza por nuestro <a href="/salud">servicio para el sector salud</a> y potencia tu visibilidad en IA con <a href="/geo">GEO</a>.
+  </p>
+</section>
+
+<!-- PROCESO -->
+<section class="process" id="proceso" aria-label="Proceso de optimización de Google Business Profile">
+  <div class="process-grid-bg"></div>
+  <div style="position:relative;">
+    <div class="section-label reveal">Proceso</div>
+    <h2 class="process-title reveal">ASÍ TE SUBIMOS<br>AL <em>MAPA</em></h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">01</div>
+        <h3 class="step-title">Auditoría del Perfil</h3>
+        <p class="step-desc">Revisamos tu perfil actual, tu competencia y tu zona para detectar qué te frena en el ranking local.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">02</div>
+        <h3 class="step-title">Optimización, Fotos y Datos</h3>
+        <p class="step-desc">Corregimos categoría, servicios, horarios y datos NAP, y ordenamos las fotos para un perfil completo y confiable.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">03</div>
+        <h3 class="step-title">Estrategia de Reseñas</h3>
+        <p class="step-desc">Ponemos en marcha un sistema para pedir reseñas de forma correcta y responderlas todas con profesionalismo.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">04</div>
+        <h3 class="step-title">Gestión y Reportes</h3>
+        <p class="step-desc">Mantenemos el perfil activo mes a mes y te reportamos cómo evolucionas en el mapa frente a tu competencia.</p>
+      </div>
+    </div>
+
+    <div class="section-cta reveal">
+      <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20empezar%20a%20optimizar%20mi%20Google%20Business%20Profile.%20Me%20interesa%20un%20diagn%C3%B3stico%20gratuito." class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section class="demo-section" id="demo" aria-label="Comprueba si apareces en Google Maps">
+  <div class="section-label reveal" style="justify-content:center;">Compruébalo tú mismo</div>
+  <h2 class="problem-title reveal">¿YA APARECES CUANDO<br><em style="font-style:normal; color:var(--green);">TE BUSCAN EN EL MAPA?</em></h2>
+  <p class="problem-desc reveal">Escribe tu especialidad y tu ciudad. Te abrimos la búsqueda directo en Google Maps para que veas quién sale primero — y en qué lugar quedas tú.</p>
+
+  <div class="demo-box reveal">
+    <div class="demo-field">
+      <label for="demoEsp">Tu especialidad</label>
+      <input type="text" id="demoEsp" placeholder="ej. dentista" autocomplete="off">
+    </div>
+    <div class="demo-field">
+      <label for="demoCiudad">Tu ciudad</label>
+      <input type="text" id="demoCiudad" placeholder="ej. Tuxtla Gutiérrez" autocomplete="off">
+    </div>
+    <p class="demo-preview" id="demoPreview" aria-live="polite">&gt; [tu especialidad] en [tu ciudad]</p>
+    <button type="button" class="btn-primary" id="demoBtn" style="width:100%; text-align:center;">Buscar en Google Maps</button>
+    <p class="demo-note">Se abre en una pestaña nueva. Si tu consultorio no sale entre los primeros, ya sabes por qué existe esta página.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-label="Preguntas frecuentes sobre Google Business Profile">
+  <div class="section-label reveal">Preguntas frecuentes</div>
+  <h2 class="features-title reveal">DUDAS <em>RESUELTAS</em></h2>
+
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <button class="faq-q" aria-expanded="false">Ya tengo perfil pero no aparezco, ¿por qué?</button>
+      <div class="faq-a"><p>Casi siempre es porque el perfil está incompleto o mal configurado: categoría equivocada, pocos datos, sin fotos, horarios desactualizados, pocas reseñas o información inconsistente entre Google, tu web y directorios. Google premia los perfiles completos, activos y coherentes. En el diagnóstico gratuito revisamos qué te está frenando y cómo corregirlo.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" aria-expanded="false">¿Cuánto tarda en mejorar el ranking?</button>
+      <div class="faq-a"><p>El posicionamiento local se construye: los ajustes técnicos y de datos se aplican en las primeras semanas, y la mejora en el ranking suele notarse de algunas semanas a varios meses, según tu competencia y tu ciudad. Las reseñas nuevas, las publicaciones constantes y la consistencia de datos aceleran el proceso.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" aria-expanded="false">¿Pueden conseguirme reseñas?</button>
+      <div class="faq-a"><p>No compramos ni inventamos reseñas: es contra las políticas de Google y en salud puede costarte el perfil. Lo que hacemos es ayudarte a pedirlas de forma correcta a tus pacientes reales (con el momento y el mensaje adecuados) y a responderlas todas de manera profesional, que es justo lo que Google valora.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" aria-expanded="false">¿Sirve para varias sucursales?</button>
+      <div class="faq-a"><p>Sí. Cada sucursal necesita su propio perfil bien optimizado y coherente con las demás. Gestionamos varias ubicaciones cuidando que la información sea consistente y que cada consultorio compita bien en su propia zona dentro de Google Maps.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" aria-expanded="false">¿Cuánto cuesta?</button>
+      <div class="faq-a"><p>Se cotiza según el estado de tu perfil, tu giro y si buscas solo la optimización inicial o también la gestión mensual. El primer paso es un diagnóstico gratuito por WhatsApp donde revisamos tu perfil actual y te damos una propuesta clara, sin sorpresas.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" aria-expanded="false">¿Esto ayuda a que ChatGPT me recomiende?</button>
+      <div class="faq-a"><p>Sí. Los datos de tu Google Business Profile también alimentan a los motores de IA como ChatGPT y Gemini. Un perfil completo, consistente y con buenas reseñas mejora tu visibilidad tanto en Google Maps como en las respuestas de la IA. Ese trabajo se potencia con nuestro <a href="/geo">servicio de GEO</a>.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" aria-label="Solicitar diagnóstico de Google Business gratuito">
+  <div class="cta-grid-bg"></div>
+  <div class="cta-eyebrow reveal">Diagnóstico gratis · Por WhatsApp</div>
+  <h2 class="cta-title reveal">QUE TE ENCUENTREN<br><span class="glitch-word" data-text="PRIMERO">PRIMERO</span></h2>
+  <div style="position:relative;z-index:1;">
+    <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%20Google%20Maps.%20Quiero%20aparecer%20primero%20cuando%20busquen%20mi%20especialidad." class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+    <p class="cta-sub">Revisamos tu perfil actual y te decimos qué falta para subir.</p>
+  </div>
+  <div class="crosslinks reveal">
+    <a href="/salud">→ Marketing para el sector salud</a>
+    <a href="/geo">→ Que la IA recomiende tu negocio</a>
+  </div>
+</section>
+
+</main>
+
+<script is:inline>
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // MATRIX RAIN
+  (function() {
+    if (reducedMotion) return;
+    const canvas = document.getElementById('matrixCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ01アBCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&';
+    let cols, drops;
+    function init() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      cols  = Math.floor(canvas.width / 16);
+      drops = Array(cols).fill(1);
+    }
+    function draw() {
+      ctx.fillStyle = (getComputedStyle(document.documentElement).getPropertyValue('--matrix-fade')||'rgba(3,3,3,0.05)');
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00FF41';
+      ctx.font = '14px Space Mono, monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const ch = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(ch, i * 16, drops[i] * 16);
+        if (drops[i] * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    init();
+    window.addEventListener('resize', init);
+    setInterval(draw, 50);
+  })();
+
+  // FAQ ACCORDION
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    const ans = item.querySelector('.faq-a');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      ans.style.maxHeight = isOpen ? ans.scrollHeight + 'px' : '0';
+    });
+  });
+
+  // DEMO GOOGLE MAPS
+  (function() {
+    const esp = document.getElementById('demoEsp');
+    const ciudad = document.getElementById('demoCiudad');
+    const preview = document.getElementById('demoPreview');
+    const btn = document.getElementById('demoBtn');
+    function buildQuery() {
+      const e = esp.value.trim() || '[tu especialidad]';
+      const c = ciudad.value.trim() || '[tu ciudad]';
+      return e + ' en ' + c;
+    }
+    function updatePreview() { preview.textContent = '> ' + buildQuery(); }
+    esp.addEventListener('input', updatePreview);
+    ciudad.addEventListener('input', updatePreview);
+    btn.addEventListener('click', () => {
+      if (!esp.value.trim()) { esp.focus(); return; }
+      if (!ciudad.value.trim()) { ciudad.focus(); return; }
+      window.open('https://www.google.com/maps/search/' + encodeURIComponent(esp.value.trim() + ' en ' + ciudad.value.trim()), '_blank', 'noopener');
+    });
+    [esp, ciudad].forEach(input => {
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') btn.click(); });
+    });
+  })();
+</script>
+
+<style is:global>
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 140px 5% 80px; position: relative; overflow: hidden; }
+  .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: gridshift 20s linear infinite; pointer-events: none; }
+  @keyframes gridshift { 0% { transform: translate(0,0); } 100% { transform: translate(60px,60px); } }
+  .hero-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,255,65,0.08) 0%, transparent 70%); top: 10%; right: -100px; border-radius: 50%; animation: pulse 4s ease-in-out infinite alternate; pointer-events: none; }
+  @keyframes pulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.2); opacity: 1; } }
+  .hero-tag { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 4px; color: var(--green); text-transform: uppercase; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; gap: 12px; animation: fadeUp 1s ease both; }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 7.5vw, 110px); line-height: 0.92; letter-spacing: -1px; margin-bottom: 0; max-width: 90%; animation: slideFromLeft 1s 0.1s ease both; }
+  @keyframes slideFromLeft { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0); } }
+  .hero-title em { font-style: italic; color: var(--green); }
+  .hero-title .outline { -webkit-text-stroke: 1px var(--white); color: transparent; }
+  .hero-content { display: flex; flex-direction: column; align-items: center; gap: 32px; width: 100%; animation: fadeUp 1s 0.15s ease both; margin-top: 48px; }
+  .hero-bottom { display: flex; flex-direction: column; align-items: center; gap: 32px; max-width: 600px; }
+  .hero-desc { font-size: 18px; line-height: 1.7; color: var(--white); font-weight: 300; text-align: center; }
+  .hero-actions { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+
+  /* TICKER */
+  .ticker { background: var(--green); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+  .ticker-inner { display: inline-flex; animation: ticker 20s linear infinite; }
+  .ticker-item { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 4px; color: var(--black); padding: 0 40px; }
+  .ticker-sep { font-size: 18px; color: rgba(0,0,0,0.3); padding: 0 10px; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* PROBLEM */
+  .problem-section { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
+  .problem-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 1.1; margin-bottom: 32px; max-width: 760px; margin-left: auto; margin-right: auto; }
+  .problem-desc { font-size: 18px; line-height: 1.8; color: var(--white); font-weight: 300; max-width: 600px; margin: 0 auto; }
+  .stat-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(80px, 12vw, 160px); color: var(--green); line-height: 1; margin: 48px 0 8px; }
+  .stat-caption { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.8; }
+
+  /* FEATURES */
+  .features-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 100px); line-height: 0.95; margin-bottom: 80px; max-width: 760px; }
+  .features-title em { font-style: italic; color: var(--green); }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .feature-card { background: var(--dark); padding: 48px 40px; position: relative; overflow: hidden; transition: background 0.3s; }
+  .feature-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,255,65,0.04) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+  .feature-card:hover::before { opacity: 1; }
+  .feature-icon { font-size: 32px; margin-bottom: 24px; display: block; }
+  .feature-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; margin-bottom: 12px; line-height: 1; color: var(--white); }
+  .feature-desc { font-size: 16px; line-height: 1.8; color: var(--white); font-weight: 300; }
+
+  /* BONUS GEO */
+  .bonus-section { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+  .bonus-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: gridshift 20s linear infinite; pointer-events: none; }
+  .bonus-desc { font-size: 18px; line-height: 1.8; color: var(--white); font-weight: 300; max-width: 720px; margin-top: 24px; }
+  .bonus-desc a { color: var(--green); }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 80px; }
+  .why-item { background: var(--dark); padding: 48px 40px; min-height: 220px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+  .why-item-border { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .why-item-border span { position: absolute; display: block; }
+  .why-item-border span:nth-child(1) { top: 0; left: -100%; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--green)); animation: borderTop 4.5s linear infinite; }
+  .why-item-border span:nth-child(2) { top: -100%; right: 0; width: 2px; height: 100%; background: linear-gradient(180deg, transparent, var(--green)); animation: borderRight 4.5s linear infinite 1.125s; }
+  .why-item-border span:nth-child(3) { bottom: 0; right: -100%; width: 100%; height: 2px; background: linear-gradient(270deg, transparent, var(--green)); animation: borderBottom 4.5s linear infinite 2.25s; }
+  .why-item-border span:nth-child(4) { bottom: -100%; left: 0; width: 2px; height: 100%; background: linear-gradient(360deg, transparent, var(--green)); animation: borderLeft 4.5s linear infinite 3.375s; }
+  @keyframes borderTop    { 0%{left:-100%} 100%{left:100%} }
+  @keyframes borderRight  { 0%{top:-100%}  100%{top:100%}  }
+  @keyframes borderBottom { 0%{right:-100%}100%{right:100%}}
+  @keyframes borderLeft   { 0%{bottom:-100%}100%{bottom:100%}}
+  .why-content h3 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; margin-bottom: 8px; }
+  .why-content p { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
+  .why-note { max-width: 760px; margin-top: 48px; font-size: 18px; line-height: 1.8; color: var(--white); font-weight: 300; }
+  .why-note a { color: var(--green); }
+
+  /* PROCESS */
+  .process { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+  .process-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: gridshift 20s linear infinite; pointer-events: none; }
+  .process-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 6vw, 88px); line-height: 0.95; margin-bottom: 80px; max-width: 760px; }
+  .process-title em { font-style: italic; color: var(--green); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; position: relative; }
+  .steps::before { content: ''; position: absolute; top: 28px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%); background-size: 200% 100%; animation: scanLine 3s linear infinite; }
+  @keyframes scanLine { 0% { background-position: -100% 0; } 100% { background-position: 200% 0; } }
+  .step { padding-top: 60px; position: relative; }
+  .step-dot { position: absolute; top: 20px; left: 0; width: 16px; height: 16px; background: var(--green); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+  .step-num { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--green); margin-bottom: 16px; opacity: 0.6; }
+  .step-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; margin-bottom: 12px; }
+  .step-desc { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
+
+  /* DEMO */
+  .demo-section { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; position: relative; overflow: hidden; }
+  .demo-box { max-width: 640px; margin: 64px auto 0; background: var(--card); border: 1px solid var(--border); padding: 48px 40px; position: relative; text-align: left; }
+  .demo-box::before { content: '> BUSCA_EN_VIVO'; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--green); display: block; margin-bottom: 32px; }
+  .demo-field { margin-bottom: 24px; }
+  .demo-field label { display: block; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .demo-field input { width: 100%; background: var(--black); border: 1px solid var(--border); color: var(--white); font-family: 'Space Mono', monospace; font-size: 15px; padding: 14px 16px; outline: none; transition: border-color 0.2s; cursor: none; }
+  .demo-field input:focus { border-color: var(--green); }
+  .demo-field input::placeholder { color: var(--muted); }
+  .demo-preview { font-family: 'Space Mono', monospace; font-size: 12px; line-height: 1.8; color: var(--green); background: var(--black); border-left: 2px solid var(--green); padding: 16px 20px; margin-bottom: 32px; word-break: break-word; }
+  .demo-note { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--muted); margin-top: 24px; line-height: 1.8; }
+
+  /* FAQ */
+  .faq-list { max-width: 820px; margin-top: 64px; }
+  .faq-item { border: 1px solid var(--border); border-bottom: none; background: var(--dark); }
+  .faq-item:last-child { border-bottom: 1px solid var(--border); }
+  .faq-q { width: 100%; background: none; border: none; color: var(--white); font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; text-align: left; padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; gap: 16px; cursor: none; transition: color 0.2s; }
+  .faq-q:hover { color: var(--green); }
+  .faq-q::after { content: '+'; font-family: 'Space Mono', monospace; font-size: 20px; color: var(--green); transition: transform 0.3s; flex-shrink: 0; }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-a p { padding: 0 32px 28px; font-size: 16px; font-weight: 300; line-height: 1.8; color: var(--white); }
+  .faq-a p a { color: var(--green); }
+
+  /* CTA */
+  .cta-section { text-align: center; padding: 160px 5%; position: relative; overflow: hidden; }
+  .cta-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: gridshift 20s linear infinite; pointer-events: none; }
+  .cta-section::before { content: 'MAGUEY'; position: absolute; font-family: 'Bebas Neue', sans-serif; font-size: 38vw; color: rgba(0,255,65,0.08); top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none; letter-spacing: -5px; }
+  .cta-eyebrow { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 24px; }
+  .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 9vw, 130px); line-height: 0.9; margin-bottom: 48px; }
+  .cta-title .glitch-word { font-style: normal; color: var(--green); position: relative; display: inline-block; animation: ctaGlitch 2.5s infinite; }
+  .cta-title .glitch-word::before, .cta-title .glitch-word::after { content: attr(data-text); position: absolute; left: 0; top: 0; width: 100%; pointer-events: none; }
+  .cta-title .glitch-word::before { color: #ff00c8; animation: ctaGlitchTop 2.5s infinite; clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%); }
+  .cta-title .glitch-word::after { color: #00eeff; animation: ctaGlitchBot 2.5s infinite; clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%); }
+  @keyframes ctaGlitch { 0%, 90%, 100% { transform: none; } 91% { transform: skewX(-2deg); } 93% { transform: skewX(2deg); } 95% { transform: skewX(0deg); } }
+  @keyframes ctaGlitchTop { 0%, 90%, 100% { transform: none; opacity: 0; } 91% { transform: translate(-3px, -2px); opacity: 1; } 93% { transform: translate(3px, 0px); opacity: 1; } 95% { transform: none; opacity: 0; } }
+  @keyframes ctaGlitchBot { 0%, 90%, 100% { transform: none; opacity: 0; } 91% { transform: translate(3px, 2px); opacity: 1; } 93% { transform: translate(-3px, 0px); opacity: 1; } 95% { transform: none; opacity: 0; } }
+  .cta-sub { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; color: var(--muted); margin-top: 24px; text-transform: uppercase; }
+  .section-cta { margin-top: 64px; text-align: center; }
+
+  /* CROSS LINKS */
+  .crosslinks { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 48px; position: relative; z-index: 1; }
+  .crosslinks a { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 4px; transition: color 0.2s, border-color 0.2s; }
+  .crosslinks a:hover { color: var(--green); border-color: var(--green); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* REDUCED MOTION (page-specific cursor) */
+  @media (prefers-reduced-motion: reduce) {
+    .faq-q, .demo-field input { cursor: auto; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .hero { align-items: center; text-align: center; }
+    .hero-title { font-size: clamp(44px, 12vw, 84px); max-width: 100%; }
+    .hero-content { flex-direction: column; align-items: center; margin-top: 32px; }
+    .hero-bottom { align-items: center; max-width: 100%; }
+    .hero-desc { font-size: 16px; text-align: center; }
+    .hero-actions { align-items: center; }
+    .faq-q, .demo-field input { cursor: auto; }
+    .features-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .step:nth-child(3)::before { content: ''; position: absolute; top: 28px; left: 0; width: calc(200% + 40px); height: 1px; background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%); background-size: 200% 100%; animation: scanLine 3s linear infinite; }
+    .why-grid { grid-template-columns: 1fr; gap: 16px; }
+    .why-item { min-height: 180px; }
+    .demo-box { padding: 36px 24px; }
+    .faq-q { font-size: 20px; padding: 22px 20px; }
+    .faq-a p { padding: 0 20px 22px; }
+  }
+</style>
+</BaseLayout>
