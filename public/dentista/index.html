@@ -431,9 +431,78 @@
   /* ── Reveal animation ── */
   .reveal { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
   .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── CINTILLO MAGUEY (demo) ── */
+  .mg-cintillo {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 400;
+    background: #519536;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    gap: .65rem;
+    padding: .5rem 1rem;
+    text-align: center;
+    animation: mgSlideDown .5s ease both;
+  }
+  .mg-cintillo p { color: #fff; font-size: .76rem; line-height: 1.35; }
+  .mg-cintillo-btn {
+    flex-shrink: 0;
+    background: #fff;
+    color: #519536;
+    font-size: .76rem; font-weight: 700;
+    padding: .32rem .85rem;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .mg-cintillo-btn:hover { transform: scale(1.05); box-shadow: 0 3px 10px rgba(0,0,0,.2); }
+  @keyframes mgSlideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+
+  /* ── MOTION: hero escalonado ── */
+  .hero-content.visible > * { opacity: 0; transform: translateY(16px); animation: fadeUp .6s ease forwards; }
+  .hero-content.visible > *:nth-child(1) { animation-delay: .05s; }
+  .hero-content.visible > *:nth-child(2) { animation-delay: .15s; }
+  .hero-content.visible > *:nth-child(3) { animation-delay: .25s; }
+  .hero-content.visible > *:nth-child(4) { animation-delay: .35s; }
+  @keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+  /* ── MOTION: Ken Burns en la foto del hero ── */
+  .hero-img { animation: kenburns 16s ease-in-out infinite alternate; transform-origin: center; }
+  @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.07); } }
+
+  /* ── MOTION: badge de rating con rebote ── */
+  .hero-card.visible .rating-badge { animation: badgePop .55s .55s cubic-bezier(.34,1.56,.64,1) both; }
+  @keyframes badgePop { from { opacity: 0; transform: translateY(10px) scale(.85); } to { opacity: 1; transform: none; } }
+
+  /* ── MOTION: stagger en checks y stats (el padre revela, los hijos entran en cascada) ── */
+  .check-grid .check-item, .stats-grid .stat-item { opacity: 0; transform: translateY(14px); }
+  .check-grid.visible .check-item, .stats-grid.visible .stat-item { animation: fadeUp .5s ease forwards; }
+  .check-grid.visible .check-item:nth-child(2), .stats-grid.visible .stat-item:nth-child(2) { animation-delay: .09s; }
+  .check-grid.visible .check-item:nth-child(3), .stats-grid.visible .stat-item:nth-child(3) { animation-delay: .18s; }
+  .check-grid.visible .check-item:nth-child(4), .stats-grid.visible .stat-item:nth-child(4) { animation-delay: .27s; }
+
+  /* ── MOTION: micro-interacciones ── */
+  .trat-icon svg, .stat-icon svg { transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
+  .tratamiento-card:hover .trat-icon svg { transform: rotate(-6deg) scale(1.15); }
+  .stat-item:hover .stat-icon svg { transform: scale(1.15); }
+  .testimonio-card { transition: transform var(--transition), box-shadow var(--transition); }
+  .testimonio-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .btn { will-change: transform; }
+  .btn:active { transform: scale(.97); }
+
+  /* ── Accesibilidad: sin movimiento si el usuario lo pide ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal, .hero-content.visible > *, .check-grid .check-item, .stats-grid .stat-item { opacity: 1; transform: none; }
+  }
 </style>
 </head>
 <body>
+
+<!-- CINTILLO MAGUEY (demo) -->
+<div class="mg-cintillo" id="mgCintillo">
+  <p>Demo realizado por <strong>Maguey Studio</strong> — Personaliza con tu información</p>
+  <a class="mg-cintillo-btn" href="https://wa.me/5215560663926?text=Hola%2C%20vi%20el%20demo%20del%20dentista%20y%20me%20interesa" target="_blank" rel="noopener">Me interesa</a>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -547,7 +616,7 @@
         <div class="stat-icon">
           <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
         </div>
-        <div class="stat-value">12+</div>
+        <div class="stat-value" id="statExp" data-count="12" data-suffix="+">12+</div>
         <div class="stat-label">años de experiencia</div>
       </div>
       <div class="stat-item">
@@ -899,11 +968,53 @@
     });
   });
 
+  // Cintillo Maguey: sincronizar altura con el layout (body y nav sticky)
+  const cintillo = document.getElementById('mgCintillo');
+  const navEl = document.querySelector('nav');
+  function syncCintillo() {
+    const h = cintillo.offsetHeight;
+    document.body.style.paddingTop = h + 'px';
+    navEl.style.top = h + 'px';
+  }
+  syncCintillo();
+  window.addEventListener('resize', syncCintillo);
+  window.addEventListener('load', syncCintillo);
+
+  // Stagger: las tarjetas de cada grid entran en cascada
+  document.querySelectorAll('.tratamientos-grid, .testimonios-grid, .faq-list').forEach(grid => {
+    [...grid.children].forEach((card, i) => {
+      card.style.transitionDelay = (i % 6) * 70 + 'ms';
+    });
+  });
+
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Contador animado (12+ años)
+  const statExp = document.getElementById('statExp');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (statExp && !reducedMotion) {
+    const target = parseInt(statExp.dataset.count, 10);
+    const suffix = statExp.dataset.suffix || '';
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        countObserver.unobserve(e.target);
+        const t0 = performance.now();
+        const dur = 1100;
+        (function tick(now) {
+          const p = Math.min((now - t0) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          statExp.textContent = Math.round(target * eased) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      });
+    }, { threshold: 0.5 });
+    countObserver.observe(statExp);
+  }
 </script>
 </body>
 </html>
