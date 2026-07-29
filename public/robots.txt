@@ -1,38 +1,50 @@
 User-agent: *
 Allow: /
+Disallow: /demo/
 
 # Crawlers de IA — GEO
 User-agent: GPTBot
 Allow: /
+Disallow: /demo/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /demo/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /demo/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /demo/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /demo/
 
 User-agent: Applebot
 Allow: /
+Disallow: /demo/
 
 User-agent: Googlebot
 Allow: /
+Disallow: /demo/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /demo/
 
 User-agent: DuckDuckBot
 Allow: /
+Disallow: /demo/
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /demo/
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /demo/
 
 Sitemap: https://magueystudio.mx/sitemap.xml

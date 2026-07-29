@@ -1,0 +1,391 @@
+---
+// Layout de páginas demo para prospección en frío (/demo/<slug>).
+// Autocontenido a propósito: no usa BaseLayout ni global.css para que
+// cada demo se vea como el sitio del doctor, no como el de Maguey.
+// Todos los datos del doctor vienen de `demo` (src/data/demos/<slug>.json).
+
+interface Servicio {
+  titulo: string;
+  descripcion: string;
+}
+
+interface Testimonio {
+  texto: string;
+  autor: string;
+}
+
+interface Demo {
+  nombre: string;
+  especialidad: string;
+  ciudad: string;
+  colonia?: string;
+  telefono: string;
+  heroDescripcion: string;
+  sobreMi: string[];
+  servicios: Servicio[];
+  testimonios: Testimonio[];
+  branding: {
+    primario: string;
+    acento: string;
+    fondo?: string;
+  };
+}
+
+interface Props {
+  demo: Demo;
+  slug: string;
+}
+
+const { demo, slug } = Astro.props;
+
+// Firma de Maguey en cada demo — fija, no cambia con el branding del doctor.
+const MAGUEY_VERDE = '#519536';
+const MAGUEY_WA = '5215560663926';
+const waMaguey = `https://wa.me/${MAGUEY_WA}?text=${encodeURIComponent(`Hola, vi el demo de ${slug} y me interesa`)}`;
+
+const ubicacion = [demo.colonia, demo.ciudad].filter(Boolean).join(', ');
+const iniciales = demo.nombre
+  .replace(/^Dra?\.\s*/i, '')
+  .split(/\s+/)
+  .slice(0, 2)
+  .map((p) => p[0])
+  .join('');
+
+const colorPrimario = demo.branding.primario;
+const colorAcento = demo.branding.acento;
+const colorFondo = demo.branding.fondo ?? '#ffffff';
+---
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>{demo.nombre} — {demo.especialidad} en {demo.ciudad} · Vista previa</title>
+<meta name="description" content={`Vista previa de la página de ${demo.nombre}, ${demo.especialidad} en ${ubicacion}. Demo creado por Maguey Studio.`}>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Banner Maguey — firma fija en todos los demos -->
+<div class="mg-banner">
+  <p>Vista previa creada por <strong>Maguey Studio</strong> — así se vería su página</p>
+  <a class="mg-banner-btn" href={waMaguey} target="_blank" rel="noopener">Me interesa</a>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="avatar" aria-hidden="true">{iniciales}</div>
+    <p class="especialidad">{demo.especialidad}</p>
+    <h1>{demo.nombre}</h1>
+    <p class="hero-desc">{demo.heroDescripcion}</p>
+    <p class="hero-ubicacion">📍 {ubicacion}</p>
+    <div class="hero-ctas">
+      <button class="btn-primario" onclick="demoAviso()">Agendar cita</button>
+      <a class="btn-secundario" href="#servicios">Ver servicios</a>
+    </div>
+  </div>
+</header>
+
+<section id="servicios" class="seccion">
+  <div class="wrap">
+    <h2>Servicios</h2>
+    <div class="servicios-grid">
+      {demo.servicios.map((s) => (
+        <article class="servicio">
+          <h3>{s.titulo}</h3>
+          <p>{s.descripcion}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-alt">
+  <div class="wrap sobre-mi">
+    <div class="foto-placeholder" aria-hidden="true">
+      <span>Foto de {demo.nombre}</span>
+    </div>
+    <div>
+      <h2>Sobre mí</h2>
+      {demo.sobreMi.map((p) => <p class="parrafo">{p}</p>)}
+    </div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="wrap">
+    <h2>Lo que dicen mis pacientes</h2>
+    <div class="testimonios-grid">
+      {demo.testimonios.map((t) => (
+        <figure class="testimonio">
+          <blockquote>“{t.texto}”</blockquote>
+          <figcaption>— {t.autor}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-alt">
+  <div class="wrap">
+    <h2>Ubicación y contacto</h2>
+    <div class="ubicacion">
+      <div class="mapa-placeholder" aria-hidden="true"><span>Mapa del consultorio</span></div>
+      <div class="contacto">
+        <p class="contacto-linea"><strong>Consultorio:</strong> {ubicacion}</p>
+        <p class="contacto-linea"><strong>Teléfono:</strong> {demo.telefono}</p>
+        <button class="btn-primario" onclick="demoAviso()">Agendar cita</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <p>{demo.nombre} · {demo.especialidad}</p>
+  <p class="pie-nota">Sitio de demostración creado por <a href={waMaguey} target="_blank" rel="noopener">Maguey Studio</a>. Testimonios y datos de contacto son ilustrativos.</p>
+</footer>
+
+<!-- Aviso al hacer clic en "Agendar cita" -->
+<div class="aviso-overlay" id="demoAvisoOverlay" role="dialog" aria-modal="true" aria-labelledby="demoAvisoTitulo" hidden>
+  <div class="aviso-caja">
+    <h3 id="demoAvisoTitulo">Esta es una vista previa</h3>
+    <p>Su página real tendría aquí su WhatsApp para que sus pacientes agenden cita directo con usted.</p>
+    <a class="aviso-btn" href={waMaguey} target="_blank" rel="noopener">Contactar a Maguey Studio</a>
+    <button class="aviso-cerrar" onclick="demoAvisoCerrar()">Cerrar</button>
+  </div>
+</div>
+
+<script is:inline>
+  function demoAviso() {
+    document.getElementById('demoAvisoOverlay').hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function demoAvisoCerrar() {
+    document.getElementById('demoAvisoOverlay').hidden = true;
+    document.body.style.overflow = '';
+  }
+  document.getElementById('demoAvisoOverlay').addEventListener('click', function (e) {
+    if (e.target === this) demoAvisoCerrar();
+  });
+</script>
+
+<style define:vars={{ colorPrimario, colorAcento, colorFondo, magueyVerde: MAGUEY_VERDE }}>
+  :root {
+    --color-primario: var(--colorPrimario);
+    --color-acento: var(--colorAcento);
+    --color-fondo: var(--colorFondo);
+    --maguey-verde: var(--magueyVerde);
+    --texto: #22303a;
+    --texto-suave: #5b6b76;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--texto);
+    background: var(--color-fondo);
+    line-height: 1.6;
+    padding-top: 58px; /* espacio del banner fijo */
+  }
+
+  h1, h2, h3 { font-family: 'Lora', Georgia, serif; font-weight: 600; }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* ── Banner Maguey (fijo) ─────────────────────────── */
+  .mg-banner {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--maguey-verde);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.55rem 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .mg-banner p { line-height: 1.3; }
+  .mg-banner-btn {
+    flex-shrink: 0;
+    background: #fff;
+    color: var(--maguey-verde);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero {
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 3rem 0 3.5rem;
+    text-align: center;
+  }
+  .avatar {
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    margin: 0 auto 1.25rem;
+    display: flex; align-items: center; justify-content: center;
+    background: color-mix(in srgb, var(--color-primario) 12%, #fff);
+    color: var(--color-primario);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 2rem;
+    border: 2px solid color-mix(in srgb, var(--color-primario) 30%, #fff);
+  }
+  .especialidad {
+    color: var(--color-acento);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.4rem;
+  }
+  .hero h1 { font-size: 2.1rem; margin-bottom: 0.75rem; }
+  .hero-desc { color: var(--texto-suave); max-width: 34rem; margin: 0 auto 0.75rem; }
+  .hero-ubicacion { font-size: 0.9rem; color: var(--texto-suave); margin-bottom: 1.75rem; }
+  .hero-ctas { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+
+  .btn-primario {
+    display: inline-block;
+    background: var(--color-primario);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font: 600 1rem 'Inter', sans-serif;
+    padding: 0.85rem 2.2rem;
+    border-radius: 8px;
+  }
+  .btn-secundario {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  /* ── Secciones ────────────────────────────────────── */
+  .seccion { padding: 3rem 0; }
+  .seccion-alt { background: color-mix(in srgb, var(--color-primario) 4%, var(--color-fondo)); }
+  .seccion h2 { font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center; }
+
+  .servicios-grid { display: grid; gap: 1rem; }
+  .servicio {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-top: 3px solid var(--color-acento);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .servicio h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-primario); }
+  .servicio p { font-size: 0.92rem; color: var(--texto-suave); }
+
+  .sobre-mi { display: grid; gap: 1.5rem; }
+  .sobre-mi h2 { text-align: left; }
+  .parrafo { color: var(--texto-suave); margin-bottom: 0.9rem; }
+  .foto-placeholder {
+    background: color-mix(in srgb, var(--color-primario) 8%, #fff);
+    border: 1px dashed color-mix(in srgb, var(--color-primario) 35%, #fff);
+    border-radius: 12px;
+    min-height: 220px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--color-primario);
+    font-size: 0.85rem;
+  }
+
+  .testimonios-grid { display: grid; gap: 1rem; }
+  .testimonio {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .testimonio blockquote { font-size: 0.95rem; margin-bottom: 0.6rem; }
+  .testimonio figcaption { font-size: 0.85rem; color: var(--color-acento); font-weight: 600; }
+
+  .ubicacion { display: grid; gap: 1.5rem; }
+  .mapa-placeholder {
+    background: color-mix(in srgb, var(--color-primario) 8%, #fff);
+    border: 1px dashed color-mix(in srgb, var(--color-primario) 35%, #fff);
+    border-radius: 12px;
+    min-height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--color-primario);
+    font-size: 0.85rem;
+  }
+  .contacto { text-align: center; }
+  .contacto-linea { margin-bottom: 0.6rem; color: var(--texto-suave); }
+  .contacto-linea strong { color: var(--texto); }
+  .contacto .btn-primario { margin-top: 0.75rem; }
+
+  /* ── Pie ──────────────────────────────────────────── */
+  .pie {
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    padding: 2rem 1.25rem 2.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+  }
+  .pie-nota { margin-top: 0.5rem; font-size: 0.78rem; }
+  .pie-nota a { color: var(--maguey-verde); font-weight: 600; }
+
+  /* ── Aviso "Agendar cita" ─────────────────────────── */
+  .aviso-overlay {
+    position: fixed; inset: 0;
+    z-index: 2000;
+    background: rgba(15, 25, 32, 0.55);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.25rem;
+  }
+  .aviso-caja {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.75rem 1.5rem;
+    max-width: 22rem;
+    text-align: center;
+  }
+  .aviso-caja h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+  .aviso-caja p { font-size: 0.92rem; color: var(--texto-suave); margin-bottom: 1.25rem; }
+  .aviso-btn {
+    display: block;
+    background: var(--maguey-verde);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+  .aviso-cerrar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: 500 0.88rem 'Inter', sans-serif;
+    color: var(--texto-suave);
+  }
+
+  /* ── Desktop ──────────────────────────────────────── */
+  @media (min-width: 720px) {
+    .mg-banner { font-size: 0.88rem; }
+    .hero h1 { font-size: 2.6rem; }
+    .hero-ctas { flex-direction: row; justify-content: center; gap: 1.5rem; }
+    .servicios-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .testimonios-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .sobre-mi { grid-template-columns: 280px 1fr; align-items: start; gap: 2.5rem; }
+    .foto-placeholder { min-height: 300px; }
+    .ubicacion { grid-template-columns: 1fr 1fr; align-items: center; }
+    .contacto { text-align: left; }
+  }
+</style>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "nombre": "Dra. Melissa Mejía",
+  "especialidad": "Otorrinolaringología · Cirugía de cabeza y cuello",
+  "ciudad": "CDMX",
+  "colonia": "",
+  "telefono": "55 0000 0000",
+  "heroDescripcion": "Atención integral de oído, nariz y garganta, con alta especialidad en cirugía oncológica de cabeza y cuello. Diagnóstico oportuno y acompañamiento cercano en cada etapa del tratamiento.",
+  "sobreMi": [
+    "Soy otorrinolaringóloga con alta especialidad en cirugía oncológica de cabeza y cuello. Mi consulta combina el diagnóstico integral de los padecimientos de oído, nariz y garganta con el manejo quirúrgico de tumores de cabeza y cuello.",
+    "Creo en una medicina que explica: cada paciente sale de mi consultorio entendiendo su diagnóstico, sus opciones y los siguientes pasos. Trabajo de la mano con oncología médica y radioterapia cuando el tratamiento lo requiere.",
+    "Este texto es de muestra — en su página real, aquí iría su trayectoria, formación y filosofía de atención, con sus propias palabras."
+  ],
+  "servicios": [
+    {
+      "titulo": "Cirugía oncológica de cabeza y cuello",
+      "descripcion": "Diagnóstico y tratamiento quirúrgico de tumores de cavidad oral, laringe, faringe y cuello."
+    },
+    {
+      "titulo": "Nódulos y cirugía de tiroides",
+      "descripcion": "Evaluación de nódulos tiroideos y cirugía de tiroides con enfoque oncológico."
+    },
+    {
+      "titulo": "Glándulas salivales",
+      "descripcion": "Manejo de tumores y padecimientos de parótida y glándulas submandibulares."
+    },
+    {
+      "titulo": "Consulta de otorrinolaringología",
+      "descripcion": "Atención integral de padecimientos de oído, nariz y garganta en adultos."
+    },
+    {
+      "titulo": "Endoscopía diagnóstica",
+      "descripcion": "Nasofibrolaringoscopía en consultorio para valoración de nariz, faringe y laringe."
+    }
+  ],
+  "testimonios": [
+    {
+      "texto": "La doctora me explicó todo con calma y claridad. Salí de la consulta entendiendo exactamente qué tenía y cuál era el plan.",
+      "autor": "Paciente (testimonio de muestra)"
+    },
+    {
+      "texto": "Me operó de tiroides y el seguimiento fue impecable. Siempre disponible para resolver mis dudas.",
+      "autor": "Paciente (testimonio de muestra)"
+    },
+    {
+      "texto": "Trato humano y muy profesional. La recomiendo ampliamente.",
+      "autor": "Paciente (testimonio de muestra)"
+    }
+  ],
+  "branding": {
+    "primario": "#8E4E59",
+    "acento": "#9E5A66",
+    "fondo": "#F7EDEF",
+    "notaPaleta": "Marca de la doctora: rosa palo #EAD7DB (fondo) y rosa #E8C8CD (círculo del logo). Como son pasteles sin contraste suficiente para UI, primario/acento son rosas profundos derivados; los pasteles aparecen como fondo y tintes."
+  }
+}

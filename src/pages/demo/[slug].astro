@@ -1,0 +1,17 @@
+---
+import DemoDoctor from '../../layouts/DemoDoctor.astro';
+
+// Cada archivo src/data/demos/<slug>.json genera la ruta /demo/<slug>.
+// Crear un demo nuevo = crear un JSON nuevo; cero cambios aquí o en el layout.
+export function getStaticPaths() {
+  const archivos = import.meta.glob('../../data/demos/*.json', { eager: true });
+  return Object.entries(archivos).map(([ruta, mod]) => {
+    const slug = ruta.split('/').pop().replace('.json', '');
+    return { params: { slug }, props: { demo: mod.default } };
+  });
+}
+
+const { demo } = Astro.props;
+const { slug } = Astro.params;
+---
+<DemoDoctor demo={demo} slug={slug} />
