@@ -342,6 +342,9 @@ const colorTexto = demo.branding.texto ?? '#22303a';
   .pie-nota a { color: var(--maguey-verde); font-weight: 600; }
 
   /* ── Aviso "Agendar cita" ─────────────────────────── */
+  /* [hidden] pierde contra el display:flex de autor; forzarlo explícito */
+  .aviso-overlay[hidden] { display: none; }
+
   .aviso-overlay {
     position: fixed; inset: 0;
     z-index: 2000;
