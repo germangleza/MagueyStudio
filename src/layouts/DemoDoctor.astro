@@ -28,6 +28,7 @@ interface Demo {
     primario: string;
     acento: string;
     fondo?: string;
+    texto?: string;
   };
 }
 
@@ -54,6 +55,7 @@ const iniciales = demo.nombre
 const colorPrimario = demo.branding.primario;
 const colorAcento = demo.branding.acento;
 const colorFondo = demo.branding.fondo ?? '#ffffff';
+const colorTexto = demo.branding.texto ?? '#22303a';
 ---
 <!doctype html>
 <html lang="es">
@@ -172,14 +174,14 @@ const colorFondo = demo.branding.fondo ?? '#ffffff';
   });
 </script>
 
-<style define:vars={{ colorPrimario, colorAcento, colorFondo, magueyVerde: MAGUEY_VERDE }}>
+<style define:vars={{ colorPrimario, colorAcento, colorFondo, colorTexto, magueyVerde: MAGUEY_VERDE }}>
   :root {
     --color-primario: var(--colorPrimario);
     --color-acento: var(--colorAcento);
     --color-fondo: var(--colorFondo);
     --maguey-verde: var(--magueyVerde);
-    --texto: #22303a;
-    --texto-suave: #5b6b76;
+    --texto: var(--colorTexto);
+    --texto-suave: color-mix(in srgb, var(--texto) 74%, #fff);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }

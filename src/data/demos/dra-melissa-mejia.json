@@ -49,7 +49,8 @@
   "branding": {
     "primario": "#8E4E59",
     "acento": "#9E5A66",
-    "fondo": "#F7EDEF",
-    "notaPaleta": "Marca de la doctora: rosa palo #EAD7DB (fondo) y rosa #E8C8CD (círculo del logo). Como son pasteles sin contraste suficiente para UI, primario/acento son rosas profundos derivados; los pasteles aparecen como fondo y tintes."
+    "fondo": "#F5E9EC",
+    "texto": "#524A50",
+    "notaPaleta": "Marca de la doctora (de su Instagram): rosa palo #EAD7DB de fondo, rosa #E8C8CD en acentos y texto gris ciruela cálido. Los pasteles no tienen contraste suficiente para UI, así que primario/acento son rosas profundos derivados y los pasteles aparecen como fondo y tintes."
   }
 }
