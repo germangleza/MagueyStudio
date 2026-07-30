@@ -4,12 +4,28 @@
   "ciudad": "CDMX",
   "colonia": "",
   "telefono": "55 0000 0000",
+  "horario": "Lun–Vie 9:00–19:00 · Sáb 9:00–14:00",
   "heroDescripcion": "Atención integral de oído, nariz y garganta, con alta especialidad en cirugía oncológica de cabeza y cuello. Diagnóstico oportuno y acompañamiento cercano en cada etapa del tratamiento.",
+  "tituloSobre": "Conoce a tu doctora",
   "sobreMi": [
     "Soy otorrinolaringóloga con alta especialidad en cirugía oncológica de cabeza y cuello. Mi consulta combina el diagnóstico integral de los padecimientos de oído, nariz y garganta con el manejo quirúrgico de tumores de cabeza y cuello.",
     "Creo en una medicina que explica: cada paciente sale de mi consultorio entendiendo su diagnóstico, sus opciones y los siguientes pasos. Trabajo de la mano con oncología médica y radioterapia cuando el tratamiento lo requiere.",
     "Este texto es de muestra — en su página real, aquí iría su trayectoria, formación y filosofía de atención, con sus propias palabras."
   ],
+  "tags": ["Cirugía de cabeza y cuello", "Tiroides", "Glándulas salivales", "Endoscopía", "ORL general"],
+  "destacados": [
+    "Atención personalizada",
+    "Diagnóstico explicado con claridad",
+    "Manejo multidisciplinario",
+    "Consultorio en CDMX"
+  ],
+  "stats": [
+    { "valor": "Alta especialidad", "etiqueta": "en cirugía oncológica de cabeza y cuello" },
+    { "valor": "Diagnóstico", "etiqueta": "endoscopía en consultorio" },
+    { "valor": "Equipo", "etiqueta": "trabajo conjunto con oncología y radioterapia" },
+    { "valor": "Citas", "etiqueta": "por WhatsApp, respuesta el mismo día" }
+  ],
+  "rating": { "valor": "5.0 de 5", "texto": "opiniones ilustrativas" },
   "servicios": [
     {
       "titulo": "Cirugía oncológica de cabeza y cuello",
@@ -35,15 +51,41 @@
   "testimonios": [
     {
       "texto": "La doctora me explicó todo con calma y claridad. Salí de la consulta entendiendo exactamente qué tenía y cuál era el plan.",
-      "autor": "Paciente (testimonio de muestra)"
+      "autor": "María G.",
+      "lugar": "Testimonio de muestra"
     },
     {
       "texto": "Me operó de tiroides y el seguimiento fue impecable. Siempre disponible para resolver mis dudas.",
-      "autor": "Paciente (testimonio de muestra)"
+      "autor": "Laura V.",
+      "lugar": "Testimonio de muestra"
     },
     {
       "texto": "Trato humano y muy profesional. La recomiendo ampliamente.",
-      "autor": "Paciente (testimonio de muestra)"
+      "autor": "Roberto P.",
+      "lugar": "Testimonio de muestra"
+    },
+    {
+      "texto": "Agendé por WhatsApp y me respondieron el mismo día. La consulta fue puntual y muy completa.",
+      "autor": "Ana C.",
+      "lugar": "Testimonio de muestra"
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Cómo agendo una cita?",
+      "respuesta": "Puedes agendar directamente por WhatsApp o llamando al consultorio. Se confirma disponibilidad el mismo día y se te orienta sobre lo que necesitas traer a tu consulta."
+    },
+    {
+      "pregunta": "¿Qué padecimientos trata?",
+      "respuesta": "Padecimientos de oído, nariz y garganta en adultos, y de forma especializada tumores de cabeza y cuello: tiroides, glándulas salivales, cavidad oral, laringe y faringe."
+    },
+    {
+      "pregunta": "¿Qué incluye la primera consulta?",
+      "respuesta": "Una valoración completa con historia clínica, exploración y, si tu caso lo requiere, endoscopía diagnóstica en el mismo consultorio. Sales con un diagnóstico claro y un plan por escrito."
+    },
+    {
+      "pregunta": "¿Dónde está el consultorio?",
+      "respuesta": "En la Ciudad de México. Al agendar tu cita se te comparte la ubicación exacta y las indicaciones para llegar. (Dato de muestra — aquí iría la dirección real.)"
     }
   ],
   "branding": {
