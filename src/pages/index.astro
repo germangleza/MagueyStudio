@@ -295,6 +295,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h3 class="partner-name">Backdoor</h3>
       <p class="partner-desc">Con Backdoor operamos campañas de Google Ads y Meta Ads y atendemos clientes compartidos, sumando su experiencia en performance a cada cuenta.</p>
     </div>
+    <div class="partner-card reveal">
+      <div class="partner-tag">Partner // Shows de drones</div>
+      <h3 class="partner-name">Sky Lights Experiences</h3>
+      <p class="partner-desc">Representamos comercialmente a Sky Lights Experiences: espectáculos de luces con drones para eventos, marcas y celebraciones que quieren dejar huella en el cielo.</p>
+    </div>
+  </div>
+
+  <div class="partners-note reveal">
+    <p>¿Necesitas algo que no ves aquí? También somos tu red de contactos: si nosotros no lo hacemos, te conectamos con expertos de confianza. <a href="https://wa.me/5215560663926?text=Hola%2C%20busco%20un%20servicio%20y%20quiero%20saber%20si%20me%20pueden%20conectar%20con%20alguien.">Cuéntanos qué buscas →</a></p>
   </div>
 </section>
 
@@ -528,13 +537,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* PARTNERS */
   .partners { border-top: 1px solid var(--border); }
   .partners-intro { font-size: 17px; line-height: 1.8; color: var(--muted); font-weight: 300; max-width: 520px; margin-top: 24px; }
-  .partners-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 64px; }
+  .partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 64px; }
   .partner-card { background: var(--dark); padding: 48px 40px; position: relative; overflow: hidden; }
   .partner-card::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(0,255,65,0.04) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; }
   .partner-card:hover::before { opacity: 1; }
   .partner-tag { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 32px; opacity: 0.7; }
   .partner-name { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 2px; margin-bottom: 14px; line-height: 1; }
   .partner-desc { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
+  .partners-note { margin-top: 40px; border-left: 2px solid var(--green); padding: 4px 0 4px 20px; }
+  .partners-note p { font-family: 'Space Mono', monospace; font-size: 13px; line-height: 1.9; color: var(--muted); max-width: 62ch; }
+  .partners-note a { color: var(--green); text-decoration: none; }
+  .partners-note a:hover { text-decoration: underline; }
 
   /* CTA */
   .cta-section { text-align: center; padding: 160px 5%; position: relative; overflow: hidden; }
