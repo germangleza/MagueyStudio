@@ -278,6 +278,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </section>
 
+<!-- PORTAFOLIO -->
+<section class="portafolio" id="portafolio" aria-label="Portafolio — negocios que confían en Maguey Studio">
+  <div class="section-label reveal">Portafolio</div>
+  <h2 class="services-title reveal">NEGOCIOS QUE YA<br><em>CRECEN</em> CON NOSOTROS</h2>
+
+  <div class="proof-grid">
+    <div class="proof-card reveal">
+      <div class="proof-tag">Consultorio Dental</div>
+      <h3 class="proof-name">Santos Consultorio Dental</h3>
+      <p class="proof-desc">Acompañamos su presencia digital para que más pacientes encuentren el consultorio y agenden su cita sin fricción.</p>
+    </div>
+    <div class="proof-card reveal">
+      <div class="proof-tag">Alergología</div>
+      <h3 class="proof-name">Alergia Balance Center</h3>
+      <p class="proof-desc">Presencia digital construida desde cero: identidad, sitio y estrategia para que los pacientes encuentren la clínica y agenden su cita.</p>
+    </div>
+    <div class="proof-card reveal">
+      <div class="proof-tag">Salud Visual</div>
+      <h3 class="proof-name">Ópticas Jarmar</h3>
+      <p class="proof-desc">Cliente 360°: llevamos todo su ecosistema digital de forma continua — agente de IA en WhatsApp, campañas de Ads, contenido para redes, sitio web y SEO/GEO. Un solo equipo, todos los frentes.</p>
+    </div>
+    <div class="proof-card reveal">
+      <div class="proof-tag">Óptica y Contactología</div>
+      <h3 class="proof-name">Clínica Óptica Contactología Especializada</h3>
+      <p class="proof-desc">Branding y presencia digital desde cero: identidad de marca y estrategia para que más pacientes encuentren la clínica y agenden su valoración visual sin fricción.</p>
+    </div>
+  </div>
+</section>
+
 <!-- PARTNERS -->
 <section class="partners" id="partners" aria-label="Partners y alianzas estratégicas">
   <div class="section-label reveal">Alianzas</div>
@@ -534,6 +563,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .why-content h3 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; margin-bottom: 8px; }
   .why-content p { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
 
+  /* PORTAFOLIO */
+  .portafolio { border-top: 1px solid var(--border); }
+  .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 64px; }
+  .proof-card { background: var(--dark); border: 1px solid var(--border); padding: 48px 40px; position: relative; overflow: hidden; }
+  .proof-card::before { content: ''; position: absolute; top: 0; left: 40px; right: 40px; height: 2px; background: var(--green); pointer-events: none; }
+  .proof-tag { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
+  .proof-name { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 2px; margin-bottom: 12px; }
+  .proof-desc { font-size: 16px; line-height: 1.8; color: var(--white); font-weight: 300; }
+
   /* PARTNERS */
   .partners { border-top: 1px solid var(--border); }
   .partners-intro { font-size: 17px; line-height: 1.8; color: var(--muted); font-weight: 300; max-width: 520px; margin-top: 24px; }
@@ -630,6 +668,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .geo-section { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; gap: 16px; }
     .partners-grid { grid-template-columns: 1fr; }
+    .proof-grid { grid-template-columns: 1fr; gap: 16px; }
   }
 </style>
 </BaseLayout>
