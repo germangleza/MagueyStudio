@@ -278,6 +278,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </section>
 
+<!-- PARTNERS -->
+<section class="partners" id="partners" aria-label="Partners y alianzas estratégicas">
+  <div class="section-label reveal">Alianzas</div>
+  <h2 class="services-title reveal">CRECEMOS EN <em>EQUIPO</em></h2>
+  <p class="partners-intro reveal">Nos aliamos con especialistas para que cada proyecto tenga al mejor equipo detrás — sin intermediarios de más.</p>
+
+  <div class="partners-grid">
+    <div class="partner-card reveal">
+      <div class="partner-tag">Partner // Agentes de IA</div>
+      <h3 class="partner-name">Life Agent</h3>
+      <p class="partner-desc">Junto a Life Agent construimos los agentes de IA que atienden a tus clientes por WhatsApp: responden al instante, agendan citas y dan seguimiento 24/7.</p>
+    </div>
+    <div class="partner-card reveal">
+      <div class="partner-tag">Partner // Publicidad digital</div>
+      <h3 class="partner-name">Backdoor</h3>
+      <p class="partner-desc">Con Backdoor operamos campañas de Google Ads y Meta Ads y atendemos clientes compartidos, sumando su experiencia en performance a cada cuenta.</p>
+    </div>
+    <div class="partner-card reveal">
+      <div class="partner-tag">Partner // Shows de drones</div>
+      <h3 class="partner-name">Sky Lights Experiences</h3>
+      <p class="partner-desc">Representamos comercialmente a Sky Lights Experiences: espectáculos de luces con drones para eventos, marcas y celebraciones que quieren dejar huella en el cielo.</p>
+    </div>
+  </div>
+
+  <div class="partners-note reveal">
+    <p>¿Necesitas algo que no ves aquí? También somos tu red de contactos: si nosotros no lo hacemos, te conectamos con expertos de confianza. <a href="https://wa.me/5215560663926?text=Hola%2C%20busco%20un%20servicio%20y%20quiero%20saber%20si%20me%20pueden%20conectar%20con%20alguien.">Cuéntanos qué buscas →</a></p>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section" aria-label="Contacto — Cotizar proyecto">
   <div class="cta-grid-bg"></div>
@@ -505,6 +534,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .why-content h3 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; margin-bottom: 8px; }
   .why-content p { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
 
+  /* PARTNERS */
+  .partners { border-top: 1px solid var(--border); }
+  .partners-intro { font-size: 17px; line-height: 1.8; color: var(--muted); font-weight: 300; max-width: 520px; margin-top: 24px; }
+  .partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 64px; }
+  .partner-card { background: var(--dark); padding: 48px 40px; position: relative; overflow: hidden; }
+  .partner-card::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(0,255,65,0.04) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; }
+  .partner-card:hover::before { opacity: 1; }
+  .partner-tag { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 32px; opacity: 0.7; }
+  .partner-name { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 2px; margin-bottom: 14px; line-height: 1; }
+  .partner-desc { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
+  .partners-note { margin-top: 40px; border-left: 2px solid var(--green); padding: 4px 0 4px 20px; }
+  .partners-note p { font-family: 'Space Mono', monospace; font-size: 13px; line-height: 1.9; color: var(--muted); max-width: 62ch; }
+  .partners-note a { color: var(--green); text-decoration: none; }
+  .partners-note a:hover { text-decoration: underline; }
+
   /* CTA */
   .cta-section { text-align: center; padding: 160px 5%; position: relative; overflow: hidden; }
   .cta-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: gridshift 20s linear infinite; pointer-events: none; }
@@ -585,6 +629,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .step:nth-child(3)::before { content: ''; position: absolute; top: 28px; left: 0; width: calc(200% + 40px); height: 1px; background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%); background-size: 200% 100%; animation: scanLine 3s linear infinite; }
     .geo-section { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; gap: 16px; }
+    .partners-grid { grid-template-columns: 1fr; }
   }
 </style>
 </BaseLayout>
