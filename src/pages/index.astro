@@ -92,8 +92,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </div>
 
 <!-- GEO -->
-<section id="geo" aria-label="GEO — Generative Engine Optimization" style="padding: 80px 5% 60px;">
-  <div class="geo-section" style="grid-template-columns: 1fr;">
+<section id="geo" aria-label="GEO — Generative Engine Optimization" style="padding: 80px 5% 60px; position: relative; overflow: hidden;">
+  <div class="geo-hole" aria-hidden="true">
+    <canvas id="geoHoleCanvas"></canvas>
+    <div class="geo-hole-glow"></div>
+    <div class="geo-hole-scan"></div>
+    <div class="geo-hole-vignette"></div>
+  </div>
+  <div class="geo-section" style="grid-template-columns: 1fr; position: relative; z-index: 1;">
     <div class="geo-left reveal">
       <div class="section-label">Diferenciador</div>
       <h2 class="geo-title">PREPARAMOS TU NEGOCIO<br>PARA LA ERA<br>DE LA <em>IA</em></h2>
@@ -374,6 +380,216 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     });
   })();
 
+  // GRID HOLE — fondo de la sección GEO
+  (function() {
+    var canvas = document.getElementById('geoHoleCanvas');
+    if (!canvas) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var DISCS = 80, LINES = 80, COUNT = 220, SPEED = 50;
+    var discInc = (SPEED / 100) * 0.002, vyScale = SPEED / 50;
+    var state = { discs: [], particles: [], clip: {}, start: {}, end: {}, rect: { w: 0, h: 0 }, dpi: 1, area: {}, linesCanvas: null };
+    var stroke = '#00FF41', dot = [255, 255, 255];
+    var rafId = 0, running = false;
+
+    function toRGB(c) {
+      c = c.trim();
+      if (c[0] === '#') {
+        var hex = c.slice(1);
+        if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+        var n = parseInt(hex.slice(0, 6), 16);
+        return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+      }
+      var m = c.match(/rgba?\(([^)]+)\)/);
+      if (m) { var p = m[1].split(',').map(parseFloat); return [p[0]||0, p[1]||0, p[2]||0]; }
+      return [255, 255, 255];
+    }
+    function readColors() {
+      var cs = getComputedStyle(document.documentElement);
+      stroke = (cs.getPropertyValue('--green') || '#00FF41').trim() || '#00FF41';
+      dot = toRGB((cs.getPropertyValue('--white') || '#fff').trim() || '#fff');
+    }
+    function easeInExpo(p) { return p === 0 ? 0 : Math.pow(2, 10 * (p - 1)); }
+    function tweenDisc(d) {
+      d.x = state.start.x + (state.end.x - state.start.x) * d.p;
+      d.y = state.start.y + (state.end.y - state.start.y) * easeInExpo(d.p);
+      d.w = state.start.w + (state.end.w - state.start.w) * d.p;
+      d.h = state.start.h + (state.end.h - state.start.h) * d.p;
+    }
+    function setSize() {
+      var r = canvas.getBoundingClientRect();
+      state.rect = { w: r.width, h: r.height };
+      state.dpi = window.devicePixelRatio || 1;
+      canvas.width = Math.max(1, r.width * state.dpi);
+      canvas.height = Math.max(1, r.height * state.dpi);
+    }
+    function setDiscs() {
+      var w = state.rect.w, h = state.rect.h;
+      if (!w || !h) return;
+      state.discs = [];
+      state.start = { x: w * 0.5, y: h * 0.45, w: w * 0.75, h: h * 0.7 };
+      state.end = { x: w * 0.5, y: h * 0.95, w: 0, h: 0 };
+      var prevBottom = h;
+      state.clip = {};
+      for (var i = 0; i < DISCS; i++) {
+        var d = { p: i / DISCS, x: 0, y: 0, w: 0, h: 0 };
+        tweenDisc(d);
+        var bottom = d.y + d.h;
+        if (bottom <= prevBottom) state.clip = { disc: { x: d.x, y: d.y, w: d.w, h: d.h } };
+        prevBottom = bottom;
+        state.discs.push(d);
+      }
+      var cp = new Path2D(), c = state.clip.disc;
+      cp.ellipse(c.x, c.y, c.w, c.h, 0, 0, Math.PI * 2);
+      cp.rect(c.x - c.w, 0, c.w * 2, c.y);
+      state.clip.path = cp;
+    }
+    function setLines() {
+      var w = state.rect.w, h = state.rect.h;
+      if (!w || !h || !state.clip.path) return;
+      var linesPts = [], angleStep = (Math.PI * 2) / LINES, i, j;
+      for (i = 0; i < LINES; i++) linesPts.push([]);
+      state.discs.forEach(function(d) {
+        for (var k = 0; k < LINES; k++) {
+          linesPts[k].push({ x: d.x + Math.cos(k * angleStep) * d.w, y: d.y + Math.sin(k * angleStep) * d.h });
+        }
+      });
+      var off = document.createElement('canvas');
+      off.width = Math.max(1, Math.round(w * state.dpi));
+      off.height = Math.max(1, Math.round(h * state.dpi));
+      var octx = off.getContext('2d');
+      if (!octx) return;
+      var cp = state.clip.path;
+      octx.lineWidth = 1;
+      var enters = linesPts.map(function(line) {
+        for (var k = 1; k < line.length; k++) {
+          if (octx.isPointInPath(cp, line[k].x, line[k].y) || octx.isPointInStroke(cp, line[k].x, line[k].y)) return k;
+        }
+        return -1;
+      });
+      octx.scale(state.dpi, state.dpi);
+      octx.strokeStyle = stroke;
+      octx.lineWidth = 1;
+      octx.lineJoin = 'round';
+      octx.lineCap = 'round';
+      function poly(pts) {
+        if (pts.length < 2) return;
+        octx.beginPath();
+        octx.moveTo(pts[0].x, pts[0].y);
+        for (var k = 1; k < pts.length; k++) octx.lineTo(pts[k].x, pts[k].y);
+        octx.stroke();
+      }
+      linesPts.forEach(function(line, k) {
+        var enter = enters[k];
+        if (enter === -1) { poly(line); return; }
+        poly(line.slice(0, enter + 1));
+        octx.save();
+        octx.clip(cp);
+        poly(line.slice(enter));
+        octx.restore();
+      });
+      state.linesCanvas = off;
+    }
+    function makeParticle(start) {
+      var sx = state.area.sx + state.area.sw * Math.random();
+      var ex = state.area.ex + state.area.ew * Math.random();
+      return {
+        x: sx, sx: sx, dx: ex - sx,
+        y: start ? state.area.h * Math.random() : state.area.h,
+        vy: 0.5 + Math.random(), p: 0, r: 0.5 + Math.random() * 4,
+        c: 'rgba(' + dot[0] + ',' + dot[1] + ',' + dot[2] + ',' + Math.random() + ')'
+      };
+    }
+    function setParticles() {
+      var w = state.rect.w, h = state.rect.h;
+      state.particles = [];
+      if (!w || !h || !state.clip.disc) return;
+      var d = state.clip.disc;
+      state.area = { sw: d.w * 0.5, ew: d.w * 2, h: h * 0.85 };
+      state.area.sx = (w - state.area.sw) / 2;
+      state.area.ex = (w - state.area.ew) / 2;
+      for (var i = 0; i < COUNT; i++) state.particles.push(makeParticle(true));
+    }
+    function draw() {
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.save();
+      ctx.scale(state.dpi, state.dpi);
+      if (state.clip.path) {
+        ctx.strokeStyle = stroke;
+        ctx.lineWidth = 1;
+        var o = state.start;
+        ctx.beginPath();
+        ctx.ellipse(o.x, o.y, o.w, o.h, 0, 0, Math.PI * 2);
+        ctx.stroke();
+        state.discs.forEach(function(d, i) {
+          if (i % 5 !== 0) return;
+          var clipped = d.w < state.clip.disc.w - 5;
+          if (clipped) { ctx.save(); ctx.clip(state.clip.path); }
+          ctx.beginPath();
+          ctx.ellipse(d.x, d.y, d.w, d.h, 0, 0, Math.PI * 2);
+          ctx.stroke();
+          if (clipped) ctx.restore();
+        });
+        if (state.linesCanvas) ctx.drawImage(state.linesCanvas, 0, 0, state.rect.w, state.rect.h);
+        ctx.save();
+        ctx.clip(state.clip.path);
+        state.particles.forEach(function(pt) {
+          ctx.fillStyle = pt.c;
+          ctx.beginPath();
+          ctx.arc(pt.x + pt.r / 2, pt.y + pt.r / 2, pt.r / 2, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        ctx.restore();
+      }
+      ctx.restore();
+    }
+    function step() {
+      state.discs.forEach(function(d) { d.p = (d.p + discInc) % 1; tweenDisc(d); });
+      state.particles.forEach(function(pt, i) {
+        pt.p = 1 - pt.y / state.area.h;
+        pt.x = pt.sx + pt.dx * pt.p;
+        pt.y -= pt.vy * vyScale;
+        if (pt.y < 0) state.particles[i] = makeParticle(false);
+      });
+      draw();
+      rafId = requestAnimationFrame(step);
+    }
+    function init() {
+      readColors();
+      setSize();
+      setDiscs();
+      setLines();
+      setParticles();
+    }
+    function play() {
+      if (running || reduce) return;
+      running = true;
+      rafId = requestAnimationFrame(step);
+    }
+    function pause() {
+      running = false;
+      cancelAnimationFrame(rafId);
+    }
+    init();
+    if (reduce) { draw(); }
+    var section = document.getElementById('geo');
+    if ('IntersectionObserver' in window && section) {
+      new IntersectionObserver(function(entries) {
+        entries[0].isIntersecting ? play() : pause();
+      }, { rootMargin: '80px' }).observe(section);
+    } else {
+      play();
+    }
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(function() { init(); if (reduce) draw(); }).observe(canvas);
+    } else {
+      window.addEventListener('resize', function() { init(); if (reduce) draw(); });
+    }
+    new MutationObserver(function() { init(); if (reduce) draw(); })
+      .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  })();
+
   // MATRIX RAIN
   (function() {
     var canvas = document.getElementById('matrixCanvas');
@@ -541,6 +757,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .step-desc { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
 
   /* GEO SECTION */
+  .geo-hole { position: absolute; inset: 0; pointer-events: none; }
+  .geo-hole canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0.2; }
+  .geo-hole-vignette { position: absolute; top: 50%; left: 50%; width: 140%; height: 140%; transform: translate(-50%, -50%); background: radial-gradient(ellipse at 50% 55%, transparent 10%, var(--black) 50%); }
+  .geo-hole-glow { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 75%, #FFFFFF 20%, transparent 75%); mix-blend-mode: overlay; opacity: 0.5; }
+  .geo-hole-scan { position: absolute; inset: 0; background: repeating-linear-gradient(transparent, transparent 1px, #FFFFFF 1px, #FFFFFF 2px); mix-blend-mode: overlay; opacity: 0.3; }
   .geo-section { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .geo-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 6vw, 88px); line-height: 0.95; margin-bottom: 32px; }
   .geo-title em { font-style: normal; color: var(--green); }
