@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
   motion,
   useInView,
@@ -6,7 +6,7 @@ import {
   useTransform,
   type MotionValue,
 } from 'framer-motion';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, Globe, Instagram, Twitter } from 'lucide-react';
 
 const HERO_VIDEO = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4';
 
@@ -23,6 +23,12 @@ const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const EASE_CARD: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const navItems = ['Our story', 'Collective', 'Workshops', 'Programs', 'Inquiries'];
+
+const ASME_HERO_VIDEO = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4';
+const FEATURED_VIDEO = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4';
+const PHILOSOPHY_VIDEO = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4';
+const SERVICE_VIDEO_1 = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4';
+const SERVICE_VIDEO_2 = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4';
 
 /* ───────────── WordsPullUp ───────────── */
 
@@ -188,6 +194,361 @@ function FeatureCard({
         <ArrowRight className="w-4 h-4 -rotate-45 transition-transform group-hover:rotate-0" />
       </a>
     </div>
+  );
+}
+
+/* ───────────── Asme · Hero con liquid glass ───────────── */
+
+function AsmeHero() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    let raf = 0;
+    let fading = false;
+
+    const animateOpacity = (from: number, to: number, dur: number) => {
+      cancelAnimationFrame(raf);
+      const t0 = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min((now - t0) / dur, 1);
+        v.style.opacity = String(from + (to - from) * p);
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    };
+
+    const onCanPlay = () => {
+      v.play().catch(() => {});
+      animateOpacity(0, 1, 500);
+    };
+    const onTimeUpdate = () => {
+      if (!fading && v.duration && v.duration - v.currentTime <= 0.55) {
+        fading = true;
+        animateOpacity(parseFloat(v.style.opacity || '1'), 0, 500);
+      }
+    };
+    const onEnded = () => {
+      v.style.opacity = '0';
+      setTimeout(() => {
+        v.currentTime = 0;
+        v.play().catch(() => {});
+        fading = false;
+        animateOpacity(0, 1, 500);
+      }, 100);
+    };
+
+    v.addEventListener('canplay', onCanPlay, { once: true });
+    v.addEventListener('timeupdate', onTimeUpdate);
+    v.addEventListener('ended', onEnded);
+    return () => {
+      cancelAnimationFrame(raf);
+      v.removeEventListener('timeupdate', onTimeUpdate);
+      v.removeEventListener('ended', onEnded);
+    };
+  }, []);
+
+  return (
+    <section className="min-h-screen overflow-hidden relative flex flex-col bg-black">
+      <video
+        ref={videoRef}
+        src={ASME_HERO_VIDEO}
+        muted
+        autoPlay
+        playsInline
+        preload="auto"
+        style={{ opacity: 0 }}
+        className="absolute inset-0 w-full h-full object-cover object-bottom"
+      />
+
+      {/* Navbar */}
+      <div className="relative z-20 px-6 py-6">
+        <div className="liquid-glass rounded-full max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center">
+            <Globe className="w-6 h-6" style={{ color: CREAM }} />
+            <span className="ml-2 font-semibold text-lg" style={{ color: CREAM }}>Asme</span>
+            <div className="hidden md:flex items-center gap-8 ml-8">
+              {['Features', 'Pricing', 'About'].map((item) => (
+                <a key={item} href="#" className="text-primary/80 hover:text-primary text-sm font-medium transition-colors">
+                  {item}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <button className="text-sm font-medium" style={{ color: CREAM }}>Sign Up</button>
+            <button className="liquid-glass rounded-full px-6 py-2 text-sm font-medium" style={{ color: CREAM }}>
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Hero content */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[20%]">
+        <h2
+          className="font-serif text-7xl md:text-8xl lg:text-9xl tracking-tight whitespace-nowrap"
+          style={{ color: CREAM }}
+        >
+          Know it <em className="italic">all</em>.
+        </h2>
+        <div className="liquid-glass rounded-full max-w-xl w-full mt-8 pl-6 pr-2 py-2 flex items-center gap-3">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="flex-1 bg-transparent outline-none text-primary placeholder:text-primary/40 text-sm"
+          />
+          <button className="bg-white rounded-full p-3 text-black shrink-0" aria-label="Subscribe">
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
+        <p className="text-primary/80 text-sm leading-relaxed px-4 mt-6 max-w-md">
+          Stay updated with the latest news and insights. Subscribe to our newsletter
+          today and never miss out on exciting updates.
+        </p>
+        <button className="liquid-glass rounded-full px-8 py-3 text-sm font-medium mt-6 hover:bg-white/5 transition-colors" style={{ color: CREAM }}>
+          Manifesto
+        </button>
+      </div>
+
+      {/* Social icons */}
+      <div className="relative z-10 flex justify-center gap-4 pb-12">
+        {[Instagram, Twitter, Globe].map((Icon, i) => (
+          <button
+            key={i}
+            className="liquid-glass rounded-full p-4 text-primary/80 hover:text-primary hover:bg-white/5 transition-all"
+            aria-label="Social link"
+          >
+            <Icon className="w-5 h-5" />
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ───────────── Asme · About ───────────── */
+
+function AboutSection() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section ref={ref} className="relative bg-black pt-32 md:pt-44 pb-10 md:pb-14 px-6 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.03)_0%,_transparent_70%)] pointer-events-none" />
+      <div className="relative max-w-5xl mx-auto text-center">
+        <motion.p
+          className="text-primary/40 text-sm tracking-widest uppercase mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          About Us
+        </motion.p>
+        <motion.h2
+          className="text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight"
+          style={{ color: CREAM }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.1 }}
+        >
+          Pioneering <em className="font-serif italic text-primary/60">ideas</em> for
+          <br className="hidden md:block" /> minds that{' '}
+          <em className="font-serif italic text-primary/60">create, build, and inspire.</em>
+        </motion.h2>
+      </div>
+    </section>
+  );
+}
+
+/* ───────────── Asme · Featured video ───────────── */
+
+function FeaturedVideoSection() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section className="bg-black pt-6 md:pt-10 pb-20 md:pb-32 px-6 overflow-hidden">
+      <motion.div
+        ref={ref}
+        className="relative max-w-6xl mx-auto rounded-3xl overflow-hidden aspect-video"
+        initial={{ opacity: 0, y: 60 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.9 }}
+      >
+        <video
+          src={FEATURED_VIDEO}
+          muted
+          autoPlay
+          loop
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="liquid-glass rounded-2xl p-6 md:p-8 max-w-md">
+            <p className="text-primary/50 text-xs tracking-widest uppercase mb-3">Our Approach</p>
+            <p className="text-sm md:text-base leading-relaxed" style={{ color: CREAM }}>
+              We believe in the power of curiosity-driven exploration. Every project
+              starts with a question, and every answer opens a new door to innovation.
+            </p>
+          </div>
+          <motion.button
+            className="liquid-glass rounded-full px-8 py-3 text-sm font-medium w-max"
+            style={{ color: CREAM }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Explore more
+          </motion.button>
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+
+/* ───────────── Asme · Philosophy ───────────── */
+
+function PhilosophySection() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section ref={ref} className="bg-black py-28 md:py-40 px-6 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <motion.h2
+          className="text-5xl md:text-7xl lg:text-8xl tracking-tight mb-16 md:mb-24"
+          style={{ color: CREAM }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
+          Innovation <em className="font-serif italic text-primary/40">x</em> Vision.
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <motion.div
+            className="rounded-3xl overflow-hidden aspect-[4/3]"
+            initial={{ opacity: 0, x: -40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.15 }}
+          >
+            <video
+              src={PHILOSOPHY_VIDEO}
+              muted
+              autoPlay
+              loop
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.15 }}
+          >
+            <div>
+              <p className="text-primary/40 text-xs tracking-widest uppercase mb-4">Choose your space</p>
+              <p className="text-primary/70 text-base md:text-lg leading-relaxed">
+                Every meaningful breakthrough begins at the intersection of disciplined
+                strategy and remarkable creative vision. We operate at that crossroads,
+                turning bold thinking into tangible outcomes that move people and
+                reshape industries.
+              </p>
+            </div>
+            <div className="w-full h-px bg-white/10 my-8" />
+            <div>
+              <p className="text-primary/40 text-xs tracking-widest uppercase mb-4">Shape the future</p>
+              <p className="text-primary/70 text-base md:text-lg leading-relaxed">
+                We believe that the best work emerges when curiosity meets conviction.
+                Our process is designed to uncover hidden opportunities and translate
+                them into experiences that resonate long after the first impression.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ───────────── Asme · Services ───────────── */
+
+const asmeServices = [
+  {
+    video: SERVICE_VIDEO_1,
+    tag: 'Strategy',
+    title: 'Research & Insight',
+    desc: 'We dig deep into data, culture, and human behavior to surface the insights that drive meaningful, lasting change.',
+  },
+  {
+    video: SERVICE_VIDEO_2,
+    tag: 'Craft',
+    title: 'Design & Execution',
+    desc: 'From concept to launch, we obsess over every detail to deliver experiences that feel effortless and look extraordinary.',
+  },
+];
+
+function ServicesSection() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section ref={ref} className="relative bg-black py-28 md:py-40 px-6 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.02)_0%,_transparent_60%)] pointer-events-none" />
+      <div className="relative max-w-6xl mx-auto">
+        <motion.div
+          className="flex items-end justify-between mb-10 md:mb-14"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+        >
+          <h2 className="text-3xl md:text-5xl tracking-tight" style={{ color: CREAM }}>
+            What we do
+          </h2>
+          <p className="hidden md:block text-primary/40 text-sm">Our services</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {asmeServices.map((svc, i) => (
+            <motion.div
+              key={svc.title}
+              className="liquid-glass rounded-3xl overflow-hidden group"
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: i * 0.15 }}
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <video
+                  src={svc.video}
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+              <div className="p-6 md:p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="uppercase tracking-widest text-primary/40 text-xs">{svc.tag}</p>
+                  <span className="liquid-glass rounded-full p-2">
+                    <ArrowUpRight className="w-4 h-4" style={{ color: CREAM }} />
+                  </span>
+                </div>
+                <h3 className="text-xl md:text-2xl mb-3 tracking-tight" style={{ color: CREAM }}>
+                  {svc.title}
+                </h3>
+                <p className="text-primary/50 text-sm leading-relaxed">{svc.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -398,6 +759,13 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* ── ASME · liquid glass ── */}
+      <AsmeHero />
+      <AboutSection />
+      <FeaturedVideoSection />
+      <PhilosophySection />
+      <ServicesSection />
     </div>
   );
 }
