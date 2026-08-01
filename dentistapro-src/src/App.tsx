@@ -250,7 +250,7 @@ function Navbar() {
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-2 md:py-3 bg-white/80 backdrop-blur-md">
         <div className="flex flex-col">
           <span className="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none text-black">Dental</span>
-          <span className="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none text-black mt-1.5 md:-mt-2">Health</span>
+          <span className="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none text-black -mt-1.5 md:-mt-2">Health</span>
           <span className="text-[8px] md:text-[9px] font-medium leading-none mt-1.5 md:mt-2 text-black">quality healthcare</span>
         </div>
 
