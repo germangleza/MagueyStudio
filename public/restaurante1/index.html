@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Su Restaurante | Demo de página web para restaurantes</title>
+<meta name="description" content="Demo de página web editorial para restaurantes: reservas por WhatsApp, menú, reseñas y estética de alta cocina. Personalizable con su marca.">
+<link rel="canonical" href="https://magueystudio.mx/restaurante1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Su Restaurante | Demo de página web para restaurantes">
+<meta property="og:description" content="Página editorial de alta cocina: pergamino cálido, tipografía serif ligera y reservas por WhatsApp.">
+<meta property="og:url" content="https://magueystudio.mx/restaurante1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════ TOKENS — Amrit Palace style reference ═══════════ */
+:root{
+  --color-parchment:#d8cbb8;
+  --color-linen:#bfb4a3;
+  --color-warm-stone:#b6ab9c;
+  --color-walnut:#978e81;
+  --color-espresso:#615b53;
+  --color-onyx-warm:#2c2c2c;
+  --color-midnight-roast:#292622;
+  --color-saffron-glow:#d49653;
+
+  --font-serif:'Cormorant Garamond', Georgia, serif;   /* sustituto de TT Ramillas Variable */
+  --font-sans:'Manrope', ui-sans-serif, system-ui, sans-serif; /* sustituto de Satoshi */
+
+  --radius-sm:3px;
+  --ease-organic:cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ═══════════ BASE ═══════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--color-parchment);
+  color:var(--color-onyx-warm);
+  font-family:var(--font-sans);
+  font-weight:500;
+  font-size:15px;
+  line-height:1.4;
+  letter-spacing:-0.15px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
+
+/* Tipografía editorial */
+.serif{font-family:var(--font-serif);font-weight:300;text-transform:uppercase;}
+.display{font-size:clamp(52px,8vw,115px);line-height:0.8;letter-spacing:-0.04em;}
+.heading-lg{font-size:clamp(40px,4.8vw,69px);line-height:0.9;letter-spacing:-0.04em;}
+.heading-sm{font-size:clamp(32px,3.5vw,50px);line-height:0.9;letter-spacing:-0.03em;}
+.body-lg{font-family:var(--font-serif);font-weight:300;font-size:clamp(20px,1.8vw,26px);line-height:1.2;letter-spacing:-0.006em;}
+
+.caption{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:-0.144px;
+  color:var(--color-walnut);
+}
+.caption--light{color:var(--color-parchment);}
+
+/* Botón fantasma — único elemento interactivo del sistema */
+.btn-ghost{
+  display:inline-block;
+  border:1px solid var(--color-onyx-warm);
+  border-radius:var(--radius-sm);
+  padding:16px 28px;
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:-0.14px;
+  transition:background 0.4s var(--ease-organic), color 0.4s var(--ease-organic);
+}
+.btn-ghost:hover{background:var(--color-onyx-warm);color:var(--color-parchment);}
+.btn-ghost--light{border-color:var(--color-parchment);color:var(--color-parchment);}
+.btn-ghost--light:hover{background:var(--color-parchment);color:var(--color-onyx-warm);}
+
+/* Hairline editorial */
+.rule{border:0;border-top:1px solid var(--color-warm-stone);}
+
+.wrap{max-width:1440px;margin-inline:auto;padding-inline:clamp(20px,4vw,64px);}
+
+/* ═══════════ CINTILLO MAGUEY (demo) ═══════════ */
+.mg-cintillo{
+  position:fixed;top:0;left:0;right:0;z-index:400;
+  background:#519536;color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:.65rem;
+  padding:.5rem 1rem;text-align:center;
+}
+.mg-cintillo p{font-size:.76rem;line-height:1.35;}
+.mg-cintillo-btn{
+  flex-shrink:0;background:#fff;color:#519536;
+  font-size:.76rem;font-weight:700;
+  padding:.32rem .85rem;border-radius:999px;white-space:nowrap;
+  transition:transform 0.4s var(--ease-organic);
+}
+.mg-cintillo-btn:hover{transform:scale(1.05);}
+
+/* ═══════════ NAV — flota sobre el hero ═══════════ */
+.nav{
+  position:absolute;top:0;left:0;right:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:24px clamp(20px,4vw,64px);
+}
+.nav__logo{
+  font-family:var(--font-serif);font-weight:300;
+  font-size:22px;letter-spacing:-0.035em;text-transform:uppercase;
+  color:var(--color-parchment);
+  display:flex;align-items:center;gap:10px;
+}
+.nav__logo svg{flex:none;}
+.nav__links{display:none;list-style:none;gap:28px;}
+.nav__links a{
+  font-size:14px;text-transform:uppercase;letter-spacing:-0.14px;
+  color:var(--color-parchment);
+  transition:color 0.4s var(--ease-organic);
+}
+.nav__links a:hover{color:var(--color-saffron-glow);}
+.nav__cta{padding:12px 20px;}
+@media(min-width:900px){.nav__links{display:flex;}}
+
+/* ═══════════ HERO — fotografía de ambiente (placeholder) ═══════════ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  background:var(--color-midnight-roast);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;
+  padding-top:120px;
+}
+/* Resplandor de velas como placeholder de fotografía */
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(38% 30% at 22% 62%, rgba(212,150,83,0.14), transparent 70%),
+    radial-gradient(30% 24% at 74% 48%, rgba(212,150,83,0.10), transparent 70%),
+    radial-gradient(46% 34% at 50% 86%, rgba(212,150,83,0.07), transparent 70%);
+}
+.hero__meta{
+  display:flex;justify-content:space-between;gap:16px;
+  padding-inline:clamp(20px,4vw,64px);
+  margin-bottom:20px;
+}
+.hero__meta span{font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;color:var(--color-parchment);}
+.hero__title{
+  color:var(--color-parchment);
+  text-align:center;
+  padding-inline:clamp(20px,4vw,64px);
+  margin-bottom:clamp(24px,4vh,48px);
+}
+.hero__wordmark{
+  font-family:var(--font-sans);font-weight:500;
+  font-size:clamp(34px,7vw,199px);
+  line-height:0.8;letter-spacing:-0.016em;text-transform:uppercase;
+  color:var(--color-parchment);
+  text-align:center;
+  white-space:nowrap;
+  padding-bottom:clamp(24px,5vh,56px);
+}
+.hero__foto-nota{
+  position:absolute;top:112px;left:clamp(20px,4vw,64px);
+  font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;
+  color:var(--color-walnut);
+}
+/* Widget de reseñas */
+.rating{
+  position:absolute;right:clamp(20px,4vw,64px);bottom:clamp(230px,38vh,380px);
+  background:#fff;border:1px solid var(--color-warm-stone);border-radius:var(--radius-sm);
+  padding:14px 18px;
+  display:flex;flex-direction:column;gap:4px;
+  color:var(--color-onyx-warm);
+}
+.rating__stars{color:var(--color-saffron-glow);font-size:15px;letter-spacing:2px;}
+.rating__score{font-weight:700;font-size:26px;line-height:1;}
+.rating__score sup{font-size:12px;font-weight:500;color:var(--color-espresso);}
+.rating__label{font-size:13px;letter-spacing:-0.143px;color:var(--color-espresso);}
+@media(max-width:640px){.rating{position:static;margin:0 20px 24px auto;width:max-content;}}
+
+/* ═══════════ MARQUEE — única animación extendida del sistema ═══════════ */
+.marquee{
+  background:var(--color-onyx-warm);
+  border-top:1px solid var(--color-warm-stone);
+  border-bottom:1px solid var(--color-warm-stone);
+  overflow:hidden;
+  padding:18px 0;
+  white-space:nowrap;
+}
+.marquee__inner{display:inline-flex;animation:marquee 27s linear infinite;}
+.marquee__item{
+  font-family:var(--font-serif);font-weight:300;
+  font-size:26px;letter-spacing:-0.006em;text-transform:uppercase;
+  color:var(--color-parchment);
+  padding-inline:28px;
+}
+.marquee__sep{color:var(--color-saffron-glow);font-size:20px;align-self:center;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ═══════════ ATMÓSFERA — transición fotográfica oscura ═══════════ */
+.atmos{
+  position:relative;
+  background:var(--color-midnight-roast);
+  padding:clamp(120px,16vh,160px) 0;
+  overflow:hidden;
+}
+.atmos::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(40% 34% at 78% 70%, rgba(212,150,83,0.10), transparent 70%);
+}
+.atmos .wrap{position:relative;}
+.atmos h2{color:var(--color-parchment);max-width:12ch;}
+.atmos p{
+  color:var(--color-parchment);
+  max-width:44ch;
+  margin:28px 0 32px;
+}
+.atmos .caption{margin-bottom:20px;display:block;}
+
+/* ═══════════ MENÚ — pliego editorial sobre pergamino ═══════════ */
+.menu{padding:clamp(120px,16vh,160px) 0;}
+.menu__head{
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:16px;margin-bottom:42px;
+}
+.menu__list{list-style:none;}
+.menu__item{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:6px 24px;
+  padding:24px 0;
+  border-top:1px solid var(--color-warm-stone);
+}
+.menu__item:last-child{border-bottom:1px solid var(--color-warm-stone);}
+.menu__nombre{
+  font-family:var(--font-serif);font-weight:300;
+  font-size:26px;line-height:1;letter-spacing:-0.006em;text-transform:uppercase;
+}
+.menu__nombre .tag{
+  display:inline-block;vertical-align:middle;
+  font-family:var(--font-sans);font-weight:500;
+  font-size:12px;letter-spacing:-0.144px;text-transform:uppercase;
+  color:var(--color-saffron-glow);
+  border:1px solid var(--color-saffron-glow);border-radius:var(--radius-sm);
+  padding:3px 8px;margin-left:12px;
+}
+.menu__precio{
+  font-weight:700;font-size:15px;letter-spacing:-0.15px;
+  align-self:start;
+}
+.menu__desc{
+  grid-column:1 / -1;
+  color:var(--color-espresso);
+  font-size:14px;letter-spacing:-0.14px;
+  max-width:56ch;
+}
+/* Bodegones oscuros (placeholder de fotografía de platillos) */
+.menu__fotos{
+  display:grid;grid-template-columns:1fr;gap:16px;
+  margin-top:56px;
+}
+@media(min-width:760px){.menu__fotos{grid-template-columns:1fr 1fr;}}
+.bodegon{
+  background:var(--color-midnight-roast);
+  aspect-ratio:4/3;
+  position:relative;
+  display:flex;align-items:flex-end;
+}
+.bodegon::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(42% 36% at 50% 44%, rgba(212,150,83,0.12), transparent 72%);
+}
+.bodegon figcaption{
+  position:relative;
+  padding:20px;
+  font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;
+  color:var(--color-walnut);
+}
+
+/* ═══════════ TESTIMONIOS — cartas sobre el mismo lienzo ═══════════ */
+.testimonios{padding-bottom:clamp(120px,16vh,160px);}
+.testimonios__head{margin-bottom:42px;}
+.testimonios__grid{
+  display:grid;grid-template-columns:1fr;gap:1px;
+  background:var(--color-warm-stone);
+  border-top:1px solid var(--color-warm-stone);
+  border-bottom:1px solid var(--color-warm-stone);
+}
+@media(min-width:820px){.testimonios__grid{grid-template-columns:repeat(3,1fr);}}
+.testi{
+  background:var(--color-parchment);
+  padding:52px 28px 32px;
+  position:relative;
+  display:flex;flex-direction:column;gap:16px;
+}
+.testi__fuente{
+  position:absolute;top:20px;right:28px;
+  font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;
+  color:var(--color-walnut);
+}
+.testi__stars{color:var(--color-saffron-glow);font-size:15px;letter-spacing:2px;}
+.testi__texto{font-size:14px;letter-spacing:-0.14px;color:var(--color-onyx-warm);flex:1;}
+.testi__autor{font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;color:var(--color-walnut);}
+
+/* ═══════════ RESERVA — banda linen ═══════════ */
+.reserva{
+  background:var(--color-linen);
+  border-top:1px solid var(--color-warm-stone);
+  border-bottom:1px solid var(--color-warm-stone);
+  padding:clamp(92px,12vh,120px) 0;
+}
+.reserva .wrap{
+  display:flex;flex-direction:column;align-items:flex-start;gap:28px;
+}
+.reserva h2{max-width:14ch;}
+.reserva__acciones{display:flex;flex-wrap:wrap;gap:12px;}
+.reserva__nota{font-size:13px;letter-spacing:-0.143px;color:var(--color-espresso);}
+.reserva__datos{
+  display:grid;grid-template-columns:1fr;gap:20px;
+  width:100%;
+  margin-top:28px;padding-top:28px;
+  border-top:1px solid var(--color-warm-stone);
+}
+@media(min-width:760px){.reserva__datos{grid-template-columns:repeat(3,1fr);}}
+.reserva__datos b{
+  display:block;
+  font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:-0.144px;
+  color:var(--color-walnut);
+  margin-bottom:6px;
+}
+.reserva__datos span{font-size:14px;letter-spacing:-0.14px;color:var(--color-onyx-warm);}
+
+/* ═══════════ FOOTER ═══════════ */
+.footer{
+  background:var(--color-onyx-warm);
+  color:var(--color-parchment);
+  padding:56px 0 32px;
+}
+.footer__grid{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;
+  margin-bottom:42px;
+}
+.footer__marca{
+  font-family:var(--font-serif);font-weight:300;
+  font-size:26px;letter-spacing:-0.006em;text-transform:uppercase;
+}
+.footer nav{display:flex;flex-wrap:wrap;gap:20px;}
+.footer nav a{
+  font-size:13px;text-transform:uppercase;letter-spacing:-0.143px;
+  color:var(--color-parchment);
+  transition:color 0.4s var(--ease-organic);
+}
+.footer nav a:hover{color:var(--color-saffron-glow);}
+.footer__legal{
+  border-top:1px solid rgba(216,203,184,0.25);
+  padding-top:20px;
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;
+  font-size:12px;letter-spacing:-0.144px;color:var(--color-walnut);
+}
+.footer__legal a{text-decoration:underline;text-underline-offset:3px;}
+
+/* ═══════════ WHATSAPP FLOTANTE (adaptado al sistema) ═══════════ */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:300;
+  width:52px;height:52px;
+  background:var(--color-onyx-warm);
+  border:1px solid var(--color-parchment);
+  border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--color-parchment);
+  transition:background 0.4s var(--ease-organic), color 0.4s var(--ease-organic);
+}
+.wa-float:hover{background:var(--color-saffron-glow);color:var(--color-onyx-warm);border-color:var(--color-saffron-glow);}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+
+<!-- CINTILLO MAGUEY (demo) -->
+<div class="mg-cintillo" id="mgCintillo">
+  <p>Demo realizado por <strong>Maguey Studio</strong> — Personaliza con tu información</p>
+  <a class="mg-cintillo-btn" href="https://wa.me/5215560663926?text=Hola%2C%20vi%20el%20demo%20del%20restaurante%20y%20me%20interesa" target="_blank" rel="noopener">Me interesa</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="#inicio" class="nav__logo">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M12 2c2 3 6 4 6 9a6 6 0 0 1-12 0c0-5 4-6 6-9z"/><path d="M12 22v-5"/></svg>
+      Su Restaurante
+    </a>
+    <ul class="nav__links">
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#reservar">Contacto</a></li>
+    </ul>
+    <a class="btn-ghost btn-ghost--light nav__cta" href="#reservar">Reservar mesa</a>
+  </nav>
+
+  <p class="hero__foto-nota">Aquí va la fotografía de su restaurante</p>
+
+  <div class="hero__meta">
+    <span>Sirviendo a su ciudad</span>
+    <span>Desde 1996</span>
+  </div>
+
+  <h1 class="serif heading-lg hero__title">Cada mesa cuenta una historia</h1>
+
+  <div class="hero__wordmark" aria-hidden="true">Su Restaurante</div>
+
+  <aside class="rating" aria-label="Calificación en Google">
+    <div class="rating__stars" aria-hidden="true">★★★★★</div>
+    <div class="rating__score">4.7<sup>/5</sup></div>
+    <div class="rating__label">Excelente · basado en 3,576 reseñas</div>
+  </aside>
+</header>
+
+<!-- MARQUEE — platillos de la casa -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__inner" id="marqueeInner">
+    <span class="marquee__item">Mole de la casa</span><span class="marquee__sep">✦</span>
+    <span class="marquee__item">Corte añejado</span><span class="marquee__sep">✦</span>
+    <span class="marquee__item">Pesca del día</span><span class="marquee__sep">✦</span>
+    <span class="marquee__item">Sopa de la abuela</span><span class="marquee__sep">✦</span>
+    <span class="marquee__item">Postre de temporada</span><span class="marquee__sep">✦</span>
+  </div>
+</div>
+
+<!-- ATMÓSFERA / NOSOTROS -->
+<section class="atmos" id="nosotros">
+  <div class="wrap">
+    <span class="caption caption--light" style="color:var(--color-walnut);">Nuestra historia · Aquí va la fotografía de su cocina</span>
+    <h2 class="serif display">El sazón de la casa</h2>
+    <p>En su restaurante, cada platillo es un tributo a la tradición y cada momento está hecho para hoy. Aquí va la historia de su cocina: el origen de sus recetas, la calidez de su hospitalidad y el ritmo de su barrio.</p>
+    <a class="btn-ghost btn-ghost--light" href="#reservar">Conócenos</a>
+  </div>
+</section>
+
+<!-- MENÚ -->
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="menu__head">
+      <h2 class="serif heading-lg">El menú</h2>
+      <span class="caption">Cocina de temporada · cambia con el mercado</span>
+    </div>
+
+    <ul class="menu__list">
+      <li class="menu__item">
+        <span class="menu__nombre">Mole de la casa <span class="tag">Platillo insignia</span></span>
+        <span class="menu__precio">$ 245</span>
+        <span class="menu__desc">Receta de tres generaciones, servido con arroz al azafrán y tortillas hechas a mano.</span>
+      </li>
+      <li class="menu__item">
+        <span class="menu__nombre">Corte añejado 28 días</span>
+        <span class="menu__precio">$ 480</span>
+        <span class="menu__desc">Al carbón de encino, con vegetales de la milpa y sal de grano.</span>
+      </li>
+      <li class="menu__item">
+        <span class="menu__nombre">Pesca del día</span>
+        <span class="menu__precio">$ 320</span>
+        <span class="menu__desc">Del mercado a la brasa, con mantequilla de hierbas y cítricos.</span>
+      </li>
+      <li class="menu__item">
+        <span class="menu__nombre">Sopa de la abuela</span>
+        <span class="menu__precio">$ 145</span>
+        <span class="menu__desc">Caldo lento de 8 horas con verduras de temporada.</span>
+      </li>
+      <li class="menu__item">
+        <span class="menu__nombre">Postre de temporada</span>
+        <span class="menu__precio">$ 120</span>
+        <span class="menu__desc">Pregunte a su mesero por la selección del día.</span>
+      </li>
+    </ul>
+
+    <div class="menu__fotos">
+      <figure class="bodegon"><figcaption>Aquí va la fotografía de su platillo insignia</figcaption></figure>
+      <figure class="bodegon"><figcaption>Aquí va la fotografía de su barra o salón</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios" id="opiniones">
+  <div class="wrap">
+    <div class="testimonios__head">
+      <h2 class="serif heading-sm">Lo que dicen los comensales</h2>
+    </div>
+    <div class="testimonios__grid">
+      <article class="testi">
+        <span class="testi__fuente">Google Maps</span>
+        <div class="testi__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="testi__texto">"El mole es otra cosa: profundo, con historia. El servicio te hace sentir en casa desde que cruzas la puerta."</p>
+        <span class="testi__autor">María G.</span>
+      </article>
+      <article class="testi">
+        <span class="testi__fuente">Google Maps</span>
+        <div class="testi__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="testi__texto">"Reservamos por WhatsApp y todo fue puntual. El corte añejado, en su punto exacto. Volvemos seguro."</p>
+        <span class="testi__autor">Roberto P.</span>
+      </article>
+      <article class="testi">
+        <span class="testi__fuente">TripAdvisor</span>
+        <div class="testi__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="testi__texto">"Cena de aniversario perfecta: luz cálida, carta corta y bien pensada, y un postre que todavía recordamos."</p>
+        <span class="testi__autor">Fernanda L.</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVA -->
+<section class="reserva" id="reservar">
+  <div class="wrap">
+    <h2 class="serif heading-lg">Reserve su mesa</h2>
+    <div class="reserva__acciones">
+      <a class="btn-ghost" href="https://wa.me/523300000000?text=Hola%2C%20quisiera%20reservar%20una%20mesa." target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      <a class="btn-ghost" href="tel:+523300000000">Llamar</a>
+    </div>
+    <p class="reserva__nota">Confirmamos su reservación el mismo día.</p>
+    <div class="reserva__datos">
+      <div><b>Dirección</b><span>Av. Ejemplo 1234, Col. Centro, Su Ciudad</span></div>
+      <div><b>Horario</b><span>Martes a domingo · 13:00 – 23:00</span></div>
+      <div><b>Contacto</b><span>+52 33 0000 0000 · hola@surestaurante.mx</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__marca">Su Restaurante</div>
+      <nav aria-label="Navegación de pie de página">
+        <a href="#menu">Menú</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#reservar">Reservaciones</a>
+      </nav>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 Su Restaurante. Todos los derechos reservados.</span>
+      <span>Sitio desarrollado por <a href="https://magueystudio.mx" target="_blank" rel="noopener">Maguey Studio</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a class="wa-float" href="https://wa.me/523300000000?text=Hola%2C%20quisiera%20reservar%20una%20mesa." target="_blank" rel="noopener" aria-label="Reservar por WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  // Cintillo: sincronizar altura con el layout
+  var cintillo = document.getElementById('mgCintillo');
+  var hero = document.querySelector('.hero');
+  var nav = document.querySelector('.nav');
+  var nota = document.querySelector('.hero__foto-nota');
+  function syncCintillo(){
+    var h = cintillo.offsetHeight;
+    nav.style.top = h + 'px';
+    hero.style.paddingTop = (h + 120) + 'px';
+    if (nota) nota.style.top = (h + 112) + 'px';
+  }
+  syncCintillo();
+  window.addEventListener('resize', syncCintillo);
+  window.addEventListener('load', syncCintillo);
+
+  // Marquee: duplicar el contenido para el loop continuo
+  var inner = document.getElementById('marqueeInner');
+  inner.innerHTML += inner.innerHTML;
+})();
+</script>
+</body>
+</html>
