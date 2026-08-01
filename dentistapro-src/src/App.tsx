@@ -18,6 +18,8 @@ const SECTION3_IMG2 = 'https://images.higgs.ai/?default=1&output=webp&url=https%
 
 const SECTION3_BG = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260624_114355_752ba9e6-0942-4abb-9047-5d9bb16632e9.png&w=1280&q=85';
 
+const DOCTOR_IMAGE = `${import.meta.env.BASE_URL}doctora.webp`;
+
 const featureBars = ['Odontología avanzada', 'Equipo de alta calidad', 'Trato amable'];
 
 const services = [
@@ -689,23 +691,20 @@ export default function App() {
         className="scroll-mt-16 md:scroll-mt-20 min-h-screen md:h-screen w-full overflow-hidden flex flex-col pt-1.5 md:pt-2 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2"
       >
         <div className="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-1.5 md:gap-2">
-          {/* Retrato: hueco listo para la foto real de la doctora */}
           <div
             className="rounded-xl md:rounded-2xl overflow-hidden relative bg-zinc-200 min-h-[380px] md:min-h-0"
             style={s4Reveal.getAnimStyle(0)}
           >
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 md:gap-3">
-              <span className="text-[clamp(5rem,14vw,12rem)] font-bold leading-none text-zinc-300 select-none">
-                VC
-              </span>
-              <span className="text-xs md:text-sm font-semibold text-zinc-500 text-center px-8">
-                Aquí va la foto de la doctora
-              </span>
-            </div>
+            <img
+              src={DOCTOR_IMAGE}
+              alt="Dra. Carla Gómez en la clínica"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
             <div className="absolute bottom-3 left-3 right-3 md:bottom-5 md:left-5 md:right-5 bg-white rounded-xl md:rounded-2xl p-4 md:p-6 flex items-end justify-between">
               <div>
                 <h3 className="text-xl md:text-3xl font-bold text-black leading-6 md:leading-8">
-                  Dra. Valeria Cantú
+                  Dra. Carla Gómez
                 </h3>
                 <p className="text-xs md:text-sm font-semibold text-black mt-1">
                   Cirujana dentista · UNAM
