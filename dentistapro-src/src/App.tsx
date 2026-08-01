@@ -212,46 +212,6 @@ function MaskedCard({
   );
 }
 
-/* ───────────────────────── Splash ───────────────────────── */
-
-function SplashScreen({ onComplete }: { onComplete: () => void }) {
-  const [count, setCount] = useState(0);
-  const [exiting, setExiting] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((c) => {
-        if (c >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return c + 1;
-      });
-    }, 20);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (count < 100) return;
-    const exitTimer = setTimeout(() => setExiting(true), 200);
-    const doneTimer = setTimeout(onComplete, 900);
-    return () => {
-      clearTimeout(exitTimer);
-      clearTimeout(doneTimer);
-    };
-  }, [count, onComplete]);
-
-  return (
-    <div
-      className={`fixed inset-0 z-[100] bg-white flex items-end justify-start transition-opacity duration-700 ${exiting ? 'opacity-0' : 'opacity-100'}`}
-    >
-      <span className="text-black text-7xl md:text-9xl font-bold tabular-nums p-6 md:p-10 leading-none">
-        {count}
-      </span>
-    </div>
-  );
-}
-
 /* ───────────────────────── Navbar ───────────────────────── */
 
 const navLinks = [
@@ -376,7 +336,6 @@ function StarIcon({ className = '' }: { className?: string }) {
 /* ───────────────────────── App ───────────────────────── */
 
 export default function App() {
-  const [showSplash, setShowSplash] = useState(true);
   const isMobile = useIsMobile();
 
   const section1Ref = useRef<HTMLElement | null>(null);
@@ -446,8 +405,6 @@ export default function App() {
 
   return (
     <div className="bg-white">
-      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
-
       <Navbar />
 
       {/* ── SECTION 1 · HERO ── */}
