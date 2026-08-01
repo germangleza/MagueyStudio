@@ -27,6 +27,25 @@ const services = [
   { name: 'Implantes\ndentales', num: null, active: false },
 ];
 
+// Reseñas de muestra para el demo; se sustituyen por las reales del cliente.
+const reviews = [
+  {
+    quote: 'Me cambiaron la sonrisa por completo. El tratamiento de carillas fue rápido y sin dolor.',
+    name: 'Mariana Cepeda',
+    detail: 'Carillas dentales',
+  },
+  {
+    quote: 'Llegué con miedo al dentista y salí feliz. Te explican todo antes de hacer cualquier cosa.',
+    name: 'Rodrigo Ancira',
+    detail: 'Limpieza y resinas',
+  },
+  {
+    quote: 'El implante quedó perfecto. Un año después no distingo cuál es el diente nuevo.',
+    name: 'Paulina Gutiérrez',
+    detail: 'Implante dental',
+  },
+];
+
 /* ───────────────────────── Hooks ───────────────────────── */
 
 interface MaskPosition {
@@ -233,7 +252,13 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
 
 /* ───────────────────────── Navbar ───────────────────────── */
 
-const navLinks = ['Inicio', 'Servicios', 'Nosotros', 'Galería', 'Contacto'];
+const navLinks = [
+  { label: 'Inicio', href: '#inicio' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'La doctora', href: '#doctora' },
+  { label: 'Reseñas', href: '#resenas' },
+  { label: 'Ubicación', href: '#ubicacion' },
+];
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -291,13 +316,13 @@ function Navbar() {
           <nav className="flex flex-col justify-center h-full px-8 gap-1">
             {navLinks.map((link, i) => (
               <a
-                key={link}
-                href="#"
+                key={link.href}
+                href={link.href}
                 onClick={() => setOpen(false)}
                 className={`text-4xl font-bold text-black hover:text-neutral-500 transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] ${open ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
                 style={{ transitionDelay: open ? `${100 + i * 60}ms` : '0ms' }}
               >
-                {link}
+                {link.label}
               </a>
             ))}
             <div
@@ -338,6 +363,14 @@ function ArrowIcon({ className = '' }: { className?: string }) {
   );
 }
 
+function StarIcon({ className = '' }: { className?: string }) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 2.5l2.83 6.06 6.63.79-4.9 4.55 1.3 6.55L12 17.2l-5.86 3.25 1.3-6.55-4.9-4.55 6.63-.79L12 2.5z" />
+    </svg>
+  );
+}
+
 /* ───────────────────────── App ───────────────────────── */
 
 export default function App() {
@@ -361,6 +394,9 @@ export default function App() {
   const s2Reveal = useStaggeredReveal(4);
 
   const s3Reveal = useStaggeredReveal(4);
+  const s4Reveal = useStaggeredReveal(3);
+  const s5Reveal = useStaggeredReveal(5);
+  const s6Reveal = useStaggeredReveal(3);
 
   const setSection1Ref = useCallback(
     (el: HTMLElement | null) => {
@@ -385,6 +421,27 @@ export default function App() {
     [s3Reveal.containerRef],
   );
 
+  const setSection4Ref = useCallback(
+    (el: HTMLElement | null) => {
+      s4Reveal.containerRef.current = el;
+    },
+    [s4Reveal.containerRef],
+  );
+
+  const setSection5Ref = useCallback(
+    (el: HTMLElement | null) => {
+      s5Reveal.containerRef.current = el;
+    },
+    [s5Reveal.containerRef],
+  );
+
+  const setSection6Ref = useCallback(
+    (el: HTMLElement | null) => {
+      s6Reveal.containerRef.current = el;
+    },
+    [s6Reveal.containerRef],
+  );
+
   return (
     <div className="bg-white">
       {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
@@ -393,6 +450,7 @@ export default function App() {
 
       {/* ── SECTION 1 · HERO ── */}
       <section
+        id="inicio"
         ref={setSection1Ref}
         className="relative h-screen w-full overflow-hidden flex flex-col pt-24 md:pt-24 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2"
       >
@@ -445,8 +503,9 @@ export default function App() {
 
       {/* ── SECTION 2 · SMILE GALLERY ── */}
       <section
+        id="servicios"
         ref={setSection2Ref}
-        className="relative min-h-screen md:h-screen w-full overflow-hidden flex flex-col pt-1.5 md:pt-2 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2"
+        className="relative scroll-mt-16 md:scroll-mt-20 min-h-screen md:h-screen w-full overflow-hidden flex flex-col pt-1.5 md:pt-2 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2"
       >
         <div className="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 grid-rows-[auto_auto_auto_auto] md:grid-rows-[1fr_1fr_0.8fr] gap-1.5 md:gap-2">
           <MaskedCard
@@ -582,7 +641,7 @@ export default function App() {
                 </h3>
               </div>
               <button className="px-5 py-3 md:px-8 md:py-5 bg-white rounded-full text-black text-base md:text-xl font-bold hover:scale-105 transition-transform">
-                Agenda en línea
+                Agendar cita
               </button>
             </div>
           </div>
@@ -619,6 +678,184 @@ export default function App() {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 4 · LA DOCTORA ── */}
+      <section
+        id="doctora"
+        ref={setSection4Ref}
+        className="scroll-mt-16 md:scroll-mt-20 min-h-screen md:h-screen w-full overflow-hidden flex flex-col pt-1.5 md:pt-2 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2"
+      >
+        <div className="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-1.5 md:gap-2">
+          {/* Retrato: hueco listo para la foto real de la doctora */}
+          <div
+            className="rounded-xl md:rounded-2xl overflow-hidden relative bg-zinc-200 min-h-[380px] md:min-h-0"
+            style={s4Reveal.getAnimStyle(0)}
+          >
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 md:gap-3">
+              <span className="text-[clamp(5rem,14vw,12rem)] font-bold leading-none text-zinc-300 select-none">
+                VC
+              </span>
+              <span className="text-xs md:text-sm font-semibold text-zinc-500 text-center px-8">
+                Aquí va la foto de la doctora
+              </span>
+            </div>
+            <div className="absolute bottom-3 left-3 right-3 md:bottom-5 md:left-5 md:right-5 bg-white rounded-xl md:rounded-2xl p-4 md:p-6 flex items-end justify-between">
+              <div>
+                <h3 className="text-xl md:text-3xl font-bold text-black leading-6 md:leading-8">
+                  Dra. Valeria Cantú
+                </h3>
+                <p className="text-xs md:text-sm font-semibold text-black mt-1">
+                  Cirujana dentista · UNAM
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-1.5 md:gap-2">
+            <div
+              className="rounded-xl md:rounded-2xl bg-stone-50 p-5 md:p-7 flex flex-col justify-between flex-[1.2] min-h-[180px] md:min-h-0"
+              style={s4Reveal.getAnimStyle(1)}
+            >
+              <h2 className="text-[clamp(3rem,7vw,6.5rem)] font-bold leading-[0.95] text-black">
+                Conoce a
+                <br />
+                tu doctora
+              </h2>
+              <p className="text-xs md:text-sm font-semibold text-black">Atención personalizada en cada visita</p>
+            </div>
+
+            <div
+              className="rounded-xl md:rounded-2xl bg-zinc-200 p-5 md:p-7 flex flex-col justify-between flex-1 min-h-[220px] md:min-h-0"
+              style={s4Reveal.getAnimStyle(2)}
+            >
+              <p className="text-sm md:text-lg font-semibold text-black leading-5 md:leading-7 max-w-[420px]">
+                Especialista en rehabilitación oral con 12 años de experiencia. Cada tratamiento se
+                planea contigo y se explica antes de empezar.
+              </p>
+              <div className="flex items-end justify-between gap-3 mt-4">
+                <p className="text-xs md:text-sm font-semibold text-black">
+                  Consulta en tu primera visita
+                </p>
+                <button className="px-5 py-3 md:px-8 md:py-5 bg-white rounded-full text-black text-base md:text-xl font-bold hover:scale-105 transition-transform shrink-0">
+                  Agendar cita
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 5 · RESEÑAS ── */}
+      <section
+        id="resenas"
+        ref={setSection5Ref}
+        className="scroll-mt-16 md:scroll-mt-20 min-h-screen md:h-screen w-full overflow-hidden flex flex-col pt-1.5 md:pt-2 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2"
+      >
+        <div className="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-3 md:grid-rows-[0.9fr_1fr] gap-1.5 md:gap-2">
+          <div
+            className="md:col-span-2 rounded-xl md:rounded-2xl bg-stone-50 p-5 md:p-7 flex flex-col justify-between min-h-[160px] md:min-h-0"
+            style={s5Reveal.getAnimStyle(0)}
+          >
+            <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[0.95] text-black">
+              Lo que dicen
+              <br />
+              nuestros pacientes
+            </h2>
+          </div>
+
+          {/* Calificación de muestra para el demo */}
+          <div
+            className="rounded-xl md:rounded-2xl bg-zinc-200 p-5 md:p-7 flex flex-col justify-between min-h-[160px] md:min-h-0"
+            style={s5Reveal.getAnimStyle(1)}
+          >
+            <span className="text-[clamp(4rem,8vw,7rem)] font-bold leading-none text-black">4.9</span>
+            <div>
+              <div className="flex gap-1 text-black mb-2">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <StarIcon key={i} className="w-4 h-4 md:w-5 md:h-5" />
+                ))}
+              </div>
+              <p className="text-xs md:text-sm font-semibold text-black">127 reseñas en Google</p>
+            </div>
+          </div>
+
+          {reviews.map((review, i) => (
+            <div
+              key={review.name}
+              className={`rounded-xl md:rounded-2xl p-5 md:p-7 flex flex-col justify-between min-h-[200px] md:min-h-0 ${i === 1 ? 'bg-zinc-200' : 'bg-stone-50'}`}
+              style={s5Reveal.getAnimStyle(2 + i)}
+            >
+              <div>
+                <div className="flex gap-1 text-black mb-3 md:mb-4">
+                  {[0, 1, 2, 3, 4].map((s) => (
+                    <StarIcon key={s} className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                  ))}
+                </div>
+                <p className="text-sm md:text-lg font-semibold text-black leading-5 md:leading-7">
+                  “{review.quote}”
+                </p>
+              </div>
+              <div className="mt-4">
+                <p className="text-sm md:text-base font-bold text-black">{review.name}</p>
+                <p className="text-xs md:text-sm font-semibold text-neutral-500">{review.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── SECTION 6 · UBICACIÓN ── */}
+      <section
+        id="ubicacion"
+        ref={setSection6Ref}
+        className="scroll-mt-16 md:scroll-mt-20 min-h-[85vh] md:h-screen w-full overflow-hidden flex flex-col pt-1.5 md:pt-2 px-3 md:px-5 pb-3 md:pb-5 gap-1.5 md:gap-2"
+      >
+        <div
+          className="flex-1 min-h-0 rounded-xl md:rounded-2xl overflow-hidden relative bg-zinc-200"
+          style={s6Reveal.getAnimStyle(0)}
+        >
+          {/* Dirección de muestra para el demo; en móvil el mapa no captura el scroll */}
+          <iframe
+            title="Ubicación de la clínica"
+            src="https://www.google.com/maps?q=Polanco,+Ciudad+de+M%C3%A9xico&output=embed&hl=es"
+            className="absolute inset-0 w-full h-full grayscale contrast-[1.05] pointer-events-none md:pointer-events-auto"
+            loading="lazy"
+          />
+
+          <div
+            className="absolute top-3 left-3 md:top-5 md:left-5 bg-white rounded-xl md:rounded-2xl px-5 py-3 md:px-7 md:py-4"
+            style={s6Reveal.getAnimStyle(1)}
+          >
+            <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-bold leading-none text-black">Visítanos</h2>
+          </div>
+
+          <div
+            className="absolute bottom-3 left-3 right-3 md:bottom-5 md:left-5 md:right-5 flex flex-col md:flex-row md:items-end gap-1.5 md:gap-2"
+            style={s6Reveal.getAnimStyle(2)}
+          >
+            <div className="flex-1 bg-white rounded-xl md:rounded-2xl p-4 md:p-6">
+              <p className="text-base md:text-2xl font-bold text-black leading-5 md:leading-7">
+                Av. Horacio 340, Polanco
+              </p>
+              <p className="text-xs md:text-sm font-semibold text-black mt-1">Ciudad de México</p>
+            </div>
+            <div className="flex-1 bg-white/80 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6">
+              <p className="text-xs md:text-sm font-semibold text-black">Lunes a sábado</p>
+              <p className="text-base md:text-2xl font-bold text-black leading-5 md:leading-7 mt-1">
+                9:00 a 19:00
+              </p>
+            </div>
+            <a
+              href="https://www.google.com/maps?q=Polanco,+Ciudad+de+M%C3%A9xico"
+              target="_blank"
+              rel="noreferrer"
+              className="px-5 py-3 md:px-8 md:py-5 bg-white rounded-full text-black text-base md:text-xl font-bold hover:scale-105 transition-transform text-center shrink-0"
+            >
+              Cómo llegar
+            </a>
           </div>
         </div>
       </section>
