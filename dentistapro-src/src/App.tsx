@@ -18,13 +18,13 @@ const SECTION3_IMG2 = 'https://images.higgs.ai/?default=1&output=webp&url=https%
 
 const SECTION3_BG = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260624_114355_752ba9e6-0942-4abb-9047-5d9bb16632e9.png&w=1280&q=85';
 
-const featureBars = ['Advanced Dentistry', 'High Quality Equipment', 'Friendly Staff'];
+const featureBars = ['Odontología avanzada', 'Equipo de alta calidad', 'Trato amable'];
 
 const services = [
-  { name: 'Dental\nVeneers', num: '01', active: true },
-  { name: 'Dental\nCrowns', num: '02', active: false },
-  { name: 'Teeth\nWhitening', num: '03', active: false },
-  { name: 'Dental\nImplants', num: null, active: false },
+  { name: 'Carillas\ndentales', num: '01', active: true },
+  { name: 'Coronas\ndentales', num: '02', active: false },
+  { name: 'Blanqueamiento\ndental', num: '03', active: false },
+  { name: 'Implantes\ndentales', num: null, active: false },
 ];
 
 /* ───────────────────────── Hooks ───────────────────────── */
@@ -233,7 +233,7 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
 
 /* ───────────────────────── Navbar ───────────────────────── */
 
-const navLinks = ['Home', 'Services', 'About', 'Gallery', 'Contact'];
+const navLinks = ['Inicio', 'Servicios', 'Nosotros', 'Galería', 'Contacto'];
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -251,19 +251,19 @@ function Navbar() {
         <div className="flex flex-col">
           <span className="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none text-black">Dental</span>
           <span className="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none text-black -mt-1.5 md:-mt-2">Health</span>
-          <span className="text-[8px] md:text-[9px] font-medium leading-none mt-1.5 md:mt-2 text-black">quality healthcare</span>
+          <span className="text-[8px] md:text-[9px] font-medium leading-none mt-1.5 md:mt-2 text-black">salud de calidad</span>
         </div>
 
         <div className="hidden md:block">
           <button className="px-6 py-3 bg-white rounded-full border border-black text-sm font-semibold hover:bg-black hover:text-white transition-colors duration-200">
-            Menu
+            Menú
           </button>
         </div>
-        <span className="hidden md:block text-sm font-semibold text-black">Dental Emergency</span>
+        <span className="hidden md:block text-sm font-semibold text-black">Urgencias dentales</span>
 
         <button
           className="md:hidden w-10 h-10 flex items-center justify-center relative"
-          aria-label="Toggle menu"
+          aria-label="Abrir o cerrar menú"
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
@@ -304,9 +304,9 @@ function Navbar() {
               className={`mt-8 pt-8 border-t border-neutral-200 transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] ${open ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
               style={{ transitionDelay: open ? '450ms' : '0ms' }}
             >
-              <p className="text-sm font-semibold text-black mb-4">Dental Emergency</p>
+              <p className="text-sm font-semibold text-black mb-4">Urgencias dentales</p>
               <button className="w-full px-6 py-4 bg-black rounded-full text-white text-sm font-semibold hover:bg-neutral-800 transition-colors duration-200">
-                Book Appointment
+                Agendar cita
               </button>
             </div>
           </nav>
@@ -423,22 +423,22 @@ export default function App() {
           style={s1Reveal.getAnimStyle(3)}
         >
           <p className="absolute top-4 left-4 md:top-7 md:left-7 text-black text-xs md:text-sm font-semibold leading-4 md:leading-5 max-w-[200px] md:max-w-[300px] z-10">
-            We wish to provide professional dental services
+            Ofrecemos servicios dentales profesionales
             <br />
-            that match the current technologies
+            con la tecnología más actual
           </p>
           <div className="absolute bottom-5 left-3 md:bottom-8 md:left-4 z-10">
             <span className="block text-black text-xs md:text-sm font-semibold mb-1 md:mb-2">
-              Trusted Dentist in West New York
+              Tu dentista de confianza en México
             </span>
             <h1 className="text-black text-[clamp(3rem,11vw,11rem)] font-bold leading-[0.79] tracking-tight">
-              Dental
+              Cuidado
               <br />
-              Care
+              Dental
             </h1>
           </div>
           <span className="absolute bottom-6 right-4 md:bottom-10 md:right-8 text-white text-xs md:text-sm font-semibold z-10">
-            Free Consultation
+            Valoración sin costo
           </span>
         </MaskedCard>
       </section>
@@ -459,10 +459,10 @@ export default function App() {
             style={s2Reveal.getAnimStyle(0)}
           >
             <h2 className="absolute top-4 left-5 md:top-6 md:left-7 text-white md:text-black text-2xl md:text-3xl font-bold z-10">
-              Smile Gallery
+              Galería de sonrisas
             </h2>
             <p className="absolute bottom-4 left-5 md:bottom-6 md:left-7 text-white md:text-black text-xs md:text-sm font-semibold z-10">
-              Our cosmetic dental work
+              Nuestro trabajo de odontología estética
             </p>
           </MaskedCard>
 
@@ -476,12 +476,12 @@ export default function App() {
             style={s2Reveal.getAnimStyle(1)}
           >
             <p className="absolute bottom-16 left-5 md:bottom-20 md:left-7 text-white text-xs md:text-sm font-semibold leading-4 md:leading-5 z-10">
-              If you want a gorgeous smile,
+              Si quieres una sonrisa espectacular,
               <br />
-              call us to ask about a smile makeover.
+              llámanos y pregunta por el diseño de sonrisa.
             </p>
             <button className="absolute bottom-4 right-4 md:bottom-6 md:right-6 px-5 py-3 md:px-8 md:py-5 bg-white rounded-full text-black text-base md:text-xl font-bold z-10 hover:scale-105 transition-transform">
-              Call Us
+              Llámanos
             </button>
           </MaskedCard>
 
@@ -495,9 +495,9 @@ export default function App() {
             style={s2Reveal.getAnimStyle(2)}
           >
             <h2 className="absolute top-4 left-5 md:top-6 md:left-7 text-white md:text-black text-[clamp(3rem,7vw,6rem)] font-bold leading-[0.9] z-10">
-              Smile
+              Diseño de
               <br />
-              makeover
+              sonrisa
             </h2>
           </MaskedCard>
 
@@ -548,11 +548,11 @@ export default function App() {
               style={s3Reveal.getAnimStyle(0)}
             >
               <h2 className="text-[clamp(3rem,7vw,6.5rem)] font-bold leading-[0.95] text-black">
-                Implant
+                Implantes
                 <br />
-                Dentistry
+                Dentales
               </h2>
-              <p className="text-xs md:text-sm font-semibold text-black">Restore Missing Teeth</p>
+              <p className="text-xs md:text-sm font-semibold text-black">Recupera los dientes que te faltan</p>
             </div>
 
             <div
@@ -560,10 +560,10 @@ export default function App() {
               style={s3Reveal.getAnimStyle(1)}
             >
               <div className="flex-1 rounded-xl md:rounded-2xl overflow-hidden">
-                <img src={SECTION3_IMG1} alt="Dental implant procedure" className="w-full h-full object-cover" />
+                <img src={SECTION3_IMG1} alt="Procedimiento de implante dental" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 rounded-xl md:rounded-2xl overflow-hidden">
-                <img src={SECTION3_IMG2} alt="Dental restoration" className="w-full h-full object-cover" />
+                <img src={SECTION3_IMG2} alt="Restauración dental" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -572,17 +572,17 @@ export default function App() {
               style={s3Reveal.getAnimStyle(2)}
             >
               <div>
-                <p className="text-xs md:text-sm font-semibold text-black mb-2 md:mb-3">Consultation</p>
+                <p className="text-xs md:text-sm font-semibold text-black mb-2 md:mb-3">Valoración</p>
                 <h3 className="text-xl md:text-3xl font-bold text-black leading-6 md:leading-8">
-                  Dental
+                  Servicios de
                   <br />
-                  Restoration
+                  restauración
                   <br />
-                  Services
+                  dental
                 </h3>
               </div>
               <button className="px-5 py-3 md:px-8 md:py-5 bg-white rounded-full text-black text-base md:text-xl font-bold hover:scale-105 transition-transform">
-                Book Online
+                Agenda en línea
               </button>
             </div>
           </div>
@@ -592,15 +592,15 @@ export default function App() {
             className="rounded-xl md:rounded-2xl overflow-hidden relative min-h-[350px] md:min-h-0"
             style={s3Reveal.getAnimStyle(3)}
           >
-            <img src={SECTION3_BG} alt="Smiling patient" className="w-full h-full object-cover" />
+            <img src={SECTION3_BG} alt="Paciente sonriendo" className="w-full h-full object-cover" />
             <div className="absolute bottom-3 left-3 right-3 md:bottom-5 md:left-5 md:right-5 flex gap-1.5 md:gap-2">
               <div className="flex-1 bg-white rounded-xl md:rounded-2xl p-3 md:p-5 flex flex-col justify-between h-36 md:h-52">
                 <h4 className="text-lg md:text-2xl font-bold text-black leading-5 md:leading-7">
-                  The Process
+                  El proceso de
                   <br />
-                  of Installing
+                  colocación de
                   <br />
-                  Implants
+                  implantes
                 </h4>
                 <span className="self-end w-9 h-9 md:w-12 md:h-12 rounded-full border border-black flex items-center justify-center">
                   <ArrowIcon />
@@ -608,11 +608,11 @@ export default function App() {
               </div>
               <div className="flex-1 bg-white/20 backdrop-blur-xl rounded-xl md:rounded-2xl p-3 md:p-5 flex flex-col justify-between h-36 md:h-52">
                 <h4 className="text-lg md:text-2xl font-bold text-white leading-5 md:leading-7">
-                  Caring
+                  Cuidado de
                   <br />
-                  for Dental
+                  los implantes
                   <br />
-                  Implants
+                  dentales
                 </h4>
                 <span className="self-end w-9 h-9 md:w-12 md:h-12 rounded-full border border-white flex items-center justify-center">
                   <ArrowIcon className="text-white" />
