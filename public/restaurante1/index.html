@@ -281,6 +281,104 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
   color:var(--color-walnut);
 }
 
+/* ═══════════ BARRA / DRINKS — pliego oscuro ═══════════ */
+.barra{
+  position:relative;
+  background:var(--color-midnight-roast);
+  padding:clamp(120px,16vh,160px) 0;
+  overflow:hidden;
+}
+.barra::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(36% 30% at 24% 30%, rgba(212,150,83,0.10), transparent 70%);
+}
+.barra .wrap{position:relative;}
+.barra__head{
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:16px;margin-bottom:42px;
+}
+.barra__head h2{color:var(--color-parchment);}
+.barra__cols{
+  display:grid;grid-template-columns:1fr;gap:0 64px;
+}
+@media(min-width:820px){.barra__cols{grid-template-columns:1fr 1fr;}}
+.barra__grupo{
+  font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;
+  color:var(--color-saffron-glow);
+  padding:24px 0 12px;
+}
+.drink{
+  display:grid;grid-template-columns:1fr auto;gap:4px 24px;
+  padding:18px 0;
+  border-top:1px solid rgba(216,203,184,0.22);
+}
+.drink__nombre{
+  font-family:var(--font-serif);font-weight:300;
+  font-size:22px;line-height:1;letter-spacing:-0.035em;text-transform:uppercase;
+  color:var(--color-parchment);
+}
+.drink__precio{
+  font-weight:700;font-size:15px;letter-spacing:-0.15px;
+  color:var(--color-parchment);
+  align-self:start;
+}
+.drink__desc{
+  grid-column:1 / -1;
+  color:var(--color-walnut);
+  font-size:14px;letter-spacing:-0.14px;
+  max-width:48ch;
+}
+.barra__nota{
+  margin-top:42px;
+  font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;
+  color:var(--color-walnut);
+}
+
+/* ═══════════ CATERING & EVENTOS — pliego editorial ═══════════ */
+.catering{padding:clamp(120px,16vh,160px) 0;}
+.catering__head{
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:16px;margin-bottom:42px;
+}
+.catering__grid{
+  display:grid;grid-template-columns:1fr;gap:1px;
+  background:var(--color-warm-stone);
+  border-top:1px solid var(--color-warm-stone);
+  border-bottom:1px solid var(--color-warm-stone);
+  margin-bottom:42px;
+}
+@media(min-width:820px){.catering__grid{grid-template-columns:repeat(3,1fr);}}
+.catering__card{
+  background:var(--color-parchment);
+  padding:42px 28px;
+}
+.catering__card h3{
+  font-family:var(--font-serif);font-weight:300;
+  font-size:26px;line-height:1;letter-spacing:-0.006em;text-transform:uppercase;
+  margin-bottom:16px;
+}
+.catering__card p{
+  color:var(--color-espresso);
+  font-size:14px;letter-spacing:-0.14px;
+  max-width:34ch;
+}
+
+/* ═══════════ TARJETAS DE REGALO — banda editorial ═══════════ */
+.regalos{
+  border-top:1px solid var(--color-warm-stone);
+  padding:clamp(92px,12vh,120px) 0;
+}
+.regalos .wrap{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:28px;
+}
+.regalos__texto{max-width:52ch;}
+.regalos__texto p{
+  color:var(--color-espresso);
+  font-size:14px;letter-spacing:-0.14px;
+  margin-top:16px;
+}
+
 /* ═══════════ TESTIMONIOS — cartas sobre el mismo lienzo ═══════════ */
 .testimonios{padding-bottom:clamp(120px,16vh,160px);}
 .testimonios__head{margin-bottom:42px;}
@@ -399,7 +497,9 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
     </a>
     <ul class="nav__links">
       <li><a href="#menu">Menú</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#barra">Barra</a></li>
+      <li><a href="#catering">Catering</a></li>
+      <li><a href="#regalos">Regalos</a></li>
       <li><a href="#opiniones">Opiniones</a></li>
       <li><a href="#reservar">Contacto</a></li>
     </ul>
@@ -488,6 +588,90 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
   </div>
 </section>
 
+<!-- LA BARRA / DRINKS -->
+<section class="barra" id="barra">
+  <div class="wrap">
+    <div class="barra__head">
+      <h2 class="serif heading-lg">La barra</h2>
+      <span class="caption" style="color:var(--color-walnut);">Aquí va la fotografía de su barra</span>
+    </div>
+    <div class="barra__cols">
+      <div>
+        <p class="barra__grupo">Cocteles de la casa</p>
+        <div class="drink">
+          <span class="drink__nombre">Mezcalita de temporada</span>
+          <span class="drink__precio">$ 180</span>
+          <span class="drink__desc">Mezcal joven, fruta del mercado y sal de gusano.</span>
+        </div>
+        <div class="drink">
+          <span class="drink__nombre">Carajillo de la casa</span>
+          <span class="drink__precio">$ 160</span>
+          <span class="drink__desc">Espresso doble y licor, servido en las rocas.</span>
+        </div>
+        <div class="drink">
+          <span class="drink__nombre">Paloma de barrio</span>
+          <span class="drink__precio">$ 150</span>
+          <span class="drink__desc">Tequila blanco, toronja natural y escarcha de sal.</span>
+        </div>
+        <div class="drink">
+          <span class="drink__nombre">Gin de jamaica</span>
+          <span class="drink__precio">$ 170</span>
+          <span class="drink__desc">Infusión de flor de jamaica, tónica y cítricos.</span>
+        </div>
+      </div>
+      <div>
+        <p class="barra__grupo">Vino y sin alcohol</p>
+        <div class="drink">
+          <span class="drink__nombre">Tinto por copa</span>
+          <span class="drink__precio">$ 140</span>
+          <span class="drink__desc">Selección de la casa; pregunte por la etiqueta del mes.</span>
+        </div>
+        <div class="drink">
+          <span class="drink__nombre">Blanco por copa</span>
+          <span class="drink__precio">$ 140</span>
+          <span class="drink__desc">Fresco y mineral, ideal con la pesca del día.</span>
+        </div>
+        <div class="drink">
+          <span class="drink__nombre">Agua fresca del día</span>
+          <span class="drink__precio">$ 60</span>
+          <span class="drink__desc">De frutas de temporada, endulzada al gusto.</span>
+        </div>
+        <div class="drink">
+          <span class="drink__nombre">Café de olla</span>
+          <span class="drink__precio">$ 55</span>
+          <span class="drink__desc">Con piloncillo y canela, servido en barro.</span>
+        </div>
+      </div>
+    </div>
+    <p class="barra__nota">Pregunte a su mesero por el maridaje sugerido para cada platillo.</p>
+  </div>
+</section>
+
+<!-- CATERING & EVENTOS -->
+<section class="catering" id="catering">
+  <div class="wrap">
+    <div class="catering__head">
+      <h2 class="serif heading-lg">Catering &amp; eventos</h2>
+      <span class="caption">Llevamos la mesa a donde usted celebre</span>
+    </div>
+    <div class="catering__grid">
+      <article class="catering__card">
+        <h3>Bodas y celebraciones</h3>
+        <p>Menús de varios tiempos diseñados con usted, servicio de sala completo y montaje a la medida.</p>
+      </article>
+      <article class="catering__card">
+        <h3>Eventos corporativos</h3>
+        <p>Desayunos, comidas ejecutivas y cenas de fin de año para equipos de 10 a 300 personas.</p>
+      </article>
+      <article class="catering__card">
+        <h3>Cenas privadas</h3>
+        <p>Nuestro salón privado o su domicilio, con chef y servicio dedicados para ocasiones íntimas.</p>
+      </article>
+    </div>
+    <a class="btn-ghost" href="https://wa.me/523300000000?text=Hola%2C%20quiero%20cotizar%20un%20evento." target="_blank" rel="noopener">Cotizar mi evento</a>
+  </div>
+</section>
+
 <!-- TESTIMONIOS -->
 <section class="testimonios" id="opiniones">
   <div class="wrap">
@@ -517,12 +701,24 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
   </div>
 </section>
 
+<!-- TARJETAS DE REGALO -->
+<section class="regalos" id="regalos">
+  <div class="wrap">
+    <div class="regalos__texto">
+      <h2 class="serif heading-sm">Tarjetas de regalo</h2>
+      <p>Regale una mesa puesta: tarjetas físicas y digitales por el monto que usted elija, entregadas el mismo día.</p>
+    </div>
+    <a class="btn-ghost" href="https://wa.me/523300000000?text=Hola%2C%20quiero%20una%20tarjeta%20de%20regalo." target="_blank" rel="noopener">Regalar una cena</a>
+  </div>
+</section>
+
 <!-- RESERVA -->
 <section class="reserva" id="reservar">
   <div class="wrap">
     <h2 class="serif heading-lg">Reserve su mesa</h2>
     <div class="reserva__acciones">
       <a class="btn-ghost" href="https://wa.me/523300000000?text=Hola%2C%20quisiera%20reservar%20una%20mesa." target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      <a class="btn-ghost" href="https://wa.me/523300000000?text=Hola%2C%20quiero%20ordenar%20a%20domicilio." target="_blank" rel="noopener">Ordenar a domicilio</a>
       <a class="btn-ghost" href="tel:+523300000000">Llamar</a>
     </div>
     <p class="reserva__nota">Confirmamos su reservación el mismo día.</p>
@@ -541,7 +737,9 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
       <div class="footer__marca">Su Restaurante</div>
       <nav aria-label="Navegación de pie de página">
         <a href="#menu">Menú</a>
-        <a href="#nosotros">Nosotros</a>
+        <a href="#barra">Barra</a>
+        <a href="#catering">Catering</a>
+        <a href="#regalos">Tarjetas de regalo</a>
         <a href="#opiniones">Opiniones</a>
         <a href="#reservar">Reservaciones</a>
       </nav>
