@@ -10,6 +10,7 @@
 <meta property="og:title" content="Su Restaurante | Demo de página web para restaurantes">
 <meta property="og:description" content="Página editorial de alta cocina: pergamino cálido, tipografía serif ligera y reservas por WhatsApp.">
 <meta property="og:url" content="https://magueystudio.mx/restaurante1">
+<meta property="og:image" content="https://magueystudio.mx/restaurante1/og.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,18 +130,12 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
 .hero{
   position:relative;
   min-height:100vh;
-  background:var(--color-midnight-roast);
+  background:
+    linear-gradient(180deg, rgba(41,38,34,0.42) 0%, rgba(41,38,34,0.28) 45%, rgba(41,38,34,0.78) 100%),
+    var(--color-midnight-roast) url('/restaurante1/interior.webp') center 42%/cover no-repeat;
   display:flex;flex-direction:column;justify-content:flex-end;
   overflow:hidden;
   padding-top:120px;
-}
-/* Resplandor de velas como placeholder de fotografía */
-.hero::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(38% 30% at 22% 62%, rgba(212,150,83,0.14), transparent 70%),
-    radial-gradient(30% 24% at 74% 48%, rgba(212,150,83,0.10), transparent 70%),
-    radial-gradient(46% 34% at 50% 86%, rgba(212,150,83,0.07), transparent 70%);
 }
 .hero__meta{
   display:flex;justify-content:space-between;gap:16px;
@@ -162,11 +157,6 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
   text-align:center;
   white-space:nowrap;
   padding-bottom:clamp(24px,5vh,56px);
-}
-.hero__foto-nota{
-  position:absolute;top:112px;left:clamp(20px,4vw,64px);
-  font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;
-  color:var(--color-walnut);
 }
 /* Widget de reseñas */
 .rating{
@@ -204,13 +194,11 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
 /* ═══════════ ATMÓSFERA — transición fotográfica oscura ═══════════ */
 .atmos{
   position:relative;
-  background:var(--color-midnight-roast);
+  background:
+    linear-gradient(90deg, rgba(41,38,34,0.88) 0%, rgba(41,38,34,0.55) 55%, rgba(41,38,34,0.30) 100%),
+    var(--color-midnight-roast) url('/restaurante1/cocina.webp') 70% 38%/cover no-repeat;
   padding:clamp(120px,16vh,160px) 0;
   overflow:hidden;
-}
-.atmos::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(40% 34% at 78% 70%, rgba(212,150,83,0.10), transparent 70%);
 }
 .atmos .wrap{position:relative;}
 .atmos h2{color:var(--color-parchment);max-width:12ch;}
@@ -269,16 +257,18 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
   aspect-ratio:4/3;
   position:relative;
   display:flex;align-items:flex-end;
+  overflow:hidden;
 }
-.bodegon::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(42% 36% at 50% 44%, rgba(212,150,83,0.12), transparent 72%);
+.bodegon img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
 }
 .bodegon figcaption{
   position:relative;
-  padding:20px;
+  width:100%;
+  padding:42px 20px 20px;
   font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;
-  color:var(--color-walnut);
+  color:var(--color-parchment);
+  background:linear-gradient(180deg, transparent 0%, rgba(41,38,34,0.75) 100%);
 }
 
 /* ═══════════ BARRA / DRINKS — pliego oscuro ═══════════ */
@@ -299,9 +289,17 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
 }
 .barra__head h2{color:var(--color-parchment);}
 .barra__cols{
-  display:grid;grid-template-columns:1fr;gap:0 64px;
+  display:grid;grid-template-columns:1fr;gap:24px 56px;
 }
-@media(min-width:820px){.barra__cols{grid-template-columns:1fr 1fr;}}
+@media(min-width:820px){.barra__cols{grid-template-columns:0.85fr 1fr 1fr;gap:0 56px;}}
+.barra__foto{
+  position:relative;
+  min-height:280px;
+  overflow:hidden;
+}
+.barra__foto img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+}
 .barra__grupo{
   font-size:12px;text-transform:uppercase;letter-spacing:-0.144px;
   color:var(--color-saffron-glow);
@@ -506,8 +504,6 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
     <a class="btn-ghost btn-ghost--light nav__cta" href="#reservar">Reservar mesa</a>
   </nav>
 
-  <p class="hero__foto-nota">Aquí va la fotografía de su restaurante</p>
-
   <div class="hero__meta">
     <span>Sirviendo a su ciudad</span>
     <span>Desde 1996</span>
@@ -538,7 +534,7 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
 <!-- ATMÓSFERA / NOSOTROS -->
 <section class="atmos" id="nosotros">
   <div class="wrap">
-    <span class="caption caption--light" style="color:var(--color-walnut);">Nuestra historia · Aquí va la fotografía de su cocina</span>
+    <span class="caption caption--light" style="color:var(--color-warm-stone);">Nuestra historia</span>
     <h2 class="serif display">El sazón de la casa</h2>
     <p>En su restaurante, cada platillo es un tributo a la tradición y cada momento está hecho para hoy. Aquí va la historia de su cocina: el origen de sus recetas, la calidez de su hospitalidad y el ritmo de su barrio.</p>
     <a class="btn-ghost btn-ghost--light" href="#reservar">Conócenos</a>
@@ -582,8 +578,14 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
     </ul>
 
     <div class="menu__fotos">
-      <figure class="bodegon"><figcaption>Aquí va la fotografía de su platillo insignia</figcaption></figure>
-      <figure class="bodegon"><figcaption>Aquí va la fotografía de su barra o salón</figcaption></figure>
+      <figure class="bodegon">
+        <img src="/restaurante1/mole.webp" alt="Mole de la casa servido en plato oscuro" loading="lazy" width="1600" height="1200">
+        <figcaption>Mole de la casa · el platillo insignia</figcaption>
+      </figure>
+      <figure class="bodegon">
+        <img src="/restaurante1/barra.webp" alt="Barra del restaurante con botellas iluminadas" loading="lazy" width="1600" height="1200">
+        <figcaption>La barra · más de 80 etiquetas</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -593,9 +595,12 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;}
   <div class="wrap">
     <div class="barra__head">
       <h2 class="serif heading-lg">La barra</h2>
-      <span class="caption" style="color:var(--color-walnut);">Aquí va la fotografía de su barra</span>
+      <span class="caption" style="color:var(--color-walnut);">Coctelería de autor y cava de la casa</span>
     </div>
     <div class="barra__cols">
+      <figure class="barra__foto">
+        <img src="/restaurante1/coctel.webp" alt="Coctel ahumado de la casa servido en la barra" loading="lazy" width="1200" height="900">
+      </figure>
       <div>
         <p class="barra__grupo">Cocteles de la casa</p>
         <div class="drink">
