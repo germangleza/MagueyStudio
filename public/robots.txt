@@ -47,4 +47,4 @@ User-agent: Twitterbot
 Allow: /
 Disallow: /demo/
 
-Sitemap: https://magueystudio.mx/sitemap.xml
+Sitemap: https://magueystudio.mx/sitemap-index.xml
