@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Promotoría de Seguros en México | Protejo Seguros</title>
+<meta name="description" content="Promotoría de seguros en México: vida, retiro, gastos médicos, autos y esquemas empresariales. Asesoría personalizada para tu familia y tu empresa.">
+<meta property="og:title" content="Promotoría de Seguros en México | Protejo Seguros">
+<meta property="og:description" content="Promotoría de seguros en México: vida, retiro, gastos médicos, autos y esquemas empresariales. Asesoría personalizada para tu familia y tu empresa.">
+<link rel="canonical" href="https://magueystudio.mx/protejoseguros">
+<meta property="og:url" content="https://magueystudio.mx/protejoseguros">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --primary-dark:#7d140b;
+  --primary:#d81e05;
+  --primary-light:#fdeeeb;
+  --accent:#a3160a;
+  --gold:#c5a46d;
+  --text:#2b1c1a;
+  --muted:#7a6a6c;
+  --bg:#ffffff;
+  --bg-alt:#faf6f5;
+  --border:#eddedb;
+  --wa:#25D366;
+  --r:12px;
+  --r-lg:20px;
+  --max:1240px;
+  --shadow:0 4px 24px rgba(125,20,11,.08);
+  --shadow-lg:0 8px 40px rgba(125,20,11,.14);
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;line-height:1.2;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+button{cursor:pointer;font-family:inherit;}
+
+/* LAYOUT */
+.contenedor{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px;}
+.seccion{padding:80px 0;}
+.seccion--alt{background:var(--bg-alt);}
+.seccion--dark{background:var(--primary-dark);color:#fff;}
+.seccion--primary{background:var(--primary);color:#fff;}
+.eyebrow{font-family:'Manrope',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+.eyebrow--light{color:var(--gold);}
+.medida{max-width:640px;margin:0 auto;text-align:center;}
+.medida h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:1rem;}
+.medida p{color:var(--muted);font-size:1.05rem;}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.6rem;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .2s;border:none;cursor:pointer;text-decoration:none;}
+.btn--primary{background:var(--primary);color:#fff;}
+.btn--primary:hover{background:var(--primary-dark);}
+.btn--accent{background:var(--accent);color:#fff;}
+.btn--accent:hover{filter:brightness(1.1);}
+.btn--wa{background:var(--wa);color:#fff;}
+.btn--wa:hover{filter:brightness(1.08);}
+.btn--outline{background:transparent;color:var(--primary);border:2px solid var(--primary);}
+.btn--outline:hover{background:var(--primary);color:#fff;}
+.btn--outline-light{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);}
+.btn--outline-light:hover{background:rgba(255,255,255,.1);}
+.btn--lg{padding:.9rem 2rem;font-size:1rem;}
+
+/* HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);transition:box-shadow .3s;}
+.header.scrolled{box-shadow:0 1px 0 var(--border);}
+.header__inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem;}
+.header__brand{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.1rem;color:var(--primary-dark);}
+.header__brand span{color:var(--accent);}
+.header__nav{display:flex;align-items:center;gap:.2rem;}
+.header__nav a{padding:.45rem .8rem;font-size:.9rem;font-weight:500;color:var(--muted);border-radius:8px;transition:color .2s,background .2s;}
+.header__nav a:hover{color:var(--primary);background:var(--primary-light);}
+.header__cta{display:flex;align-items:center;gap:.75rem;}
+.header__menu-btn{display:none;background:none;border:none;padding:.4rem;color:var(--text);}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:#fff;z-index:99;padding:1.5rem;overflow-y:auto;}
+.mobile-menu.open{display:flex;flex-direction:column;gap:.25rem;}
+.mobile-menu a{padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--text);border-radius:10px;display:block;}
+.mobile-menu a:hover{background:var(--bg-alt);}
+.mobile-menu .btn{margin-top:1rem;justify-content:center;}
+
+/* HERO */
+.hero{padding:140px 0 80px;background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);color:#fff;overflow:hidden;}
+.hero__grid{display:grid;gap:3rem;align-items:center;}
+@media(min-width:900px){.hero__grid{grid-template-columns:1fr 1fr;}}
+.hero__eyebrow{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.1;margin-bottom:1.2rem;}
+.hero__sub{font-size:1.05rem;color:rgba(255,255,255,.8);margin-bottom:2rem;max-width:48ch;line-height:1.7;}
+.hero__btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.4rem;}
+.hero__trust{display:flex;flex-wrap:wrap;gap:1rem;}
+.hero__trust-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem;color:rgba(255,255,255,.75);}
+.hero__trust-item svg{color:var(--gold);flex-shrink:0;}
+.hero__img-wrap{position:relative;}
+.hero__img{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;}
+.hero__img img{width:100%;height:100%;object-fit:cover;}
+.hero__img-placeholder{color:rgba(255,255,255,.3);font-size:5rem;text-align:center;}
+.hero__badge{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);background:#fff;border-radius:50px;padding:.6rem 1.2rem;display:flex;align-items:center;gap:.5rem;box-shadow:var(--shadow-lg);white-space:nowrap;}
+.hero__badge span{font-size:.82rem;font-weight:600;color:var(--primary-dark);}
+
+/* TRUST BAR */
+.trust-bar{background:#fff;border-bottom:1px solid var(--border);padding:28px 0;}
+.trust-bar__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+@media(min-width:760px){.trust-bar__grid{grid-template-columns:repeat(4,1fr);}}
+.trust-bar__item{display:flex;align-items:flex-start;gap:.75rem;}
+.trust-bar__icon{width:36px;height:36px;border-radius:8px;background:var(--primary-light);display:grid;place-items:center;flex-shrink:0;color:var(--primary);}
+.trust-bar__item b{display:block;font-size:.9rem;font-weight:700;color:var(--primary-dark);}
+.trust-bar__item span{font-size:.8rem;color:var(--muted);}
+
+/* NECESIDADES */
+.necesidades__grid{display:grid;gap:1.2rem;margin-top:3rem;}
+@media(min-width:600px){.necesidades__grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:960px){.necesidades__grid{grid-template-columns:repeat(4,1fr);}}
+.nec-card{border:1.5px solid var(--border);border-radius:var(--r-lg);padding:1.6rem;transition:border-color .2s,box-shadow .2s;}
+.nec-card:hover{border-color:var(--primary);box-shadow:var(--shadow);}
+.nec-card__icon{width:48px;height:48px;border-radius:12px;background:var(--primary-light);display:grid;place-items:center;color:var(--primary);margin-bottom:1rem;}
+.nec-card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem;color:var(--primary-dark);}
+.nec-card p{font-size:.88rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.55;}
+.nec-card .btn{font-size:.82rem;padding:.5rem 1rem;}
+
+/* SERVICIOS */
+.servicios__grid{display:grid;gap:1.2rem;margin-top:3rem;}
+@media(min-width:600px){.servicios__grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:960px){.servicios__grid{grid-template-columns:repeat(4,1fr);}}
+.srv-card{background:#fff;border-radius:var(--r-lg);padding:1.6rem;border:1.5px solid var(--border);transition:box-shadow .2s,border-color .2s;}
+.srv-card:hover{box-shadow:var(--shadow-lg);border-color:var(--primary);}
+.srv-card__icon{width:48px;height:48px;border-radius:12px;background:var(--primary-light);display:grid;place-items:center;color:var(--primary);margin-bottom:1rem;}
+.srv-card h3{font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:.3rem;}
+.srv-card__headline{font-size:.88rem;font-weight:600;color:var(--primary);margin-bottom:.6rem;}
+.srv-card p{font-size:.85rem;color:var(--muted);margin-bottom:1rem;line-height:1.55;}
+.srv-card__tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem;}
+.srv-card__tag{font-size:.72rem;font-weight:600;background:var(--primary-light);color:var(--primary);padding:.25rem .6rem;border-radius:50px;}
+.srv-card .btn{font-size:.82rem;padding:.5rem 1rem;width:100%;justify-content:center;}
+
+/* DIAGNÓSTICO */
+.diagnostico{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;}
+.diag__wrap{max-width:700px;margin:0 auto;}
+.diag__wrap h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.75rem;}
+.diag__wrap > p{color:rgba(255,255,255,.75);margin-bottom:2.5rem;}
+.diag__progress{background:rgba(255,255,255,.2);border-radius:50px;height:6px;margin-bottom:2rem;}
+.diag__progress-bar{background:var(--gold);height:100%;border-radius:50px;transition:width .4s;}
+.diag__step{display:none;}
+.diag__step.active{display:block;}
+.diag__question{font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;}
+.diag__options{display:grid;gap:.6rem;}
+.diag__option{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);border-radius:10px;padding:.85rem 1rem;font-size:.93rem;color:#fff;cursor:pointer;transition:all .2s;text-align:left;}
+.diag__option:hover,.diag__option.selected{background:rgba(255,255,255,.2);border-color:var(--gold);}
+.diag__nav{display:flex;justify-content:space-between;margin-top:1.5rem;gap:1rem;}
+.diag__field{margin-bottom:1rem;}
+.diag__field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.4rem;color:rgba(255,255,255,.85);}
+.diag__field input{width:100%;padding:.75rem 1rem;border-radius:10px;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:.93rem;font-family:inherit;}
+.diag__field input::placeholder{color:rgba(255,255,255,.4);}
+.diag__aviso{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:1.5rem;line-height:1.5;}
+
+/* SOBRE DANIEL */
+.daniel__grid{display:grid;gap:3rem;align-items:center;}
+@media(min-width:860px){.daniel__grid{grid-template-columns:1fr 1fr;}}
+.daniel__foto{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:var(--primary-light);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:4rem;}
+.daniel__foto img{width:100%;height:100%;object-fit:cover;}
+.daniel__content h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1rem;}
+.daniel__copy{color:var(--muted);margin-bottom:1.5rem;line-height:1.75;}
+.daniel__creds{display:grid;gap:.75rem;margin-bottom:2rem;}
+.daniel__cred{display:flex;align-items:center;gap:.7rem;font-size:.9rem;}
+.daniel__cred svg{color:var(--accent);flex-shrink:0;}
+
+/* PROCESO */
+.proceso__steps{max-width:640px;margin:3rem auto 0;display:flex;flex-direction:column;gap:1.5rem;}
+.proceso__step{display:flex;gap:1.2rem;align-items:flex-start;}
+.proceso__num{width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;font-family:'Manrope',sans-serif;font-weight:800;font-size:.95rem;display:grid;place-items:center;flex-shrink:0;}
+.proceso__step h3{font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:.25rem;}
+.proceso__step p{font-size:.9rem;color:var(--muted);}
+.proceso__cta{text-align:center;margin-top:2.5rem;}
+
+/* ASEGURADORAS */
+.aseguradoras__grid{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2.5rem;}
+.aseguradoras__item{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.5rem;font-family:'Manrope',sans-serif;font-weight:700;font-size:.9rem;color:var(--primary-dark);min-width:120px;text-align:center;}
+.aseguradoras__nota{text-align:center;font-size:.82rem;color:var(--muted);margin-top:1.5rem;max-width:480px;margin-left:auto;margin-right:auto;}
+
+
+/* TESTIMONIOS */
+.testimonios__grid{display:grid;gap:1.2rem;margin-top:3rem;}
+@media(min-width:700px){.testimonios__grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1000px){.testimonios__grid{grid-template-columns:repeat(3,1fr);}}
+.testi-card{background:#fff;border-radius:var(--r-lg);padding:1.6rem;border:1.5px solid var(--border);}
+.testi-card__stars{color:var(--gold);font-size:1rem;margin-bottom:.75rem;}
+.testi-card blockquote{font-size:.92rem;color:var(--text);line-height:1.65;margin-bottom:1rem;font-style:italic;}
+.testi-card__quien{font-size:.8rem;font-weight:600;color:var(--muted);}
+
+/* FAQ */
+.faq__lista{max-width:740px;margin:2.5rem auto 0;border-top:1px solid var(--border);}
+.faq__item{border-bottom:1px solid var(--border);}
+.faq__btn{width:100%;background:none;border:none;text-align:left;padding:1.1rem 2.5rem 1.1rem 0;font-family:'Manrope',sans-serif;font-size:.97rem;font-weight:600;color:var(--primary-dark);cursor:pointer;position:relative;line-height:1.4;}
+.faq__btn::after,.faq__btn::before{content:'';position:absolute;right:4px;top:50%;background:var(--primary);border-radius:2px;transition:transform .3s,opacity .3s;}
+.faq__btn::before{width:12px;height:2px;margin-top:-1px;}
+.faq__btn::after{width:2px;height:12px;margin-top:-6px;margin-right:5px;}
+.faq__btn[aria-expanded="true"]::after{transform:rotate(90deg);opacity:0;}
+.faq__resp{display:none;padding:0 2.5rem .9rem 0;}
+.faq__resp.open{display:block;}
+.faq__resp p{font-size:.9rem;color:var(--muted);line-height:1.65;}
+
+/* FORMULARIO */
+.form-wrap{max-width:680px;margin:0 auto;}
+.form-grid{display:grid;gap:1rem;}
+@media(min-width:600px){.form-grid{grid-template-columns:1fr 1fr;}}
+.form-field{display:flex;flex-direction:column;gap:.35rem;}
+.form-field.full{grid-column:1/-1;}
+.form-field label{font-size:.85rem;font-weight:600;color:var(--primary-dark);}
+.form-field input,.form-field select,.form-field textarea{padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-size:.93rem;font-family:inherit;color:var(--text);background:#fff;transition:border-color .2s;}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--primary);}
+.form-field textarea{resize:vertical;min-height:100px;}
+.form-check{display:flex;align-items:flex-start;gap:.6rem;font-size:.83rem;color:var(--muted);}
+.form-check input{margin-top:3px;flex-shrink:0;}
+.form-aviso{font-size:.78rem;color:var(--muted);text-align:center;margin-top:.75rem;}
+.form-success{text-align:center;padding:2rem;background:var(--primary-light);border-radius:var(--r-lg);display:none;}
+.form-success h3{font-size:1.1rem;font-weight:700;color:var(--primary-dark);margin-bottom:.5rem;}
+.form-success p{font-size:.9rem;color:var(--muted);}
+
+/* CTA FINAL */
+.cta-final{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;}
+.cta-final h2{font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:1rem;}
+.cta-final p{color:rgba(255,255,255,.75);font-size:1.05rem;max-width:52ch;margin:0 auto 2rem;}
+.cta-final__btns{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;}
+
+/* FOOTER */
+.footer{background:var(--primary-dark);color:rgba(255,255,255,.7);padding:56px 0 32px;}
+.footer__grid{display:grid;gap:2.5rem;margin-bottom:2.5rem;}
+@media(min-width:760px){.footer__grid{grid-template-columns:2fr 1fr 1fr;}}
+.footer__brand{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;margin-bottom:.5rem;}
+.footer__descriptor{font-size:.85rem;margin-bottom:1rem;}
+.footer__aviso{font-size:.75rem;line-height:1.6;color:rgba(255,255,255,.45);}
+.footer h4{font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom.75rem:;margin-bottom:.75rem;}
+.footer ul li{margin-bottom:.5rem;}
+.footer ul li a{font-size:.88rem;color:rgba(255,255,255,.6);transition:color .2s;}
+.footer ul li a:hover{color:#fff;}
+.footer__legal{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;font-size:.78rem;color:rgba(255,255,255,.35);}
+.footer__legal a{color:rgba(255,255,255,.35);text-decoration:underline;}
+.footer__legal a:hover{color:rgba(255,255,255,.7);}
+
+/* WHATSAPP FLOTANTE */
+.flotante{position:fixed;bottom:96px;right:20px;z-index:90;background:var(--wa);color:#fff;border-radius:50px;padding:.75rem 1.2rem;display:flex;align-items:center;gap:.5rem;box-shadow:0 4px 20px rgba(37,211,102,.4);font-weight:600;font-size:.88rem;transition:transform .2s,box-shadow .2s;}
+.flotante:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.5);}
+.flotante svg{flex-shrink:0;}
+@media(max-width:639px){.flotante{bottom:76px;padding:.65rem 1rem;font-size:.8rem;}}
+
+/* BARRA MÓVIL */
+.barra-movil{display:none;position:fixed;bottom:0;left:0;right:0;z-index:91;background:#fff;border-top:1px solid var(--border);padding:.5rem .75rem;padding-bottom:max(.5rem,env(safe-area-inset-bottom));display:flex;gap:.5rem;}
+@media(min-width:640px){.barra-movil{display:none!important;}}
+.barra-movil a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;padding:.4rem;border-radius:8px;font-size:.7rem;font-weight:600;color:var(--muted);}
+.barra-movil a.wa{background:var(--wa);color:#fff;}
+.barra-movil a.tel{background:var(--primary);color:#fff;}
+
+/* SCROLL REVEAL */
+.rev{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.rev.visible{opacity:1;transform:none;}
+
+@media(max-width:760px){
+  .header__nav,.header__cta .btn--outline{display:none;}
+  .header__menu-btn{display:flex;}
+  .seccion{padding:56px 0;}
+  .hero{padding:110px 0 60px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="contenedor">
+    <div class="header__inner">
+      <a href="#inicio" class="header__brand">Protejo<span>·</span>Seguros</a>
+      <nav class="header__nav" aria-label="Navegación principal">
+        <a href="#soluciones">Soluciones</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#nosotros">Quiénes somos</a>
+        <a href="#testimonios">Opiniones</a>
+        <a href="#faq">Preguntas frecuentes</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="header__cta">
+        <a class="btn btn--outline" href="#contacto" style="padding:.55rem 1.2rem;font-size:.88rem;">Solicitar asesoría</a>
+        <button class="header__menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MENÚ MÓVIL -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú">
+  <a href="#soluciones">Soluciones</a>
+        <a href="#empresas">Empresas</a>
+  <a href="#proceso">Cómo funciona</a>
+  <a href="#nosotros">Quiénes somos</a>
+  <a href="#testimonios">Opiniones</a>
+  <a href="#faq">Preguntas frecuentes</a>
+  <a href="#contacto">Contacto</a>
+  <a class="btn btn--wa" href="https://wa.me/525500000000?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa." target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+    Solicitar asesoría
+  </a>
+</div>
+
+<main id="inicio">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="contenedor">
+    <div class="hero__grid">
+      <div class="rev">
+        <p class="hero__eyebrow">Seguros y Protección Financiera</p>
+        <h1>Protege tu presente y construye tu futuro</h1>
+        <p class="hero__sub">Recibe asesoría personalizada en seguros de vida, retiro, gastos médicos y autos para encontrar una solución adecuada para ti, tu familia y tu patrimonio.</p>
+        <div class="hero__btns">
+          <a class="btn btn--wa btn--lg" href="https://wa.me/525500000000?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa." target="_blank" rel="noopener">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+            Solicitar asesoría
+          </a>
+          <a class="btn btn--outline-light btn--lg" href="#soluciones">Conocer soluciones</a>
+        </div>
+        <div class="hero__trust">
+          <div class="hero__trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Asesoría personalizada</div>
+          <div class="hero__trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Explicaciones claras</div>
+          <div class="hero__trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Opciones de distintas aseguradoras</div>
+          <div class="hero__trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Acompañamiento continuo</div>
+        </div>
+      </div>
+      <div class="hero__img-wrap rev" data-d="1">
+        <div class="hero__img">
+          <img src="/agente/ChatGPT%20Image%2023%20jul%202026,%2015_54_21.png" alt="Protejo Seguros, asesor de seguros" width="1086" height="1448" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="hero__badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d81e05" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Ciudad de México · Atención en todo México</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="contenedor">
+    <div class="trust-bar__grid">
+      <div class="trust-bar__item rev">
+        <div class="trust-bar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div><b>Asesoría sin tecnicismos</b><span>Explicamos cada cobertura con claridad</span></div>
+      </div>
+      <div class="trust-bar__item rev" data-d="1">
+        <div class="trust-bar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></div>
+        <div><b>Comparación de alternativas</b><span>Distintas opciones según tu perfil</span></div>
+      </div>
+      <div class="trust-bar__item rev" data-d="2">
+        <div class="trust-bar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><b>Seguimiento de renovaciones</b><span>Te avisamos antes de que venza tu póliza</span></div>
+      </div>
+      <div class="trust-bar__item rev" data-d="3">
+        <div class="trust-bar__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <div><b>Apoyo en caso de siniestro</b><span>Te acompañamos en el proceso</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NECESIDADES -->
+<section class="seccion seccion--alt">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Empieza aquí</p>
+      <h2>¿Qué quieres proteger o planear?</h2>
+      <p>Cada persona tiene necesidades diferentes. Elige lo que más te importa y conoce las soluciones que pueden ayudarte.</p>
+    </div>
+    <div class="necesidades__grid">
+      <div class="nec-card rev">
+        <div class="nec-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>El futuro de mi familia</h3>
+        <p>Ayuda a mantener la estabilidad económica de las personas que dependen de ti ante una situación inesperada.</p>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20conocer%20opciones%20para%20proteger%20econ%C3%B3micamente%20a%20mi%20familia." target="_blank" rel="noopener">Proteger a mi familia</a>
+      </div>
+      <div class="nec-card rev" data-d="1">
+        <div class="nec-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Mi retiro</h3>
+        <p>Comienza a construir un patrimonio para disfrutar tu retiro con mayor tranquilidad y libertad financiera.</p>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20me%20interesa%20conocer%20c%C3%B3mo%20puedo%20comenzar%20a%20ahorrar%20para%20mi%20retiro." target="_blank" rel="noopener">Planear mi retiro</a>
+      </div>
+      <div class="nec-card rev" data-d="2">
+        <div class="nec-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Mi salud y mis ahorros</h3>
+        <p>Accede a atención médica privada sin comprometer tus ahorros ante una enfermedad o accidente.</p>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro%20de%20gastos%20m%C3%A9dicos%20mayores." target="_blank" rel="noopener">Proteger mi salud</a>
+      </div>
+      <div class="nec-card rev" data-d="3">
+        <div class="nec-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>Mi automóvil</h3>
+        <p>Obtén respaldo ante accidentes, daños, robo y responsabilidad frente a otras personas.</p>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20recibir%20una%20cotizaci%C3%B3n%20para%20asegurar%20mi%20autom%C3%B3vil." target="_blank" rel="noopener">Asegurar mi auto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="seccion" id="soluciones">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Soluciones de Protección</p>
+      <h2>Seguros adaptados a tus necesidades</h2>
+      <p>Conoce alternativas para proteger a tu familia, cuidar tu patrimonio y prepararte para las distintas etapas de la vida.</p>
+    </div>
+    <div class="servicios__grid">
+      <div class="srv-card rev">
+        <div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <h3>Seguro de vida</h3>
+        <p class="srv-card__headline">Protección financiera para quienes más te importan</p>
+        <p>Ayuda a proteger la estabilidad económica de tu familia si llegaras a faltar o enfrentaras una situación que afecte tus ingresos.</p>
+        <div class="srv-card__tags">
+          <span class="srv-card__tag">Fallecimiento</span><span class="srv-card__tag">Invalidez</span><span class="srv-card__tag">Enfermedades graves</span><span class="srv-card__tag">Ahorro</span>
+        </div>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20conocer%20opciones%20de%20seguro%20de%20vida%20para%20proteger%20a%20mi%20familia." target="_blank" rel="noopener">Calcular mi protección</a>
+      </div>
+      <div class="srv-card rev" data-d="1">
+        <div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3>Plan Personal de Retiro</h3>
+        <p class="srv-card__headline">Construye desde hoy el retiro que quieres</p>
+        <p>Crea un ahorro de largo plazo para mantener tu calidad de vida cuando decidas dejar de trabajar.</p>
+        <div class="srv-card__tags">
+          <span class="srv-card__tag">Ahorro</span><span class="srv-card__tag">Proyección</span><span class="srv-card__tag">Beneficios fiscales</span>
+        </div>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20me%20interesa%20conocer%20c%C3%B3mo%20puedo%20comenzar%20a%20ahorrar%20para%20mi%20retiro." target="_blank" rel="noopener">Proyectar mi retiro</a>
+      </div>
+      <div class="srv-card rev" data-d="2">
+        <div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Gastos médicos mayores</h3>
+        <p class="srv-card__headline">Cuida tu salud sin poner en riesgo tu patrimonio</p>
+        <p>Obtén respaldo ante enfermedades, accidentes, hospitalizaciones y procedimientos médicos cubiertos.</p>
+        <div class="srv-card__tags">
+          <span class="srv-card__tag">Hospitalización</span><span class="srv-card__tag">Cirugías</span><span class="srv-card__tag">Emergencias</span>
+        </div>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro%20de%20gastos%20m%C3%A9dicos%20mayores." target="_blank" rel="noopener">Cotizar gastos médicos</a>
+      </div>
+      <div class="srv-card rev" data-d="3">
+        <div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>Seguro de auto</h3>
+        <p class="srv-card__headline">Conduce con respaldo ante cualquier imprevisto</p>
+        <p>Protege tu automóvil ante accidentes, daños, robo y responsabilidad frente a terceros.</p>
+        <div class="srv-card__tags">
+          <span class="srv-card__tag">Responsabilidad civil</span><span class="srv-card__tag">Robo</span><span class="srv-card__tag">Asistencia vial</span>
+        </div>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20recibir%20una%20cotizaci%C3%B3n%20para%20asegurar%20mi%20autom%C3%B3vil." target="_blank" rel="noopener">Cotizar mi auto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEGUROS EMPRESARIALES -->
+<section class="seccion seccion--alt" id="empresas">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Para tu empresa</p>
+      <h2>Protección para tu empresa y tus colaboradores</h2>
+      <p>Esquemas colectivos y de continuidad para proteger tu operación, retener talento y cuidar a quienes hacen posible tu negocio.</p>
+    </div>
+    <div class="servicios__grid">
+      <div class="srv-card rev">
+        <div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Vida colectivo</h3>
+        <p class="srv-card__headline">Protección para toda tu plantilla</p>
+        <p>Una sola póliza que cubre a tus colaboradores y respalda a su familia ante un imprevisto.</p>
+        <div class="srv-card__tags"><span class="srv-card__tag">Fallecimiento</span><span class="srv-card__tag">Invalidez</span><span class="srv-card__tag">Plantilla completa</span></div>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro%20de%20vida%20colectivo%20para%20mi%20empresa." target="_blank" rel="noopener">Cotizar vida colectivo</a>
+      </div>
+      <div class="srv-card rev" data-d="1">
+        <div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Gastos médicos colectivos</h3>
+        <p class="srv-card__headline">Atención médica como prestación</p>
+        <p>Cobertura de gastos médicos mayores para tu equipo y, si lo defines así, para sus dependientes.</p>
+        <div class="srv-card__tags"><span class="srv-card__tag">Hospitalización</span><span class="srv-card__tag">Dependientes</span><span class="srv-card__tag">Red de hospitales</span></div>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20cotizar%20gastos%20m%C3%A9dicos%20colectivos%20para%20mi%20empresa." target="_blank" rel="noopener">Cotizar gastos médicos</a>
+      </div>
+      <div class="srv-card rev" data-d="2">
+        <div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>Seguro de flotillas</h3>
+        <p class="srv-card__headline">Todas tus unidades en un solo contrato</p>
+        <p>Administra en una póliza los vehículos de tu operación, con un solo vencimiento que atender.</p>
+        <div class="srv-card__tags"><span class="srv-card__tag">Autos</span><span class="srv-card__tag">Carga</span><span class="srv-card__tag">Un solo vencimiento</span></div>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20cotizar%20un%20seguro%20de%20flotilla%20para%20mi%20empresa." target="_blank" rel="noopener">Cotizar mi flotilla</a>
+      </div>
+      <div class="srv-card rev" data-d="3">
+        <div class="srv-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 1-4.5 4.5 1 6L12 17l-5.5 2.5 1-6L3 9l6-1z"/></svg></div>
+        <h3>Hombre clave</h3>
+        <p class="srv-card__headline">Continuidad si falta quien sostiene la operación</p>
+        <p>Protege a la empresa ante la ausencia de un socio o directivo del que dependen los ingresos.</p>
+        <div class="srv-card__tags"><span class="srv-card__tag">Socios</span><span class="srv-card__tag">Directivos</span><span class="srv-card__tag">Continuidad</span></div>
+        <a class="btn btn--primary" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20hombre%20clave." target="_blank" rel="noopener">Conocer hombre clave</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section class="seccion diagnostico" id="diagnostico">
+  <div class="contenedor">
+    <div class="diag__wrap">
+      <p class="eyebrow" style="text-align:center;">Orientación gratuita</p>
+      <h2 class="rev" style="text-align:center;">Descubre qué protección necesitas</h2>
+      <p class="rev" style="text-align:center;" data-d="1">Responde cinco preguntas y recibe orientación personalizada sin costo ni compromiso.</p>
+      <div class="diag__progress rev" data-d="1"><div class="diag__progress-bar" id="diagBar" style="width:20%"></div></div>
+
+      <form id="diagForm">
+        <!-- Paso 1 -->
+        <div class="diag__step active" id="step1">
+          <p class="diag__question">1 de 5 · ¿Qué deseas proteger?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="1" data-v="familia">A mi familia si llegara a faltarme</button>
+            <button type="button" class="diag__option" data-q="1" data-v="retiro">Mi retiro y ahorro a largo plazo</button>
+            <button type="button" class="diag__option" data-q="1" data-v="salud">Mi salud y la de mi familia</button>
+            <button type="button" class="diag__option" data-q="1" data-v="auto">Mi automóvil</button>
+          </div>
+          <div class="diag__nav"><span></span><button type="button" class="btn btn--outline-light" id="next1" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Paso 2 -->
+        <div class="diag__step" id="step2">
+          <p class="diag__question">2 de 5 · ¿Tienes dependientes económicos?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="2" data-v="si">Sí, dependen de mis ingresos</button>
+            <button type="button" class="diag__option" data-q="2" data-v="no">No por ahora</button>
+            <button type="button" class="diag__option" data-q="2" data-v="futuro">No actualmente, pero lo planeo</button>
+          </div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev2">← Anterior</button><button type="button" class="btn btn--outline-light" id="next2" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Paso 3 -->
+        <div class="diag__step" id="step3">
+          <p class="diag__question">3 de 5 · ¿Cuál es tu rango de edad?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="3" data-v="18-29">18 a 29 años</button>
+            <button type="button" class="diag__option" data-q="3" data-v="30-45">30 a 45 años</button>
+            <button type="button" class="diag__option" data-q="3" data-v="46-60">46 a 60 años</button>
+            <button type="button" class="diag__option" data-q="3" data-v="60+">Más de 60 años</button>
+          </div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev3">← Anterior</button><button type="button" class="btn btn--outline-light" id="next3" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Paso 4 -->
+        <div class="diag__step" id="step4">
+          <p class="diag__question">4 de 5 · ¿Ya cuentas con algún seguro?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="4" data-v="no">No tengo ninguno</button>
+            <button type="button" class="diag__option" data-q="4" data-v="vida">Tengo seguro de vida</button>
+            <button type="button" class="diag__option" data-q="4" data-v="gmm">Tengo gastos médicos</button>
+            <button type="button" class="diag__option" data-q="4" data-v="varios">Tengo varios seguros</button>
+          </div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev4">← Anterior</button><button type="button" class="btn btn--outline-light" id="next4" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Paso 5 -->
+        <div class="diag__step" id="step5">
+          <p class="diag__question">5 de 5 · ¿Qué te interesa principalmente?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="5" data-v="proteccion">Protección para mi familia</button>
+            <button type="button" class="diag__option" data-q="5" data-v="ahorro">Ahorro y acumulación</button>
+            <button type="button" class="diag__option" data-q="5" data-v="fiscal">Beneficios fiscales</button>
+            <button type="button" class="diag__option" data-q="5" data-v="medica">Atención médica privada</button>
+          </div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev5">← Anterior</button><button type="button" class="btn btn--outline-light" id="next5" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Captura -->
+        <div class="diag__step" id="step6">
+          <p class="diag__question">¡Casi listo! ¿Cómo te contactamos con tu orientación?</p>
+          <div class="diag__field"><label for="diagNombre">Nombre *</label><input type="text" id="diagNombre" name="nombre" placeholder="Tu nombre" required></div>
+          <div class="diag__field"><label for="diagWA">WhatsApp *</label><input type="tel" id="diagWA" name="whatsapp" placeholder="+52 55 0000 0000" required></div>
+          <div class="diag__field"><label for="diagEmail">Correo (opcional)</label><input type="email" id="diagEmail" name="email" placeholder="hola@correo.com"></div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev6">← Anterior</button><button type="submit" class="btn btn--wa">Recibir orientación</button></div>
+          <p class="diag__aviso">El resultado es únicamente orientativo y no constituye una cotización, recomendación financiera definitiva ni aceptación por parte de una aseguradora.</p>
+        </div>
+        <!-- Éxito -->
+        <div class="diag__step" id="stepOk" style="text-align:center;padding:2rem 0;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Manrope',sans-serif;font-size:1.3rem;margin-bottom:.75rem;">¡Recibí tu información!</h3>
+          <p style="color:rgba(255,255,255,.75);">Un asesor se pondrá en contacto contigo pronto para compartirte orientación personalizada.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE DANIEL -->
+<section class="seccion" id="nosotros">
+  <div class="contenedor">
+    <div class="daniel__grid">
+      <div class="daniel__foto rev" style="background:linear-gradient(155deg,var(--primary-dark),var(--accent));display:grid;place-items:center;padding:2.5rem;">
+        <div style="text-align:center;color:#fff;">
+          <div style="font-family:'Manrope',sans-serif;font-size:2.1rem;font-weight:800;line-height:1.1;letter-spacing:-.02em;">Protejo<br>Seguros</div>
+          <div style="width:44px;height:3px;background:var(--gold);margin:1.2rem auto;"></div>
+          <p style="font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.6;max-width:26ch;margin:0 auto;">Promotoría de seguros para personas, familias y empresas en México.</p>
+        </div>
+      </div>
+      <div class="rev" data-d="1">
+        <p class="eyebrow">Quiénes somos</p>
+        <h2>Asesoría que continúa después de contratar</h2>
+        <p class="daniel__copy">Somos Protejo Seguros, una promotoría especializada en protección financiera.<br><br>Nuestro trabajo es ayudarte a identificar tus principales riesgos, entender las diferentes alternativas y elegir una solución que tenga sentido para tus necesidades, objetivos y presupuesto.<br><br>Te acompañamos desde la primera asesoría hasta las renovaciones, actualizaciones de tu protección y procesos relacionados con el uso de tu seguro.</p>
+        <div class="daniel__creds">
+          <div class="daniel__cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Equipo de asesores certificados</div>
+          <div class="daniel__cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Personas, familias y empresas</div>
+          <div class="daniel__cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Atención presencial y en línea</div>
+          <div class="daniel__cred"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Seguimiento durante toda la vigencia</div>
+        </div>
+        <a class="btn btn--wa" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20platicar%20sobre%20mi%20protecci%C3%B3n." target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+          Hablar con un asesor
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="seccion seccion--alt" id="proceso">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Proceso</p>
+      <h2>Así te ayudamos a elegir una mejor protección</h2>
+    </div>
+    <div class="proceso__steps">
+      <div class="proceso__step rev"><div class="proceso__num">1</div><div><h3>Conocemos tus necesidades</h3><p>Conversamos sobre tu situación, prioridades y objetivos.</p></div></div>
+      <div class="proceso__step rev" data-d="1"><div class="proceso__num">2</div><div><h3>Analizamos alternativas</h3><p>Revisamos opciones según tu perfil y presupuesto.</p></div></div>
+      <div class="proceso__step rev" data-d="2"><div class="proceso__num">3</div><div><h3>Te explicamos con claridad</h3><p>Coberturas, costos, exclusiones y condiciones sin tecnicismos.</p></div></div>
+      <div class="proceso__step rev" data-d="3"><div class="proceso__num">4</div><div><h3>Te acompañamos en la contratación</h3><p>Gestionamos la solicitud y te orientamos con la documentación.</p></div></div>
+      <div class="proceso__step rev" data-d="4"><div class="proceso__num">5</div><div><h3>Seguimos contigo</h3><p>Renovaciones, cambios, dudas y acompañamiento en siniestros.</p></div></div>
+    </div>
+    <div class="proceso__cta rev">
+      <a class="btn btn--primary btn--lg" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20comenzar%20mi%20asesor%C3%ADa." target="_blank" rel="noopener">Comenzar mi asesoría</a>
+    </div>
+  </div>
+</section>
+
+<!-- ASEGURADORAS -->
+<section class="seccion">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Respaldo</p>
+      <h2>Opciones respaldadas por compañías reconocidas</h2>
+      <p>Trabajamos con diferentes aseguradoras para ayudarte a conocer alternativas y encontrar una solución adecuada para tus necesidades.</p>
+    </div>
+    <div class="aseguradoras__grid rev" data-d="1">
+      <div class="aseguradoras__item">GNP Seguros</div>
+      <div class="aseguradoras__item">Mapfre</div>
+      <div class="aseguradoras__item">AXA</div>
+      <div class="aseguradoras__item">Metlife</div>
+      <div class="aseguradoras__item">Seguros BBVA</div>
+      <div class="aseguradoras__item">Allianz</div>
+    </div>
+    <p class="aseguradoras__nota rev" data-d="2">Los productos y coberturas disponibles dependen de cada aseguradora. La contratación está sujeta a aceptación por parte de la compañía correspondiente.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="seccion seccion--alt" id="testimonios">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Opiniones</p>
+      <h2>Confianza construida con asesoría y acompañamiento</h2>
+      <p>Sustituir por testimonios reales con autorización del cliente.</p>
+    </div>
+    <div class="testimonios__grid">
+      <div class="testi-card rev"><div class="testi-card__stars">★★★★★</div><blockquote>"En Protejo me explicaron las diferentes opciones con claridad y pude elegir una cobertura de acuerdo con lo que realmente necesitaba."</blockquote><p class="testi-card__quien">— Cliente · Seguro de vida</p></div>
+      <div class="testi-card rev" data-d="1"><div class="testi-card__stars">★★★★★</div><blockquote>"Recibí apoyo durante todo el proceso y también después de contratar. Cuando tuve un siniestro, me orientaron paso a paso."</blockquote><p class="testi-card__quien">— Cliente · Gastos médicos mayores</p></div>
+      <div class="testi-card rev" data-d="2"><div class="testi-card__stars">★★★★★</div><blockquote>"Lo que más valoro es que nunca sentí que me quisieran vender algo. Me dieron información real para que yo decidiera."</blockquote><p class="testi-card__quien">— Cliente · Plan Personal de Retiro</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="seccion" id="faq">
+  <div class="contenedor">
+    <div class="medida rev">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Resuelve tus dudas antes de empezar</h2>
+    </div>
+    <div class="faq__lista">
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f1" id="fb1">¿La asesoría tiene costo?</button><div class="faq__resp" id="f1" role="region" aria-labelledby="fb1"><p>No. La asesoría es gratuita. Nuestra compensación la recibimos de las aseguradoras en caso de que decidas contratar un producto. Puedes recibir asesoría, comparar opciones y no contratar nada, sin ningún compromiso.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f2" id="fb2">¿Trabajan con diferentes aseguradoras?</button><div class="faq__resp" id="f2" role="region" aria-labelledby="fb2"><p>Sí. Trabajamos con varias aseguradoras reconocidas para poder mostrarte alternativas y ayudarte a encontrar una solución más adecuada para tu perfil y presupuesto. No trabajamos con todas las aseguradoras del mercado.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f3" id="fb3">¿Qué información necesito para cotizar?</button><div class="faq__resp" id="f3" role="region" aria-labelledby="fb3"><p>Depende del producto. Para gastos médicos o vida generalmente se necesita tu edad, estado de salud general y suma asegurada aproximada. Para auto, los datos del vehículo. En la primera llamada te oriento sobre qué necesitamos.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f4" id="fb4">¿Puedo contratar en línea?</button><div class="faq__resp" id="f4" role="region" aria-labelledby="fb4"><p>Sí. La asesoría y la contratación se pueden hacer por videollamada, WhatsApp o de forma presencial, según lo que prefieras.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f5" id="fb5">¿Cómo sé cuánto seguro de vida necesito?</button><div class="faq__resp" id="f5" role="region" aria-labelledby="fb5"><p>Existen diferentes métodos para estimarlo: ingresos anuales, deudas, dependientes, objetivos. En la asesoría revisamos tu situación particular para darte una orientación más precisa.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f6" id="fb6">¿Qué beneficios fiscales puede tener un PPR?</button><div class="faq__resp" id="f6" role="region" aria-labelledby="fb6"><p>Los Planes Personales de Retiro pueden ser deducibles de impuestos según los requisitos de la Ley del ISR. Los beneficios dependen de la situación fiscal de cada persona. Se recomienda consultar a un especialista fiscal.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f7" id="fb7">¿Qué son deducible y coaseguro?</button><div class="faq__resp" id="f7" role="region" aria-labelledby="fb7"><p>El deducible es la cantidad que pagas primero antes de que el seguro empiece a cubrir. El coaseguro es el porcentaje que compartes con la aseguradora después del deducible. Por ejemplo: deducible de $5,000 y coaseguro de 10% significa que pagas los primeros $5,000 y el 10% de lo que sigue, hasta un tope.</p></div></div>
+      <div class="faq__item"><button class="faq__btn" aria-expanded="false" aria-controls="f8" id="fb8">¿Me ayudan en caso de siniestro?</button><div class="faq__resp" id="f8" role="region" aria-labelledby="fb8"><p>Sí. Te oriento sobre los pasos a seguir, la documentación necesaria y hago seguimiento del proceso con la aseguradora. No resuelvo directamente los siniestros, pero estoy contigo durante el proceso.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO -->
+<section class="seccion seccion--alt" id="contacto">
+  <div class="contenedor">
+    <div class="medida rev" style="margin-bottom:2.5rem;">
+      <p class="eyebrow">Contacto</p>
+      <h2>Recibe una asesoría personalizada</h2>
+    </div>
+    <div class="form-wrap">
+      <form id="contactForm" class="form-grid rev" data-d="1">
+        <div class="form-field"><label for="cNombre">Nombre *</label><input type="text" id="cNombre" name="nombre" required placeholder="Tu nombre completo"></div>
+        <div class="form-field"><label for="cWA">WhatsApp *</label><input type="tel" id="cWA" name="whatsapp" required placeholder="+52 55 0000 0000"></div>
+        <div class="form-field"><label for="cEmail">Correo *</label><input type="email" id="cEmail" name="email" required placeholder="hola@correo.com"></div>
+        <div class="form-field"><label for="cCiudad">Ciudad</label><input type="text" id="cCiudad" name="ciudad" placeholder="Ciudad de México"></div>
+        <div class="form-field full"><label for="cProducto">Producto de interés</label>
+          <select id="cProducto" name="producto">
+            <option value="">Selecciona una opción</option>
+            <option>Seguro de vida</option>
+            <option>Plan Personal de Retiro</option>
+            <option>Gastos médicos mayores</option>
+            <option>Seguro de auto</option>
+            <option>No estoy seguro</option>
+          </select>
+        </div>
+        <div class="form-field full"><label for="cHorario">Horario preferido</label>
+          <select id="cHorario" name="horario">
+            <option value="">Selecciona una opción</option>
+            <option>Mañana (9:00 – 12:00)</option>
+            <option>Mediodía (12:00 – 15:00)</option>
+            <option>Tarde (15:00 – 19:00)</option>
+          </select>
+        </div>
+        <div class="form-field full"><label for="cMensaje">Mensaje (opcional)</label><textarea id="cMensaje" name="mensaje" placeholder="Cuéntame brevemente qué te interesa proteger o planear."></textarea></div>
+        <div class="form-field full">
+          <label class="form-check"><input type="checkbox" required> He leído y acepto el <a href="#" style="color:var(--primary);text-decoration:underline;">aviso de privacidad</a>.</label>
+        </div>
+        <div class="form-field full" style="text-align:center;">
+          <button type="submit" class="btn btn--primary btn--lg" style="width:100%;max-width:320px;justify-content:center;">Enviar solicitud</button>
+          <p class="form-aviso" style="margin-top:.75rem;">El envío del formulario no representa contratación, aprobación ni emisión de una póliza.</p>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <h3>¡Solicitud recibida!</h3>
+        <p>Nos comunicaremos contigo pronto para conocer tus necesidades y explicarte los siguientes pasos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="seccion cta-final">
+  <div class="contenedor">
+    <h2 class="rev">La mejor protección comienza con una buena decisión</h2>
+    <p class="rev" data-d="1">Recibe asesoría personalizada y conoce opciones para proteger a tu familia, tu salud, tu patrimonio y tu futuro.</p>
+    <div class="cta-final__btns rev" data-d="2">
+      <a class="btn btn--wa btn--lg" href="https://wa.me/525500000000?text=Hola%2C%20quiero%20platicar%20sobre%20mi%20protecci%C3%B3n." target="_blank" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+        Hablar con un asesor
+      </a>
+      <a class="btn btn--outline-light btn--lg" href="tel:+525500000000">Agendar una llamada</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="contenedor">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__brand">Protejo Seguros</p>
+        <p class="footer__descriptor">Promotoría de Seguros y Protección Financiera<br>Ciudad de México · Atención en todo México</p>
+        <p class="footer__aviso">La información presentada es de carácter informativo. Las coberturas, costos, deducibles, coaseguros, exclusiones, periodos de espera y demás condiciones dependen de cada aseguradora y producto. La contratación está sujeta a evaluación, aceptación y emisión por parte de la aseguradora correspondiente.<br><br>Los beneficios fiscales dependen de las características del producto, del cumplimiento de los requisitos legales aplicables y de la situación particular de cada persona. Se recomienda consultar a un especialista fiscal.</p>
+      </div>
+      <div>
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="#soluciones">Seguro de vida</a></li>
+          <li><a href="#soluciones">Plan de Retiro</a></li>
+          <li><a href="#soluciones">Gastos médicos</a></li>
+          <li><a href="#soluciones">Seguro de auto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+525500000000">+52 55 0000 0000</a></li>
+          <li><a href="mailto:hola@protejoseguros.mx">hola@protejoseguros.mx</a></li>
+          <li><a href="https://wa.me/525500000000" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© <span id="anio"></span> Protejo Seguros. Ciudad de México.</span>
+      <span>Sitio desarrollado por <a href="https://magueystudio.mx" target="_blank" rel="noopener">Maguey Studio</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="flotante" href="https://wa.me/525500000000?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+  WhatsApp
+</a>
+
+<!-- BARRA MÓVIL -->
+<div class="barra-movil">
+  <a href="tel:+525500000000" class="tel">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Llamar
+  </a>
+  <a href="https://wa.me/525500000000?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa." target="_blank" rel="noopener" class="wa">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.43 12.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","@id":"#promotoria","name":"Protejo Seguros","description":"Promotoría de seguros y protección financiera para personas, familias y empresas.","address":{"@type":"PostalAddress","addressLocality":"Ciudad de México","addressCountry":"MX"},"telephone":"+525500000000","email":"hola@protejoseguros.mx"},
+    {"@type":"FinancialService","@id":"#servicio","name":"Protejo Seguros – Promotoría de Seguros","description":"Asesoría en seguros de vida, PPR, gastos médicos, autos y esquemas empresariales (vida colectivo, gastos médicos colectivos, flotillas y hombre clave) en México.","areaServed":"MX"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"¿La asesoría tiene costo?","acceptedAnswer":{"@type":"Answer","text":"No. La asesoría es gratuita."}},
+      {"@type":"Question","name":"¿Trabajan con diferentes aseguradoras?","acceptedAnswer":{"@type":"Answer","text":"Sí, trabajamos con varias aseguradoras reconocidas para poder mostrarte alternativas."}},
+      {"@type":"Question","name":"¿Me ayudan en caso de siniestro?","acceptedAnswer":{"@type":"Answer","text":"Sí, te orientamos sobre los pasos a seguir y damos seguimiento del proceso con la aseguradora."}}
+    ]}
+  ]
+}
+</script>
+
+<script>
+// Año footer
+document.getElementById('anio').textContent = new Date().getFullYear();
+
+// Header scroll
+var header = document.getElementById('header');
+window.addEventListener('scroll', function(){
+  header.classList.toggle('scrolled', window.scrollY > 10);
+}, {passive:true});
+
+// Menú móvil
+var menuBtn = document.getElementById('menuBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+var menuOpen = false;
+function toggleMenu(open){
+  menuOpen = open;
+  mobileMenu.classList.toggle('open', open);
+  menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.innerHTML = open
+    ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+    : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+}
+menuBtn.addEventListener('click', function(){ toggleMenu(!menuOpen); });
+mobileMenu.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){ toggleMenu(false); });
+});
+
+// Scroll reveal
+if('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var d = e.target.dataset.d ? parseFloat(e.target.dataset.d)*80 : 0;
+        setTimeout(function(){ e.target.classList.add('visible'); }, d);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.rev').forEach(function(el){ io.observe(el); });
+}
+
+// FAQ acordeón
+document.querySelectorAll('.faq__btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var exp = this.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq__btn').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      document.getElementById(b.getAttribute('aria-controls')).classList.remove('open');
+    });
+    if(!exp){
+      this.setAttribute('aria-expanded','true');
+      document.getElementById(this.getAttribute('aria-controls')).classList.add('open');
+    }
+  });
+});
+
+// Diagnóstico multipaso
+(function(){
+  var steps = ['step1','step2','step3','step4','step5','step6','stepOk'];
+  var current = 0;
+  var bar = document.getElementById('diagBar');
+  function showStep(n){
+    steps.forEach(function(id){ document.getElementById(id).classList.remove('active'); });
+    document.getElementById(steps[n]).classList.add('active');
+    current = n;
+    var pct = Math.round(((n+1)/steps.length)*100);
+    if(bar) bar.style.width = pct+'%';
+  }
+  function enableNext(btnId, q){
+    document.querySelectorAll('.diag__option[data-q="'+q+'"]').forEach(function(opt){
+      opt.addEventListener('click', function(){
+        document.querySelectorAll('.diag__option[data-q="'+q+'"]').forEach(function(o){ o.classList.remove('selected'); });
+        this.classList.add('selected');
+        var btn = document.getElementById(btnId);
+        if(btn) btn.removeAttribute('disabled');
+      });
+    });
+  }
+  enableNext('next1','1'); enableNext('next2','2'); enableNext('next3','3'); enableNext('next4','4'); enableNext('next5','5');
+  ['next1','next2','next3','next4','next5'].forEach(function(id,i){
+    var el = document.getElementById(id);
+    if(el) el.addEventListener('click', function(){ showStep(i+1); });
+  });
+  ['prev2','prev3','prev4','prev5','prev6'].forEach(function(id,i){
+    var el = document.getElementById(id);
+    if(el) el.addEventListener('click', function(){ showStep(i); });
+  });
+  var diagForm = document.getElementById('diagForm');
+  if(diagForm) diagForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    showStep(6);
+  });
+})();
+
+// Formulario de contacto
+var contactForm = document.getElementById('contactForm');
+if(contactForm){
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    contactForm.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+}
+</script>
+</body>
+</html>
