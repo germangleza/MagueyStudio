@@ -178,25 +178,6 @@ button{cursor:pointer;font-family:inherit;}
 .aseguradoras__item{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1rem 1.5rem;font-family:'Manrope',sans-serif;font-weight:700;font-size:.9rem;color:var(--primary-dark);min-width:120px;text-align:center;}
 .aseguradoras__nota{text-align:center;font-size:.82rem;color:var(--muted);margin-top:1.5rem;max-width:480px;margin-left:auto;margin-right:auto;}
 
-/* DIFERENCIADORES */
-.difs__grid{display:grid;gap:1.2rem;margin-top:3rem;}
-@media(min-width:600px){.difs__grid{grid-template-columns:repeat(2,1fr);}}
-@media(min-width:960px){.difs__grid{grid-template-columns:repeat(3,1fr);}}
-.dif-card{padding:1.5rem;border-radius:var(--r-lg);background:#fff;border:1.5px solid var(--border);}
-.dif-card__icon{width:44px;height:44px;border-radius:10px;background:var(--primary-light);display:grid;place-items:center;color:var(--primary);margin-bottom:.9rem;}
-.dif-card h3{font-size:.97rem;font-weight:700;color:var(--primary-dark);margin-bottom:.4rem;}
-.dif-card p{font-size:.85rem;color:var(--muted);line-height:1.55;}
-
-/* ETAPAS */
-.etapas__grid{display:grid;gap:1.2rem;margin-top:3rem;}
-@media(min-width:600px){.etapas__grid{grid-template-columns:repeat(2,1fr);}}
-@media(min-width:960px){.etapas__grid{grid-template-columns:repeat(4,1fr);}}
-.etapa-card{border-radius:var(--r-lg);padding:1.6rem;border:1.5px solid var(--border);}
-.etapa-card__num{font-family:'Manrope',sans-serif;font-size:2.5rem;font-weight:800;color:var(--primary-light);margin-bottom:.5rem;}
-.etapa-card h3{font-size:.97rem;font-weight:700;color:var(--primary-dark);margin-bottom:.5rem;}
-.etapa-card p{font-size:.85rem;color:var(--muted);margin-bottom:1rem;line-height:1.55;}
-.etapa-card__tags{display:flex;flex-wrap:wrap;gap:.35rem;}
-.etapa-card__tag{font-size:.72rem;font-weight:600;background:var(--primary-light);color:var(--primary);padding:.2rem .55rem;border-radius:50px;}
 
 /* TESTIMONIOS */
 .testimonios__grid{display:grid;gap:1.2rem;margin-top:3rem;}
@@ -619,40 +600,6 @@ button{cursor:pointer;font-family:inherit;}
       <div class="aseguradoras__item">Allianz</div>
     </div>
     <p class="aseguradoras__nota rev" data-d="2">Los productos y coberturas disponibles dependen de cada aseguradora. La contratación está sujeta a aceptación por parte de la compañía correspondiente.</p>
-  </div>
-</section>
-
-<!-- DIFERENCIADORES -->
-<section class="seccion seccion--alt">
-  <div class="contenedor">
-    <div class="medida rev">
-      <p class="eyebrow">Por qué Daniel</p>
-      <h2>Lo que puedes esperar de trabajar conmigo</h2>
-    </div>
-    <div class="difs__grid">
-      <div class="dif-card rev"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Explicaciones claras</h3><p>Sin jerga técnica. Te explico cada cobertura en términos que puedas entender y comparar.</p></div>
-      <div class="dif-card rev" data-d="1"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Recomendaciones personalizadas</h3><p>Analizo tu situación específica antes de sugerirte cualquier producto.</p></div>
-      <div class="dif-card rev" data-d="2"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Comparación de alternativas</h3><p>Reviso opciones de diferentes aseguradoras para darte un panorama más amplio.</p></div>
-      <div class="dif-card rev" data-d="3"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3>Seguimiento de renovaciones</h3><p>Te aviso antes de que venza tu póliza para que siempre estés protegido.</p></div>
-      <div class="dif-card rev" data-d="4"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Apoyo en trámites</h3><p>Te oriento con la documentación y gestiono el proceso contigo.</p></div>
-      <div class="dif-card rev" data-d="5"><div class="dif-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Acompañamiento en siniestros</h3><p>Cuando más lo necesitas, te apoyo en el proceso con la aseguradora.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ETAPAS DE VIDA -->
-<section class="seccion">
-  <div class="contenedor">
-    <div class="medida rev">
-      <p class="eyebrow">Para cada momento</p>
-      <h2>Protección para cada etapa de tu vida</h2>
-    </div>
-    <div class="etapas__grid">
-      <div class="etapa-card rev"><div class="etapa-card__num">01</div><h3>Comienzas tu vida profesional</h3><p>Es el mejor momento para empezar. Las primas son más bajas y el horizonte de ahorro es mayor.</p><div class="etapa-card__tags"><span class="etapa-card__tag">Vida</span><span class="etapa-card__tag">GMM</span><span class="etapa-card__tag">PPR</span></div></div>
-      <div class="etapa-card rev" data-d="1"><div class="etapa-card__num">02</div><h3>Estás formando una familia</h3><p>Tener dependientes económicos cambia todo. Tu protección debe evolucionar con tus responsabilidades.</p><div class="etapa-card__tags"><span class="etapa-card__tag">Vida</span><span class="etapa-card__tag">GMM familiar</span><span class="etapa-card__tag">Auto</span></div></div>
-      <div class="etapa-card rev" data-d="2"><div class="etapa-card__num">03</div><h3>Estás construyendo patrimonio</h3><p>Proteger lo que has logrado es tan importante como seguir creciendo.</p><div class="etapa-card__tags"><span class="etapa-card__tag">Vida</span><span class="etapa-card__tag">PPR</span><span class="etapa-card__tag">GMM</span></div></div>
-      <div class="etapa-card rev" data-d="3"><div class="etapa-card__num">04</div><h3>Estás planeando tu retiro</h3><p>La atención médica y la continuidad de ingresos son las prioridades en esta etapa.</p><div class="etapa-card__tags"><span class="etapa-card__tag">GMM</span><span class="etapa-card__tag">Retiro</span><span class="etapa-card__tag">Vida</span></div></div>
-    </div>
   </div>
 </section>
 
