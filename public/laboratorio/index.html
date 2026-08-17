@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Alumica — Redefining the Future of Automation &amp; Fintech</title>
-<meta name="description" content="Alumica is the intelligence layer that connects your operations, payments and data into one system.">
+<title>Laboratorio Gamma Biotec — Análisis clínicos 24/7 en sucursal y a domicilio</title>
+<meta name="description" content="Laboratorio Gamma Biotec: toma de muestra las 24 horas en sucursal o en tu casa. Resultados en línea validados por químicos certificados.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,9 @@
 
 <style>
 :root{
-  --orange:#ff8a00;
-  --red:#ea580c;
+  /* Azul de marca — cambia estos dos valores para reajustar toda la paleta */
+  --blue:#5B7BC4;
+  --blue-deep:#33509B;
   --t:.3s ease;
 }
 
@@ -80,8 +81,20 @@ header{
 }
 @keyframes girar{to{transform:rotate(360deg);}}
 .logo-text{
-  font-size:1.15rem;font-weight:600;
-  letter-spacing:-.045em;
+  display:flex;flex-direction:column;
+  line-height:1;
+}
+.logo-text b{
+  font-size:1.05rem;font-weight:600;
+  letter-spacing:-.035em;
+}
+.logo-text em{
+  font-style:normal;
+  font-size:.58rem;font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:rgba(255,255,255,.5);
+  margin-top:4px;
 }
 
 /* Píldora de navegación */
@@ -106,9 +119,9 @@ header{
   white-space:nowrap;
 }
 .nav-glass a:hover{color:#fff;background:rgba(255,255,255,.06);}
-.nav-glass a.active{color:var(--orange);}
+.nav-glass a.active{color:var(--blue);}
 
-/* Sign In */
+/* Acceso a resultados */
 .btn-signin{
   flex-shrink:0;
   padding:.6rem 1.4rem;
@@ -116,6 +129,7 @@ header{
   border-radius:999px;
   font-size:.875rem;font-weight:500;
   color:#fff;text-decoration:none;
+  white-space:nowrap;
   transition:background var(--t), border-color var(--t);
 }
 .btn-signin:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);}
@@ -163,7 +177,7 @@ h1 span{display:block;}
   color:transparent;-webkit-text-fill-color:transparent;
 }
 .linea-2{
-  background:linear-gradient(to right, var(--orange) 0%, var(--red) 100%);
+  background:linear-gradient(to right, var(--blue) 0%, var(--blue-deep) 100%);
   -webkit-background-clip:text;background-clip:text;
   color:transparent;-webkit-text-fill-color:transparent;
 }
@@ -195,8 +209,8 @@ h1 span{display:block;}
   translate:-50% -50%;
   background:conic-gradient(from 0deg,
     rgba(255,255,255,.14) 0deg,
-    var(--orange) 70deg,
-    var(--red) 130deg,
+    var(--blue) 70deg,
+    var(--blue-deep) 130deg,
     rgba(255,255,255,.14) 200deg,
     rgba(255,255,255,.14) 360deg);
   animation:girar 4s linear infinite;
@@ -213,26 +227,31 @@ h1 span{display:block;}
   color:#fff;
   transition:background var(--t);
 }
-.cta:hover .cta-inner{background:rgba(40,32,26,.75);}
+.cta:hover .cta-inner{background:rgba(26,32,48,.78);}
 .cta-icon{
   width:38px;height:38px;
   border-radius:50%;
-  background:linear-gradient(135deg, var(--orange), var(--red));
+  background:linear-gradient(135deg, var(--blue), var(--blue-deep));
   display:grid;place-items:center;
   flex-shrink:0;
-  box-shadow:0 4px 16px rgba(234,88,12,.45);
+  box-shadow:0 4px 16px rgba(51,80,155,.5);
   transition:transform var(--t);
 }
 .cta:hover .cta-icon{transform:translateX(2px);}
 .cta-icon svg{display:block;}
 
-/* ═══════ COMUNIDAD ═══════ */
+/* ═══════ PACIENTES ═══════ */
 .community{
   width:130px;
   height:auto;
   display:block;
   margin-top:3.25rem;
   filter:drop-shadow(0 8px 25px rgba(0,0,0,.55));
+}
+.community-nota{
+  margin-top:.9rem;
+  font-size:.8125rem;font-weight:300;
+  color:rgba(255,255,255,.5);
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -254,38 +273,42 @@ h1 span{display:block;}
   <div class="header-inner">
     <a href="#" class="logo">
       <span class="logo-mark" aria-hidden="true"><i></i></span>
-      <span class="logo-text">Alumica</span>
+      <span class="logo-text">
+        <b>Gamma Biotec</b>
+        <em>Laboratorio clínico</em>
+      </span>
     </a>
 
     <nav class="nav-glass">
-      <a href="#" class="active">Home</a>
-      <a href="#">Pricing</a>
-      <a href="#">About Us</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
+      <a href="#" class="active">Inicio</a>
+      <a href="#">Estudios</a>
+      <a href="#">A domicilio</a>
+      <a href="#">Sucursales</a>
+      <a href="#">Contacto</a>
     </nav>
 
-    <a href="#" class="btn-signin">Sign In</a>
+    <a href="#" class="btn-signin">Ver resultados</a>
   </div>
 </header>
 
 <!-- Hero -->
 <main>
-  <span class="badge">Best Intelligence Layer 2026</span>
+  <span class="badge">Abierto 24/7 · Sucursal y domicilio</span>
 
   <h1>
-    <span class="linea-1">Redefining the Future of</span>
-    <span class="linea-2">Automation &amp; Fintech</span>
+    <span class="linea-1">Tus análisis clínicos</span>
+    <span class="linea-2">a cualquier hora</span>
   </h1>
 
   <p class="sub">
-    One intelligent layer that connects your operations, payments and data,
-    so your team ships faster with far less manual work.
+    Toma de muestra las 24 horas, los 365 días: llega a la sucursal sin cita
+    o pide que un enfermero vaya a tu casa. Resultados en línea desde 3 horas,
+    validados por químicos certificados.
   </p>
 
   <a href="#" class="cta">
     <span class="cta-inner">
-      Join Today
+      Agendar toma de muestra
       <span class="cta-icon">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M5 12h13M13 6l6 6-6 6"/>
@@ -296,7 +319,8 @@ h1 span{display:block;}
 
   <img class="community" width="130"
     src="https://cdn.sceneai.art/Hero%20Section%20Video/4c39c031-79d4-41e2-a6ab-bd1c49960765.png"
-    alt="Community of users already building with Alumica">
+    alt="Pacientes atendidos en Laboratorio Gamma Biotec">
+  <p class="community-nota">Más de 12,000 estudios entregados este año</p>
 </main>
 
 </body>
