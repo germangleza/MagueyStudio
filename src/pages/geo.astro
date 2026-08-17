@@ -3,22 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const nav = {
   links: [
-    { href: '#que-incluye', label: 'Qué incluye' },
-    { href: '#seo-vs-geo', label: 'SEO vs GEO' },
+    { href: '#estrategia', label: 'La Estrategia' },
+    { href: '#proceso', label: 'Cómo trabajamos' },
     { href: '#demo', label: 'Pruébalo' },
     { href: '#faq', label: 'FAQ' },
     { href: '/', label: 'Inicio' },
   ],
   mobileLinks: [
-    { href: '#que-incluye', label: 'Qué incluye' },
-    { href: '#seo-vs-geo', label: 'SEO vs GEO' },
+    { href: '#estrategia', label: 'La Estrategia' },
+    { href: '#proceso', label: 'Cómo trabajamos' },
     { href: '#demo', label: 'Pruébalo' },
     { href: '#faq', label: 'FAQ' },
     { href: '/', label: 'Inicio' },
   ],
-  ctaHref: 'https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20GEO%20gratuito%20para%20mi%20negocio.',
+  ctaHref: 'https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20de%20mi%20estrategia%20digital%20(Google%2C%20p%C3%A1gina%20web%20y%20GEO).',
   ctaLabel: 'Solicitar Diagnóstico',
-  ctaAria: 'Solicitar diagnóstico GEO por WhatsApp',
+  ctaAria: 'Solicitar diagnóstico gratuito por WhatsApp',
 };
 const footer = {
   links: [
@@ -26,23 +26,23 @@ const footer = {
     { href: '/paginas-web', label: 'Páginas Web' },
     { href: '/blog', label: 'Blog' },
     { href: '/#servicios', label: 'Servicios' },
-    { href: 'https://wa.me/5215560663926?text=Hola%2C%20me%20interesa%20el%20servicio%20GEO.', label: 'WhatsApp', aria: 'Contactar por WhatsApp' },
+    { href: 'https://wa.me/5215560663926?text=Hola%2C%20me%20interesa%20la%20estrategia%20de%20Google%2C%20p%C3%A1gina%20web%20y%20GEO.', label: 'WhatsApp', aria: 'Contactar por WhatsApp' },
   ],
 };
 ---
 <BaseLayout
-  title="GEO: Que la IA Recomiende Tu Negocio | Maguey Studio®"
-  description="Generative Engine Optimization (GEO): posicionamos tu negocio en las respuestas de ChatGPT, Perplexity, Gemini y Claude. Schema.org, llms.txt, Bing, contenido fresco y reporte mensual de citaciones. Diagnóstico gratis."
+  title="GEO: Que Google y la IA Recomienden Tu Negocio | Maguey Studio®"
+  description="La estrategia completa para que te encuentren: página web que convierte, presencia en Google y optimización para que ChatGPT, Perplexity, Gemini y Claude recomienden tu negocio. Diagnóstico gratis."
   canonical="https://magueystudio.mx/geo"
-  ogTitle="GEO: Que la IA Recomiende Tu Negocio | Maguey Studio®"
-  ogDescription="Tus clientes ya le preguntan a la IA. Nosotros logramos que la respuesta seas tú. Optimización para ChatGPT, Perplexity, Gemini y Claude."
+  ogTitle="GEO: Que Google y la IA Recomienden Tu Negocio | Maguey Studio®"
+  ogDescription="Tus clientes te buscan en Google y le preguntan a la IA. Te armamos la estrategia completa para que aparezcas en los dos."
   nav={nav}
   footer={footer}
 >
 <script type="application/ld+json" slot="head" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "GEO — Generative Engine Optimization",
+  "name": "GEO — Estrategia de Visibilidad en Google e IA",
   "serviceType": "Generative Engine Optimization",
   "provider": {
     "@type": "ProfessionalService",
@@ -55,7 +55,7 @@ const footer = {
       {"@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressCountry": "MX"}
     ]
   },
-  "description": "Servicio de Generative Engine Optimization (GEO): datos estructurados Schema.org, llms.txt, sitemap y robots optimizados para crawlers de IA, indexación en Bing Webmaster Tools, contenido fresco mensual, menciones de terceros y reporte mensual de citaciones de IA para que ChatGPT, Perplexity, Gemini y Claude recomienden tu negocio.",
+  "description": "Estrategia de visibilidad digital de tres frentes: página web que convierte, posicionamiento en Google (búsqueda y Maps) y optimización para que ChatGPT, Perplexity, Gemini y Claude recomienden el negocio. Incluye reporte mensual de citaciones de IA.",
   "url": "https://magueystudio.mx/geo",
   "areaServed": "MX"
 })} />
@@ -63,39 +63,40 @@ const footer = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question","name": "¿Qué es GEO (Generative Engine Optimization)?","acceptedAnswer": {"@type": "Answer","text": "GEO es la optimización de tu presencia digital para que los motores de IA generativa — ChatGPT, Perplexity, Gemini y Claude — encuentren, entiendan y recomienden tu negocio cuando alguien les pregunta por productos o servicios como los tuyos."}},
+    {"@type": "Question","name": "¿Qué es GEO (Generative Engine Optimization)?","acceptedAnswer": {"@type": "Answer","text": "GEO es la parte de la estrategia que hace que los motores de IA generativa —ChatGPT, Perplexity, Gemini y Claude— encuentren, entiendan y recomienden tu negocio cuando alguien les pregunta. Va de la mano con tener una buena página web y aparecer bien en Google: las tres cosas juntas son la estrategia completa que armamos para ti."}},
     {"@type": "Question","name": "¿GEO es lo mismo que SEO?","acceptedAnswer": {"@type": "Answer","text": "No. SEO busca posicionarte en la lista de resultados de Google; GEO busca que la IA te cite como respuesta directa. Menos del 10% de las fuentes que cita la IA está en el top 10 de Google: son juegos distintos con reglas distintas, aunque se complementan."}},
-    {"@type": "Question","name": "¿Cuánto tarda en verse resultados con GEO?","acceptedAnswer": {"@type": "Answer","text": "La base técnica (schema, llms.txt, indexación en Bing) se implementa en las primeras semanas. Las primeras citaciones de IA suelen aparecer entre 1 y 3 meses, y se consolidan con el contenido fresco mensual y las menciones de terceros."}},
-    {"@type": "Question","name": "¿Cómo sé que GEO está funcionando?","acceptedAnswer": {"@type": "Answer","text": "Cada mes recibes un reporte de citaciones de IA: en qué preguntas te menciona ChatGPT, Perplexity, Gemini o Claude, junto con un checklist técnico verificable de todo lo implementado. Nada de métricas de humo."}},
-    {"@type": "Question","name": "¿GEO me sirve si ya tengo página web?","acceptedAnswer": {"@type": "Answer","text": "Sí. GEO se implementa sobre tu sitio actual: agregamos datos estructurados, llms.txt, optimizamos sitemap y robots para crawlers de IA, te indexamos en Bing y gestionamos tu contenido mensual. Si tu sitio necesita mejoras de base, te lo decimos en el diagnóstico gratuito."}},
-    {"@type": "Question","name": "¿Cuánto cuesta el servicio GEO?","acceptedAnswer": {"@type": "Answer","text": "Se cotiza según tu giro y el número de servicios que quieres posicionar en la IA. El primer paso es un diagnóstico gratuito de 15 minutos por WhatsApp donde revisamos si la IA ya te recomienda (o a tu competencia) y qué necesitas."}}
+    {"@type": "Question","name": "¿Necesito contratar Google, la página web y GEO por separado?","acceptedAnswer": {"@type": "Answer","text": "No. Te la ofrecemos como una sola estrategia: tu página web, tu presencia en Google y tu optimización para IA trabajando juntas. En el diagnóstico gratuito revisamos qué necesitas de cada frente y priorizamos lo que te trae clientes más rápido."}},
+    {"@type": "Question","name": "¿Cuánto tarda en verse resultados?","acceptedAnswer": {"@type": "Answer","text": "Los ajustes en tu web y tu ficha de Google se hacen en las primeras semanas. Las primeras citaciones de IA suelen aparecer entre 1 y 3 meses, y se consolidan con el contenido mensual y las menciones de terceros."}},
+    {"@type": "Question","name": "¿Cómo sé que está funcionando?","acceptedAnswer": {"@type": "Answer","text": "Cada mes recibes un reporte de citaciones de IA —en qué preguntas te menciona ChatGPT, Perplexity, Gemini o Claude— junto con un checklist verificable de todo lo implementado en tu web y en Google. Nada de métricas de humo."}},
+    {"@type": "Question","name": "¿Me sirve si ya tengo página web?","acceptedAnswer": {"@type": "Answer","text": "Sí. Trabajamos sobre tu sitio actual: lo ajustamos, optimizamos tu ficha de Google y gestionamos tu contenido mensual para IA. Si tu sitio necesita mejoras de base, te lo decimos en el diagnóstico gratuito. Y si aún no tienes página, empieza por nuestro servicio de páginas web."}},
+    {"@type": "Question","name": "¿Cuánto cuesta?","acceptedAnswer": {"@type": "Answer","text": "Se cotiza según tu giro y cuántos de los tres frentes —Google, página web y GEO— necesitas. El primer paso es un diagnóstico gratuito de 15 minutos por WhatsApp donde revisamos si ya te recomiendan (o a tu competencia) y qué te falta."}}
   ]
 })} />
 
 <main id="main-content">
 
 <!-- HERO -->
-<section class="hero" aria-label="GEO: que la inteligencia artificial recomiende tu negocio">
+<section class="hero" aria-label="Estrategia para que Google y la IA recomienden tu negocio">
   <canvas id="matrixCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;pointer-events:none;z-index:0;"></canvas>
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
 
-  <div class="hero-tag" style="position:relative;z-index:1;">GEO — Generative Engine Optimization</div>
+  <div class="hero-tag" style="position:relative;z-index:1;">Estrategia de visibilidad digital</div>
 
   <h1 class="hero-title" style="position:relative;z-index:1;">
-    TUS CLIENTES YA<br>
+    TE BUSCAN EN GOOGLE.<br>
     <span class="outline">LE PREGUNTAN A LA IA.</span><br>
-    NOSOTROS LOGRAMOS QUE LA RESPUESTA<br>
-    <em class="glitch" data-text="SEAS TÚ">SEAS TÚ</em>
+    NOSOTROS LOGRAMOS QUE EN LOS DOS<br>
+    <em class="glitch" data-text="TE ENCUENTREN">TE ENCUENTREN</em>
   </h1>
 
   <div class="hero-content" style="position:relative;z-index:1;">
     <div class="hero-bottom">
       <p class="hero-desc">
-        ChatGPT, Perplexity, Gemini y Claude ya recomiendan negocios todos los días. La pregunta no es si la IA responde — es si la respuesta incluye al tuyo o al de tu competencia.
+        Google, ChatGPT, Perplexity, Gemini... hoy tus clientes buscan en varios lugares antes de elegir. Te armamos una sola estrategia — tu página web, tu presencia en Google y tu optimización para IA — para que aparezcas en todos.
       </p>
       <div class="hero-actions">
-        <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20GEO%20gratuito%20para%20mi%20negocio." class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+        <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20de%20mi%20estrategia%20digital%20(Google%2C%20p%C3%A1gina%20web%20y%20GEO)." class="btn-primary">Solicitar Diagnóstico Gratuito</a>
         <a href="#demo" class="btn-ghost">Comprueba si la IA te recomienda</a>
       </div>
     </div>
@@ -105,23 +106,23 @@ const footer = {
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-inner">
+    <span class="ticker-item">Google</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Tu Página Web</span><span class="ticker-sep">✦</span>
     <span class="ticker-item">ChatGPT</span><span class="ticker-sep">✦</span>
     <span class="ticker-item">Perplexity</span><span class="ticker-sep">✦</span>
     <span class="ticker-item">Gemini</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item">Claude</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item">Schema.org</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item">llms.txt</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Más Clientes</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Google</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Tu Página Web</span><span class="ticker-sep">✦</span>
     <span class="ticker-item">ChatGPT</span><span class="ticker-sep">✦</span>
     <span class="ticker-item">Perplexity</span><span class="ticker-sep">✦</span>
     <span class="ticker-item">Gemini</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item">Claude</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item">Schema.org</span><span class="ticker-sep">✦</span>
-    <span class="ticker-item">llms.txt</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Más Clientes</span><span class="ticker-sep">✦</span>
   </div>
 </div>
 
 <!-- PROBLEMA -->
-<section class="problem-section" aria-label="SEO y GEO son juegos distintos">
+<section class="problem-section" aria-label="Buscar en Google y preguntarle a la IA ya no es lo mismo">
   <div class="section-label reveal" style="justify-content:center;">El nuevo juego</div>
   <h2 class="problem-title reveal">
     LA IA NO MUESTRA UNA LISTA DE RESULTADOS.<br>
@@ -131,70 +132,81 @@ const footer = {
     Cuando alguien le pregunta a ChatGPT "¿quién es el mejor dentista de implantes en Tijuana?", la IA no muestra diez enlaces azules: nombra dos o tres negocios. Estar en Google ya no garantiza estar en esa respuesta.
   </p>
   <div class="stat-big reveal" aria-hidden="true">&lt;10%</div>
-  <p class="stat-caption reveal">Menos del 10% de las fuentes que cita la IA está en el top 10 de Google. SEO y GEO son juegos distintos, con reglas distintas.</p>
+  <p class="stat-caption reveal">Menos del 10% de las fuentes que cita la IA está en el top 10 de Google. Por eso no basta con uno solo: necesitas los dos.</p>
 </section>
 
-<!-- QUÉ INCLUYE -->
-<section id="que-incluye" aria-label="Qué incluye el servicio GEO de Maguey Studio">
-  <div class="section-label reveal">Lo que hacemos</div>
-  <h2 class="features-title reveal">TODO LO QUE LA IA<br>NECESITA PARA <em>RECOMENDARTE</em></h2>
+<!-- LA ESTRATEGIA -->
+<section id="estrategia" aria-label="La estrategia completa: Google, página web y optimización para IA">
+  <div class="section-label reveal">La estrategia completa</div>
+  <h2 class="features-title reveal">TRES FRENTES.<br>UNA SOLA <em>ESTRATEGIA</em></h2>
+  <p class="problem-desc reveal" style="text-align:left; margin-bottom:64px; max-width:640px;">No se trata de elegir entre Google o la IA. Se trata de aparecer en los dos — sostenidos por una página web que convierta esa visibilidad en clientes.</p>
 
   <div class="features-grid">
     <div class="feature-card reveal">
-      <span class="feature-icon">⬡</span>
-      <h3 class="feature-name">Schema.org Completo</h3>
-      <p class="feature-desc">Datos estructurados que le dicen a la IA exactamente qué eres, qué ofreces, dónde estás y por qué eres confiable. El idioma nativo de las máquinas.</p>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">◈</span>
-      <h3 class="feature-name">llms.txt</h3>
-      <p class="feature-desc">Un archivo diseñado específicamente para que los modelos de lenguaje entiendan tu negocio de forma clara y directa, sin ruido.</p>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">⟡</span>
-      <h3 class="feature-name">Sitemap & Robots para IA</h3>
-      <p class="feature-desc">Optimizamos tu sitemap y robots.txt para que los crawlers de OpenAI, Anthropic, Google y Perplexity puedan rastrear tu sitio sin barreras.</p>
-    </div>
-    <div class="feature-card reveal">
       <span class="feature-icon">◉</span>
-      <h3 class="feature-name">Indexación en Bing</h3>
-      <p class="feature-desc">ChatGPT se apoya en el índice de Bing para buscar en la web. Te registramos y optimizamos en Bing Webmaster Tools — el paso que casi todos ignoran.</p>
+      <h3 class="feature-name">Google</h3>
+      <p class="feature-desc">Te posicionamos en búsquedas y en Google Maps para que aparezcas cuando alguien busca lo que ofreces, en tu ciudad. El punto de partida de casi toda decisión de compra.</p>
+    </div>
+    <div class="feature-card reveal">
+      <span class="feature-icon">⬡</span>
+      <h3 class="feature-name">Tu Página Web</h3>
+      <p class="feature-desc">Sin una web rápida y clara, ni Google ni la IA tienen qué recomendar. Construimos o ajustamos tu sitio para que reciba visitas y las convierta en clientes reales.</p>
     </div>
     <div class="feature-card reveal">
       <span class="feature-icon">✦</span>
-      <h3 class="feature-name">Contenido Fresco Mensual</h3>
-      <p class="feature-desc">La IA prefiere fuentes vivas y actualizadas. Gestionamos tu blog con contenido mensual pensado para responder las preguntas que tus clientes le hacen a la IA.</p>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">⚡</span>
-      <h3 class="feature-name">Menciones de Terceros</h3>
-      <p class="feature-desc">La IA confía más cuando otros hablan de ti. Trabajamos citaciones y menciones en directorios, medios y sitios relevantes para tu giro.</p>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">◎</span>
-      <h3 class="feature-name">Reporte de Citaciones de IA</h3>
-      <p class="feature-desc">Cada mes te mostramos en qué preguntas te menciona ChatGPT, Perplexity, Gemini y Claude — y cómo evoluciona frente a tu competencia.</p>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">▣</span>
-      <h3 class="feature-name">Checklist Técnico Verificable</h3>
-      <p class="feature-desc">Todo lo implementado se puede comprobar: schema válido, llms.txt en línea, indexación activa. Nada de cajas negras ni promesas al aire.</p>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">↺</span>
-      <h3 class="feature-name">Ajuste Continuo</h3>
-      <p class="feature-desc">Los motores de IA cambian rápido. Ajustamos la estrategia mes a mes según lo que muestran los reportes de citaciones.</p>
+      <h3 class="feature-name">Optimización para IA (GEO)</h3>
+      <p class="feature-desc">Preparamos tu presencia para que ChatGPT, Perplexity y Gemini te mencionen cuando alguien les pregunta por un negocio como el tuyo.</p>
     </div>
   </div>
 
   <div class="section-cta reveal">
-    <a href="https://wa.me/5215560663926?text=Hola%2C%20me%20interesa%20el%20servicio%20GEO.%20Quiero%20mi%20diagn%C3%B3stico%20gratuito." class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+    <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20la%20estrategia%20completa%3A%20Google%2C%20p%C3%A1gina%20web%20y%20GEO." class="btn-primary">Quiero la Estrategia Completa</a>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="process" id="proceso" aria-label="Cómo trabajamos la estrategia">
+  <div class="process-grid-bg"></div>
+  <div style="position:relative;">
+    <div class="section-label reveal">Cómo trabajamos</div>
+    <h2 class="process-title reveal">ASÍ ARMAMOS<br>TU <em>ESTRATEGIA</em></h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">01</div>
+        <h3 class="step-title">Diagnóstico</h3>
+        <p class="step-desc">Revisamos si Google y la IA ya te recomiendan — o a tu competencia — y en qué te estás quedando corto.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">02</div>
+        <h3 class="step-title">Estrategia a Medida</h3>
+        <p class="step-desc">Definimos qué pesa más para tu negocio hoy: Google, tu página web o tu presencia en IA. Priorizamos lo que trae clientes primero.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">03</div>
+        <h3 class="step-title">Implementación</h3>
+        <p class="step-desc">Ajustamos tu web, tu ficha de Google y tu contenido para que buscadores e IA te encuentren y te entiendan.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">04</div>
+        <h3 class="step-title">Reporte y Ajuste Mensual</h3>
+        <p class="step-desc">Cada mes te mostramos en qué preguntas apareces, cómo evoluciona tu posición en Google y qué seguimos ajustando.</p>
+      </div>
+    </div>
+
+    <div class="section-cta reveal">
+      <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20de%20mi%20estrategia%20digital." class="btn-primary">Solicitar Diagnóstico Gratuito</a>
+    </div>
   </div>
 </section>
 
 <!-- SEO VS GEO -->
 <section class="vs-section" id="seo-vs-geo" aria-label="Comparativa entre SEO y GEO">
-  <div class="section-label reveal">Comparativa</div>
+  <div class="section-label reveal">A detalle</div>
   <h2 class="vs-title reveal">SEO VS <em>GEO</em></h2>
 
   <div class="vs-table-wrap reveal">
@@ -224,13 +236,13 @@ const footer = {
         </tr>
         <tr>
           <td>Qué pesa</td>
-          <td>Keywords, backlinks, autoridad de dominio.</td>
-          <td class="geo-cell">Datos estructurados, claridad, menciones de terceros, contenido fresco y citable.</td>
+          <td>Palabras clave, enlaces y autoridad de tu web.</td>
+          <td class="geo-cell">Claridad de tu información, menciones de otros y contenido fresco y fácil de citar.</td>
         </tr>
         <tr>
-          <td>Infraestructura</td>
-          <td>Google Search Console, sitemap clásico.</td>
-          <td class="geo-cell">Schema.org, llms.txt, Bing Webmaster Tools, robots para crawlers de IA.</td>
+          <td>Ajustes técnicos</td>
+          <td>Estructura de tu web y Google Search Console.</td>
+          <td class="geo-cell">Ajustes en tu web y tu contenido para que la IA te lea y te entienda bien.</td>
         </tr>
         <tr>
           <td>Cómo se mide</td>
@@ -245,7 +257,7 @@ const footer = {
 </section>
 
 <!-- CÓMO SE MIDE -->
-<section id="medicion" aria-label="Cómo se mide el servicio GEO">
+<section id="medicion" aria-label="Cómo se mide la estrategia">
   <div class="section-label reveal">Resultados medibles</div>
   <h2 class="features-title reveal">SI NO SE PUEDE MEDIR,<br>NO ES <em>ESTRATEGIA</em></h2>
 
@@ -260,12 +272,12 @@ const footer = {
       </ul>
     </div>
     <div class="measure-card reveal">
-      <h3>Checklist Técnico Verificable</h3>
+      <h3>Todo lo que Hacemos, Comprobable</h3>
       <ul>
-        <li>Schema.org validado con las herramientas oficiales.</li>
-        <li>llms.txt publicado y accesible en tu dominio.</li>
-        <li>Indexación activa y verificada en Bing Webmaster Tools.</li>
-        <li>Contenido mensual publicado y menciones de terceros conseguidas.</li>
+        <li>Tu página web ajustada, publicada y funcionando.</li>
+        <li>Tu negocio dado de alta y optimizado en Google.</li>
+        <li>Contenido mensual publicado en tu sitio.</li>
+        <li>Menciones de terceros conseguidas para tu negocio.</li>
       </ul>
     </div>
   </div>
@@ -293,46 +305,50 @@ const footer = {
 </section>
 
 <!-- FAQ -->
-<section id="faq" aria-label="Preguntas frecuentes sobre GEO">
+<section id="faq" aria-label="Preguntas frecuentes sobre la estrategia">
   <div class="section-label reveal">Preguntas frecuentes</div>
   <h2 class="features-title reveal">DUDAS <em>RESUELTAS</em></h2>
 
   <div class="faq-list">
     <div class="faq-item reveal">
       <button class="faq-q" aria-expanded="false">¿Qué es GEO (Generative Engine Optimization)?</button>
-      <div class="faq-a"><p>GEO es la optimización de tu presencia digital para que los motores de IA generativa — ChatGPT, Perplexity, Gemini y Claude — encuentren, entiendan y recomienden tu negocio cuando alguien les pregunta por productos o servicios como los tuyos.</p></div>
+      <div class="faq-a"><p>GEO es la parte de la estrategia que hace que los motores de IA generativa —ChatGPT, Perplexity, Gemini y Claude— encuentren, entiendan y recomienden tu negocio cuando alguien les pregunta. Va de la mano con tener una buena página web y aparecer bien en Google: las tres cosas juntas son la estrategia completa que armamos para ti.</p></div>
     </div>
     <div class="faq-item reveal">
       <button class="faq-q" aria-expanded="false">¿GEO es lo mismo que SEO?</button>
       <div class="faq-a"><p>No. SEO busca posicionarte en la lista de resultados de Google; GEO busca que la IA te cite como respuesta directa. Menos del 10% de las fuentes que cita la IA está en el top 10 de Google: son juegos distintos con reglas distintas, aunque se complementan.</p></div>
     </div>
     <div class="faq-item reveal">
+      <button class="faq-q" aria-expanded="false">¿Necesito contratar Google, la página web y GEO por separado?</button>
+      <div class="faq-a"><p>No. Te la ofrecemos como una sola estrategia: tu página web, tu presencia en Google y tu optimización para IA trabajando juntas. En el diagnóstico gratuito revisamos qué necesitas de cada frente y priorizamos lo que te trae clientes más rápido.</p></div>
+    </div>
+    <div class="faq-item reveal">
       <button class="faq-q" aria-expanded="false">¿Cuánto tarda en verse resultados?</button>
-      <div class="faq-a"><p>La base técnica (schema, llms.txt, indexación en Bing) se implementa en las primeras semanas. Las primeras citaciones de IA suelen aparecer entre 1 y 3 meses, y se consolidan con el contenido fresco mensual y las menciones de terceros.</p></div>
+      <div class="faq-a"><p>Los ajustes en tu web y tu ficha de Google se hacen en las primeras semanas. Las primeras citaciones de IA suelen aparecer entre 1 y 3 meses, y se consolidan con el contenido mensual y las menciones de terceros.</p></div>
     </div>
     <div class="faq-item reveal">
       <button class="faq-q" aria-expanded="false">¿Cómo sé que está funcionando?</button>
-      <div class="faq-a"><p>Cada mes recibes un reporte de citaciones de IA: en qué preguntas te menciona ChatGPT, Perplexity, Gemini o Claude, junto con un checklist técnico verificable de todo lo implementado. Nada de métricas de humo.</p></div>
+      <div class="faq-a"><p>Cada mes recibes un reporte de citaciones de IA —en qué preguntas te menciona ChatGPT, Perplexity, Gemini o Claude— junto con un checklist verificable de todo lo implementado en tu web y en Google. Nada de métricas de humo.</p></div>
     </div>
     <div class="faq-item reveal">
       <button class="faq-q" aria-expanded="false">¿Me sirve si ya tengo página web?</button>
-      <div class="faq-a"><p>Sí. GEO se implementa sobre tu sitio actual: agregamos datos estructurados, llms.txt, optimizamos sitemap y robots para crawlers de IA, te indexamos en Bing y gestionamos tu contenido mensual. Si tu sitio necesita mejoras de base, te lo decimos en el diagnóstico gratuito. Y si aún no tienes página, empieza por <a href="/paginas-web" style="color:var(--green);">nuestro servicio de páginas web</a>.</p></div>
+      <div class="faq-a"><p>Sí. Trabajamos sobre tu sitio actual: lo ajustamos, optimizamos tu ficha de Google y gestionamos tu contenido mensual para IA. Si tu sitio necesita mejoras de base, te lo decimos en el diagnóstico gratuito. Y si aún no tienes página, empieza por <a href="/paginas-web" style="color:var(--green);">nuestro servicio de páginas web</a>.</p></div>
     </div>
     <div class="faq-item reveal">
       <button class="faq-q" aria-expanded="false">¿Cuánto cuesta?</button>
-      <div class="faq-a"><p>Se cotiza según tu giro y el número de servicios que quieres posicionar en la IA. El primer paso es un diagnóstico gratuito de 15 minutos por WhatsApp donde revisamos si la IA ya te recomienda (o a tu competencia) y qué necesitas.</p></div>
+      <div class="faq-a"><p>Se cotiza según tu giro y cuántos de los tres frentes —Google, página web y GEO— necesitas. El primer paso es un diagnóstico gratuito de 15 minutos por WhatsApp donde revisamos si ya te recomiendan (o a tu competencia) y qué te falta.</p></div>
     </div>
   </div>
 </section>
 
 <!-- CTA FINAL -->
-<section class="cta-section" aria-label="Solicitar diagnóstico GEO gratuito">
+<section class="cta-section" aria-label="Solicitar diagnóstico gratuito de la estrategia">
   <div class="cta-grid-bg"></div>
   <div class="cta-eyebrow reveal">Diagnóstico gratis · 15 minutos · Por WhatsApp</div>
-  <h2 class="cta-title reveal">QUE LA IA<br><span class="glitch-word" data-text="TE RECOMIENDE">TE RECOMIENDE</span><br>A TI</h2>
+  <h2 class="cta-title reveal">QUE TE<br><span class="glitch-word" data-text="ENCUENTREN">ENCUENTREN</span><br>EN LOS DOS</h2>
   <div style="position:relative;z-index:1;">
-    <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20GEO%20gratuito%20de%2015%20minutos.%20Quiero%20saber%20si%20la%20IA%20recomienda%20mi%20negocio." class="btn-primary">Agendar Diagnóstico Gratuito</a>
-    <p class="cta-sub">Te decimos si la IA ya te menciona — y qué falta para que lo haga.</p>
+    <a href="https://wa.me/5215560663926?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito%20de%2015%20minutos.%20Quiero%20saber%20si%20Google%20y%20la%20IA%20ya%20recomiendan%20mi%20negocio." class="btn-primary">Agendar Diagnóstico Gratuito</a>
+    <p class="cta-sub">Te decimos si Google y la IA ya te recomiendan — y qué falta para que lo hagan los dos.</p>
   </div>
   <div class="crosslinks reveal">
     <a href="/paginas-web">→ Páginas web que convierten</a>
@@ -420,7 +436,7 @@ const footer = {
   .hero-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,255,65,0.08) 0%, transparent 70%); top: 10%; right: -100px; border-radius: 50%; animation: pulse 4s ease-in-out infinite alternate; }
   @keyframes pulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.2); opacity: 1; } }
   .hero-tag { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 4px; color: var(--green); text-transform: uppercase; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; gap: 12px; animation: fadeUp 1s ease both; }
-  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 7.5vw, 110px); line-height: 0.92; letter-spacing: -1px; margin-bottom: 0; max-width: 90%; animation: slideFromLeft 1s 0.1s ease both; }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 7vw, 100px); line-height: 0.95; letter-spacing: -1px; margin-bottom: 0; max-width: 92%; animation: slideFromLeft 1s 0.1s ease both; }
   @keyframes slideFromLeft { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0); } }
   .hero-title em { font-style: normal; color: var(--green); }
   .hero-title .outline { -webkit-text-stroke: 1px var(--white); color: transparent; }
@@ -444,8 +460,8 @@ const footer = {
   .stat-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(80px, 12vw, 160px); color: var(--green); line-height: 1; margin: 48px 0 8px; }
   .stat-caption { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.8; }
 
-  /* FEATURES */
-  .features-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 100px); line-height: 0.95; margin-bottom: 80px; max-width: 760px; }
+  /* FEATURES / PILLARS */
+  .features-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 100px); line-height: 0.95; margin-bottom: 32px; max-width: 760px; }
   .features-title em { font-style: normal; color: var(--green); }
   .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
   .feature-card { background: var(--dark); padding: 48px 40px; position: relative; overflow: hidden; transition: background 0.3s; }
@@ -455,6 +471,20 @@ const footer = {
   .feature-icon { font-size: 32px; margin-bottom: 24px; display: block; }
   .feature-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; margin-bottom: 12px; line-height: 1; color: var(--white); }
   .feature-desc { font-size: 16px; line-height: 1.8; color: var(--white); font-weight: 300; }
+
+  /* PROCESO */
+  .process { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+  .process-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px); background-size: 60px 60px; animation: gridshift 20s linear infinite; pointer-events: none; }
+  .process-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 6vw, 88px); line-height: 0.95; margin-bottom: 80px; max-width: 700px; }
+  .process-title em { font-style: normal; color: var(--green); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; position: relative; }
+  .steps::before { content: ''; position: absolute; top: 28px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%); background-size: 200% 100%; animation: scanLine 3s linear infinite; }
+  @keyframes scanLine { 0% { background-position: -100% 0; } 100% { background-position: 200% 0; } }
+  .step { padding-top: 60px; position: relative; }
+  .step-dot { position: absolute; top: 20px; left: 0; width: 16px; height: 16px; background: var(--green); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+  .step-num { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--green); margin-bottom: 16px; opacity: 0.6; }
+  .step-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; margin-bottom: 12px; }
+  .step-desc { font-size: 17px; line-height: 1.8; color: var(--white); font-weight: 300; }
 
   /* SEO VS GEO */
   .vs-section { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
@@ -541,7 +571,7 @@ const footer = {
   /* MOBILE */
   @media (max-width: 900px) {
     .hero { align-items: center; text-align: center; }
-    .hero-title { font-size: clamp(44px, 12vw, 84px); max-width: 100%; }
+    .hero-title { font-size: clamp(40px, 11vw, 76px); max-width: 100%; }
     .hero-content { flex-direction: column; align-items: center; margin-top: 32px; }
     .hero-bottom { align-items: center; max-width: 100%; }
     .hero-desc { font-size: 16px; text-align: center; }
@@ -552,6 +582,16 @@ const footer = {
     .demo-box { padding: 36px 24px; }
     .faq-q { font-size: 20px; padding: 22px 20px; }
     .faq-a p { padding: 0 20px 22px; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .step:nth-child(3)::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 0;
+      width: calc(200% + 40px); height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--green) 30%, rgba(0,255,65,0.6) 60%, transparent 100%);
+      background-size: 200% 100%;
+      animation: scanLine 3s linear infinite;
+    }
   }
 </style>
 </BaseLayout>
