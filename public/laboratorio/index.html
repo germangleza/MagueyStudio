@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Alumica — Redefining the Future of Automation &amp; Fintech</title>
+<meta name="description" content="Alumica is the intelligence layer that connects your operations, payments and data into one system.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --orange:#ff8a00;
+  --red:#ea580c;
+  --t:.3s ease;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+html{height:100%;}
+body{
+  min-height:100%;
+  background:#000;
+  color:#fff;
+  font-family:'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ═══════ FONDO: video + velo ═══════ */
+.bg-video{
+  position:fixed;inset:0;z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+.bg-video video{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+.bg-overlay{
+  position:fixed;inset:0;z-index:1;
+  background:rgba(0,0,0,.4);
+  pointer-events:none;
+}
+
+/* ═══════ HEADER ═══════ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:1.5rem 24px;
+}
+.header-inner{
+  max-width:1280px;margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+
+/* Logo */
+.logo{
+  display:flex;align-items:center;gap:.6rem;
+  text-decoration:none;color:#fff;
+  flex-shrink:0;
+}
+.logo-mark{
+  width:32px;height:32px;
+  background:#fff;
+  border-radius:9px;
+  display:grid;place-items:center;
+  flex-shrink:0;
+}
+.logo-mark i{
+  display:block;
+  width:12px;height:12px;
+  background:#000;
+  border-radius:2px;
+  animation:girar 6s linear infinite;
+}
+@keyframes girar{to{transform:rotate(360deg);}}
+.logo-text{
+  font-size:1.15rem;font-weight:600;
+  letter-spacing:-.045em;
+}
+
+/* Píldora de navegación */
+.nav-glass{
+  display:none;
+  align-items:center;gap:.35rem;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;
+  padding:.35rem;
+}
+.nav-glass a{
+  display:block;
+  padding:.5rem 1rem;
+  border-radius:999px;
+  font-size:.875rem;font-weight:500;
+  color:rgba(255,255,255,.6);
+  text-decoration:none;
+  transition:color var(--t), background var(--t);
+  white-space:nowrap;
+}
+.nav-glass a:hover{color:#fff;background:rgba(255,255,255,.06);}
+.nav-glass a.active{color:var(--orange);}
+
+/* Sign In */
+.btn-signin{
+  flex-shrink:0;
+  padding:.6rem 1.4rem;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:999px;
+  font-size:.875rem;font-weight:500;
+  color:#fff;text-decoration:none;
+  transition:background var(--t), border-color var(--t);
+}
+.btn-signin:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);}
+
+@media(min-width:960px){
+  .nav-glass{display:flex;}
+}
+
+/* ═══════ HERO ═══════ */
+main{
+  position:relative;z-index:10;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:8rem 24px 4rem;
+}
+
+.badge{
+  display:inline-block;
+  padding:.5rem 1.1rem;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  font-size:.6875rem;font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  color:rgba(255,255,255,.8);
+  margin-bottom:2rem;
+}
+
+h1{
+  font-weight:600;
+  font-size:clamp(2.4rem, 7vw, 4.75rem);
+  line-height:1.06;
+  letter-spacing:-.035em;
+  margin-bottom:1.6rem;
+}
+h1 span{display:block;}
+.linea-1{
+  background:linear-gradient(to bottom, #ffffff 0%, #9ca3af 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+}
+.linea-2{
+  background:linear-gradient(to right, var(--orange) 0%, var(--red) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+}
+
+.sub{
+  max-width:34rem;
+  font-size:clamp(.95rem, 2.2vw, 1.0625rem);
+  font-weight:300;
+  line-height:1.65;
+  color:rgba(255,255,255,.6);
+  margin-bottom:2.6rem;
+}
+
+/* ═══════ CTA con borde de gradiente giratorio ═══════ */
+.cta{
+  position:relative;
+  display:inline-block;
+  padding:1.5px;                 /* grosor del borde */
+  border-radius:999px;
+  overflow:hidden;
+  text-decoration:none;
+  isolation:isolate;
+}
+.cta::before{
+  content:'';
+  position:absolute;
+  top:50%;left:50%;
+  width:220%;aspect-ratio:1;
+  translate:-50% -50%;
+  background:conic-gradient(from 0deg,
+    rgba(255,255,255,.14) 0deg,
+    var(--orange) 70deg,
+    var(--red) 130deg,
+    rgba(255,255,255,.14) 200deg,
+    rgba(255,255,255,.14) 360deg);
+  animation:girar 4s linear infinite;
+  z-index:-1;
+}
+.cta-inner{
+  display:flex;align-items:center;gap:1rem;
+  padding:.5rem .6rem .5rem 1.9rem;
+  border-radius:999px;
+  background:rgba(20,20,20,.72);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  font-size:1rem;font-weight:500;
+  color:#fff;
+  transition:background var(--t);
+}
+.cta:hover .cta-inner{background:rgba(40,32,26,.75);}
+.cta-icon{
+  width:38px;height:38px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--orange), var(--red));
+  display:grid;place-items:center;
+  flex-shrink:0;
+  box-shadow:0 4px 16px rgba(234,88,12,.45);
+  transition:transform var(--t);
+}
+.cta:hover .cta-icon{transform:translateX(2px);}
+.cta-icon svg{display:block;}
+
+/* ═══════ COMUNIDAD ═══════ */
+.community{
+  width:130px;
+  height:auto;
+  display:block;
+  margin-top:3.25rem;
+  filter:drop-shadow(0 8px 25px rgba(0,0,0,.55));
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- Fondo -->
+<div class="bg-video">
+  <video autoplay loop muted playsinline
+    src="https://cdn.sceneai.art/Hero%20Section%20Video/5a6cf9a9-9f93-4e44-88f3-cf666065daf7.mp4"></video>
+</div>
+<div class="bg-overlay"></div>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark" aria-hidden="true"><i></i></span>
+      <span class="logo-text">Alumica</span>
+    </a>
+
+    <nav class="nav-glass">
+      <a href="#" class="active">Home</a>
+      <a href="#">Pricing</a>
+      <a href="#">About Us</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <a href="#" class="btn-signin">Sign In</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<main>
+  <span class="badge">Best Intelligence Layer 2026</span>
+
+  <h1>
+    <span class="linea-1">Redefining the Future of</span>
+    <span class="linea-2">Automation &amp; Fintech</span>
+  </h1>
+
+  <p class="sub">
+    One intelligent layer that connects your operations, payments and data,
+    so your team ships faster with far less manual work.
+  </p>
+
+  <a href="#" class="cta">
+    <span class="cta-inner">
+      Join Today
+      <span class="cta-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h13M13 6l6 6-6 6"/>
+        </svg>
+      </span>
+    </span>
+  </a>
+
+  <img class="community" width="130"
+    src="https://cdn.sceneai.art/Hero%20Section%20Video/4c39c031-79d4-41e2-a6ab-bd1c49960765.png"
+    alt="Community of users already building with Alumica">
+</main>
+
+</body>
+</html>
