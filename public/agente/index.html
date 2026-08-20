@@ -406,90 +406,6 @@ button{cursor:pointer;font-family:inherit;}
   </div>
 </section>
 
-<!-- DIAGNÓSTICO -->
-<section class="seccion diagnostico" id="diagnostico">
-  <div class="contenedor">
-    <div class="diag__wrap">
-      <p class="eyebrow" style="text-align:center;">Orientación gratuita</p>
-      <h2 class="rev" style="text-align:center;">Descubre qué protección necesitas</h2>
-      <p class="rev" style="text-align:center;" data-d="1">Responde cinco preguntas y recibe orientación personalizada sin costo ni compromiso.</p>
-      <div class="diag__progress rev" data-d="1"><div class="diag__progress-bar" id="diagBar" style="width:20%"></div></div>
-
-      <form id="diagForm">
-        <!-- Paso 1 -->
-        <div class="diag__step active" id="step1">
-          <p class="diag__question">1 de 5 · ¿Qué deseas proteger?</p>
-          <div class="diag__options">
-            <button type="button" class="diag__option" data-q="1" data-v="familia">A mi familia si llegara a faltarme</button>
-            <button type="button" class="diag__option" data-q="1" data-v="retiro">Mi retiro y ahorro a largo plazo</button>
-            <button type="button" class="diag__option" data-q="1" data-v="salud">Mi salud y la de mi familia</button>
-            <button type="button" class="diag__option" data-q="1" data-v="auto">Mi automóvil</button>
-          </div>
-          <div class="diag__nav"><span></span><button type="button" class="btn btn--outline-light" id="next1" disabled>Siguiente →</button></div>
-        </div>
-        <!-- Paso 2 -->
-        <div class="diag__step" id="step2">
-          <p class="diag__question">2 de 5 · ¿Tienes dependientes económicos?</p>
-          <div class="diag__options">
-            <button type="button" class="diag__option" data-q="2" data-v="si">Sí, dependen de mis ingresos</button>
-            <button type="button" class="diag__option" data-q="2" data-v="no">No por ahora</button>
-            <button type="button" class="diag__option" data-q="2" data-v="futuro">No actualmente, pero lo planeo</button>
-          </div>
-          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev2">← Anterior</button><button type="button" class="btn btn--outline-light" id="next2" disabled>Siguiente →</button></div>
-        </div>
-        <!-- Paso 3 -->
-        <div class="diag__step" id="step3">
-          <p class="diag__question">3 de 5 · ¿Cuál es tu rango de edad?</p>
-          <div class="diag__options">
-            <button type="button" class="diag__option" data-q="3" data-v="18-29">18 a 29 años</button>
-            <button type="button" class="diag__option" data-q="3" data-v="30-45">30 a 45 años</button>
-            <button type="button" class="diag__option" data-q="3" data-v="46-60">46 a 60 años</button>
-            <button type="button" class="diag__option" data-q="3" data-v="60+">Más de 60 años</button>
-          </div>
-          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev3">← Anterior</button><button type="button" class="btn btn--outline-light" id="next3" disabled>Siguiente →</button></div>
-        </div>
-        <!-- Paso 4 -->
-        <div class="diag__step" id="step4">
-          <p class="diag__question">4 de 5 · ¿Ya cuentas con algún seguro?</p>
-          <div class="diag__options">
-            <button type="button" class="diag__option" data-q="4" data-v="no">No tengo ninguno</button>
-            <button type="button" class="diag__option" data-q="4" data-v="vida">Tengo seguro de vida</button>
-            <button type="button" class="diag__option" data-q="4" data-v="gmm">Tengo gastos médicos</button>
-            <button type="button" class="diag__option" data-q="4" data-v="varios">Tengo varios seguros</button>
-          </div>
-          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev4">← Anterior</button><button type="button" class="btn btn--outline-light" id="next4" disabled>Siguiente →</button></div>
-        </div>
-        <!-- Paso 5 -->
-        <div class="diag__step" id="step5">
-          <p class="diag__question">5 de 5 · ¿Qué te interesa principalmente?</p>
-          <div class="diag__options">
-            <button type="button" class="diag__option" data-q="5" data-v="proteccion">Protección para mi familia</button>
-            <button type="button" class="diag__option" data-q="5" data-v="ahorro">Ahorro y acumulación</button>
-            <button type="button" class="diag__option" data-q="5" data-v="fiscal">Beneficios fiscales</button>
-            <button type="button" class="diag__option" data-q="5" data-v="medica">Atención médica privada</button>
-          </div>
-          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev5">← Anterior</button><button type="button" class="btn btn--outline-light" id="next5" disabled>Siguiente →</button></div>
-        </div>
-        <!-- Captura -->
-        <div class="diag__step" id="step6">
-          <p class="diag__question">¡Casi listo! ¿Cómo te contactamos con tu orientación?</p>
-          <div class="diag__field"><label for="diagNombre">Nombre *</label><input type="text" id="diagNombre" name="nombre" placeholder="Tu nombre" required></div>
-          <div class="diag__field"><label for="diagWA">WhatsApp *</label><input type="tel" id="diagWA" name="whatsapp" placeholder="+52 55 0000 0000" required></div>
-          <div class="diag__field"><label for="diagEmail">Correo (opcional)</label><input type="email" id="diagEmail" name="email" placeholder="hola@correo.com"></div>
-          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev6">← Anterior</button><button type="submit" class="btn btn--wa">Recibir orientación</button></div>
-          <p class="diag__aviso">El resultado es únicamente orientativo y no constituye una cotización, recomendación financiera definitiva ni aceptación por parte de una aseguradora.</p>
-        </div>
-        <!-- Éxito -->
-        <div class="diag__step" id="stepOk" style="text-align:center;padding:2rem 0;">
-          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
-          <h3 style="font-family:'Manrope',sans-serif;font-size:1.3rem;margin-bottom:.75rem;">¡Recibí tu información!</h3>
-          <p style="color:rgba(255,255,255,.75);">Daniel se pondrá en contacto contigo pronto para compartirte orientación personalizada.</p>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
 <!-- SOBRE DANIEL -->
 <section class="seccion" id="daniel">
   <div class="contenedor">
@@ -636,6 +552,90 @@ button{cursor:pointer;font-family:inherit;}
         <h3>¡Solicitud recibida!</h3>
         <p>Me comunicaré contigo pronto para conocer tus necesidades y explicarte los siguientes pasos.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section class="seccion diagnostico" id="diagnostico">
+  <div class="contenedor">
+    <div class="diag__wrap">
+      <p class="eyebrow" style="text-align:center;">Orientación gratuita</p>
+      <h2 class="rev" style="text-align:center;">Descubre qué protección necesitas</h2>
+      <p class="rev" style="text-align:center;" data-d="1">Responde cinco preguntas y recibe orientación personalizada sin costo ni compromiso.</p>
+      <div class="diag__progress rev" data-d="1"><div class="diag__progress-bar" id="diagBar" style="width:20%"></div></div>
+
+      <form id="diagForm">
+        <!-- Paso 1 -->
+        <div class="diag__step active" id="step1">
+          <p class="diag__question">1 de 5 · ¿Qué deseas proteger?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="1" data-v="familia">A mi familia si llegara a faltarme</button>
+            <button type="button" class="diag__option" data-q="1" data-v="retiro">Mi retiro y ahorro a largo plazo</button>
+            <button type="button" class="diag__option" data-q="1" data-v="salud">Mi salud y la de mi familia</button>
+            <button type="button" class="diag__option" data-q="1" data-v="auto">Mi automóvil</button>
+          </div>
+          <div class="diag__nav"><span></span><button type="button" class="btn btn--outline-light" id="next1" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Paso 2 -->
+        <div class="diag__step" id="step2">
+          <p class="diag__question">2 de 5 · ¿Tienes dependientes económicos?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="2" data-v="si">Sí, dependen de mis ingresos</button>
+            <button type="button" class="diag__option" data-q="2" data-v="no">No por ahora</button>
+            <button type="button" class="diag__option" data-q="2" data-v="futuro">No actualmente, pero lo planeo</button>
+          </div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev2">← Anterior</button><button type="button" class="btn btn--outline-light" id="next2" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Paso 3 -->
+        <div class="diag__step" id="step3">
+          <p class="diag__question">3 de 5 · ¿Cuál es tu rango de edad?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="3" data-v="18-29">18 a 29 años</button>
+            <button type="button" class="diag__option" data-q="3" data-v="30-45">30 a 45 años</button>
+            <button type="button" class="diag__option" data-q="3" data-v="46-60">46 a 60 años</button>
+            <button type="button" class="diag__option" data-q="3" data-v="60+">Más de 60 años</button>
+          </div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev3">← Anterior</button><button type="button" class="btn btn--outline-light" id="next3" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Paso 4 -->
+        <div class="diag__step" id="step4">
+          <p class="diag__question">4 de 5 · ¿Ya cuentas con algún seguro?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="4" data-v="no">No tengo ninguno</button>
+            <button type="button" class="diag__option" data-q="4" data-v="vida">Tengo seguro de vida</button>
+            <button type="button" class="diag__option" data-q="4" data-v="gmm">Tengo gastos médicos</button>
+            <button type="button" class="diag__option" data-q="4" data-v="varios">Tengo varios seguros</button>
+          </div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev4">← Anterior</button><button type="button" class="btn btn--outline-light" id="next4" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Paso 5 -->
+        <div class="diag__step" id="step5">
+          <p class="diag__question">5 de 5 · ¿Qué te interesa principalmente?</p>
+          <div class="diag__options">
+            <button type="button" class="diag__option" data-q="5" data-v="proteccion">Protección para mi familia</button>
+            <button type="button" class="diag__option" data-q="5" data-v="ahorro">Ahorro y acumulación</button>
+            <button type="button" class="diag__option" data-q="5" data-v="fiscal">Beneficios fiscales</button>
+            <button type="button" class="diag__option" data-q="5" data-v="medica">Atención médica privada</button>
+          </div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev5">← Anterior</button><button type="button" class="btn btn--outline-light" id="next5" disabled>Siguiente →</button></div>
+        </div>
+        <!-- Captura -->
+        <div class="diag__step" id="step6">
+          <p class="diag__question">¡Casi listo! ¿Cómo te contactamos con tu orientación?</p>
+          <div class="diag__field"><label for="diagNombre">Nombre *</label><input type="text" id="diagNombre" name="nombre" placeholder="Tu nombre" required></div>
+          <div class="diag__field"><label for="diagWA">WhatsApp *</label><input type="tel" id="diagWA" name="whatsapp" placeholder="+52 55 0000 0000" required></div>
+          <div class="diag__field"><label for="diagEmail">Correo (opcional)</label><input type="email" id="diagEmail" name="email" placeholder="hola@correo.com"></div>
+          <div class="diag__nav"><button type="button" class="btn btn--outline-light" id="prev6">← Anterior</button><button type="submit" class="btn btn--wa">Recibir orientación</button></div>
+          <p class="diag__aviso">El resultado es únicamente orientativo y no constituye una cotización, recomendación financiera definitiva ni aceptación por parte de una aseguradora.</p>
+        </div>
+        <!-- Éxito -->
+        <div class="diag__step" id="stepOk" style="text-align:center;padding:2rem 0;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Manrope',sans-serif;font-size:1.3rem;margin-bottom:.75rem;">¡Recibí tu información!</h3>
+          <p style="color:rgba(255,255,255,.75);">Daniel se pondrá en contacto contigo pronto para compartirte orientación personalizada.</p>
+        </div>
+      </form>
     </div>
   </div>
 </section>
