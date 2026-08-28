@@ -115,8 +115,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <!-- DEMO CHATGPT -->
 <section class="demo-section" id="demo" aria-label="Comprueba si la IA recomienda tu negocio">
+  <h2 class="demo-hero-title reveal">
+    TUS CLIENTES YA<br>
+    <span class="outline">LE PREGUNTAN A LA IA.</span><br>
+    NOSOTROS LOGRAMOS QUE LA RESPUESTA<br>
+    <em class="glitch" data-text="SEAS TÚ">SEAS TÚ</em>
+  </h2>
   <div class="section-label reveal">Compruébalo en 30 segundos</div>
-  <h2 class="demo-title reveal">¿LA IA YA RECOMIENDA <em>TU NEGOCIO?</em></h2>
+  <h3 class="demo-title reveal">¿LA IA YA RECOMIENDA <em>TU NEGOCIO?</em></h3>
   <p class="demo-intro reveal">Escribe tu giro y tu ciudad. Te abrimos la pregunta directo en ChatGPT para que veas quién aparece en la respuesta — y quién no.</p>
 
   <div class="demo-box reveal">
@@ -838,6 +844,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* DEMO CHATGPT */
   .demo-section{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;position:relative;overflow:hidden;padding:90px 5%;}
   .demo-section .section-label{justify-content:center;}
+  .demo-hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,84px);line-height:0.95;letter-spacing:-1px;margin-bottom:56px;}
+  .demo-hero-title .outline{-webkit-text-stroke:1px var(--white);color:transparent;}
+  .demo-hero-title em{font-style:normal;color:var(--green);}
   .demo-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:1px;margin:14px 0 18px;}
   .demo-title em{font-style:italic;color:var(--green);}
   .demo-intro{color:var(--muted);font-size:16px;line-height:1.7;max-width:600px;margin:0 auto;}
