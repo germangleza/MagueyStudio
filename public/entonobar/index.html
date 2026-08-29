@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entono Bar Tijuana | Cartelera y boletos — Live Music &amp; Comedy</title>
+<meta name="description" content="Cartelera de música en vivo y comedia en Tijuana. Consulta las fechas, elige tu zona y aparta tus boletos o tu mesa en Entono Bar, Zona Río. Reservaciones 664 385 2385.">
+<link rel="canonical" href="https://magueystudio.mx/entonobar">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#000000">
+<meta name="geo.region" content="MX-BCN">
+<meta name="geo.placename" content="Tijuana">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Entono Bar">
+<meta property="og:title" content="Entono Bar Tijuana | Cartelera y boletos — Live Music &amp; Comedy">
+<meta property="og:description" content="Música en vivo y comedia todas las semanas en Zona Río. Consulta la cartelera, elige tu zona y aparta tus boletos.">
+<meta property="og:url" content="https://magueystudio.mx/entonobar">
+<meta property="og:image" content="https://magueystudio.mx/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════ TOKENS ═══════════════ */
+:root{
+  --ink:#000000;
+  --paper:#ffffff;
+  --carbon:#0b0b0b;
+  --slate:#141414;
+  --steel:#232323;
+  --ash:#8d8d8d;
+  --fog:#c8c8c8;
+  --line:rgba(255,255,255,.14);
+  --line-strong:rgba(255,255,255,.34);
+  --line-dark:rgba(0,0,0,.14);
+
+  --display:'Bebas Neue', Impact, 'Arial Narrow Bold', sans-serif;
+  --sans:'Space Grotesk', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --wrap:1240px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button,input,select,textarea{font:inherit;color:inherit;}
+button{background:none;border:0;cursor:pointer;}
+:focus-visible{outline:2px solid var(--paper);outline-offset:3px;}
+::selection{background:var(--paper);color:var(--ink);}
+
+/* Grano sutil sobre todo el sitio */
+body::after{
+  content:"";position:fixed;inset:0;z-index:900;pointer-events:none;opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(18px,5vw,44px);}
+
+/* ═══════════════ TIPOGRAFÍA ═══════════════ */
+.display{font-family:var(--display);font-weight:400;line-height:.86;letter-spacing:.01em;text-transform:uppercase;}
+.d-xl{font-size:clamp(50px,10vw,120px);}
+.d-lg{font-size:clamp(40px,7vw,88px);}
+.d-md{font-size:clamp(30px,4.4vw,54px);}
+.d-sm{font-size:clamp(24px,3vw,34px);}
+
+.kicker{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.24em;color:var(--ash);
+  display:flex;align-items:center;gap:12px;
+}
+.kicker::before{content:"";width:26px;height:1px;background:var(--ash);flex:none;}
+.kicker--dark{color:#555;}
+.kicker--dark::before{background:#555;}
+
+.lead{font-size:clamp(17px,2vw,21px);line-height:1.55;color:var(--fog);max-width:60ch;}
+.muted{color:var(--ash);}
+
+/* ═══════════════ BOTONES ═══════════════ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--mono);font-size:13px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.12em;
+  padding:16px 28px;border:1.5px solid var(--paper);
+  transition:background .35s var(--ease),color .35s var(--ease),transform .2s var(--ease);
+  text-align:center;
+}
+.btn--solid{background:var(--paper);color:var(--ink);}
+.btn--solid:hover{background:transparent;color:var(--paper);}
+.btn--ghost{background:transparent;color:var(--paper);}
+.btn--ghost:hover{background:var(--paper);color:var(--ink);}
+.btn--dark{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.btn--dark:hover{background:transparent;color:var(--ink);}
+.btn--outline-dark{background:transparent;color:var(--ink);border-color:var(--ink);}
+.btn--outline-dark:hover{background:var(--ink);color:var(--paper);}
+.btn--sm{padding:11px 18px;font-size:11px;}
+.btn--full{width:100%;}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:.4;cursor:not-allowed;pointer-events:none;}
+
+/* ═══════════════ HEADER ═══════════════ */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:600;
+  border-bottom:1px solid transparent;
+  transition:background .4s var(--ease),border-color .4s var(--ease),backdrop-filter .4s;
+}
+.header.scrolled{background:rgba(0,0,0,.88);backdrop-filter:blur(14px);border-bottom-color:var(--line);}
+.header__in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px;}
+.logo{display:flex;align-items:baseline;gap:9px;}
+.logo__mark{font-family:var(--display);font-size:30px;letter-spacing:.06em;line-height:1;}
+.logo__sub{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);}
+.nav{display:none;align-items:center;gap:30px;}
+.nav a{
+  font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--fog);position:relative;padding-block:4px;transition:color .3s var(--ease);
+}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--paper);transition:width .35s var(--ease);}
+.nav a:hover{color:var(--paper);}
+.nav a:hover::after{width:100%;}
+.header__cta{display:none;}
+.burger{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line-strong);}
+@media(min-width:1000px){
+  .nav{display:flex;}
+  .header__cta{display:inline-flex;}
+  .burger{display:none;}
+}
+.menu{
+  position:fixed;inset:0;z-index:700;background:var(--ink);
+  display:flex;flex-direction:column;justify-content:center;gap:6px;
+  padding:0 clamp(18px,6vw,44px);
+  transform:translateY(-100%);visibility:hidden;pointer-events:none;
+  transition:transform .5s var(--ease),visibility .5s var(--ease);
+}
+.menu.open{transform:translateY(0);visibility:visible;pointer-events:auto;}
+.menu a{font-family:var(--display);font-size:clamp(34px,9vw,60px);line-height:1.06;text-transform:uppercase;color:var(--fog);transition:color .25s;}
+.menu a:hover{color:var(--paper);}
+.menu__close{position:absolute;top:16px;right:clamp(18px,6vw,44px);width:42px;height:42px;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;}
+.menu__foot{margin-top:34px;font-family:var(--mono);font-size:12px;color:var(--ash);letter-spacing:.08em;}
+
+/* ═══════════════ MARQUESINA ═══════════════ */
+.marquee{
+  border-block:1px solid var(--line);overflow:hidden;background:var(--carbon);
+  padding-block:11px;white-space:nowrap;
+}
+.marquee__track{display:inline-flex;gap:38px;animation:slide 34s linear infinite;}
+.marquee span{
+  font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.26em;color:var(--ash);
+  display:inline-flex;align-items:center;gap:38px;
+}
+.marquee span::after{content:"✦";color:var(--paper);}
+@keyframes slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media(prefers-reduced-motion:reduce){.marquee__track{animation:none;}}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero{position:relative;padding-top:74px;overflow:hidden;}
+.hero__bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% -10%, rgba(255,255,255,.16), transparent 70%),
+    repeating-linear-gradient(90deg, transparent 0 78px, rgba(255,255,255,.045) 78px 79px);
+}
+.hero__in{position:relative;padding-block:clamp(56px,10vw,104px) clamp(40px,6vw,64px);}
+.hero__top{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;margin-bottom:26px;}
+.badge{
+  font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;
+  border:1px solid var(--line-strong);padding:7px 13px;color:var(--fog);
+}
+.badge--live{border-color:var(--paper);color:var(--paper);display:inline-flex;align-items:center;gap:8px;}
+.badge--live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--paper);animation:pulse 1.9s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(.7);}}
+.hero h1{margin-bottom:22px;}
+.hero h1 em{font-style:normal;display:block;-webkit-text-stroke:1.5px var(--paper);color:transparent;}
+.hero__grid{display:grid;gap:38px;align-items:end;}
+@media(min-width:900px){.hero__grid{grid-template-columns:1.35fr .95fr;gap:54px;}}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+
+/* Tarjeta próximo evento */
+.next{border:1px solid var(--line-strong);background:linear-gradient(180deg,rgba(255,255,255,.055),transparent);padding:26px 24px;}
+.next__label{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ash);margin-bottom:14px;}
+.next__title{font-family:var(--display);font-size:clamp(30px,4vw,42px);line-height:.95;text-transform:uppercase;margin-bottom:8px;}
+.next__meta{font-family:var(--mono);font-size:12px;color:var(--fog);letter-spacing:.06em;margin-bottom:20px;}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px;}
+.count div{border:1px solid var(--line);padding:11px 4px;text-align:center;}
+.count b{display:block;font-family:var(--display);font-size:30px;line-height:1;}
+.count small{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);}
+
+/* Franja de datos */
+.stats{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(2,1fr);}
+@media(min-width:820px){.stats{grid-template-columns:repeat(4,1fr);}}
+.stats div{padding:26px clamp(18px,3vw,30px);border-bottom:1px solid var(--line);}
+@media(min-width:820px){.stats div{border-bottom:0;}}
+.stats div + div{border-left:1px solid var(--line);}
+@media(max-width:819px){.stats div:nth-child(odd){border-left:0;}}
+.stats b{display:block;font-family:var(--display);font-size:clamp(28px,4vw,40px);line-height:1;margin-bottom:6px;}
+.stats span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);}
+
+/* ═══════════════ SECCIONES ═══════════════ */
+.section{padding-block:clamp(64px,9vw,112px);}
+.section--paper{background:var(--paper);color:var(--ink);}
+.section--carbon{background:var(--carbon);}
+.section__head{display:grid;gap:18px;margin-bottom:clamp(34px,5vw,54px);}
+@media(min-width:900px){.section__head{grid-template-columns:1.1fr .9fr;align-items:end;gap:44px;}}
+.section--paper .lead{color:#4a4a4a;}
+.section--paper .btn--ghost{border-color:var(--ink);color:var(--ink);}
+.section--paper .btn--ghost:hover{background:var(--ink);color:var(--paper);}
+
+/* ═══════════════ CARTELERA ═══════════════ */
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;}
+.filtro{
+  font-family:var(--mono);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.14em;
+  border:1px solid var(--line-strong);padding:10px 16px;color:var(--fog);
+  transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);
+}
+.filtro:hover{border-color:var(--paper);color:var(--paper);}
+.filtro[aria-pressed="true"]{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+
+.cartelera{border-top:1px solid var(--line);}
+.evento{
+  display:grid;gap:18px;align-items:center;
+  padding:26px 0;border-bottom:1px solid var(--line);
+  transition:opacity .35s var(--ease);
+}
+@media(min-width:860px){
+  .evento{grid-template-columns:120px 1fr auto auto;gap:30px;padding:30px 0;}
+}
+.evento.oculto{display:none;}
+.evento:hover .evento__titulo{opacity:.62;}
+.evento__fecha{display:flex;align-items:baseline;gap:10px;}
+@media(min-width:860px){.evento__fecha{display:block;}}
+.evento__dia{font-family:var(--display);font-size:clamp(42px,5vw,58px);line-height:.82;}
+.evento__mes{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);}
+.evento__titulo{font-family:var(--display);font-size:clamp(26px,3.4vw,40px);line-height:.98;text-transform:uppercase;transition:opacity .3s var(--ease);}
+.evento__desc{font-size:14px;color:var(--ash);margin-top:7px;max-width:52ch;}
+.evento__tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+.tag{
+  font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.16em;
+  border:1px solid var(--line-strong);padding:5px 9px;color:var(--fog);
+}
+.tag--alerta{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+.evento__precio{font-family:var(--mono);font-size:12px;color:var(--fog);letter-spacing:.05em;white-space:nowrap;}
+.evento__precio b{display:block;font-family:var(--display);font-size:28px;letter-spacing:.02em;color:var(--paper);line-height:1.1;}
+.evento__acciones{display:flex;gap:9px;flex-wrap:wrap;}
+.aviso-cartelera{
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ash);
+  margin-top:26px;display:flex;gap:10px;align-items:flex-start;
+}
+
+/* ═══════════════ CÓMO COMPRAR ═══════════════ */
+.pasos{display:grid;gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);}
+@media(min-width:800px){.pasos{grid-template-columns:repeat(3,1fr);}}
+.paso{background:var(--paper);padding:32px clamp(20px,3vw,34px);}
+.paso__n{font-family:var(--display);font-size:52px;line-height:1;color:var(--ink);opacity:.16;margin-bottom:10px;}
+.paso h3{font-family:var(--display);font-size:26px;text-transform:uppercase;line-height:1;margin-bottom:10px;}
+.paso p{font-size:14.5px;color:#4a4a4a;}
+
+/* ═══════════════ ZONAS ═══════════════ */
+.zonas{display:grid;gap:16px;}
+@media(min-width:820px){.zonas{grid-template-columns:repeat(3,1fr);}}
+.zona{
+  border:1px solid var(--line);padding:30px 26px;display:flex;flex-direction:column;
+  transition:border-color .35s var(--ease),transform .35s var(--ease);
+}
+.zona:hover{border-color:var(--paper);transform:translateY(-4px);}
+.zona--destacada{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+.zona__nombre{font-family:var(--display);font-size:32px;text-transform:uppercase;line-height:1;margin-bottom:6px;}
+.zona__precio{font-family:var(--mono);font-size:13px;letter-spacing:.08em;margin-bottom:20px;color:var(--ash);}
+.zona--destacada .zona__precio{color:#4a4a4a;}
+.zona ul{list-style:none;display:grid;gap:10px;font-size:14.5px;margin-bottom:26px;}
+.zona li{display:flex;gap:10px;align-items:flex-start;color:var(--fog);}
+.zona--destacada li{color:#3a3a3a;}
+.zona li::before{content:"—";flex:none;opacity:.55;}
+.zona .btn{margin-top:auto;}
+
+/* ═══════════════ EL LUGAR ═══════════════ */
+.lugar{display:grid;gap:34px;align-items:center;}
+@media(min-width:900px){.lugar{grid-template-columns:1fr 1fr;gap:60px;}}
+.poster{
+  aspect-ratio:4/5;border:1px solid var(--line-dark);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:clamp(22px,3vw,34px);background:var(--ink);color:var(--paper);
+  position:relative;overflow:hidden;
+}
+.poster::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(135deg,transparent 0 16px,rgba(255,255,255,.05) 16px 17px);
+}
+.poster > *{position:relative;}
+.poster__grande{font-family:var(--display);font-size:clamp(46px,8vw,86px);line-height:.84;text-transform:uppercase;}
+.poster__pie{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fog);}
+.lista-check{list-style:none;display:grid;gap:14px;margin-top:26px;}
+.lista-check li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;}
+.lista-check li::before{content:"◆";font-size:10px;line-height:1.9;flex:none;}
+
+/* ═══════════════ RESERVA ═══════════════ */
+.reserva{display:grid;gap:38px;}
+@media(min-width:960px){.reserva{grid-template-columns:.9fr 1.1fr;gap:60px;}}
+.form{display:grid;gap:16px;}
+@media(min-width:640px){.form__2{grid-template-columns:1fr 1fr;display:grid;gap:16px;}}
+.campo{display:grid;gap:7px;}
+.campo label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ash);}
+.campo input,.campo select,.campo textarea{
+  background:transparent;border:1px solid var(--line-strong);color:var(--paper);
+  padding:14px 15px;font-size:15px;width:100%;
+  transition:border-color .3s var(--ease);
+}
+.campo input:focus,.campo select:focus,.campo textarea:focus{border-color:var(--paper);outline:none;}
+.campo select option{background:var(--ink);color:var(--paper);}
+.campo input::placeholder,.campo textarea::placeholder{color:#5a5a5a;}
+.form__nota{font-family:var(--mono);font-size:11px;color:var(--ash);line-height:1.7;letter-spacing:.03em;}
+
+.datos{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);}
+.dato{background:var(--ink);padding:22px 24px;}
+.dato dt{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);margin-bottom:8px;}
+.dato dd{font-size:15.5px;line-height:1.55;}
+.dato dd a{border-bottom:1px solid var(--line-strong);}
+.dato dd a:hover{border-color:var(--paper);}
+.mapa{border:1px solid var(--line);height:280px;filter:grayscale(1) contrast(1.15) invert(.92);}
+.mapa iframe{width:100%;height:100%;border:0;display:block;}
+
+/* ═══════════════ FAQ ═══════════════ */
+.faq{border-top:1px solid var(--line-dark);max-width:900px;}
+.faq__item{border-bottom:1px solid var(--line-dark);}
+.faq__btn{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:24px 0;text-align:left;font-family:var(--display);font-size:clamp(20px,2.4vw,26px);
+  text-transform:uppercase;line-height:1.1;
+}
+.faq__btn span{flex:none;font-family:var(--mono);font-size:20px;transition:transform .35s var(--ease);}
+.faq__btn[aria-expanded="true"] span{transform:rotate(45deg);}
+.faq__panel{max-height:0;overflow:hidden;transition:max-height .45s var(--ease);}
+.faq__panel p{padding-bottom:24px;font-size:15.5px;color:#4a4a4a;max-width:70ch;}
+
+/* ═══════════════ CTA FINAL ═══════════════ */
+.cta-final{text-align:center;display:grid;gap:24px;justify-items:center;}
+.cta-final .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+
+/* ═══════════════ FOOTER ═══════════════ */
+.footer{border-top:1px solid var(--line);padding-block:56px 30px;background:var(--carbon);}
+.footer__grid{display:grid;gap:34px;}
+@media(min-width:840px){.footer__grid{grid-template-columns:1.4fr 1fr 1fr;gap:44px;}}
+.footer h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);margin-bottom:16px;}
+.footer ul{list-style:none;display:grid;gap:10px;font-size:14.5px;color:var(--fog);}
+.footer ul a:hover{color:var(--paper);}
+.footer__bar{
+  margin-top:44px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-family:var(--mono);font-size:11px;color:var(--ash);letter-spacing:.05em;
+}
+.footer__bar a{border-bottom:1px solid var(--line-strong);}
+
+/* ═══════════════ MODAL BOLETOS ═══════════════ */
+.modal{
+  position:fixed;inset:0;z-index:800;display:none;
+  align-items:flex-end;justify-content:center;
+  background:rgba(0,0,0,.82);backdrop-filter:blur(6px);
+}
+@media(min-width:720px){.modal{align-items:center;}}
+.modal.open{display:flex;}
+.modal__box{
+  background:var(--ink);border:1px solid var(--line-strong);
+  width:min(560px,100%);max-height:92vh;overflow-y:auto;
+  padding:clamp(24px,4vw,36px);
+  animation:up .4s var(--ease);
+}
+@keyframes up{from{transform:translateY(24px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@media(prefers-reduced-motion:reduce){.modal__box{animation:none;}}
+.modal__head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:8px;}
+.modal__cerrar{width:38px;height:38px;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;flex:none;}
+.modal__titulo{font-family:var(--display);font-size:clamp(26px,4vw,34px);line-height:1;text-transform:uppercase;}
+.modal__meta{font-family:var(--mono);font-size:11.5px;color:var(--ash);letter-spacing:.08em;margin-bottom:24px;}
+.opciones{display:grid;gap:9px;margin-bottom:22px;}
+.opcion{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  border:1px solid var(--line-strong);padding:15px 17px;cursor:pointer;text-align:left;
+  transition:background .25s var(--ease),color .25s var(--ease),border-color .25s;
+}
+.opcion:hover{border-color:var(--paper);}
+.opcion[aria-checked="true"]{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+.opcion strong{font-family:var(--display);font-size:20px;letter-spacing:.03em;text-transform:uppercase;display:block;line-height:1.1;}
+.opcion small{font-size:12.5px;opacity:.62;}
+.opcion b{font-family:var(--mono);font-size:15px;white-space:nowrap;}
+.cantidad{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line-strong);padding:10px 12px;margin-bottom:20px;}
+.cantidad__label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);}
+.cantidad__ctrl{display:flex;align-items:center;gap:6px;}
+.cantidad__btn{width:36px;height:36px;border:1px solid var(--line-strong);font-family:var(--mono);font-size:17px;transition:background .25s,color .25s;}
+.cantidad__btn:hover{background:var(--paper);color:var(--ink);}
+.cantidad__valor{font-family:var(--display);font-size:26px;min-width:44px;text-align:center;}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line-strong);padding-top:18px;margin-bottom:20px;}
+.total span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ash);}
+.total b{font-family:var(--display);font-size:38px;line-height:1;}
+.modal__nota{font-family:var(--mono);font-size:10.5px;color:var(--ash);line-height:1.75;margin-top:14px;letter-spacing:.03em;}
+body.bloqueado{overflow:hidden;}
+
+/* ═══════════════ FLOTANTE ═══════════════ */
+.flotante{
+  position:fixed;right:16px;bottom:16px;z-index:650;
+  display:flex;align-items:center;gap:10px;
+  background:var(--paper);color:var(--ink);
+  border:1.5px solid var(--ink);
+  padding:13px 18px;
+  font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  box-shadow:0 0 0 1px rgba(255,255,255,.5);
+  transition:transform .3s var(--ease);
+}
+.flotante:hover{transform:translateY(-3px);}
+.flotante span{display:none;}
+@media(min-width:600px){.flotante span{display:inline;}}
+
+/* ═══════════════ REVEAL ═══════════════ */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.rev.visible{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none;}}
+.oculto-visual{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="header" id="header">
+  <div class="wrap header__in">
+    <a class="logo" href="#inicio" aria-label="Entono Bar — inicio">
+      <span class="logo__mark">ENTONO</span>
+      <span class="logo__sub">Live Music &amp; Comedy</span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#cartelera">Cartelera</a>
+      <a href="#boletos">Boletos</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#lugar">El lugar</a>
+      <a href="#reservaciones">Reservaciones</a>
+    </nav>
+    <a class="btn btn--solid btn--sm header__cta" href="#cartelera">Comprar boletos</a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════ MENÚ MÓVIL ═══════════ -->
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú">
+  <button class="menu__close" id="menuClose" aria-label="Cerrar menú">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#cartelera">Cartelera</a>
+  <a href="#boletos">Boletos</a>
+  <a href="#zonas">Zonas y precios</a>
+  <a href="#lugar">El lugar</a>
+  <a href="#reservaciones">Reservaciones</a>
+  <a href="#faq">Preguntas</a>
+  <p class="menu__foot">Reservaciones · <a href="tel:+526643852385">664 385 2385</a></p>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<main id="inicio">
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="wrap hero__in">
+    <div class="hero__top">
+      <span class="badge badge--live">En vivo cada semana</span>
+      <span class="badge">Zona Río · Tijuana, B.C.</span>
+      <span class="badge">Mayores de 18 años</span>
+    </div>
+
+    <div class="hero__grid">
+      <div>
+        <h1 class="display d-xl">Música<br>en vivo y<em>comedia</em></h1>
+        <p class="lead">Entono Bar es el show center de Zona Río: bandas, stand up e improvisación en un escenario hecho para escucharse bien. Consulta la cartelera, elige tu zona y aparta tus boletos en menos de un minuto.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#cartelera">Ver cartelera</a>
+          <a class="btn btn--ghost" href="#reservaciones">Reservar mesa</a>
+        </div>
+      </div>
+
+      <aside class="next" id="proximo">
+        <p class="next__label">Próximo show</p>
+        <h2 class="next__title" id="proximoTitulo">—</h2>
+        <p class="next__meta" id="proximoMeta">—</p>
+        <div class="count" id="cuenta" aria-live="off">
+          <div><b id="cDias">00</b><small>Días</small></div>
+          <div><b id="cHoras">00</b><small>Horas</small></div>
+          <div><b id="cMin">00</b><small>Min</small></div>
+          <div><b id="cSeg">00</b><small>Seg</small></div>
+        </div>
+        <a class="btn btn--solid btn--full btn--sm" href="#cartelera" id="proximoCta">Apartar boletos</a>
+      </aside>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Live Music</span><span>Stand Up Comedy</span><span>Open Mic</span><span>Tributos</span><span>Improvisación</span><span>Zona Río Tijuana</span>
+      <span>Live Music</span><span>Stand Up Comedy</span><span>Open Mic</span><span>Tributos</span><span>Improvisación</span><span>Zona Río Tijuana</span>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="stats">
+    <div><b>3</b><span>Shows por semana</span></div>
+    <div><b>180</b><span>Personas de aforo</span></div>
+    <div><b>21:00</b><span>Hora típica de show</span></div>
+    <div><b>$150</b><span>Boletos desde</span></div>
+  </div></div>
+</section>
+
+<!-- ═══════════ CARTELERA ═══════════ -->
+<section class="section" id="cartelera">
+  <div class="wrap">
+    <div class="section__head rev">
+      <div>
+        <p class="kicker">Cartelera</p>
+        <h2 class="display d-lg" style="margin-top:14px;">Lo que viene<br>en el escenario</h2>
+      </div>
+      <p class="lead">Programación de septiembre. Las puertas abren una hora antes de cada show y los boletos se apartan por WhatsApp con confirmación inmediata.</p>
+    </div>
+
+    <div class="filtros rev" role="group" aria-label="Filtrar cartelera por tipo de show">
+      <button class="filtro" data-filtro="todos" aria-pressed="true">Todos</button>
+      <button class="filtro" data-filtro="musica" aria-pressed="false">Música en vivo</button>
+      <button class="filtro" data-filtro="comedia" aria-pressed="false">Comedia</button>
+      <button class="filtro" data-filtro="especial" aria-pressed="false">Especiales</button>
+    </div>
+
+    <!-- ▼▼ EDITAR AQUÍ LA CARTELERA ▼▼
+         Cada bloque "article.evento" es una fecha. Para publicar un show nuevo:
+         copie un bloque y actualice data-fecha (ISO con zona -07:00), data-cat
+         (musica | comedia | especial), los precios data-general / data-barra /
+         data-mesa y, si se agota, ponga data-estado="agotado".
+         Recuerde reflejar el cambio también en el bloque JSON-LD del final. -->
+    <div class="cartelera" id="listaEventos">
+
+      <article class="evento rev" data-cat="comedia" data-fecha="2026-09-04T21:00:00-07:00"
+               data-titulo="Noche de Stand Up · 4 Comediantes" data-cuando="Viernes 4 de septiembre · 21:00 h"
+               data-general="250" data-barra="350" data-mesa="1400" data-estado="">
+        <div class="evento__fecha">
+          <span class="evento__dia display">04</span>
+          <span class="evento__mes">Sep · Vie</span>
+        </div>
+        <div>
+          <h3 class="evento__titulo">Noche de Stand Up · 4 Comediantes</h3>
+          <p class="evento__desc">Cuatro comediantes del circuito de Tijuana y San Diego, una hora y media de show corrido y presentador en vivo.</p>
+          <div class="evento__tags"><span class="tag">Comedia</span><span class="tag">+18</span><span class="tag">Show 21:00</span></div>
+        </div>
+        <p class="evento__precio">Desde<b>$250</b>por persona</p>
+        <div class="evento__acciones">
+          <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
+          <a class="btn btn--ghost btn--sm" href="#reservaciones">Mesa</a>
+        </div>
+      </article>
+
+      <article class="evento rev" data-cat="musica" data-fecha="2026-09-05T22:00:00-07:00"
+               data-titulo="Soul &amp; Funk en Vivo" data-cuando="Sábado 5 de septiembre · 22:00 h"
+               data-general="220" data-barra="320" data-mesa="1300" data-estado="">
+        <div class="evento__fecha">
+          <span class="evento__dia display">05</span>
+          <span class="evento__mes">Sep · Sáb</span>
+        </div>
+        <div>
+          <h3 class="evento__titulo">Soul &amp; Funk en Vivo</h3>
+          <p class="evento__desc">Banda de seis integrantes con repertorio de soul, funk y R&amp;B clásico. Dos sets con descanso.</p>
+          <div class="evento__tags"><span class="tag">Música en vivo</span><span class="tag">Banda</span><span class="tag tag--alerta">Últimos lugares</span></div>
+        </div>
+        <p class="evento__precio">Desde<b>$220</b>por persona</p>
+        <div class="evento__acciones">
+          <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
+          <a class="btn btn--ghost btn--sm" href="#reservaciones">Mesa</a>
+        </div>
+      </article>
+
+      <article class="evento rev" data-cat="comedia" data-fecha="2026-09-10T20:30:00-07:00"
+               data-titulo="Micrófono Abierto" data-cuando="Jueves 10 de septiembre · 20:30 h"
+               data-general="100" data-barra="150" data-mesa="700" data-estado="">
+        <div class="evento__fecha">
+          <span class="evento__dia display">10</span>
+          <span class="evento__mes">Sep · Jue</span>
+        </div>
+        <div>
+          <h3 class="evento__titulo">Micrófono Abierto</h3>
+          <p class="evento__desc">Diez minutos por comediante. Si quieres subir al escenario, escríbenos y te apartamos turno.</p>
+          <div class="evento__tags"><span class="tag">Comedia</span><span class="tag">Open mic</span><span class="tag">Show 20:30</span></div>
+        </div>
+        <p class="evento__precio">Desde<b>$100</b>por persona</p>
+        <div class="evento__acciones">
+          <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
+          <a class="btn btn--ghost btn--sm" href="#reservaciones">Mesa</a>
+        </div>
+      </article>
+
+      <article class="evento rev" data-cat="musica" data-fecha="2026-09-11T22:00:00-07:00"
+               data-titulo="Rock en Tu Idioma · Tributo" data-cuando="Viernes 11 de septiembre · 22:00 h"
+               data-general="250" data-barra="350" data-mesa="1500" data-estado="">
+        <div class="evento__fecha">
+          <span class="evento__dia display">11</span>
+          <span class="evento__mes">Sep · Vie</span>
+        </div>
+        <div>
+          <h3 class="evento__titulo">Rock en Tu Idioma · Tributo</h3>
+          <p class="evento__desc">Los himnos del rock en español de los ochenta y noventa, tocados completos y sin pista.</p>
+          <div class="evento__tags"><span class="tag">Música en vivo</span><span class="tag">Tributo</span><span class="tag">Show 22:00</span></div>
+        </div>
+        <p class="evento__precio">Desde<b>$250</b>por persona</p>
+        <div class="evento__acciones">
+          <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
+          <a class="btn btn--ghost btn--sm" href="#reservaciones">Mesa</a>
+        </div>
+      </article>
+
+      <article class="evento rev" data-cat="especial" data-fecha="2026-09-15T21:00:00-07:00"
+               data-titulo="Noche Mexicana · Mariachi y Banda" data-cuando="Martes 15 de septiembre · 21:00 h"
+               data-general="350" data-barra="450" data-mesa="1900" data-estado="agotado">
+        <div class="evento__fecha">
+          <span class="evento__dia display">15</span>
+          <span class="evento__mes">Sep · Mar</span>
+        </div>
+        <div>
+          <h3 class="evento__titulo">Noche Mexicana · Mariachi y Banda</h3>
+          <p class="evento__desc">Mariachi en vivo, banda y el grito a las 23:00. Cena y barra disponibles toda la noche.</p>
+          <div class="evento__tags"><span class="tag">Especial</span><span class="tag">Fiestas patrias</span><span class="tag tag--alerta">Agotado</span></div>
+        </div>
+        <p class="evento__precio">Desde<b>$350</b>por persona</p>
+        <div class="evento__acciones">
+          <span class="btn btn--ghost btn--sm" aria-disabled="true">Agotado</span>
+        </div>
+      </article>
+
+      <article class="evento rev" data-cat="musica" data-fecha="2026-09-18T21:00:00-07:00"
+               data-titulo="Jazz Trío + Bossa Nova" data-cuando="Viernes 18 de septiembre · 21:00 h"
+               data-general="220" data-barra="320" data-mesa="1300" data-estado="">
+        <div class="evento__fecha">
+          <span class="evento__dia display">18</span>
+          <span class="evento__mes">Sep · Vie</span>
+        </div>
+        <div>
+          <h3 class="evento__titulo">Jazz Trío + Bossa Nova</h3>
+          <p class="evento__desc">Formato íntimo de piano, contrabajo y batería. Volumen bajo, ideal para escuchar y platicar.</p>
+          <div class="evento__tags"><span class="tag">Música en vivo</span><span class="tag">Jazz</span><span class="tag">Show 21:00</span></div>
+        </div>
+        <p class="evento__precio">Desde<b>$220</b>por persona</p>
+        <div class="evento__acciones">
+          <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
+          <a class="btn btn--ghost btn--sm" href="#reservaciones">Mesa</a>
+        </div>
+      </article>
+
+      <article class="evento rev" data-cat="comedia" data-fecha="2026-09-19T21:30:00-07:00"
+               data-titulo="Comedia de Improvisación" data-cuando="Sábado 19 de septiembre · 21:30 h"
+               data-general="280" data-barra="380" data-mesa="1600" data-estado="">
+        <div class="evento__fecha">
+          <span class="evento__dia display">19</span>
+          <span class="evento__mes">Sep · Sáb</span>
+        </div>
+        <div>
+          <h3 class="evento__titulo">Comedia de Improvisación</h3>
+          <p class="evento__desc">Dos equipos, sugerencias del público y nada escrito. Cada función es distinta.</p>
+          <div class="evento__tags"><span class="tag">Comedia</span><span class="tag">Improvisación</span><span class="tag">+18</span></div>
+        </div>
+        <p class="evento__precio">Desde<b>$280</b>por persona</p>
+        <div class="evento__acciones">
+          <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
+          <a class="btn btn--ghost btn--sm" href="#reservaciones">Mesa</a>
+        </div>
+      </article>
+
+      <article class="evento rev" data-cat="musica" data-fecha="2026-09-25T22:00:00-07:00"
+               data-titulo="Cumbia y Salsa en Vivo" data-cuando="Viernes 25 de septiembre · 22:00 h"
+               data-general="250" data-barra="350" data-mesa="1500" data-estado="">
+        <div class="evento__fecha">
+          <span class="evento__dia display">25</span>
+          <span class="evento__mes">Sep · Vie</span>
+        </div>
+        <div>
+          <h3 class="evento__titulo">Cumbia y Salsa en Vivo</h3>
+          <p class="evento__desc">Orquesta de nueve músicos y pista abierta desde el primer set.</p>
+          <div class="evento__tags"><span class="tag">Música en vivo</span><span class="tag">Baile</span><span class="tag">Show 22:00</span></div>
+        </div>
+        <p class="evento__precio">Desde<b>$250</b>por persona</p>
+        <div class="evento__acciones">
+          <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
+          <a class="btn btn--ghost btn--sm" href="#reservaciones">Mesa</a>
+        </div>
+      </article>
+
+      <article class="evento rev" data-cat="especial" data-fecha="2026-09-26T21:00:00-07:00"
+               data-titulo="Karaoke con Banda en Vivo" data-cuando="Sábado 26 de septiembre · 21:00 h"
+               data-general="150" data-barra="250" data-mesa="1000" data-estado="">
+        <div class="evento__fecha">
+          <span class="evento__dia display">26</span>
+          <span class="evento__mes">Sep · Sáb</span>
+        </div>
+        <div>
+          <h3 class="evento__titulo">Karaoke con Banda en Vivo</h3>
+          <p class="evento__desc">Tú cantas, la banda te acompaña. Más de doscientas canciones en el repertorio.</p>
+          <div class="evento__tags"><span class="tag">Especial</span><span class="tag">Participativo</span><span class="tag">Show 21:00</span></div>
+        </div>
+        <p class="evento__precio">Desde<b>$150</b>por persona</p>
+        <div class="evento__acciones">
+          <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
+          <a class="btn btn--ghost btn--sm" href="#reservaciones">Mesa</a>
+        </div>
+      </article>
+    </div>
+    <!-- ▲▲ FIN DE LA CARTELERA ▲▲ -->
+
+    <p class="aviso-cartelera"><span aria-hidden="true">↳</span> La programación puede ajustarse por causas ajenas al bar. Cualquier cambio se avisa por WhatsApp a quienes ya apartaron boleto.</p>
+  </div>
+</section>
+
+<!-- ═══════════ CÓMO COMPRAR ═══════════ -->
+<section class="section section--paper" id="boletos">
+  <div class="wrap">
+    <div class="section__head rev">
+      <div>
+        <p class="kicker kicker--dark">Boletos</p>
+        <h2 class="display d-lg" style="margin-top:14px;">Comprar toma<br>un minuto</h2>
+      </div>
+      <p class="lead">Sin filas y sin app. Eliges el show, la zona y la cantidad; nosotros confirmamos tu lugar y te enviamos el pase de entrada al mismo chat.</p>
+    </div>
+
+    <div class="pasos rev">
+      <div class="paso">
+        <p class="paso__n">01</p>
+        <h3>Elige tu show</h3>
+        <p>Abre la cartelera y toca «Boletos» en la fecha que quieres. Puedes filtrar por música en vivo, comedia o noches especiales.</p>
+      </div>
+      <div class="paso">
+        <p class="paso__n">02</p>
+        <h3>Zona y cantidad</h3>
+        <p>General, barra o mesa VIP. El total se calcula al momento, sin cargos escondidos ni cargo por servicio.</p>
+      </div>
+      <div class="paso">
+        <p class="paso__n">03</p>
+        <h3>Confirma y paga</h3>
+        <p>Tu pedido llega armado a nuestro WhatsApp. Te respondemos con los datos de pago —transferencia o tarjeta— y tu lugar queda apartado.</p>
+      </div>
+    </div>
+
+    <p class="lead rev" style="margin-top:34px;font-size:15px;">¿Prefieres hablar? Llámanos al <a href="tel:+526643852385" style="border-bottom:1px solid currentColor;">664 385 2385</a> y te apartamos por teléfono.</p>
+  </div>
+</section>
+
+<!-- ═══════════ ZONAS Y PRECIOS ═══════════ -->
+<section class="section section--carbon" id="zonas">
+  <div class="wrap">
+    <div class="section__head rev">
+      <div>
+        <p class="kicker">Zonas</p>
+        <h2 class="display d-lg" style="margin-top:14px;">Dónde<br>te sientas</h2>
+      </div>
+      <p class="lead">Tres formas de vivir el show. Los precios varían según la fecha; los de abajo son la referencia de un viernes o sábado con banda en vivo.</p>
+    </div>
+
+    <div class="zonas">
+      <div class="zona rev">
+        <h3 class="zona__nombre">General</h3>
+        <p class="zona__precio">Desde $150 por persona</p>
+        <ul>
+          <li>Acceso de pie y bancos altos por orden de llegada</li>
+          <li>Vista abierta al escenario</li>
+          <li>Servicio de barra en tu lugar</li>
+          <li>Sin consumo mínimo</li>
+        </ul>
+        <a class="btn btn--ghost btn--sm" href="#cartelera">Ver fechas</a>
+      </div>
+
+      <div class="zona zona--destacada rev">
+        <h3 class="zona__nombre">Barra Preferente</h3>
+        <p class="zona__precio">Desde $250 por persona</p>
+        <ul>
+          <li>Lugar numerado en barra frente al escenario</li>
+          <li>Entrada anticipada 30 minutos antes</li>
+          <li>Primera bebida incluida</li>
+          <li>Atención directa del bartender</li>
+        </ul>
+        <a class="btn btn--dark btn--sm" href="#cartelera">Ver fechas</a>
+      </div>
+
+      <div class="zona rev">
+        <h3 class="zona__nombre">Mesa VIP</h3>
+        <p class="zona__precio">Desde $700 la mesa (4 personas)</p>
+        <ul>
+          <li>Mesa reservada a tu nombre toda la noche</li>
+          <li>Las mejores butacas del salón</li>
+          <li>Servicio de mesa y carta completa</li>
+          <li>Ideal para cumpleaños y grupos</li>
+        </ul>
+        <a class="btn btn--ghost btn--sm" href="#reservaciones">Reservar mesa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EL LUGAR ═══════════ -->
+<section class="section section--paper" id="lugar">
+  <div class="wrap">
+    <div class="lugar">
+      <div class="poster rev" role="img" aria-label="Cartel tipográfico de Entono Bar: música en vivo y comedia en Tijuana">
+        <p class="poster__pie">Tijuana, B.C. · Zona Río</p>
+        <p class="poster__grande">Aquí<br>se<br>escucha<br>bien</p>
+        <p class="poster__pie">Entono Bar · Est. Live Music &amp; Comedy</p>
+      </div>
+
+      <div class="rev">
+        <p class="kicker kicker--dark">El lugar</p>
+        <h2 class="display d-md" style="margin-top:14px;margin-bottom:18px;">Un escenario,<br>no un rincón</h2>
+        <p class="lead">Entono nació con una idea simple: en Tijuana faltaba un lugar donde la música en vivo y la comedia se oyeran de verdad. Por eso el salón está tratado acústicamente, el escenario está al centro y ninguna mesa queda a espaldas del show.</p>
+        <ul class="lista-check">
+          <li>Aforo de 180 personas con visibilidad total al escenario</li>
+          <li>Equipo de audio profesional y backline para bandas</li>
+          <li>Barra de coctelería de autor, cerveza artesanal y cocina de barra</li>
+          <li>Salón privatizable para eventos de empresa y cumpleaños</li>
+          <li>Estacionamiento cercano y acceso por Blvd. Sánchez Taboada</li>
+        </ul>
+        <div class="hero__actions">
+          <a class="btn btn--dark" href="#cartelera">Ver cartelera</a>
+          <a class="btn btn--outline-dark" href="https://wa.me/526643852385?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20privatizar%20Entono%20Bar%20para%20un%20evento." target="_blank" rel="noopener">Eventos privados</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ RESERVACIONES ═══════════ -->
+<section class="section" id="reservaciones">
+  <div class="wrap">
+    <div class="section__head rev">
+      <div>
+        <p class="kicker">Reservaciones</p>
+        <h2 class="display d-lg" style="margin-top:14px;">Aparta<br>tu mesa</h2>
+      </div>
+      <p class="lead">Para grupos, cumpleaños o simplemente para llegar y tener tu lugar listo. Llena los datos y confirmamos por WhatsApp en minutos.</p>
+    </div>
+
+    <div class="reserva">
+      <form class="form rev" id="formReserva" novalidate>
+        <div class="form__2">
+          <div class="campo">
+            <label for="rNombre">Nombre</label>
+            <input id="rNombre" name="nombre" type="text" placeholder="Tu nombre" required>
+          </div>
+          <div class="campo">
+            <label for="rTel">Teléfono</label>
+            <input id="rTel" name="tel" type="tel" placeholder="664 000 0000" required>
+          </div>
+        </div>
+        <div class="form__2">
+          <div class="campo">
+            <label for="rFecha">Fecha</label>
+            <input id="rFecha" name="fecha" type="date" required>
+          </div>
+          <div class="campo">
+            <label for="rHora">Hora de llegada</label>
+            <input id="rHora" name="hora" type="time" value="20:30" required>
+          </div>
+        </div>
+        <div class="form__2">
+          <div class="campo">
+            <label for="rPersonas">Personas</label>
+            <select id="rPersonas" name="personas">
+              <option>2</option><option>3</option><option selected>4</option><option>5</option>
+              <option>6</option><option>8</option><option>10</option><option>Más de 10</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="rOcasion">Ocasión</label>
+            <select id="rOcasion" name="ocasion">
+              <option>Solo salir</option>
+              <option>Cumpleaños</option>
+              <option>Aniversario</option>
+              <option>Evento de empresa</option>
+              <option>Despedida</option>
+            </select>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="rNotas">Comentarios (opcional)</label>
+          <textarea id="rNotas" name="notas" rows="3" placeholder="¿Vienen por algún show en particular? ¿Algo que debamos preparar?"></textarea>
+        </div>
+        <button class="btn btn--solid btn--full" type="submit">Enviar reservación por WhatsApp</button>
+        <p class="form__nota">Al enviar se abre WhatsApp con tu solicitud escrita. La mesa queda confirmada cuando te respondemos. Acceso solo para mayores de 18 años con identificación oficial.</p>
+      </form>
+
+      <div class="rev">
+        <dl class="datos">
+          <div class="dato">
+            <dt>Dirección</dt>
+            <dd>Blvrd Gral Rodolfo Sánchez Taboada 10521-D<br>Zona Urbana Rio Tijuana, 22010<br>Tijuana, Baja California<br>
+              <a href="https://maps.google.com/?q=Blvrd%20Gral%20Rodolfo%20S%C3%A1nchez%20Taboada%2010521-D%2C%20Zona%20Urbana%20Rio%20Tijuana%2C%2022010%20Tijuana%2C%20B.C." target="_blank" rel="noopener">Cómo llegar →</a>
+            </dd>
+          </div>
+          <div class="dato">
+            <dt>Reservaciones</dt>
+            <dd><a href="tel:+526643852385">664 385 2385</a> · <a href="https://wa.me/526643852385?text=Hola%2C%20quiero%20hacer%20una%20reservaci%C3%B3n%20en%20Entono%20Bar." target="_blank" rel="noopener">WhatsApp</a></dd>
+          </div>
+          <div class="dato">
+            <dt>Horarios</dt>
+            <dd>Jueves 19:00 – 01:00<br>Viernes y sábado 19:00 – 02:00<br>Domingo a miércoles: solo eventos privados</dd>
+          </div>
+          <div class="dato">
+            <dt>Antes de venir</dt>
+            <dd>Acceso a partir de 18 años con identificación. Las puertas abren una hora antes del show y los lugares se ocupan por orden de llegada dentro de cada zona.</dd>
+          </div>
+        </dl>
+        <div class="mapa" style="margin-top:16px;">
+          <iframe title="Mapa de Entono Bar en Zona Río, Tijuana" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Blvrd%20Gral%20Rodolfo%20S%C3%A1nchez%20Taboada%2010521-D%2C%20Zona%20Urbana%20Rio%20Tijuana%2C%2022010%20Tijuana%2C%20B.C.&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="section section--paper" id="faq">
+  <div class="wrap">
+    <div class="section__head rev">
+      <div>
+        <p class="kicker kicker--dark">Preguntas</p>
+        <h2 class="display d-lg" style="margin-top:14px;">Lo que<br>siempre nos<br>preguntan</h2>
+      </div>
+      <p class="lead">Y si falta algo, escríbenos por WhatsApp al 664 385 2385: contestamos todos los días de la semana.</p>
+    </div>
+
+    <div class="faq rev">
+      <div class="faq__item">
+        <button class="faq__btn" aria-expanded="false" aria-controls="f1" id="b1">¿Cómo compro mis boletos? <span aria-hidden="true">+</span></button>
+        <div class="faq__panel" id="f1" role="region" aria-labelledby="b1"><p>Toca «Boletos» en la fecha que te interesa dentro de la cartelera, elige zona y cantidad, y confirma. Tu pedido llega a nuestro WhatsApp ya armado; te respondemos con los datos de pago por transferencia o tarjeta y, en cuanto se cubre, tu lugar queda apartado a tu nombre.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" aria-expanded="false" aria-controls="f2" id="b2">¿Puedo pagar en la puerta? <span aria-hidden="true">+</span></button>
+        <div class="faq__panel" id="f2" role="region" aria-labelledby="b2"><p>Sí, cuando queda cupo. En shows con banda invitada o noches especiales solemos agotarnos con días de anticipación, así que apartar por adelantado es la única forma de asegurar lugar.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" aria-expanded="false" aria-controls="f3" id="b3">¿A qué hora llego? <span aria-hidden="true">+</span></button>
+        <div class="faq__panel" id="f3" role="region" aria-labelledby="b3"><p>Las puertas abren una hora antes del show. Dentro de cada zona los lugares se ocupan por orden de llegada, salvo barra preferente y mesas VIP, que van numeradas. Si compraste barra, puedes entrar 30 minutos antes que el resto.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" aria-expanded="false" aria-controls="f4" id="b4">¿Hay consumo mínimo? <span aria-hidden="true">+</span></button>
+        <div class="faq__panel" id="f4" role="region" aria-labelledby="b4"><p>En general y barra no hay consumo mínimo. Las mesas VIP se apartan con el costo de la mesa, que es independiente de lo que consumas esa noche.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" aria-expanded="false" aria-controls="f5" id="b5">¿Puedo cancelar o cambiar de fecha? <span aria-hidden="true">+</span></button>
+        <div class="faq__panel" id="f5" role="region" aria-labelledby="b5"><p>Puedes cambiar tu boleto a otra fecha de la cartelera avisando con al menos 48 horas de anticipación. Si el bar cancela o reprograma un show, te devolvemos el importe completo o lo pasamos a la nueva fecha, como prefieras.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" aria-expanded="false" aria-controls="f6" id="b6">¿Se puede privatizar el lugar? <span aria-hidden="true">+</span></button>
+        <div class="faq__panel" id="f6" role="region" aria-labelledby="b6"><p>Sí. De domingo a miércoles el salón se renta completo para eventos de empresa, cumpleaños y presentaciones, con opción de banda o comediante contratado. Escríbenos y armamos la cotización.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__btn" aria-expanded="false" aria-controls="f7" id="b7">¿Dónde están y dónde me estaciono? <span aria-hidden="true">+</span></button>
+        <div class="faq__panel" id="f7" role="region" aria-labelledby="b7"><p>Sobre Blvrd Gral Rodolfo Sánchez Taboada 10521-D, en Zona Urbana Río Tijuana, C.P. 22010. Hay estacionamiento público a unos pasos y la zona está bien comunicada para taxi o aplicación.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA FINAL ═══════════ -->
+<section class="section section--carbon">
+  <div class="wrap cta-final rev">
+    <p class="kicker">Nos vemos pronto</p>
+    <h2 class="display d-lg">El escenario<br>ya está listo</h2>
+    <p class="lead" style="text-align:center;">Elige tu noche, aparta tu lugar y llega. De lo demás nos encargamos nosotros.</p>
+    <div class="btns">
+      <a class="btn btn--solid" href="#cartelera">Ver cartelera</a>
+      <a class="btn btn--ghost" href="tel:+526643852385">Llamar 664 385 2385</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <p class="logo" style="margin-bottom:14px;">
+          <span class="logo__mark">ENTONO</span>
+          <span class="logo__sub">Live Music &amp; Comedy</span>
+        </p>
+        <p style="color:var(--fog);font-size:15px;max-width:38ch;">Show center de música en vivo y comedia en Zona Río, Tijuana. Cartelera semanal, barra de autor y un escenario pensado para escucharse.</p>
+      </div>
+      <div>
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="#cartelera">Cartelera</a></li>
+          <li><a href="#boletos">Cómo comprar boletos</a></li>
+          <li><a href="#zonas">Zonas y precios</a></li>
+          <li><a href="#lugar">El lugar</a></li>
+          <li><a href="#reservaciones">Reservaciones</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+526643852385">664 385 2385</a></li>
+          <li><a href="https://wa.me/526643852385" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li>Blvrd Gral Rodolfo Sánchez Taboada 10521-D, Zona Urbana Rio Tijuana, 22010 Tijuana, B.C.</li>
+          <li>Jue 19:00–01:00 · Vie y sáb 19:00–02:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>© <span id="anio">2026</span> Entono Bar · Tijuana, B.C. · Acceso solo mayores de 18 años.</span>
+      <span>Sitio desarrollado por <a href="https://magueystudio.mx" target="_blank" rel="noopener">Maguey Studio</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ MODAL DE BOLETOS ═══════════ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+  <div class="modal__box">
+    <div class="modal__head">
+      <div>
+        <p class="next__label">Boletos</p>
+        <h2 class="modal__titulo" id="modalTitulo">—</h2>
+      </div>
+      <button class="modal__cerrar" id="modalCerrar" aria-label="Cerrar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <p class="modal__meta" id="modalMeta">—</p>
+
+    <div class="opciones" id="opciones" role="radiogroup" aria-label="Elige tu zona">
+      <button class="opcion" role="radio" aria-checked="true" data-zona="General" data-tipo="persona">
+        <span><strong>General</strong><small>De pie y bancos altos</small></span>
+        <b data-precio-general>$0</b>
+      </button>
+      <button class="opcion" role="radio" aria-checked="false" data-zona="Barra preferente" data-tipo="persona">
+        <span><strong>Barra preferente</strong><small>Lugar numerado · 1ª bebida incluida</small></span>
+        <b data-precio-barra>$0</b>
+      </button>
+      <button class="opcion" role="radio" aria-checked="false" data-zona="Mesa VIP" data-tipo="mesa">
+        <span><strong>Mesa VIP</strong><small>Mesa para 4 personas · servicio en mesa</small></span>
+        <b data-precio-mesa>$0</b>
+      </button>
+    </div>
+
+    <div class="cantidad">
+      <span class="cantidad__label" id="cantidadLabel">Boletos</span>
+      <span class="cantidad__ctrl">
+        <button class="cantidad__btn" id="menos" aria-label="Quitar uno">−</button>
+        <span class="cantidad__valor" id="cantidadValor" aria-live="polite">2</span>
+        <button class="cantidad__btn" id="mas" aria-label="Agregar uno">+</button>
+      </span>
+    </div>
+
+    <div class="campo" style="margin-bottom:20px;">
+      <label for="mNombre">A nombre de</label>
+      <input id="mNombre" type="text" placeholder="Tu nombre completo">
+    </div>
+
+    <div class="total">
+      <span>Total estimado</span>
+      <b id="totalValor">$0</b>
+    </div>
+
+    <button class="btn btn--solid btn--full" id="modalEnviar">Continuar por WhatsApp</button>
+    <p class="modal__nota">Al continuar se abre WhatsApp con tu pedido escrito. Te respondemos con los datos de pago (transferencia o tarjeta) y tu lugar queda apartado en cuanto se confirma. Sin cargo por servicio.</p>
+  </div>
+</div>
+
+<!-- ═══════════ WHATSAPP FLOTANTE ═══════════ -->
+<a class="flotante" href="https://wa.me/526643852385?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20boletos%20en%20Entono%20Bar." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp al 664 385 2385">
+  <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+  <span>Reservar</span>
+</a>
+
+<!-- ═══════════ DATOS ESTRUCTURADOS ═══════════ -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "BarOrPub",
+    "NightClub"
+   ],
+   "@id": "https://magueystudio.mx/entonobar#lugar",
+   "name": "Entono Bar",
+   "alternateName": "Entono Bar — Live Music & Comedy",
+   "description": "Bar y show center de música en vivo y comedia en Zona Río, Tijuana. Cartelera semanal, barra de coctelería y venta de boletos por WhatsApp.",
+   "url": "https://magueystudio.mx/entonobar",
+   "telephone": "+526643852385",
+   "priceRange": "$$",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Blvrd Gral Rodolfo Sánchez Taboada 10521-D",
+    "addressLocality": "Tijuana",
+    "addressRegion": "BC",
+    "postalCode": "22010",
+    "addressCountry": "MX"
+   },
+   "areaServed": {
+    "@type": "City",
+    "name": "Tijuana"
+   },
+   "hasMap": "https://maps.google.com/?q=Blvrd+Gral+Rodolfo+S%C3%A1nchez+Taboada+10521-D,+Zona+Urbana+Rio+Tijuana,+22010+Tijuana,+B.C.",
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": "Thursday",
+     "opens": "19:00",
+     "closes": "01:00"
+    },
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Friday",
+      "Saturday"
+     ],
+     "opens": "19:00",
+     "closes": "02:00"
+    }
+   ],
+   "amenityFeature": [
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Música en vivo",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Comedia en vivo",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Salón privatizable para eventos",
+     "value": true
+    }
+   ],
+   "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+     "@type": "EntryPoint",
+     "urlTemplate": "https://wa.me/526643852385",
+     "inLanguage": "es-MX",
+     "actionPlatform": [
+      "http://schema.org/DesktopWebPlatform",
+      "http://schema.org/MobileWebPlatform"
+     ]
+    },
+    "result": {
+     "@type": "Reservation",
+     "name": "Reservación de mesa en Entono Bar"
+    }
+   }
+  },
+  {
+   "@type": "ComedyEvent",
+   "name": "Noche de Stand Up · 4 Comediantes",
+   "startDate": "2026-09-04T21:00:00-07:00",
+   "endDate": "2026-09-04T23:30:00-07:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "organizer": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "image": "https://magueystudio.mx/logo.png",
+   "description": "Noche de Stand Up · 4 Comediantes en Entono Bar, Zona Río, Tijuana. Boletos por WhatsApp al 664 385 2385.",
+   "typicalAgeRange": "18-",
+   "offers": {
+    "@type": "Offer",
+    "name": "Acceso general",
+    "price": "250",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://magueystudio.mx/entonobar#cartelera",
+    "validFrom": "2026-08-01T00:00:00-07:00"
+   }
+  },
+  {
+   "@type": "MusicEvent",
+   "name": "Soul & Funk en Vivo",
+   "startDate": "2026-09-05T22:00:00-07:00",
+   "endDate": "2026-09-06T01:00:00-07:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "organizer": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "image": "https://magueystudio.mx/logo.png",
+   "description": "Soul & Funk en Vivo en Entono Bar, Zona Río, Tijuana. Boletos por WhatsApp al 664 385 2385.",
+   "typicalAgeRange": "18-",
+   "offers": {
+    "@type": "Offer",
+    "name": "Acceso general",
+    "price": "220",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/LimitedAvailability",
+    "url": "https://magueystudio.mx/entonobar#cartelera",
+    "validFrom": "2026-08-01T00:00:00-07:00"
+   }
+  },
+  {
+   "@type": "ComedyEvent",
+   "name": "Micrófono Abierto",
+   "startDate": "2026-09-10T20:30:00-07:00",
+   "endDate": "2026-09-10T23:00:00-07:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "organizer": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "image": "https://magueystudio.mx/logo.png",
+   "description": "Micrófono Abierto en Entono Bar, Zona Río, Tijuana. Boletos por WhatsApp al 664 385 2385.",
+   "typicalAgeRange": "18-",
+   "offers": {
+    "@type": "Offer",
+    "name": "Acceso general",
+    "price": "100",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://magueystudio.mx/entonobar#cartelera",
+    "validFrom": "2026-08-01T00:00:00-07:00"
+   }
+  },
+  {
+   "@type": "MusicEvent",
+   "name": "Rock en Tu Idioma · Tributo",
+   "startDate": "2026-09-11T22:00:00-07:00",
+   "endDate": "2026-09-12T01:00:00-07:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "organizer": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "image": "https://magueystudio.mx/logo.png",
+   "description": "Rock en Tu Idioma · Tributo en Entono Bar, Zona Río, Tijuana. Boletos por WhatsApp al 664 385 2385.",
+   "typicalAgeRange": "18-",
+   "offers": {
+    "@type": "Offer",
+    "name": "Acceso general",
+    "price": "250",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://magueystudio.mx/entonobar#cartelera",
+    "validFrom": "2026-08-01T00:00:00-07:00"
+   }
+  },
+  {
+   "@type": "MusicEvent",
+   "name": "Noche Mexicana · Mariachi y Banda",
+   "startDate": "2026-09-15T21:00:00-07:00",
+   "endDate": "2026-09-16T01:00:00-07:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "organizer": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "image": "https://magueystudio.mx/logo.png",
+   "description": "Noche Mexicana · Mariachi y Banda en Entono Bar, Zona Río, Tijuana. Boletos por WhatsApp al 664 385 2385.",
+   "typicalAgeRange": "18-",
+   "offers": {
+    "@type": "Offer",
+    "name": "Acceso general",
+    "price": "350",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/SoldOut",
+    "url": "https://magueystudio.mx/entonobar#cartelera",
+    "validFrom": "2026-08-01T00:00:00-07:00"
+   }
+  },
+  {
+   "@type": "MusicEvent",
+   "name": "Jazz Trío + Bossa Nova",
+   "startDate": "2026-09-18T21:00:00-07:00",
+   "endDate": "2026-09-18T23:30:00-07:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "organizer": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "image": "https://magueystudio.mx/logo.png",
+   "description": "Jazz Trío + Bossa Nova en Entono Bar, Zona Río, Tijuana. Boletos por WhatsApp al 664 385 2385.",
+   "typicalAgeRange": "18-",
+   "offers": {
+    "@type": "Offer",
+    "name": "Acceso general",
+    "price": "220",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://magueystudio.mx/entonobar#cartelera",
+    "validFrom": "2026-08-01T00:00:00-07:00"
+   }
+  },
+  {
+   "@type": "ComedyEvent",
+   "name": "Comedia de Improvisación",
+   "startDate": "2026-09-19T21:30:00-07:00",
+   "endDate": "2026-09-19T23:30:00-07:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "organizer": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "image": "https://magueystudio.mx/logo.png",
+   "description": "Comedia de Improvisación en Entono Bar, Zona Río, Tijuana. Boletos por WhatsApp al 664 385 2385.",
+   "typicalAgeRange": "18-",
+   "offers": {
+    "@type": "Offer",
+    "name": "Acceso general",
+    "price": "280",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://magueystudio.mx/entonobar#cartelera",
+    "validFrom": "2026-08-01T00:00:00-07:00"
+   }
+  },
+  {
+   "@type": "MusicEvent",
+   "name": "Cumbia y Salsa en Vivo",
+   "startDate": "2026-09-25T22:00:00-07:00",
+   "endDate": "2026-09-26T01:00:00-07:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "organizer": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "image": "https://magueystudio.mx/logo.png",
+   "description": "Cumbia y Salsa en Vivo en Entono Bar, Zona Río, Tijuana. Boletos por WhatsApp al 664 385 2385.",
+   "typicalAgeRange": "18-",
+   "offers": {
+    "@type": "Offer",
+    "name": "Acceso general",
+    "price": "250",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://magueystudio.mx/entonobar#cartelera",
+    "validFrom": "2026-08-01T00:00:00-07:00"
+   }
+  },
+  {
+   "@type": "MusicEvent",
+   "name": "Karaoke con Banda en Vivo",
+   "startDate": "2026-09-26T21:00:00-07:00",
+   "endDate": "2026-09-27T00:00:00-07:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "organizer": {
+    "@id": "https://magueystudio.mx/entonobar#lugar"
+   },
+   "image": "https://magueystudio.mx/logo.png",
+   "description": "Karaoke con Banda en Vivo en Entono Bar, Zona Río, Tijuana. Boletos por WhatsApp al 664 385 2385.",
+   "typicalAgeRange": "18-",
+   "offers": {
+    "@type": "Offer",
+    "name": "Acceso general",
+    "price": "150",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://magueystudio.mx/entonobar#cartelera",
+    "validFrom": "2026-08-01T00:00:00-07:00"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Cómo compro mis boletos en Entono Bar?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Elige la fecha en la cartelera, selecciona zona y cantidad, y confirma. Tu pedido llega armado al WhatsApp del bar; ahí se envían los datos de pago por transferencia o tarjeta y el lugar queda apartado a tu nombre."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Puedo pagar en la puerta?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí, cuando queda cupo. En shows con banda invitada o noches especiales suele agotarse con días de anticipación, por lo que apartar por adelantado es la única forma de asegurar lugar."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿A qué hora abren las puertas?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Una hora antes del show. Dentro de cada zona los lugares se ocupan por orden de llegada, salvo barra preferente y mesas VIP, que van numeradas."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Hay consumo mínimo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "En general y barra no hay consumo mínimo. Las mesas VIP se apartan con el costo de la mesa, independiente del consumo de la noche."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Puedo cancelar o cambiar de fecha?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "El boleto se puede cambiar a otra fecha de la cartelera avisando con al menos 48 horas de anticipación. Si el bar cancela o reprograma un show, se devuelve el importe completo o se pasa a la nueva fecha."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Se puede privatizar el lugar para un evento?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí. De domingo a miércoles el salón se renta completo para eventos de empresa, cumpleaños y presentaciones, con opción de banda o comediante contratado."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Dónde está Entono Bar?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "En Blvrd Gral Rodolfo Sánchez Taboada 10521-D, Zona Urbana Rio Tijuana, C.P. 22010, Tijuana, Baja California."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+
+<script>
+(function(){
+  'use strict';
+  var TEL = '526643852385';
+  var $  = function(s,c){ return (c||document).querySelector(s); };
+  var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+  var pesos = function(n){ return '$' + n.toLocaleString('es-MX'); };
+  var wa = function(msg){ window.open('https://wa.me/' + TEL + '?text=' + encodeURIComponent(msg), '_blank', 'noopener'); };
+
+  /* ─── Año del footer ─── */
+  $('#anio').textContent = new Date().getFullYear();
+
+  /* ─── Header al hacer scroll ─── */
+  var header = $('#header');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  }, {passive:true});
+
+  /* ─── Menú móvil ─── */
+  var menu = $('#menu'), burger = $('#burger');
+  function menuToggle(abrir){
+    menu.classList.toggle('open', abrir);
+    burger.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+    document.body.classList.toggle('bloqueado', abrir);
+  }
+  burger.addEventListener('click', function(){ menuToggle(!menu.classList.contains('open')); });
+  $('#menuClose').addEventListener('click', function(){ menuToggle(false); });
+  $$('#menu a').forEach(function(a){ a.addEventListener('click', function(){ menuToggle(false); }); });
+
+  /* ─── Reveal al entrar en pantalla ─── */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    $$('.rev').forEach(function(el){ io.observe(el); });
+  } else {
+    $$('.rev').forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  /* ─── Filtros de la cartelera ─── */
+  var eventos = $$('.evento');
+  $$('.filtro').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.dataset.filtro;
+      $$('.filtro').forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      eventos.forEach(function(ev){
+        ev.classList.toggle('oculto', f !== 'todos' && ev.dataset.cat !== f);
+      });
+    });
+  });
+
+  /* ─── Próximo show + cuenta regresiva ─── */
+  var ahora = Date.now();
+  var proximo = eventos.filter(function(ev){
+    return new Date(ev.dataset.fecha).getTime() > ahora && ev.dataset.estado !== 'agotado';
+  })[0];
+
+  if(proximo){
+    $('#proximoTitulo').textContent = proximo.dataset.titulo;
+    $('#proximoMeta').textContent = proximo.dataset.cuando + ' · desde ' + pesos(+proximo.dataset.general);
+    $('#proximoCta').addEventListener('click', function(e){
+      e.preventDefault();
+      abrirModal(proximo);
+    });
+
+    var destino = new Date(proximo.dataset.fecha).getTime();
+    var dd = $('#cDias'), hh = $('#cHoras'), mm = $('#cMin'), ss = $('#cSeg');
+    var pad = function(n){ return n < 10 ? '0' + n : '' + n; };
+    (function tic(){
+      var falta = destino - Date.now();
+      if(falta <= 0){ falta = 0; }
+      var s = Math.floor(falta / 1000);
+      dd.textContent = pad(Math.floor(s / 86400));
+      hh.textContent = pad(Math.floor(s % 86400 / 3600));
+      mm.textContent = pad(Math.floor(s % 3600 / 60));
+      ss.textContent = pad(s % 60);
+      if(falta > 0){ setTimeout(tic, 1000); }
+    })();
+  } else {
+    $('#proximoTitulo').textContent = 'Cartelera en preparación';
+    $('#proximoMeta').textContent = 'Escríbenos al 664 385 2385 para conocer las próximas fechas.';
+    $('#cuenta').style.display = 'none';
+    $('#proximoCta').textContent = 'Ver fechas';
+  }
+
+  /* ─── Modal de boletos ─── */
+  var modal = $('#modal'), evActual = null, zona = null, cant = 2, ultimoFoco = null;
+
+  function precioZona(){
+    if(!evActual || !zona) return 0;
+    var mapa = { 'General': 'general', 'Barra preferente': 'barra', 'Mesa VIP': 'mesa' };
+    return +evActual.dataset[mapa[zona.dataset.zona]];
+  }
+  function esMesa(){ return zona && zona.dataset.tipo === 'mesa'; }
+
+  function pintarTotal(){
+    $('#cantidadValor').textContent = cant;
+    $('#cantidadLabel').textContent = esMesa() ? (cant === 1 ? 'Mesa' : 'Mesas') : 'Boletos';
+    $('#totalValor').textContent = pesos(precioZona() * cant);
+  }
+
+  function elegirZona(btn){
+    zona = btn;
+    $$('.opcion').forEach(function(o){ o.setAttribute('aria-checked', o === btn ? 'true' : 'false'); });
+    var tope = esMesa() ? 1 : 2;
+    if(esMesa() && cant > 6) cant = 6;
+    if(cant < tope) cant = tope;
+    pintarTotal();
+  }
+
+  function abrirModal(card){
+    evActual = card;
+    ultimoFoco = document.activeElement;
+    $('#modalTitulo').textContent = card.dataset.titulo;
+    $('#modalMeta').textContent = card.dataset.cuando + ' · Entono Bar, Zona Río';
+    $('[data-precio-general]').textContent = pesos(+card.dataset.general) + ' / persona';
+    $('[data-precio-barra]').textContent   = pesos(+card.dataset.barra) + ' / persona';
+    $('[data-precio-mesa]').textContent     = pesos(+card.dataset.mesa) + ' / mesa';
+    cant = 2;
+    elegirZona($$('.opcion')[0]);
+    modal.classList.add('open');
+    document.body.classList.add('bloqueado');
+    $('#modalCerrar').focus();
+  }
+
+  function cerrarModal(){
+    modal.classList.remove('open');
+    document.body.classList.remove('bloqueado');
+    if(ultimoFoco) ultimoFoco.focus();
+  }
+
+  $$('.js-boletos').forEach(function(btn){
+    btn.addEventListener('click', function(){ abrirModal(btn.closest('.evento')); });
+  });
+  $$('.opcion').forEach(function(o){ o.addEventListener('click', function(){ elegirZona(o); }); });
+  $('#mas').addEventListener('click', function(){
+    var max = esMesa() ? 6 : 20;
+    if(cant < max){ cant++; pintarTotal(); }
+  });
+  $('#menos').addEventListener('click', function(){
+    var min = esMesa() ? 1 : 2;
+    if(cant > min){ cant--; pintarTotal(); }
+  });
+  $('#modalCerrar').addEventListener('click', cerrarModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) cerrarModal(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+    if(modal.classList.contains('open')) cerrarModal();
+    if(menu.classList.contains('open')) menuToggle(false);
+  });
+
+  $('#modalEnviar').addEventListener('click', function(){
+    var nombre = $('#mNombre').value.trim();
+    if(!nombre){
+      $('#mNombre').style.borderColor = '#fff';
+      $('#mNombre').setAttribute('aria-invalid','true');
+      $('#mNombre').focus();
+      return;
+    }
+    $('#mNombre').removeAttribute('aria-invalid');
+    var unidad = esMesa() ? (cant === 1 ? 'mesa' : 'mesas') : (cant === 1 ? 'boleto' : 'boletos');
+    wa(
+      'Hola Entono Bar, quiero apartar boletos.\n\n' +
+      'Show: ' + evActual.dataset.titulo + '\n' +
+      'Fecha: ' + evActual.dataset.cuando + '\n' +
+      'Zona: ' + zona.dataset.zona + '\n' +
+      'Cantidad: ' + cant + ' ' + unidad + '\n' +
+      'Total estimado: ' + pesos(precioZona() * cant) + ' MXN\n' +
+      'A nombre de: ' + nombre + '\n\n' +
+      '¿Me confirman disponibilidad y datos de pago?'
+    );
+    cerrarModal();
+  });
+
+  /* ─── Formulario de reservación ─── */
+  var fechaInput = $('#rFecha');
+  var hoy = new Date();
+  fechaInput.min = hoy.toISOString().slice(0,10);
+
+  $('#formReserva').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target;
+    if(!f.nombre.value.trim() || !f.tel.value.trim() || !f.fecha.value){
+      (!f.nombre.value.trim() ? f.nombre : !f.tel.value.trim() ? f.tel : f.fecha).focus();
+      return;
+    }
+    var notas = f.notas.value.trim();
+    wa(
+      'Hola Entono Bar, quiero reservar una mesa.\n\n' +
+      'Nombre: ' + f.nombre.value.trim() + '\n' +
+      'Teléfono: ' + f.tel.value.trim() + '\n' +
+      'Fecha: ' + f.fecha.value + '\n' +
+      'Hora de llegada: ' + f.hora.value + '\n' +
+      'Personas: ' + f.personas.value + '\n' +
+      'Ocasión: ' + f.ocasion.value +
+      (notas ? '\nComentarios: ' + notas : '') + '\n\n' +
+      '¿Me confirman disponibilidad?'
+    );
+  });
+
+  /* ─── Acordeón de preguntas ─── */
+  $$('.faq__btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var abierto = btn.getAttribute('aria-expanded') === 'true';
+      $$('.faq__btn').forEach(function(b){
+        b.setAttribute('aria-expanded','false');
+        $('#' + b.getAttribute('aria-controls')).style.maxHeight = null;
+      });
+      if(!abierto){
+        btn.setAttribute('aria-expanded','true');
+        var panel = $('#' + btn.getAttribute('aria-controls'));
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
