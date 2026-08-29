@@ -74,7 +74,7 @@ body::after{
 
 /* ═══════════════ TIPOGRAFÍA ═══════════════ */
 .display{font-family:var(--display);font-weight:400;line-height:.86;letter-spacing:.01em;text-transform:uppercase;}
-.d-xl{font-size:clamp(50px,10vw,120px);}
+.d-hero{font-size:clamp(34px,5vw,68px);}
 .d-lg{font-size:clamp(40px,7vw,88px);}
 .d-md{font-size:clamp(30px,4.4vw,54px);}
 .d-sm{font-size:clamp(24px,3vw,34px);}
@@ -182,7 +182,7 @@ body::after{
 .badge--live{border-color:var(--paper);color:var(--paper);display:inline-flex;align-items:center;gap:8px;}
 .badge--live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--paper);animation:pulse 1.9s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(.7);}}
-.hero h1{margin-bottom:22px;}
+.hero h1{margin-bottom:22px;text-wrap:balance;}
 .hero h1 em{font-style:normal;display:block;-webkit-text-stroke:1.5px var(--paper);color:transparent;}
 .hero__grid{display:grid;gap:38px;align-items:end;}
 @media(min-width:900px){.hero__grid{grid-template-columns:1.35fr .95fr;gap:54px;}}
@@ -197,16 +197,6 @@ body::after{
 .count div{border:1px solid var(--line);padding:11px 4px;text-align:center;}
 .count b{display:block;font-family:var(--display);font-size:30px;line-height:1;}
 .count small{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);}
-
-/* Franja de datos */
-.stats{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(2,1fr);}
-@media(min-width:820px){.stats{grid-template-columns:repeat(4,1fr);}}
-.stats div{padding:26px clamp(18px,3vw,30px);border-bottom:1px solid var(--line);}
-@media(min-width:820px){.stats div{border-bottom:0;}}
-.stats div + div{border-left:1px solid var(--line);}
-@media(max-width:819px){.stats div:nth-child(odd){border-left:0;}}
-.stats b{display:block;font-family:var(--display);font-size:clamp(28px,4vw,40px);line-height:1;margin-bottom:6px;}
-.stats span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);}
 
 /* ═══════════════ SECCIONES ═══════════════ */
 .section{padding-block:clamp(64px,9vw,112px);}
@@ -259,32 +249,6 @@ body::after{
   margin-top:26px;display:flex;gap:10px;align-items:flex-start;
 }
 
-/* ═══════════════ CÓMO COMPRAR ═══════════════ */
-.pasos{display:grid;gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);}
-@media(min-width:800px){.pasos{grid-template-columns:repeat(3,1fr);}}
-.paso{background:var(--paper);padding:32px clamp(20px,3vw,34px);}
-.paso__n{font-family:var(--display);font-size:52px;line-height:1;color:var(--ink);opacity:.16;margin-bottom:10px;}
-.paso h3{font-family:var(--display);font-size:26px;text-transform:uppercase;line-height:1;margin-bottom:10px;}
-.paso p{font-size:14.5px;color:#4a4a4a;}
-
-/* ═══════════════ ZONAS ═══════════════ */
-.zonas{display:grid;gap:16px;}
-@media(min-width:820px){.zonas{grid-template-columns:repeat(3,1fr);}}
-.zona{
-  border:1px solid var(--line);padding:30px 26px;display:flex;flex-direction:column;
-  transition:border-color .35s var(--ease),transform .35s var(--ease);
-}
-.zona:hover{border-color:var(--paper);transform:translateY(-4px);}
-.zona--destacada{background:var(--paper);color:var(--ink);border-color:var(--paper);}
-.zona__nombre{font-family:var(--display);font-size:32px;text-transform:uppercase;line-height:1;margin-bottom:6px;}
-.zona__precio{font-family:var(--mono);font-size:13px;letter-spacing:.08em;margin-bottom:20px;color:var(--ash);}
-.zona--destacada .zona__precio{color:#4a4a4a;}
-.zona ul{list-style:none;display:grid;gap:10px;font-size:14.5px;margin-bottom:26px;}
-.zona li{display:flex;gap:10px;align-items:flex-start;color:var(--fog);}
-.zona--destacada li{color:#3a3a3a;}
-.zona li::before{content:"—";flex:none;opacity:.55;}
-.zona .btn{margin-top:auto;}
-
 /* ═══════════════ EL LUGAR ═══════════════ */
 .lugar{display:grid;gap:34px;align-items:center;}
 @media(min-width:900px){.lugar{grid-template-columns:1fr 1fr;gap:60px;}}
@@ -308,19 +272,10 @@ body::after{
 /* ═══════════════ RESERVA ═══════════════ */
 .reserva{display:grid;gap:38px;}
 @media(min-width:960px){.reserva{grid-template-columns:.9fr 1.1fr;gap:60px;}}
-.form{display:grid;gap:16px;}
-@media(min-width:640px){.form__2{grid-template-columns:1fr 1fr;display:grid;gap:16px;}}
-.campo{display:grid;gap:7px;}
-.campo label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ash);}
-.campo input,.campo select,.campo textarea{
-  background:transparent;border:1px solid var(--line-strong);color:var(--paper);
-  padding:14px 15px;font-size:15px;width:100%;
-  transition:border-color .3s var(--ease);
-}
-.campo input:focus,.campo select:focus,.campo textarea:focus{border-color:var(--paper);outline:none;}
-.campo select option{background:var(--ink);color:var(--paper);}
-.campo input::placeholder,.campo textarea::placeholder{color:#5a5a5a;}
-.form__nota{font-family:var(--mono);font-size:11px;color:var(--ash);line-height:1.7;letter-spacing:.03em;}
+.directo{display:grid;gap:12px;align-content:start;align-self:start;border:1px solid var(--line);padding:clamp(26px,4vw,38px);}
+.directo__titulo{font-family:var(--display);font-size:clamp(30px,4vw,42px);line-height:1;text-transform:uppercase;}
+.directo__texto{color:var(--fog);font-size:15.5px;margin-bottom:12px;}
+.directo__nota{font-family:var(--mono);font-size:11px;color:var(--ash);line-height:1.7;letter-spacing:.03em;margin-top:8px;}
 
 .datos{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);}
 .dato{background:var(--ink);padding:22px 24px;}
@@ -438,8 +393,6 @@ body.bloqueado{overflow:hidden;}
     </a>
     <nav class="nav" aria-label="Navegación principal">
       <a href="#cartelera">Cartelera</a>
-      <a href="#boletos">Boletos</a>
-      <a href="#zonas">Zonas</a>
       <a href="#lugar">El lugar</a>
       <a href="#reservaciones">Reservaciones</a>
     </nav>
@@ -456,8 +409,6 @@ body.bloqueado{overflow:hidden;}
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
   <a href="#cartelera">Cartelera</a>
-  <a href="#boletos">Boletos</a>
-  <a href="#zonas">Zonas y precios</a>
   <a href="#lugar">El lugar</a>
   <a href="#reservaciones">Reservaciones</a>
   <a href="#faq">Preguntas</a>
@@ -472,13 +423,12 @@ body.bloqueado{overflow:hidden;}
     <div class="hero__top">
       <span class="badge badge--live">En vivo cada semana</span>
       <span class="badge">Zona Río · Tijuana, B.C.</span>
-      <span class="badge">Mayores de 18 años</span>
     </div>
 
     <div class="hero__grid">
       <div>
-        <h1 class="display d-xl">Música<br>en vivo y<em>comedia</em></h1>
-        <p class="lead">Entono Bar es el show center de Zona Río: bandas, stand up e improvisación en un escenario hecho para escucharse bien. Consulta la cartelera, elige tu zona y aparta tus boletos en menos de un minuto.</p>
+        <h1 class="display d-hero">Los mejores shows en vivo están en<em>Entono Bar</em></h1>
+        <p class="lead">Disfruta música y comedia en vivo con extraordinarios artistas locales y nacionales, además de la banda de Entono en vivo todos los fines de semana. Cada noche una experiencia que no te puedes perder.</p>
         <div class="hero__actions">
           <a class="btn btn--solid" href="#cartelera">Ver cartelera</a>
           <a class="btn btn--ghost" href="#reservaciones">Reservar mesa</a>
@@ -506,13 +456,6 @@ body.bloqueado{overflow:hidden;}
       <span>Live Music</span><span>Stand Up Comedy</span><span>Open Mic</span><span>Tributos</span><span>Improvisación</span><span>Zona Río Tijuana</span>
     </div>
   </div>
-
-  <div class="wrap"><div class="stats">
-    <div><b>3</b><span>Shows por semana</span></div>
-    <div><b>180</b><span>Personas de aforo</span></div>
-    <div><b>21:00</b><span>Hora típica de show</span></div>
-    <div><b>$150</b><span>Boletos desde</span></div>
-  </div></div>
 </section>
 
 <!-- ═══════════ CARTELERA ═══════════ -->
@@ -523,7 +466,6 @@ body.bloqueado{overflow:hidden;}
         <p class="kicker">Cartelera</p>
         <h2 class="display d-lg" style="margin-top:14px;">Lo que viene<br>en el escenario</h2>
       </div>
-      <p class="lead">Programación de septiembre. Las puertas abren una hora antes de cada show y los boletos se apartan por WhatsApp con confirmación inmediata.</p>
     </div>
 
     <div class="filtros rev" role="group" aria-label="Filtrar cartelera por tipo de show">
@@ -717,90 +659,6 @@ body.bloqueado{overflow:hidden;}
   </div>
 </section>
 
-<!-- ═══════════ CÓMO COMPRAR ═══════════ -->
-<section class="section section--paper" id="boletos">
-  <div class="wrap">
-    <div class="section__head rev">
-      <div>
-        <p class="kicker kicker--dark">Boletos</p>
-        <h2 class="display d-lg" style="margin-top:14px;">Comprar toma<br>un minuto</h2>
-      </div>
-      <p class="lead">Sin filas y sin app. Eliges el show, la zona y la cantidad; nosotros confirmamos tu lugar y te enviamos el pase de entrada al mismo chat.</p>
-    </div>
-
-    <div class="pasos rev">
-      <div class="paso">
-        <p class="paso__n">01</p>
-        <h3>Elige tu show</h3>
-        <p>Abre la cartelera y toca «Boletos» en la fecha que quieres. Puedes filtrar por música en vivo, comedia o noches especiales.</p>
-      </div>
-      <div class="paso">
-        <p class="paso__n">02</p>
-        <h3>Zona y cantidad</h3>
-        <p>General, barra o mesa VIP. El total se calcula al momento, sin cargos escondidos ni cargo por servicio.</p>
-      </div>
-      <div class="paso">
-        <p class="paso__n">03</p>
-        <h3>Confirma y paga</h3>
-        <p>Tu pedido llega armado a nuestro WhatsApp. Te respondemos con los datos de pago —transferencia o tarjeta— y tu lugar queda apartado.</p>
-      </div>
-    </div>
-
-    <p class="lead rev" style="margin-top:34px;font-size:15px;">¿Prefieres hablar? Llámanos al <a href="tel:+526643852385" style="border-bottom:1px solid currentColor;">664 385 2385</a> y te apartamos por teléfono.</p>
-  </div>
-</section>
-
-<!-- ═══════════ ZONAS Y PRECIOS ═══════════ -->
-<section class="section section--carbon" id="zonas">
-  <div class="wrap">
-    <div class="section__head rev">
-      <div>
-        <p class="kicker">Zonas</p>
-        <h2 class="display d-lg" style="margin-top:14px;">Dónde<br>te sientas</h2>
-      </div>
-      <p class="lead">Tres formas de vivir el show. Los precios varían según la fecha; los de abajo son la referencia de un viernes o sábado con banda en vivo.</p>
-    </div>
-
-    <div class="zonas">
-      <div class="zona rev">
-        <h3 class="zona__nombre">General</h3>
-        <p class="zona__precio">Desde $150 por persona</p>
-        <ul>
-          <li>Acceso de pie y bancos altos por orden de llegada</li>
-          <li>Vista abierta al escenario</li>
-          <li>Servicio de barra en tu lugar</li>
-          <li>Sin consumo mínimo</li>
-        </ul>
-        <a class="btn btn--ghost btn--sm" href="#cartelera">Ver fechas</a>
-      </div>
-
-      <div class="zona zona--destacada rev">
-        <h3 class="zona__nombre">Barra Preferente</h3>
-        <p class="zona__precio">Desde $250 por persona</p>
-        <ul>
-          <li>Lugar numerado en barra frente al escenario</li>
-          <li>Entrada anticipada 30 minutos antes</li>
-          <li>Primera bebida incluida</li>
-          <li>Atención directa del bartender</li>
-        </ul>
-        <a class="btn btn--dark btn--sm" href="#cartelera">Ver fechas</a>
-      </div>
-
-      <div class="zona rev">
-        <h3 class="zona__nombre">Mesa VIP</h3>
-        <p class="zona__precio">Desde $700 la mesa (4 personas)</p>
-        <ul>
-          <li>Mesa reservada a tu nombre toda la noche</li>
-          <li>Las mejores butacas del salón</li>
-          <li>Servicio de mesa y carta completa</li>
-          <li>Ideal para cumpleaños y grupos</li>
-        </ul>
-        <a class="btn btn--ghost btn--sm" href="#reservaciones">Reservar mesa</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════ EL LUGAR ═══════════ -->
 <section class="section section--paper" id="lugar">
   <div class="wrap">
@@ -839,57 +697,18 @@ body.bloqueado{overflow:hidden;}
         <p class="kicker">Reservaciones</p>
         <h2 class="display d-lg" style="margin-top:14px;">Aparta<br>tu mesa</h2>
       </div>
-      <p class="lead">Para grupos, cumpleaños o simplemente para llegar y tener tu lugar listo. Llena los datos y confirmamos por WhatsApp en minutos.</p>
+      <p class="lead">Para grupos, cumpleaños o simplemente para llegar y tener tu lugar listo. Escríbenos por WhatsApp y te confirmamos en minutos.</p>
     </div>
 
     <div class="reserva">
-      <form class="form rev" id="formReserva" novalidate>
-        <div class="form__2">
-          <div class="campo">
-            <label for="rNombre">Nombre</label>
-            <input id="rNombre" name="nombre" type="text" placeholder="Tu nombre" required>
-          </div>
-          <div class="campo">
-            <label for="rTel">Teléfono</label>
-            <input id="rTel" name="tel" type="tel" placeholder="664 000 0000" required>
-          </div>
-        </div>
-        <div class="form__2">
-          <div class="campo">
-            <label for="rFecha">Fecha</label>
-            <input id="rFecha" name="fecha" type="date" required>
-          </div>
-          <div class="campo">
-            <label for="rHora">Hora de llegada</label>
-            <input id="rHora" name="hora" type="time" value="20:30" required>
-          </div>
-        </div>
-        <div class="form__2">
-          <div class="campo">
-            <label for="rPersonas">Personas</label>
-            <select id="rPersonas" name="personas">
-              <option>2</option><option>3</option><option selected>4</option><option>5</option>
-              <option>6</option><option>8</option><option>10</option><option>Más de 10</option>
-            </select>
-          </div>
-          <div class="campo">
-            <label for="rOcasion">Ocasión</label>
-            <select id="rOcasion" name="ocasion">
-              <option>Solo salir</option>
-              <option>Cumpleaños</option>
-              <option>Aniversario</option>
-              <option>Evento de empresa</option>
-              <option>Despedida</option>
-            </select>
-          </div>
-        </div>
-        <div class="campo">
-          <label for="rNotas">Comentarios (opcional)</label>
-          <textarea id="rNotas" name="notas" rows="3" placeholder="¿Vienen por algún show en particular? ¿Algo que debamos preparar?"></textarea>
-        </div>
-        <button class="btn btn--solid btn--full" type="submit">Enviar reservación por WhatsApp</button>
-        <p class="form__nota">Al enviar se abre WhatsApp con tu solicitud escrita. La mesa queda confirmada cuando te respondemos. Acceso solo para mayores de 18 años con identificación oficial.</p>
-      </form>
+      <div class="rev directo">
+        <p class="directo__titulo">Escríbenos y listo</p>
+        <p class="directo__texto">Dinos la fecha, la hora y cuántos vienen. Te confirmamos la mesa por WhatsApp en minutos, sin llenar formularios.</p>
+        <a class="btn btn--solid btn--full" href="https://wa.me/526643852385?text=Hola%2C%20quiero%20reservar%20una%20mesa%20en%20Entono%20Bar.%20%C2%BFMe%20confirman%20disponibilidad%3F" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+        <a class="btn btn--ghost btn--full" href="tel:+526643852385">Llamar 664 385 2385</a>
+        <a class="btn btn--ghost btn--full" href="https://wa.me/526643852385?text=Hola%2C%20quiero%20comprar%20boletos%20para%20un%20show%20en%20Entono%20Bar." target="_blank" rel="noopener">Comprar boletos por WhatsApp</a>
+        <p class="directo__nota">Contestamos todos los días. Acceso solo para mayores de 18 años con identificación oficial.</p>
+      </div>
 
       <div class="rev">
         <dl class="datos">
@@ -994,8 +813,6 @@ body.bloqueado{overflow:hidden;}
         <h4>Sitio</h4>
         <ul>
           <li><a href="#cartelera">Cartelera</a></li>
-          <li><a href="#boletos">Cómo comprar boletos</a></li>
-          <li><a href="#zonas">Zonas y precios</a></li>
           <li><a href="#lugar">El lugar</a></li>
           <li><a href="#reservaciones">Reservaciones</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
@@ -1054,11 +871,6 @@ body.bloqueado{overflow:hidden;}
         <span class="cantidad__valor" id="cantidadValor" aria-live="polite">2</span>
         <button class="cantidad__btn" id="mas" aria-label="Agregar uno">+</button>
       </span>
-    </div>
-
-    <div class="campo" style="margin-bottom:20px;">
-      <label for="mNombre">A nombre de</label>
-      <input id="mNombre" type="text" placeholder="Tu nombre completo">
     </div>
 
     <div class="total">
@@ -1611,14 +1423,6 @@ body.bloqueado{overflow:hidden;}
   });
 
   $('#modalEnviar').addEventListener('click', function(){
-    var nombre = $('#mNombre').value.trim();
-    if(!nombre){
-      $('#mNombre').style.borderColor = '#fff';
-      $('#mNombre').setAttribute('aria-invalid','true');
-      $('#mNombre').focus();
-      return;
-    }
-    $('#mNombre').removeAttribute('aria-invalid');
     var unidad = esMesa() ? (cant === 1 ? 'mesa' : 'mesas') : (cant === 1 ? 'boleto' : 'boletos');
     wa(
       'Hola Entono Bar, quiero apartar boletos.\n\n' +
@@ -1626,37 +1430,10 @@ body.bloqueado{overflow:hidden;}
       'Fecha: ' + evActual.dataset.cuando + '\n' +
       'Zona: ' + zona.dataset.zona + '\n' +
       'Cantidad: ' + cant + ' ' + unidad + '\n' +
-      'Total estimado: ' + pesos(precioZona() * cant) + ' MXN\n' +
-      'A nombre de: ' + nombre + '\n\n' +
+      'Total estimado: ' + pesos(precioZona() * cant) + ' MXN\n\n' +
       '¿Me confirman disponibilidad y datos de pago?'
     );
     cerrarModal();
-  });
-
-  /* ─── Formulario de reservación ─── */
-  var fechaInput = $('#rFecha');
-  var hoy = new Date();
-  fechaInput.min = hoy.toISOString().slice(0,10);
-
-  $('#formReserva').addEventListener('submit', function(e){
-    e.preventDefault();
-    var f = e.target;
-    if(!f.nombre.value.trim() || !f.tel.value.trim() || !f.fecha.value){
-      (!f.nombre.value.trim() ? f.nombre : !f.tel.value.trim() ? f.tel : f.fecha).focus();
-      return;
-    }
-    var notas = f.notas.value.trim();
-    wa(
-      'Hola Entono Bar, quiero reservar una mesa.\n\n' +
-      'Nombre: ' + f.nombre.value.trim() + '\n' +
-      'Teléfono: ' + f.tel.value.trim() + '\n' +
-      'Fecha: ' + f.fecha.value + '\n' +
-      'Hora de llegada: ' + f.hora.value + '\n' +
-      'Personas: ' + f.personas.value + '\n' +
-      'Ocasión: ' + f.ocasion.value +
-      (notas ? '\nComentarios: ' + notas : '') + '\n\n' +
-      '¿Me confirman disponibilidad?'
-    );
   });
 
   /* ─── Acordeón de preguntas ─── */
