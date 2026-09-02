@@ -74,7 +74,7 @@ body::after{
 
 /* ═══════════════ TIPOGRAFÍA ═══════════════ */
 .display{font-family:var(--display);font-weight:400;line-height:.86;letter-spacing:.01em;text-transform:uppercase;}
-.d-hero{font-size:clamp(34px,5vw,68px);}
+.d-hero{font-size:clamp(40px,8.4vw,116px);}
 .d-lg{font-size:clamp(40px,7vw,88px);}
 .d-md{font-size:clamp(30px,4.4vw,54px);}
 .d-sm{font-size:clamp(24px,3vw,34px);}
@@ -184,19 +184,8 @@ body::after{
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(.7);}}
 .hero h1{margin-bottom:22px;text-wrap:balance;}
 .hero h1 em{font-style:normal;display:block;-webkit-text-stroke:1.5px var(--paper);color:transparent;}
-.hero__grid{display:grid;gap:38px;align-items:end;}
-@media(min-width:900px){.hero__grid{grid-template-columns:1.35fr .95fr;gap:54px;}}
 .hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
-
-/* Tarjeta próximo evento */
-.next{border:1px solid var(--line-strong);background:linear-gradient(180deg,rgba(255,255,255,.055),transparent);padding:26px 24px;}
-.next__label{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ash);margin-bottom:14px;}
-.next__title{font-family:var(--display);font-size:clamp(30px,4vw,42px);line-height:.95;text-transform:uppercase;margin-bottom:8px;}
-.next__meta{font-family:var(--mono);font-size:12px;color:var(--fog);letter-spacing:.06em;margin-bottom:20px;}
-.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px;}
-.count div{border:1px solid var(--line);padding:11px 4px;text-align:center;}
-.count b{display:block;font-family:var(--display);font-size:30px;line-height:1;}
-.count small{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);}
+.hero__texto .lead{max-width:64ch;}
 
 /* ═══════════════ SECCIONES ═══════════════ */
 .section{padding-block:clamp(64px,9vw,112px);}
@@ -224,13 +213,34 @@ body::after{
   padding:26px 0;border-bottom:1px solid var(--line);
   transition:opacity .35s var(--ease);
 }
-@media(min-width:860px){
-  .evento{grid-template-columns:120px 1fr auto auto;gap:30px;padding:30px 0;}
+@media(min-width:900px){
+  .evento{grid-template-columns:158px 112px 1fr auto auto;gap:26px;padding:30px 0;align-items:center;}
 }
+/* Espacio para el flyer del show */
+.evento__flyer{
+  position:relative;overflow:hidden;
+  width:100%;max-width:190px;aspect-ratio:3/4;
+  border:1px solid var(--line-strong);background:var(--carbon);
+  display:flex;align-items:center;justify-content:center;
+}
+@media(min-width:900px){.evento__flyer{max-width:none;}}
+.evento__flyer::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(135deg,transparent 0 12px,rgba(255,255,255,.055) 12px 13px);
+}
+.evento__flyer__ph{
+  position:relative;font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ash);text-align:center;line-height:1.9;
+}
+.evento__flyer img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;}
 .evento.oculto{display:none;}
 .evento:hover .evento__titulo{opacity:.62;}
 .evento__fecha{display:flex;align-items:baseline;gap:10px;}
-@media(min-width:860px){.evento__fecha{display:block;}}
+@media(min-width:900px){
+  .evento__fecha{display:block;}
+  .evento__dia,.evento__mes{display:block;}
+  .evento__mes{white-space:nowrap;}
+}
 .evento__dia{font-family:var(--display);font-size:clamp(42px,5vw,58px);line-height:.82;}
 .evento__mes{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);}
 .evento__titulo{font-family:var(--display);font-size:clamp(26px,3.4vw,40px);line-height:.98;text-transform:uppercase;transition:opacity .3s var(--ease);}
@@ -335,6 +345,7 @@ body::after{
 @media(prefers-reduced-motion:reduce){.modal__box{animation:none;}}
 .modal__head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:8px;}
 .modal__cerrar{width:38px;height:38px;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;flex:none;}
+.modal__label{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ash);margin-bottom:10px;}
 .modal__titulo{font-family:var(--display);font-size:clamp(26px,4vw,34px);line-height:1;text-transform:uppercase;}
 .modal__meta{font-family:var(--mono);font-size:11.5px;color:var(--ash);letter-spacing:.08em;margin-bottom:24px;}
 .opciones{display:grid;gap:9px;margin-bottom:22px;}
@@ -425,28 +436,13 @@ body.bloqueado{overflow:hidden;}
       <span class="badge">Zona Río · Tijuana, B.C.</span>
     </div>
 
-    <div class="hero__grid">
-      <div>
-        <h1 class="display d-hero">Los mejores shows en vivo están en<em>Entono Bar</em></h1>
-        <p class="lead">Disfruta música y comedia en vivo con extraordinarios artistas locales y nacionales, además de la banda de Entono en vivo todos los fines de semana. Cada noche una experiencia que no te puedes perder.</p>
-        <div class="hero__actions">
-          <a class="btn btn--solid" href="#cartelera">Ver cartelera</a>
-          <a class="btn btn--ghost" href="#reservaciones">Reservar mesa</a>
-        </div>
+    <div class="hero__texto">
+      <h1 class="display d-hero">Los mejores shows en vivo están en<em>Entono Bar</em></h1>
+      <p class="lead">Disfruta música y comedia en vivo con extraordinarios artistas locales y nacionales, además de la banda de Entono en vivo todos los fines de semana. Cada noche una experiencia que no te puedes perder.</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#cartelera">Ver cartelera</a>
+        <a class="btn btn--ghost" href="#reservaciones">Reservar mesa</a>
       </div>
-
-      <aside class="next" id="proximo">
-        <p class="next__label">Próximo show</p>
-        <h2 class="next__title" id="proximoTitulo">—</h2>
-        <p class="next__meta" id="proximoMeta">—</p>
-        <div class="count" id="cuenta" aria-live="off">
-          <div><b id="cDias">00</b><small>Días</small></div>
-          <div><b id="cHoras">00</b><small>Horas</small></div>
-          <div><b id="cMin">00</b><small>Min</small></div>
-          <div><b id="cSeg">00</b><small>Seg</small></div>
-        </div>
-        <a class="btn btn--solid btn--full btn--sm" href="#cartelera" id="proximoCta">Apartar boletos</a>
-      </aside>
     </div>
   </div>
 
@@ -480,12 +476,20 @@ body.bloqueado{overflow:hidden;}
          copie un bloque y actualice data-fecha (ISO con zona -07:00), data-cat
          (musica | comedia | especial), los precios data-general / data-barra /
          data-mesa y, si se agota, ponga data-estado="agotado".
+         El flyer: suba la imagen a public/entonobar/flyers/ y descomente la
+         etiqueta <img> del bloque .evento__flyer; la imagen cubre sola el
+         marcador de posición. Formato recomendado 3:4 (por ejemplo 900x1200).
          Recuerde reflejar el cambio también en el bloque JSON-LD del final. -->
     <div class="cartelera" id="listaEventos">
 
       <article class="evento rev" data-cat="comedia" data-fecha="2026-09-04T21:00:00-07:00"
                data-titulo="Noche de Stand Up · 4 Comediantes" data-cuando="Viernes 4 de septiembre · 21:00 h"
                data-general="250" data-barra="350" data-mesa="1400" data-estado="">
+        <div class="evento__flyer">
+          <!-- Flyer: sustituya este comentario por la imagen y se acomoda sola.
+               <img src="/entonobar/flyers/2026-09-04.jpg" alt="Flyer de Noche de Stand Up · 4 Comediantes — Viernes 4 de septiembre · 21:00 h"> -->
+          <span class="evento__flyer__ph">Flyer<br>2026-09-04</span>
+        </div>
         <div class="evento__fecha">
           <span class="evento__dia display">04</span>
           <span class="evento__mes">Sep · Vie</span>
@@ -505,6 +509,11 @@ body.bloqueado{overflow:hidden;}
       <article class="evento rev" data-cat="musica" data-fecha="2026-09-05T22:00:00-07:00"
                data-titulo="Soul &amp; Funk en Vivo" data-cuando="Sábado 5 de septiembre · 22:00 h"
                data-general="220" data-barra="320" data-mesa="1300" data-estado="">
+        <div class="evento__flyer">
+          <!-- Flyer: sustituya este comentario por la imagen y se acomoda sola.
+               <img src="/entonobar/flyers/2026-09-05.jpg" alt="Flyer de Soul &amp; Funk en Vivo — Sábado 5 de septiembre · 22:00 h"> -->
+          <span class="evento__flyer__ph">Flyer<br>2026-09-05</span>
+        </div>
         <div class="evento__fecha">
           <span class="evento__dia display">05</span>
           <span class="evento__mes">Sep · Sáb</span>
@@ -524,6 +533,11 @@ body.bloqueado{overflow:hidden;}
       <article class="evento rev" data-cat="comedia" data-fecha="2026-09-10T20:30:00-07:00"
                data-titulo="Micrófono Abierto" data-cuando="Jueves 10 de septiembre · 20:30 h"
                data-general="100" data-barra="150" data-mesa="700" data-estado="">
+        <div class="evento__flyer">
+          <!-- Flyer: sustituya este comentario por la imagen y se acomoda sola.
+               <img src="/entonobar/flyers/2026-09-10.jpg" alt="Flyer de Micrófono Abierto — Jueves 10 de septiembre · 20:30 h"> -->
+          <span class="evento__flyer__ph">Flyer<br>2026-09-10</span>
+        </div>
         <div class="evento__fecha">
           <span class="evento__dia display">10</span>
           <span class="evento__mes">Sep · Jue</span>
@@ -543,6 +557,11 @@ body.bloqueado{overflow:hidden;}
       <article class="evento rev" data-cat="musica" data-fecha="2026-09-11T22:00:00-07:00"
                data-titulo="Rock en Tu Idioma · Tributo" data-cuando="Viernes 11 de septiembre · 22:00 h"
                data-general="250" data-barra="350" data-mesa="1500" data-estado="">
+        <div class="evento__flyer">
+          <!-- Flyer: sustituya este comentario por la imagen y se acomoda sola.
+               <img src="/entonobar/flyers/2026-09-11.jpg" alt="Flyer de Rock en Tu Idioma · Tributo — Viernes 11 de septiembre · 22:00 h"> -->
+          <span class="evento__flyer__ph">Flyer<br>2026-09-11</span>
+        </div>
         <div class="evento__fecha">
           <span class="evento__dia display">11</span>
           <span class="evento__mes">Sep · Vie</span>
@@ -562,6 +581,11 @@ body.bloqueado{overflow:hidden;}
       <article class="evento rev" data-cat="especial" data-fecha="2026-09-15T21:00:00-07:00"
                data-titulo="Noche Mexicana · Mariachi y Banda" data-cuando="Martes 15 de septiembre · 21:00 h"
                data-general="350" data-barra="450" data-mesa="1900" data-estado="agotado">
+        <div class="evento__flyer">
+          <!-- Flyer: sustituya este comentario por la imagen y se acomoda sola.
+               <img src="/entonobar/flyers/2026-09-15.jpg" alt="Flyer de Noche Mexicana · Mariachi y Banda — Martes 15 de septiembre · 21:00 h"> -->
+          <span class="evento__flyer__ph">Flyer<br>2026-09-15</span>
+        </div>
         <div class="evento__fecha">
           <span class="evento__dia display">15</span>
           <span class="evento__mes">Sep · Mar</span>
@@ -580,6 +604,11 @@ body.bloqueado{overflow:hidden;}
       <article class="evento rev" data-cat="musica" data-fecha="2026-09-18T21:00:00-07:00"
                data-titulo="Jazz Trío + Bossa Nova" data-cuando="Viernes 18 de septiembre · 21:00 h"
                data-general="220" data-barra="320" data-mesa="1300" data-estado="">
+        <div class="evento__flyer">
+          <!-- Flyer: sustituya este comentario por la imagen y se acomoda sola.
+               <img src="/entonobar/flyers/2026-09-18.jpg" alt="Flyer de Jazz Trío + Bossa Nova — Viernes 18 de septiembre · 21:00 h"> -->
+          <span class="evento__flyer__ph">Flyer<br>2026-09-18</span>
+        </div>
         <div class="evento__fecha">
           <span class="evento__dia display">18</span>
           <span class="evento__mes">Sep · Vie</span>
@@ -599,6 +628,11 @@ body.bloqueado{overflow:hidden;}
       <article class="evento rev" data-cat="comedia" data-fecha="2026-09-19T21:30:00-07:00"
                data-titulo="Comedia de Improvisación" data-cuando="Sábado 19 de septiembre · 21:30 h"
                data-general="280" data-barra="380" data-mesa="1600" data-estado="">
+        <div class="evento__flyer">
+          <!-- Flyer: sustituya este comentario por la imagen y se acomoda sola.
+               <img src="/entonobar/flyers/2026-09-19.jpg" alt="Flyer de Comedia de Improvisación — Sábado 19 de septiembre · 21:30 h"> -->
+          <span class="evento__flyer__ph">Flyer<br>2026-09-19</span>
+        </div>
         <div class="evento__fecha">
           <span class="evento__dia display">19</span>
           <span class="evento__mes">Sep · Sáb</span>
@@ -618,6 +652,11 @@ body.bloqueado{overflow:hidden;}
       <article class="evento rev" data-cat="musica" data-fecha="2026-09-25T22:00:00-07:00"
                data-titulo="Cumbia y Salsa en Vivo" data-cuando="Viernes 25 de septiembre · 22:00 h"
                data-general="250" data-barra="350" data-mesa="1500" data-estado="">
+        <div class="evento__flyer">
+          <!-- Flyer: sustituya este comentario por la imagen y se acomoda sola.
+               <img src="/entonobar/flyers/2026-09-25.jpg" alt="Flyer de Cumbia y Salsa en Vivo — Viernes 25 de septiembre · 22:00 h"> -->
+          <span class="evento__flyer__ph">Flyer<br>2026-09-25</span>
+        </div>
         <div class="evento__fecha">
           <span class="evento__dia display">25</span>
           <span class="evento__mes">Sep · Vie</span>
@@ -637,6 +676,11 @@ body.bloqueado{overflow:hidden;}
       <article class="evento rev" data-cat="especial" data-fecha="2026-09-26T21:00:00-07:00"
                data-titulo="Karaoke con Banda en Vivo" data-cuando="Sábado 26 de septiembre · 21:00 h"
                data-general="150" data-barra="250" data-mesa="1000" data-estado="">
+        <div class="evento__flyer">
+          <!-- Flyer: sustituya este comentario por la imagen y se acomoda sola.
+               <img src="/entonobar/flyers/2026-09-26.jpg" alt="Flyer de Karaoke con Banda en Vivo — Sábado 26 de septiembre · 21:00 h"> -->
+          <span class="evento__flyer__ph">Flyer<br>2026-09-26</span>
+        </div>
         <div class="evento__fecha">
           <span class="evento__dia display">26</span>
           <span class="evento__mes">Sep · Sáb</span>
@@ -840,7 +884,7 @@ body.bloqueado{overflow:hidden;}
   <div class="modal__box">
     <div class="modal__head">
       <div>
-        <p class="next__label">Boletos</p>
+        <p class="modal__label">Boletos</p>
         <h2 class="modal__titulo" id="modalTitulo">—</h2>
       </div>
       <button class="modal__cerrar" id="modalCerrar" aria-label="Cerrar">
@@ -1321,41 +1365,6 @@ body.bloqueado{overflow:hidden;}
       });
     });
   });
-
-  /* ─── Próximo show + cuenta regresiva ─── */
-  var ahora = Date.now();
-  var proximo = eventos.filter(function(ev){
-    return new Date(ev.dataset.fecha).getTime() > ahora && ev.dataset.estado !== 'agotado';
-  })[0];
-
-  if(proximo){
-    $('#proximoTitulo').textContent = proximo.dataset.titulo;
-    $('#proximoMeta').textContent = proximo.dataset.cuando + ' · desde ' + pesos(+proximo.dataset.general);
-    $('#proximoCta').addEventListener('click', function(e){
-      e.preventDefault();
-      abrirModal(proximo);
-    });
-
-    var destino = new Date(proximo.dataset.fecha).getTime();
-    var dd = $('#cDias'), hh = $('#cHoras'), mm = $('#cMin'), ss = $('#cSeg');
-    var pad = function(n){ return n < 10 ? '0' + n : '' + n; };
-    (function tic(){
-      var falta = destino - Date.now();
-      if(falta <= 0){ falta = 0; }
-      var s = Math.floor(falta / 1000);
-      dd.textContent = pad(Math.floor(s / 86400));
-      hh.textContent = pad(Math.floor(s % 86400 / 3600));
-      mm.textContent = pad(Math.floor(s % 3600 / 60));
-      ss.textContent = pad(s % 60);
-      if(falta > 0){ setTimeout(tic, 1000); }
-    })();
-  } else {
-    $('#proximoTitulo').textContent = 'Cartelera en preparación';
-    $('#proximoMeta').textContent = 'Escríbenos al 664 385 2385 para conocer las próximas fechas.';
-    $('#cuenta').style.display = 'none';
-    $('#proximoCta').textContent = 'Ver fechas';
-  }
-
   /* ─── Modal de boletos ─── */
   var modal = $('#modal'), evActual = null, zona = null, cant = 2, ultimoFoco = null;
 

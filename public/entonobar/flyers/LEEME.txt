@@ -1,0 +1,7 @@
+Flyers de la cartelera de Entono Bar.
+
+Suba aqui la imagen de cada show en formato 3:4 (por ejemplo 900x1200 px, .jpg o .webp)
+y nombrela con la fecha del evento: 2026-09-04.jpg
+
+Despues, en public/entonobar/index.html, descomente la etiqueta <img> del bloque
+.evento__flyer de ese evento. La imagen cubre sola el marcador de posicion.
