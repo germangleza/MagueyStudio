@@ -245,6 +245,30 @@ body::after{
 .evento__mes{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);}
 .evento__titulo{font-family:var(--display);font-size:clamp(26px,3.4vw,40px);line-height:.98;text-transform:uppercase;transition:opacity .3s var(--ease);}
 .evento__hora{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fog);}
+
+/* Móvil y tablet: la cartelera se arma en dos columnas de tarjetas */
+@media(max-width:899px){
+  .cartelera{
+    display:grid;grid-template-columns:repeat(2,1fr);
+    gap:34px clamp(12px,3vw,20px);
+    border-top:0;padding-top:4px;
+  }
+  .evento{
+    display:flex;flex-direction:column;align-items:flex-start;gap:11px;
+    padding:0;border-bottom:0;
+  }
+  .evento__flyer{max-width:none;}
+  .evento__fecha{flex-wrap:wrap;gap:4px 9px;}
+  .evento__dia{font-size:30px;}
+  .evento__mes,.evento__hora{font-size:9.5px;letter-spacing:.12em;}
+  .evento__titulo{font-size:clamp(16px,4.4vw,20px);line-height:1.04;}
+  .evento__precio{font-size:10.5px;line-height:1.5;}
+  .evento__precio b{font-size:22px;}
+  .evento__acciones{display:grid;grid-template-columns:1fr;gap:7px;width:100%;margin-top:auto;}
+  .evento__acciones .btn,.evento__acciones .btn--sm{
+    width:100%;font-size:10px;letter-spacing:.1em;padding:11px 6px;
+  }
+}
 .evento__precio{font-family:var(--mono);font-size:12px;color:var(--fog);letter-spacing:.05em;white-space:nowrap;}
 .evento__precio b{display:block;font-family:var(--display);font-size:28px;letter-spacing:.02em;color:var(--paper);line-height:1.1;}
 .evento__acciones{display:flex;gap:9px;flex-wrap:wrap;}
