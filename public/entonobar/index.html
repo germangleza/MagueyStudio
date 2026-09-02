@@ -238,19 +238,13 @@ body::after{
 .evento__fecha{display:flex;align-items:baseline;gap:10px;}
 @media(min-width:900px){
   .evento__fecha{display:block;}
-  .evento__dia,.evento__mes{display:block;}
+  .evento__dia,.evento__mes,.evento__hora{display:block;}
   .evento__mes{white-space:nowrap;}
 }
 .evento__dia{font-family:var(--display);font-size:clamp(42px,5vw,58px);line-height:.82;}
 .evento__mes{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);}
 .evento__titulo{font-family:var(--display);font-size:clamp(26px,3.4vw,40px);line-height:.98;text-transform:uppercase;transition:opacity .3s var(--ease);}
-.evento__desc{font-size:14px;color:var(--ash);margin-top:7px;max-width:52ch;}
-.evento__tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
-.tag{
-  font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.16em;
-  border:1px solid var(--line-strong);padding:5px 9px;color:var(--fog);
-}
-.tag--alerta{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+.evento__hora{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fog);}
 .evento__precio{font-family:var(--mono);font-size:12px;color:var(--fog);letter-spacing:.05em;white-space:nowrap;}
 .evento__precio b{display:block;font-family:var(--display);font-size:28px;letter-spacing:.02em;color:var(--paper);line-height:1.1;}
 .evento__acciones{display:flex;gap:9px;flex-wrap:wrap;}
@@ -493,12 +487,9 @@ body.bloqueado{overflow:hidden;}
         <div class="evento__fecha">
           <span class="evento__dia display">04</span>
           <span class="evento__mes">Sep · Vie</span>
+          <span class="evento__hora">21:00 h</span>
         </div>
-        <div>
-          <h3 class="evento__titulo">Noche de Stand Up · 4 Comediantes</h3>
-          <p class="evento__desc">Cuatro comediantes del circuito de Tijuana y San Diego, una hora y media de show corrido y presentador en vivo.</p>
-          <div class="evento__tags"><span class="tag">Comedia</span><span class="tag">+18</span><span class="tag">Show 21:00</span></div>
-        </div>
+        <h3 class="evento__titulo">Noche de Stand Up · 4 Comediantes</h3>
         <p class="evento__precio">Desde<b>$250</b>por persona</p>
         <div class="evento__acciones">
           <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
@@ -517,12 +508,9 @@ body.bloqueado{overflow:hidden;}
         <div class="evento__fecha">
           <span class="evento__dia display">05</span>
           <span class="evento__mes">Sep · Sáb</span>
+          <span class="evento__hora">22:00 h</span>
         </div>
-        <div>
-          <h3 class="evento__titulo">Soul &amp; Funk en Vivo</h3>
-          <p class="evento__desc">Banda de seis integrantes con repertorio de soul, funk y R&amp;B clásico. Dos sets con descanso.</p>
-          <div class="evento__tags"><span class="tag">Música en vivo</span><span class="tag">Banda</span><span class="tag tag--alerta">Últimos lugares</span></div>
-        </div>
+        <h3 class="evento__titulo">Soul &amp; Funk en Vivo</h3>
         <p class="evento__precio">Desde<b>$220</b>por persona</p>
         <div class="evento__acciones">
           <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
@@ -541,12 +529,9 @@ body.bloqueado{overflow:hidden;}
         <div class="evento__fecha">
           <span class="evento__dia display">10</span>
           <span class="evento__mes">Sep · Jue</span>
+          <span class="evento__hora">20:30 h</span>
         </div>
-        <div>
-          <h3 class="evento__titulo">Micrófono Abierto</h3>
-          <p class="evento__desc">Diez minutos por comediante. Si quieres subir al escenario, escríbenos y te apartamos turno.</p>
-          <div class="evento__tags"><span class="tag">Comedia</span><span class="tag">Open mic</span><span class="tag">Show 20:30</span></div>
-        </div>
+        <h3 class="evento__titulo">Micrófono Abierto</h3>
         <p class="evento__precio">Desde<b>$100</b>por persona</p>
         <div class="evento__acciones">
           <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
@@ -565,12 +550,9 @@ body.bloqueado{overflow:hidden;}
         <div class="evento__fecha">
           <span class="evento__dia display">11</span>
           <span class="evento__mes">Sep · Vie</span>
+          <span class="evento__hora">22:00 h</span>
         </div>
-        <div>
-          <h3 class="evento__titulo">Rock en Tu Idioma · Tributo</h3>
-          <p class="evento__desc">Los himnos del rock en español de los ochenta y noventa, tocados completos y sin pista.</p>
-          <div class="evento__tags"><span class="tag">Música en vivo</span><span class="tag">Tributo</span><span class="tag">Show 22:00</span></div>
-        </div>
+        <h3 class="evento__titulo">Rock en Tu Idioma · Tributo</h3>
         <p class="evento__precio">Desde<b>$250</b>por persona</p>
         <div class="evento__acciones">
           <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
@@ -589,12 +571,9 @@ body.bloqueado{overflow:hidden;}
         <div class="evento__fecha">
           <span class="evento__dia display">15</span>
           <span class="evento__mes">Sep · Mar</span>
+          <span class="evento__hora">21:00 h</span>
         </div>
-        <div>
-          <h3 class="evento__titulo">Noche Mexicana · Mariachi y Banda</h3>
-          <p class="evento__desc">Mariachi en vivo, banda y el grito a las 23:00. Cena y barra disponibles toda la noche.</p>
-          <div class="evento__tags"><span class="tag">Especial</span><span class="tag">Fiestas patrias</span><span class="tag tag--alerta">Agotado</span></div>
-        </div>
+        <h3 class="evento__titulo">Noche Mexicana · Mariachi y Banda</h3>
         <p class="evento__precio">Desde<b>$350</b>por persona</p>
         <div class="evento__acciones">
           <span class="btn btn--ghost btn--sm" aria-disabled="true">Agotado</span>
@@ -612,12 +591,9 @@ body.bloqueado{overflow:hidden;}
         <div class="evento__fecha">
           <span class="evento__dia display">18</span>
           <span class="evento__mes">Sep · Vie</span>
+          <span class="evento__hora">21:00 h</span>
         </div>
-        <div>
-          <h3 class="evento__titulo">Jazz Trío + Bossa Nova</h3>
-          <p class="evento__desc">Formato íntimo de piano, contrabajo y batería. Volumen bajo, ideal para escuchar y platicar.</p>
-          <div class="evento__tags"><span class="tag">Música en vivo</span><span class="tag">Jazz</span><span class="tag">Show 21:00</span></div>
-        </div>
+        <h3 class="evento__titulo">Jazz Trío + Bossa Nova</h3>
         <p class="evento__precio">Desde<b>$220</b>por persona</p>
         <div class="evento__acciones">
           <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
@@ -636,12 +612,9 @@ body.bloqueado{overflow:hidden;}
         <div class="evento__fecha">
           <span class="evento__dia display">19</span>
           <span class="evento__mes">Sep · Sáb</span>
+          <span class="evento__hora">21:30 h</span>
         </div>
-        <div>
-          <h3 class="evento__titulo">Comedia de Improvisación</h3>
-          <p class="evento__desc">Dos equipos, sugerencias del público y nada escrito. Cada función es distinta.</p>
-          <div class="evento__tags"><span class="tag">Comedia</span><span class="tag">Improvisación</span><span class="tag">+18</span></div>
-        </div>
+        <h3 class="evento__titulo">Comedia de Improvisación</h3>
         <p class="evento__precio">Desde<b>$280</b>por persona</p>
         <div class="evento__acciones">
           <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
@@ -660,12 +633,9 @@ body.bloqueado{overflow:hidden;}
         <div class="evento__fecha">
           <span class="evento__dia display">25</span>
           <span class="evento__mes">Sep · Vie</span>
+          <span class="evento__hora">22:00 h</span>
         </div>
-        <div>
-          <h3 class="evento__titulo">Cumbia y Salsa en Vivo</h3>
-          <p class="evento__desc">Orquesta de nueve músicos y pista abierta desde el primer set.</p>
-          <div class="evento__tags"><span class="tag">Música en vivo</span><span class="tag">Baile</span><span class="tag">Show 22:00</span></div>
-        </div>
+        <h3 class="evento__titulo">Cumbia y Salsa en Vivo</h3>
         <p class="evento__precio">Desde<b>$250</b>por persona</p>
         <div class="evento__acciones">
           <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
@@ -684,12 +654,9 @@ body.bloqueado{overflow:hidden;}
         <div class="evento__fecha">
           <span class="evento__dia display">26</span>
           <span class="evento__mes">Sep · Sáb</span>
+          <span class="evento__hora">21:00 h</span>
         </div>
-        <div>
-          <h3 class="evento__titulo">Karaoke con Banda en Vivo</h3>
-          <p class="evento__desc">Tú cantas, la banda te acompaña. Más de doscientas canciones en el repertorio.</p>
-          <div class="evento__tags"><span class="tag">Especial</span><span class="tag">Participativo</span><span class="tag">Show 21:00</span></div>
-        </div>
+        <h3 class="evento__titulo">Karaoke con Banda en Vivo</h3>
         <p class="evento__precio">Desde<b>$150</b>por persona</p>
         <div class="evento__acciones">
           <button class="btn btn--solid btn--sm js-boletos">Boletos</button>
