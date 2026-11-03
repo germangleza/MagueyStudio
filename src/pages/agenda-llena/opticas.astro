@@ -1,0 +1,983 @@
+---
+// ─────────────────────────────────────────────────────────────
+// AGENDA LLENA PARA ÓPTICAS — landing de una sola conversión.
+//
+// Ruta: /agenda-llena/opticas (la define la ubicación de este archivo).
+// Para moverla a otra ruta o a un dominio propio, mueve el archivo y
+// ajusta SITE_URL / PAGE_PATH (canonical, OG y schema salen de ahí).
+//
+// Variables de configuración (se leen en build desde .env o desde las
+// variables de entorno del proyecto en Vercel; si no existen, se usa
+// el valor por defecto de la derecha):
+//   WHATSAPP_NUMBER          número con lada país, sin "+" ni espacios
+//   META_PIXEL_ID            vacío = no se carga el Pixel
+//   GA4_ID                   vacío = no se carga GA4 (formato G-XXXXXXX)
+//   AVISO_DE_PRIVACIDAD_URL  link del aviso de privacidad
+//   SHOW_CASE_JARMAR         "false" oculta la sección del caso Jarmar
+// ─────────────────────────────────────────────────────────────
+const env = import.meta.env;
+
+const WHATSAPP_NUMBER = (env.WHATSAPP_NUMBER || '5215560663926').replace(/\D/g, '');
+const META_PIXEL_ID = (env.META_PIXEL_ID || '').trim();
+const GA4_ID = (env.GA4_ID || '').trim();
+const AVISO_DE_PRIVACIDAD_URL = env.AVISO_DE_PRIVACIDAD_URL || '/aviso-de-privacidad';
+const SHOW_CASE_JARMAR = String(env.SHOW_CASE_JARMAR ?? 'true').toLowerCase() !== 'false';
+
+const SITE_URL = 'https://magueystudio.mx';
+const PAGE_PATH = '/agenda-llena/opticas';
+const canonical = SITE_URL + PAGE_PATH;
+
+const title = 'Agenda Llena para Ópticas | Pacientes nuevos todos los meses';
+const description =
+  'Instalamos en 14 días un sistema que atrae pacientes a tu óptica, les contesta por WhatsApp en segundos y los agenda solo.';
+// [OG: 1200x630] — reemplazar por la imagen final (ej. /agenda-llena/og-opticas.jpg).
+const ogImage = SITE_URL + '/logo.png';
+
+const waBase = `https://wa.me/${WHATSAPP_NUMBER}`;
+const year = new Date().getFullYear();
+
+const faqs = [
+  {
+    q: '¿Tengo que firmar por años?',
+    a: 'No. El mínimo son 2 meses. Nuestros clientes se quedan porque ven los resultados cada mes.',
+  },
+  {
+    q: '¿Cuánto tengo que invertir en anuncios?',
+    a: 'Desde $10,000 al mes, pagados directo desde tu cuenta.',
+  },
+  {
+    q: '¿El agente suena como robot?',
+    a: 'Responde con la información de tu óptica y pasa a tu equipo lo que no sabe.',
+  },
+  {
+    q: '¿Cuánto tarda?',
+    a: '14 días en tener todo funcionando.',
+  },
+  {
+    q: '¿Tengo que grabar contenido?',
+    a: 'Sí, con guiones listos cada mes. Si no tienes quién edite, también lo hacemos.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Agenda Llena para Ópticas',
+  serviceType: 'Sistema de captación y agenda de pacientes para ópticas',
+  description,
+  url: canonical,
+  areaServed: 'MX',
+  audience: { '@type': 'BusinessAudience', name: 'Ópticas independientes y cadenas pequeñas' },
+  provider: {
+    '@type': 'Organization',
+    name: 'Maguey Studio',
+    url: SITE_URL,
+    logo: SITE_URL + '/logo.png',
+  },
+};
+
+const comparativa = [
+  ['Meses buenos y meses malos', 'Pacientes nuevos todos los meses'],
+  ['Mensajes sin contestar por horas', 'Respuesta en segundos, a cualquier hora'],
+  ['"Al rato agendo", y nunca regresa', 'Seguimiento automático hasta la cita'],
+  ['No sabes qué funciona', 'Un reporte de citas y ventas cada mes'],
+];
+
+const pasos = [
+  {
+    t: 'Atrae.',
+    d: 'Campañas, landing y Google Maps para que te encuentren quienes buscan examen de la vista o lentes en tu ciudad.',
+    icon: 'atrae',
+  },
+  {
+    t: 'Contesta y agenda.',
+    d: 'Un agente de IA responde en segundos, a cualquier hora, resuelve precio y horario, y agenda directo en tu calendario. Lo que necesite a una persona, pasa a tu equipo.',
+    icon: 'chat',
+  },
+  {
+    t: 'Lleva a la cita.',
+    d: 'Recordatorios para que lleguen y seguimiento a quien no agendó.',
+    icon: 'cita',
+  },
+  {
+    t: 'Trae de regreso.',
+    d: 'Tus pacientes de años anteriores reciben su recordatorio de revisión. Tu base de clientes también vende.',
+    icon: 'regreso',
+  },
+];
+
+const etapas = [
+  {
+    t: 'Días 1 a 14: instalamos.',
+    d: 'Landing, Google Maps, campañas, agente y capacitación a tu equipo. El día 14 todo funciona.',
+  },
+  {
+    t: 'Primeros 60 días: primera meta.',
+    d: 'Arrancamos con un objetivo claro: 30 citas para tu óptica.',
+  },
+  {
+    t: 'Cada mes después: crecemos.',
+    d: 'Nuevos guiones, campañas optimizadas, más reseñas y un reporte que te dice cuántas citas se volvieron venta.',
+  },
+];
+
+const cifras = [
+  { n: '5% → 7%', l: 'de mensajes convertidos en citas' },
+  { n: '5x a 8x', l: 'ventas sobre inversión en anuncios' },
+  { n: 'Segundos', l: 'tiempo de respuesta en WhatsApp' },
+];
+
+const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
+---
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Maguey Studio">
+<meta name="theme-color" content="#2F5D46">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Maguey Studio">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={ogImage}>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={ogImage}>
+
+<link rel="icon" href="/logo.png">
+<link rel="preload" as="image" href="/agenda-llena/logo-96.webp" type="image/webp">
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+{META_PIXEL_ID && (
+  <script is:inline define:vars={{ META_PIXEL_ID }}>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+  </script>
+)}
+{GA4_ID && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+    <script is:inline define:vars={{ GA4_ID }}>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', GA4_ID);
+    </script>
+  </>
+)}
+
+<style>
+  /* ===== TOKENS MAGUEY (los mismos de /diagnostico) ===== */
+  :root{
+    --verde:#519536;
+    --verde-hover:#437c2d;
+    --agave:#2F5D46;
+    --lima:#9BB558;
+    --crema:#FAF7F0;
+    --tinta:#1F2A24;
+    --tinta-suave:#5A6B60;
+    --linea:rgba(47,93,70,.14);
+    /* Derivados de la paleta (no son colores nuevos, son mezclas de los de arriba) */
+    --crema-2:#F2EEE3;          /* crema un paso más oscuro: fondos de contraste suave */
+    --lima-suave:rgba(155,181,88,.16);  /* fondo de la tarjeta de garantía */
+    --agave-suave:rgba(47,93,70,.06);
+    --blanco:#FFFFFF;
+    --radio:14px;
+    --sombra:0 1px 0 rgba(47,93,70,.08), 0 10px 30px -18px rgba(47,93,70,.35);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+
+  body{
+    background:var(--crema);
+    color:var(--tinta);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:var(--agave);}
+
+  .wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:20px;}
+  .angosto{max-width:640px;margin-inline:auto;}
+
+  h1,h2,h3,.display{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-weight:normal;
+    line-height:1.15;
+    letter-spacing:-.01em;
+    color:var(--agave);
+    text-wrap:balance;
+  }
+  h1{font-size:clamp(32px, 9vw, 54px);margin-bottom:18px;}
+  h2{font-size:clamp(26px, 7vw, 38px);margin-bottom:18px;}
+  h3{font-size:22px;margin-bottom:10px;}
+
+  section{padding-block:56px;}
+  .contraste{background:var(--crema-2);}
+  .centro{text-align:center;}
+  .lead{font-size:17px;color:var(--tinta);}
+  .muted{color:var(--tinta-suave);}
+
+  /* ===== BOTONES ===== */
+  .cta{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:56px;
+    width:100%;
+    background:var(--verde-hover);
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:19px;font-weight:bold;
+    text-decoration:none;
+    padding:16px 24px;
+    border:0;border-radius:10px;
+    box-shadow:0 2px 0 rgba(47,93,70,.18);
+    cursor:pointer;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .cta:active{background:var(--agave);transform:translateY(1px);}
+  @media (hover:hover){.cta:hover{background:var(--agave);}}
+  .cta:focus-visible,.btn-sec:focus-visible,summary:focus-visible,
+  input:focus-visible,select:focus-visible{outline:3px solid var(--lima);outline-offset:2px;}
+
+  .btn-sec{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:44px;padding:0 16px;
+    border:1.5px solid var(--agave);border-radius:10px;
+    color:var(--agave);background:transparent;
+    font-size:15px;font-weight:bold;text-decoration:none;
+    white-space:nowrap;
+    transition:background .15s ease,color .15s ease;
+  }
+  @media (hover:hover){.btn-sec:hover{background:var(--agave);color:#fff;}}
+
+  /* ===== HEADER ===== */
+  .top{
+    position:sticky;top:0;z-index:40;
+    background:rgba(250,247,240,.92);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--linea);
+  }
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px;}
+  .marca{display:flex;align-items:center;gap:9px;text-decoration:none;}
+  .marca img{width:30px;height:30px;}
+  .marca span{font-family:Georgia, serif;font-size:16px;color:var(--agave);}
+
+  /* ===== HERO ===== */
+  .hero{padding-top:36px;padding-bottom:48px;}
+  .hero-grid{display:grid;gap:36px;align-items:center;}
+  .pill{
+    display:inline-block;
+    font-size:12px;font-weight:bold;letter-spacing:.12em;
+    color:var(--agave);background:var(--lima-suave);
+    border:1px solid rgba(155,181,88,.45);
+    padding:6px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .hero .sub{font-size:17px;color:var(--tinta-suave);margin-bottom:26px;max-width:52ch;}
+  .micro{font-size:14px;color:var(--tinta-suave);margin-top:12px;max-width:46ch;}
+
+  /* Placeholders de imagen */
+  .ph{
+    display:grid;place-items:center;text-align:center;
+    background:repeating-linear-gradient(135deg, var(--agave-suave) 0 12px, transparent 12px 24px), var(--blanco);
+    border:1.5px dashed rgba(47,93,70,.35);
+    border-radius:var(--radio);
+    color:var(--tinta-suave);
+    font-size:13px;line-height:1.45;
+    padding:20px;
+  }
+  .ph b{display:block;color:var(--agave);font-size:12px;letter-spacing:.1em;margin-bottom:6px;}
+  .ph-hero{aspect-ratio:4/5;max-width:340px;margin-inline:auto;width:100%;border-radius:32px;}
+  .ph-jarmar{aspect-ratio:16/9;margin-top:32px;}
+
+  /* ===== PROBLEMA: burbujas ===== */
+  .chats{display:flex;flex-direction:column;gap:10px;margin:0 auto 28px;max-width:320px;text-align:left;}
+  .burbuja{
+    align-self:flex-start;
+    background:var(--blanco);
+    border-radius:4px 14px 14px 14px;
+    padding:9px 13px;
+    font-size:15px;
+    box-shadow:var(--sombra);
+  }
+  .burbuja:nth-child(2){align-self:flex-end;border-radius:14px 4px 14px 14px;background:#E3EED3;}
+  .visto{align-self:flex-end;font-size:12px;color:var(--tinta-suave);}
+
+  /* ===== QUÉ CAMBIA: comparativa ===== */
+  .comp{display:grid;gap:14px;margin-top:28px;}
+  .comp-col{border-radius:var(--radio);padding:22px;}
+  .comp-col h3{font-size:19px;margin-bottom:14px;}
+  .comp-col ul{list-style:none;display:grid;gap:12px;}
+  .comp-col li{position:relative;padding-left:26px;font-size:15px;}
+  .antes{background:var(--blanco);border:1px solid var(--linea);}
+  .antes h3{color:var(--tinta-suave);}
+  .antes li{color:var(--tinta-suave);}
+  .antes li::before{content:"×";position:absolute;left:2px;top:-1px;font-size:18px;color:var(--tinta-suave);}
+  .con{background:var(--agave);color:#fff;}
+  .con h3{color:#fff;}
+  .con li::before{content:"◆";position:absolute;left:0;top:0;color:var(--lima);font-size:13px;line-height:1.75;}
+
+  /* ===== SISTEMA ===== */
+  .pasos{display:grid;gap:16px;margin-top:28px;list-style:none;counter-reset:paso;}
+  .paso{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:var(--radio);
+    padding:22px;box-shadow:var(--sombra);
+  }
+  .paso-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .num{font-family:Georgia, serif;font-size:34px;color:var(--lima);line-height:1;}
+  .ico{
+    width:46px;height:46px;border-radius:12px;
+    display:grid;place-items:center;
+    background:var(--lima-suave);color:var(--agave);
+  }
+  .ico svg{width:24px;height:24px;}
+  .paso h3{font-size:21px;margin-bottom:8px;}
+  .paso p{font-size:15px;color:var(--tinta-suave);}
+
+  /* ===== CÓMO TRABAJAMOS + GARANTÍA ===== */
+  .trabajo-grid{display:grid;gap:28px;margin-top:28px;align-items:start;}
+  .timeline{list-style:none;position:relative;padding-left:34px;}
+  .timeline::before{content:"";position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:rgba(155,181,88,.55);}
+  .timeline li{position:relative;padding-bottom:26px;}
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline li::before{
+    content:"";position:absolute;left:-30px;top:5px;
+    width:14px;height:14px;border-radius:50%;
+    background:var(--crema);border:3px solid var(--verde);
+  }
+  .timeline h3{font-size:20px;margin-bottom:6px;}
+  .timeline p{font-size:15px;color:var(--tinta-suave);}
+
+  .garantia{
+    background:var(--lima-suave);
+    border:2px solid var(--verde);
+    border-radius:var(--radio);
+    padding:26px 22px;
+  }
+  .garantia .ico{background:var(--verde-hover);color:#fff;margin-bottom:16px;}
+  .garantia p{font-size:16px;}
+  .garantia small{display:block;margin-top:14px;font-size:13px;color:var(--tinta-suave);line-height:1.5;}
+
+  /* ===== JARMAR ===== */
+  .cifras{display:grid;gap:14px;margin-top:28px;}
+  .cifra{background:var(--blanco);border-radius:var(--radio);padding:22px;text-align:center;border:1px solid var(--linea);}
+  .cifra strong{display:block;font-family:Georgia, serif;font-weight:normal;font-size:clamp(34px, 9vw, 44px);color:var(--agave);line-height:1.1;margin-bottom:6px;}
+  .cifra span{font-size:14px;color:var(--tinta-suave);}
+  .jarmar-txt{margin-top:28px;}
+
+  /* ===== REPORTE ===== */
+  .reporte-grid{display:grid;gap:28px;align-items:center;}
+  .reporte{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:var(--radio);
+    padding:22px;box-shadow:var(--sombra);max-width:440px;width:100%;margin-inline:auto;
+  }
+  .reporte-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px;}
+  .reporte-head span{font-family:Georgia, serif;color:var(--agave);font-size:18px;}
+  .tag{font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;background:var(--crema-2);color:var(--tinta-suave);padding:4px 9px;border-radius:999px;border:1px dashed rgba(47,93,70,.3);}
+  .metricas{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .metrica{background:var(--crema);border-radius:10px;padding:14px;}
+  .metrica small{display:block;font-size:12px;color:var(--tinta-suave);margin-bottom:2px;}
+  .metrica b{font-family:Georgia, serif;font-weight:normal;font-size:28px;color:var(--agave);}
+
+  /* ===== PARA QUIÉN ===== */
+  .quien{display:grid;gap:14px;margin-top:28px;}
+  .quien-col{border-radius:var(--radio);padding:22px;background:var(--blanco);border:1px solid var(--linea);}
+  .quien-col h3{display:flex;align-items:center;gap:10px;font-size:20px;}
+  .marca-si,.marca-no{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:Arial, sans-serif;font-size:16px;font-weight:bold;}
+  .marca-si{background:var(--verde-hover);color:#fff;}
+  .marca-no{background:var(--crema-2);color:var(--tinta-suave);border:1px solid var(--linea);}
+  .quien-col p{font-size:15px;color:var(--tinta-suave);}
+  .si{border:2px solid var(--verde);}
+  .escasez{
+    margin-top:22px;padding:18px 20px;border-radius:var(--radio);
+    background:var(--agave);color:#fff;font-size:16px;text-align:center;
+  }
+  .escasez strong{font-family:Georgia, serif;font-weight:normal;font-size:19px;display:block;margin-bottom:4px;}
+
+  /* ===== FAQ ===== */
+  .faq{margin-top:24px;display:grid;gap:10px;}
+  .faq details{background:var(--blanco);border:1px solid var(--linea);border-radius:12px;}
+  .faq summary{
+    list-style:none;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+    min-height:56px;padding:14px 18px;
+    font-weight:bold;font-size:16px;color:var(--tinta);
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";flex:none;font-size:24px;font-weight:normal;color:var(--verde-hover);line-height:1;transition:transform .2s;}
+  .faq details[open] summary::after{transform:rotate(45deg);}
+  .faq details p{padding:0 18px 18px;color:var(--tinta-suave);font-size:15px;}
+
+  /* ===== CIERRE + FORMULARIO ===== */
+  .cierre{background:var(--agave);color:#fff;padding-block:60px 72px;}
+  .cierre h2{color:#fff;}
+  .cierre .sub{color:rgba(255,255,255,.85);font-size:17px;margin-bottom:28px;}
+  .form-card{
+    background:var(--crema);color:var(--tinta);
+    border-radius:18px;padding:24px 20px;
+    max-width:560px;margin-inline:auto;
+    box-shadow:0 20px 50px -25px rgba(0,0,0,.5);
+  }
+  .campo{margin-bottom:16px;}
+  .campo > label,.campo legend{display:block;font-size:15px;font-weight:bold;margin-bottom:6px;color:var(--tinta);}
+  .campo input[type=text],.campo input[type=tel],.campo select{
+    width:100%;min-height:50px;
+    padding:12px 14px;
+    font:inherit;font-size:16px;color:var(--tinta);
+    background:var(--blanco);
+    border:1.5px solid rgba(47,93,70,.3);border-radius:10px;
+    appearance:none;-webkit-appearance:none;
+  }
+  .campo select{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%232F5D46' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;
+  }
+  .campo input::placeholder{color:#7d8a81;}
+  .campo fieldset{border:0;}
+  .radios{display:flex;gap:10px;flex-wrap:wrap;}
+  .radios label{
+    flex:1 1 120px;
+    display:flex;align-items:center;gap:10px;
+    min-height:50px;padding:10px 14px;
+    background:var(--blanco);border:1.5px solid rgba(47,93,70,.3);border-radius:10px;
+    font-size:16px;cursor:pointer;
+  }
+  .radios input{width:20px;height:20px;accent-color:var(--verde-hover);flex:none;}
+  .radios label:has(input:checked){border-color:var(--verde-hover);background:var(--lima-suave);}
+  .campo.invalido input,.campo.invalido select,.campo.invalido .radios label{border-color:#B3261E;}
+  .error{display:none;margin-top:6px;font-size:13px;color:#B3261E;}
+  .campo.invalido .error{display:block;}
+  .form-card .cta{margin-top:8px;}
+  .form-card .micro{text-align:center;margin-inline:auto;}
+  .aviso{margin-top:10px;font-size:12px;color:var(--tinta-suave);text-align:center;}
+  .confirmacion{
+    display:none;text-align:center;padding:12px 4px;
+  }
+  .confirmacion h3{margin-bottom:10px;}
+  .confirmacion p{font-size:16px;}
+  .form-card.enviado form{display:none;}
+  .form-card.enviado .confirmacion{display:block;}
+
+  /* ===== FOOTER ===== */
+  footer{padding-block:36px 110px;border-top:1px solid var(--linea);font-size:14px;color:var(--tinta-suave);}
+  footer .wrap{display:grid;gap:14px;}
+  footer .marca{margin-bottom:4px;}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+  .foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--agave);font-weight:bold;}
+
+  /* ===== BOTÓN FIJO MÓVIL ===== */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(250,247,240,.96);
+    border-top:1px solid var(--linea);
+    box-shadow:0 -8px 24px -16px rgba(0,0,0,.35);
+    transform:translateY(110%);
+    transition:transform .25s ease;
+  }
+  .sticky-cta.visible{transform:translateY(0);}
+  .sticky-cta .cta{min-height:52px;font-size:18px;}
+
+  /* ===== TABLET / DESKTOP ===== */
+  @media (min-width:768px){
+    .wrap{padding-inline:32px;}
+    section{padding-block:80px;}
+    .hero{padding-top:64px;padding-bottom:80px;}
+    .cta{width:auto;padding-inline:34px;}
+    .comp{grid-template-columns:1fr 1fr;}
+    .pasos{grid-template-columns:1fr 1fr;}
+    .cifras{grid-template-columns:repeat(3,1fr);}
+    .quien{grid-template-columns:1fr 1fr;}
+    .form-card{padding:34px 32px;}
+    .form-card .cta{width:100%;}
+    .fila-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  }
+  @media (min-width:960px){
+    .hero-grid{grid-template-columns:1.1fr .9fr;gap:56px;}
+    .pasos{grid-template-columns:repeat(4,1fr);}
+    .trabajo-grid{grid-template-columns:1.15fr .85fr;gap:48px;}
+    .reporte-grid{grid-template-columns:1fr 1fr;gap:56px;}
+    .sticky-cta{display:none;}
+    footer{padding-bottom:40px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ 3. HEADER ══ -->
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="/" aria-label="Maguey Studio, ir al inicio">
+      <img src="/agenda-llena/logo-96.webp" alt="Logo de Maguey Studio" width="30" height="30">
+      <span>Maguey Studio</span>
+    </a>
+    <a class="btn-sec js-cta" href="#diagnostico">Diagnóstico gratis</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ══ 4. HERO ══ -->
+  <section class="hero" id="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill">AGENDA LLENA PARA ÓPTICAS</span>
+        <h1>Pacientes nuevos en tu óptica, todos los meses.</h1>
+        <p class="sub">
+          Instalamos un sistema que atrae pacientes, les contesta por WhatsApp en segundos y los agenda solo. Después lo operamos contigo para que tu agenda no dependa de la temporada ni de las recomendaciones.
+        </p>
+        <a class="cta js-cta" href="#diagnostico">Quiero mi diagnóstico gratis</a>
+        <p class="micro">Probamos tu WhatsApp como paciente incógnito y te decimos cuántas citas se te están yendo.</p>
+      </div>
+      <div class="ph ph-hero" role="img" aria-label="Celular con una conversación de WhatsApp en la que el agente agenda un examen de la vista a las 11:42 p.m.">
+        <div><b>[FOTO]</b>Mockup de celular con una conversación de WhatsApp donde el agente agenda un examen de la vista; hora visible 11:42 p.m.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 5. PROBLEMA ══ -->
+  <section class="contraste">
+    <div class="wrap angosto centro">
+      <div class="chats" aria-hidden="true">
+        <div class="burbuja">¿cuánto cuesta el examen?</div>
+        <div class="burbuja">al rato agendo</div>
+        <div class="visto">visto hace 3 h</div>
+      </div>
+      <h2>Meses buenos, meses malos.</h2>
+      <p class="lead">
+        Un mes llegan por recomendación y otro la óptica se queda vacía. Cuando sí escriben ("¿cuánto cuesta el examen?", "al rato agendo"), el mensaje se queda 3 horas sin respuesta entre el mostrador y los pendientes. Para entonces ese paciente ya fue a otra óptica.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ 6. QUÉ CAMBIA ══ -->
+  <section>
+    <div class="wrap">
+      <div class="angosto centro">
+        <h2>De depender de la suerte a tener un sistema.</h2>
+        <p class="lead">Un flujo constante de pacientes que llegan, se atienden y se agendan solos. Y cada mes funciona mejor que el anterior.</p>
+      </div>
+      <div class="comp angosto" style="max-width:860px">
+        <div class="comp-col antes">
+          <h3>Antes</h3>
+          <ul>{comparativa.map(([a]) => <li>{a}</li>)}</ul>
+        </div>
+        <div class="comp-col con">
+          <h3>Con Agenda Llena</h3>
+          <ul>{comparativa.map(([, b]) => <li>{b}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 7. EL SISTEMA ══ -->
+  <section class="contraste" id="sistema">
+    <div class="wrap">
+      <h2 class="centro">Así funciona el sistema</h2>
+      <ol class="pasos">
+        {pasos.map((p, i) => (
+          <li class="paso">
+            <div class="paso-top">
+              <span class="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <span class="ico" aria-hidden="true">
+                {p.icon === 'atrae' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                )}
+                {p.icon === 'chat' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/><path d="M9 12l2 2 4-4"/></svg>
+                )}
+                {p.icon === 'cita' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M12 13v3l2 1"/></svg>
+                )}
+                {p.icon === 'regreso' && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4.5h4.5"/><circle cx="12" cy="12" r="2"/></svg>
+                )}
+              </span>
+            </div>
+            <h3>{p.t}</h3>
+            <p>{p.d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══ 8. CÓMO TRABAJAMOS + GARANTÍA ══ -->
+  <section>
+    <div class="wrap">
+      <h2>Cómo trabajamos contigo</h2>
+      <div class="trabajo-grid">
+        <ol class="timeline">
+          {etapas.map((e) => (
+            <li>
+              <h3>{e.t}</h3>
+              <p>{e.d}</p>
+            </li>
+          ))}
+        </ol>
+        <aside class="garantia" aria-labelledby="garantia-t">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.4-7.5 9.5-4.3-1.1-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+          </span>
+          <h3 id="garantia-t">Tu primera meta, garantizada.</h3>
+          <p>Si en los primeros 60 días no llegamos a 30 citas agendadas, seguimos trabajando sin cobrarte honorarios hasta lograrlo. Queremos que te quedes porque funciona, no porque firmaste.</p>
+          <small>Aplica con el sistema completo y las condiciones de inversión que revisamos en la llamada.</small>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 9. CASO JARMAR (flag SHOW_CASE_JARMAR) ══ -->
+  {SHOW_CASE_JARMAR && (
+    <section class="contraste" id="caso-jarmar">
+      <div class="wrap">
+        <h2 class="centro">Lo construimos primero en nuestra propia óptica.</h2>
+        <div class="cifras">
+          {cifras.map((c) => (
+            <div class="cifra"><strong>{c.n}</strong><span>{c.l}</span></div>
+          ))}
+        </div>
+        <p class="lead angosto centro jarmar-txt">
+          En Ópticas Jarmar, negocio familiar donde participamos, pasamos de 5% a 7% de mensajes convertidos en citas, con ventas de entre 5 y 8 veces la inversión en anuncios.
+        </p>
+        <div class="ph ph-jarmar angosto" role="img" aria-label="Fachada de Ópticas Jarmar">
+          <div><b>[FOTO]</b>Fachada o interior de Ópticas Jarmar</div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ══ 10. LO QUE VES CADA MES ══ -->
+  <section>
+    <div class="wrap reporte-grid">
+      <div>
+        <h2>Lo que ves cada mes</h2>
+        <p class="lead">Un reporte simple: mensajes que llegaron, citas agendadas, pacientes que asistieron y ventas. Sabes exactamente qué te deja cada peso que inviertes.</p>
+      </div>
+      <!-- [MOCKUP] números claramente ficticios -->
+      <div class="reporte" role="img" aria-label="Ejemplo de reporte mensual con cuatro métricas: mensajes, citas, asistencias y ventas. Números de ejemplo.">
+        <div class="reporte-head">
+          <span>Reporte del mes</span>
+          <span class="tag">Ejemplo</span>
+        </div>
+        <div class="metricas">
+          <div class="metrica"><small>Mensajes</small><b>000</b></div>
+          <div class="metrica"><small>Citas</small><b>00</b></div>
+          <div class="metrica"><small>Asistencias</small><b>00</b></div>
+          <div class="metrica"><small>Ventas</small><b>$00,000</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 11. PARA QUIÉN ES ══ -->
+  <section class="contraste">
+    <div class="wrap" style="max-width:920px">
+      <h2 class="centro">¿Es para tu óptica?</h2>
+      <div class="quien">
+        <div class="quien-col si">
+          <h3><span class="marca-si" aria-hidden="true">✓</span>Sí es para ti si:</h3>
+          <p>Tienes una óptica que quiere crecer de forma constante y tienes capacidad para más pacientes.</p>
+        </div>
+        <div class="quien-col">
+          <h3><span class="marca-no" aria-hidden="true">✗</span>No es para ti si:</h3>
+          <p>Buscas una campaña de un mes o no puedes atender más citas.</p>
+        </div>
+      </div>
+      <p class="escasez">
+        <strong>Trabajamos con una sola óptica por ciudad.</strong>
+        Si tu competencia llega primero, ya no podemos trabajar contigo.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ 12. PREGUNTAS FRECUENTES ══ -->
+  <section>
+    <div class="wrap angosto">
+      <h2 class="centro">Preguntas frecuentes</h2>
+      <div class="faq">
+        {faqs.map((f, i) => (
+          <details open={i === 0}>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 13. CIERRE + FORMULARIO ══ -->
+  <section class="cierre" id="diagnostico">
+    <div class="wrap">
+      <div class="angosto centro">
+        <h2>Que tu agenda no dependa de la suerte.</h2>
+        <p class="sub">Déjanos tus datos y agendamos tu diagnóstico gratis por WhatsApp.</p>
+      </div>
+
+      <div class="form-card" id="form-card">
+        <form id="form-diagnostico" novalidate>
+          <div class="campo">
+            <label for="f-nombre">Nombre</label>
+            <input id="f-nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required>
+            <p class="error">Escribe tu nombre.</p>
+          </div>
+          <div class="campo">
+            <label for="f-optica">Nombre de la óptica</label>
+            <input id="f-optica" name="optica" type="text" placeholder="Ej. Óptica Visión Clara" autocomplete="organization" required>
+            <p class="error">Escribe el nombre de tu óptica.</p>
+          </div>
+          <div class="fila-2">
+            <div class="campo">
+              <label for="f-ciudad">Ciudad</label>
+              <input id="f-ciudad" name="ciudad" type="text" placeholder="Ej. Mexicali" autocomplete="address-level2" required>
+              <p class="error">Escribe tu ciudad.</p>
+            </div>
+            <div class="campo">
+              <label for="f-sucursales">Número de sucursales</label>
+              <select id="f-sucursales" name="sucursales" required>
+                <option value="" selected disabled>Elige una opción</option>
+                <option>1</option>
+                <option>2–3</option>
+                <option>4–5</option>
+                <option>Más de 5</option>
+              </select>
+              <p class="error">Elige una opción.</p>
+            </div>
+          </div>
+          <div class="fila-2">
+            <div class="campo">
+              <label for="f-whatsapp">WhatsApp</label>
+              <input id="f-whatsapp" name="whatsapp" type="tel" inputmode="numeric" placeholder="10 dígitos" autocomplete="tel-national" maxlength="14" required>
+              <p class="error">Escribe tu WhatsApp a 10 dígitos.</p>
+            </div>
+            <div class="campo">
+              <label for="f-examenes">Exámenes de la vista por semana hoy</label>
+              <select id="f-examenes" name="examenes" required>
+                <option value="" selected disabled>Elige una opción</option>
+                <option>Menos de 10</option>
+                <option>10–25</option>
+                <option>26–50</option>
+                <option>Más de 50</option>
+              </select>
+              <p class="error">Elige una opción.</p>
+            </div>
+          </div>
+          <div class="campo">
+            <fieldset>
+              <legend>¿Puedes invertir $10,000 al mes en anuncios?</legend>
+              <div class="radios">
+                <label><input type="radio" name="inversion" value="Sí" required> Sí</label>
+                <label><input type="radio" name="inversion" value="Todavía no"> Todavía no</label>
+              </div>
+            </fieldset>
+            <p class="error">Elige una opción.</p>
+          </div>
+
+          <button class="cta" type="submit">Quiero mi diagnóstico gratis</button>
+          <p class="micro">Te escribimos por WhatsApp para agendar. Sin compromiso.</p>
+          <p class="aviso">Al enviar aceptas nuestro <a href={AVISO_DE_PRIVACIDAD_URL}>aviso de privacidad</a>.</p>
+        </form>
+
+        <div class="confirmacion" role="status" aria-live="polite">
+          <h3>¡Listo!</h3>
+          <p>Te abrimos WhatsApp para agendar. Si no se abrió, <a id="wa-fallback" href={waBase} target="_blank" rel="noopener">toca aquí</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ 14. FOOTER ══ -->
+<footer>
+  <div class="wrap">
+    <a class="marca" href="/" aria-label="Maguey Studio, ir al inicio">
+      <img src="/agenda-llena/logo-96.webp" alt="Logo de Maguey Studio" width="30" height="30" loading="lazy">
+      <span>Maguey Studio</span>
+    </a>
+    <p>Agenda Llena es un sistema de Germán González, implementado por Maguey Studio con tecnología de Life Agent.</p>
+    <nav class="foot-links" aria-label="Enlaces del pie de página">
+      <a href={AVISO_DE_PRIVACIDAD_URL}>Aviso de privacidad</a>
+      <a href={waBase} target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+    <p>© {year} Maguey Studio</p>
+  </div>
+</footer>
+
+<!-- ══ BOTÓN FIJO MÓVIL ══ -->
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <a class="cta js-cta" href="#diagnostico" tabindex="-1">Quiero mi diagnóstico gratis</a>
+</div>
+
+<script is:inline define:vars={{ cfg }}>
+(function () {
+  var WA = 'https://wa.me/' + cfg.WHATSAPP_NUMBER;
+
+  function track(fbEvent, gaEvent) {
+    try { if (window.fbq && fbEvent) window.fbq('track', fbEvent); } catch (e) {}
+    try { if (window.gtag && gaEvent) window.gtag('event', gaEvent); } catch (e) {}
+  }
+
+  // ── UTM: se guardan en la sesión para no perderlas si navega ──
+  var UTM_KEY = 'al_utm';
+  var utm = {};
+  try { utm = JSON.parse(sessionStorage.getItem(UTM_KEY) || '{}'); } catch (e) {}
+  var qs = new URLSearchParams(location.search);
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+    if (qs.get(k)) utm[k] = qs.get(k);
+  });
+  try { sessionStorage.setItem(UTM_KEY, JSON.stringify(utm)); } catch (e) {}
+
+  // ── Scroll suave al formulario desde cualquier botón ──
+  var form = document.getElementById('form-diagnostico');
+  var destino = document.getElementById('diagnostico');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.js-cta').forEach(function (a) {
+    a.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      destino.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      history.replaceState(null, '', '#diagnostico');
+      setTimeout(function () {
+        var first = document.getElementById('f-nombre');
+        if (first) first.focus({ preventScroll: true });
+      }, reduce ? 0 : 600);
+    });
+  });
+
+  // ── Botón fijo en móvil: visible tras el hero, oculto con el form en pantalla ──
+  var sticky = document.getElementById('sticky-cta');
+  var hero = document.getElementById('hero');
+  if ('IntersectionObserver' in window && sticky && hero) {
+    var pasoHero = false, formVisible = false;
+    function update() {
+      var on = pasoHero && !formVisible;
+      sticky.classList.toggle('visible', on);
+      sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+      sticky.querySelector('a').tabIndex = on ? 0 : -1;
+    }
+    new IntersectionObserver(function (en) {
+      en.forEach(function (e) {
+        pasoHero = !e.isIntersecting && e.boundingClientRect.top < 0;
+      });
+      update();
+    }).observe(hero);
+    new IntersectionObserver(function (en) {
+      en.forEach(function (e) { formVisible = e.isIntersecting; });
+      update();
+    }, { threshold: 0.05 }).observe(destino);
+  }
+
+  // ── ViewContent al ver la sección del sistema (una vez) ──
+  var sistema = document.getElementById('sistema');
+  if ('IntersectionObserver' in window && sistema) {
+    var io = new IntersectionObserver(function (en) {
+      if (en.some(function (e) { return e.isIntersecting; })) {
+        track('ViewContent');
+        io.disconnect();
+      }
+    }, { threshold: 0.3 });
+    io.observe(sistema);
+  }
+
+  // ── Formulario → WhatsApp ──
+  function campo(el) { return el.closest('.campo'); }
+  function marcar(el, ok) { campo(el).classList.toggle('invalido', !ok); el.setAttribute('aria-invalid', ok ? 'false' : 'true'); }
+
+  var tel = document.getElementById('f-whatsapp');
+  tel.addEventListener('input', function () {
+    tel.value = tel.value.replace(/\D/g, '').slice(0, 10);
+  });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var d = {};
+    var primerError = null;
+
+    ['nombre', 'optica', 'ciudad'].forEach(function (n) {
+      var el = form.elements[n];
+      d[n] = el.value.trim();
+      var ok = d[n].length > 1;
+      marcar(el, ok);
+      if (!ok && !primerError) primerError = el;
+    });
+    ['sucursales', 'examenes'].forEach(function (n) {
+      var el = form.elements[n];
+      d[n] = el.value;
+      var ok = !!d[n];
+      marcar(el, ok);
+      if (!ok && !primerError) primerError = el;
+    });
+    d.whatsapp = tel.value.replace(/\D/g, '');
+    var telOk = /^\d{10}$/.test(d.whatsapp);
+    marcar(tel, telOk);
+    if (!telOk && !primerError) primerError = tel;
+
+    var inv = form.querySelector('input[name="inversion"]:checked');
+    var invCampo = form.querySelector('input[name="inversion"]').closest('.campo');
+    invCampo.classList.toggle('invalido', !inv);
+    if (!inv && !primerError) primerError = form.querySelector('input[name="inversion"]');
+    d.inversion = inv ? inv.value : '';
+
+    if (primerError) { primerError.focus(); return; }
+
+    var fuente = (utm.utm_source || 'directo') + '/' + (utm.utm_campaign || 'sin campaña');
+    var lineas = [
+      'Hola, quiero mi diagnóstico de Agenda Llena.',
+      'Nombre: ' + d.nombre,
+      'Óptica: ' + d.optica,
+      'Ciudad: ' + d.ciudad,
+      'Sucursales: ' + d.sucursales,
+      'Exámenes por semana: ' + d.examenes,
+      'Inversión $10k/mes en anuncios: ' + d.inversion,
+      'Fuente: ' + fuente
+    ];
+    if (d.inversion === 'Todavía no') lineas.push('Perfil: sistema base');
+
+    var url = WA + '?text=' + encodeURIComponent(lineas.join('\n'));
+
+    track('Lead', 'generate_lead');
+
+    document.getElementById('wa-fallback').href = url;
+    document.getElementById('form-card').classList.add('enviado');
+
+    var win = window.open(url, '_blank');
+    if (win) { try { win.opener = null; } catch (e) {} }
+    else {
+      // Pop-up bloqueado (común en navegadores in-app de Instagram/Facebook):
+      // se da un instante para que salgan los eventos y se abre en la misma pestaña.
+      setTimeout(function () { location.href = url; }, 350);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
