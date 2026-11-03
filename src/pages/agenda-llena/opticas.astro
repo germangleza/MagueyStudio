@@ -318,18 +318,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   .ph-hero{aspect-ratio:4/5;max-width:340px;margin-inline:auto;width:100%;border-radius:32px;}
   .ph-jarmar{aspect-ratio:16/9;margin-top:32px;}
 
-  /* ===== PROBLEMA: burbujas ===== */
-  .chats{display:flex;flex-direction:column;gap:10px;margin:0 auto 28px;max-width:320px;text-align:left;}
-  .burbuja{
-    align-self:flex-start;
-    background:var(--blanco);
-    border-radius:4px 14px 14px 14px;
-    padding:9px 13px;
-    font-size:15px;
-    box-shadow:var(--sombra);
-  }
-  .burbuja:nth-child(2){align-self:flex-end;border-radius:14px 4px 14px 14px;background:#E3EED3;}
-  .visto{align-self:flex-end;font-size:12px;color:var(--tinta-suave);}
 
   /* ===== QUÉ CAMBIA: comparativa ===== */
   .comp{display:grid;gap:14px;margin-top:28px;}
@@ -555,7 +543,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
           Instalamos un sistema que atrae pacientes, les contesta por WhatsApp en segundos y los agenda solo. Después lo operamos contigo para que tu agenda no dependa de la temporada ni de las recomendaciones.
         </p>
         <a class="cta js-cta" href="#diagnostico">Quiero mi diagnóstico gratis</a>
-        <p class="micro">Probamos tu WhatsApp como paciente incógnito y te decimos cuántas citas se te están yendo.</p>
       </div>
       <div class="ph ph-hero" role="img" aria-label="Celular con una conversación de WhatsApp en la que el agente agenda un examen de la vista a las 11:42 p.m.">
         <div><b>[FOTO]</b>Mockup de celular con una conversación de WhatsApp donde el agente agenda un examen de la vista; hora visible 11:42 p.m.</div>
@@ -566,11 +553,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   <!-- ══ 5. PROBLEMA ══ -->
   <section class="contraste">
     <div class="wrap angosto centro">
-      <div class="chats" aria-hidden="true">
-        <div class="burbuja">¿cuánto cuesta el examen?</div>
-        <div class="burbuja">al rato agendo</div>
-        <div class="visto">visto hace 3 h</div>
-      </div>
       <h2>Meses buenos, meses malos.</h2>
       <p class="lead">
         Un mes llegan por recomendación y otro la óptica se queda vacía. Cuando sí escriben ("¿cuánto cuesta el examen?", "al rato agendo"), el mensaje se queda 3 horas sin respuesta entre el mostrador y los pendientes. Para entonces ese paciente ya fue a otra óptica.
