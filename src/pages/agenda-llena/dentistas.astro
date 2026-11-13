@@ -330,8 +330,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
     padding:20px;
   }
   .ph b{display:block;color:var(--agave);font-size:12px;letter-spacing:.1em;margin-bottom:6px;}
-  .ph-hero{aspect-ratio:4/5;max-width:340px;margin-inline:auto;width:100%;border-radius:32px;}
-  .ph-jarmar{aspect-ratio:16/9;margin-top:32px;}
+  .hero-img{width:100%;max-width:290px;height:auto;margin-inline:auto;filter:drop-shadow(0 24px 40px rgba(31,42,36,.22));}
 
 
   /* ===== QUÉ CAMBIA: comparativa ===== */
@@ -495,15 +494,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   .sticky-cta.visible{transform:translateY(0);}
   .sticky-cta .cta{min-height:52px;font-size:18px;}
 
-    /* ===== TRATAMIENTOS (chips) ===== */
-  .tratamientos{padding-block:40px;}
-  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;list-style:none;margin-top:20px;}
-  .chips li{
-    background:var(--blanco);border:1px solid var(--linea);border-radius:999px;
-    padding:9px 16px;font-size:15px;font-weight:bold;color:var(--agave);
-  }
-  .tratamientos h2{font-size:clamp(22px, 6vw, 30px);margin-bottom:10px;}
-
   /* ===== COFEPRIS ===== */
   .cofe{display:grid;gap:24px;align-items:center;}
   .cofe .ico{margin-bottom:16px;}
@@ -569,25 +559,13 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
         </p>
         <a class="cta js-cta" href="#diagnostico">Quiero mi diagnóstico gratis</a>
       </div>
-      <div class="ph ph-hero" role="img" aria-label="Celular con una conversación de WhatsApp en la que el agente agenda una valoración de implante a las 10:15 p.m.">
-        <div><b>[FOTO]</b>Mockup de celular con una conversación de WhatsApp donde el agente agenda una valoración de implante; hora visible 10:15 p.m.</div>
-      </div>
+      <img class="hero-img" src="/agenda-llena/dentistas-whatsapp.webp" width="560" height="1138" fetchpriority="high" alt="Conversación de WhatsApp en la que el agente de IA de una clínica dental agenda una valoración de implantes a las 11:42 p.m.">
     </div>
   </section>
 
-  <!-- ══ TRATAMIENTOS ══ -->
-  <section class="contraste tratamientos">
-    <div class="wrap angosto centro" style="max-width:760px">
-      <h2>Campañas por tratamiento, no por consultorio.</h2>
-      <p class="muted">Cada tratamiento tiene su paciente, sus preguntas y su tiempo de decisión. Trabajamos cada uno por separado.</p>
-      <ul class="chips">
-        {tratamientos.map((t) => <li>{t}</li>)}
-      </ul>
-    </div>
-  </section>
 
   <!-- ══ PROBLEMA ══ -->
-  <section>
+  <section class="contraste">
     <div class="wrap angosto centro">
       <h2>Lo buscan, dudan y se van.</h2>
       <p class="lead">
@@ -597,7 +575,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   </section>
 
   <!-- ══ QUÉ CAMBIA ══ -->
-  <section class="contraste">
+  <section>
     <div class="wrap">
       <div class="angosto centro">
         <h2>De vivir de limpiezas a llenar su agenda de especialidad.</h2>
@@ -617,7 +595,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   </section>
 
   <!-- ══ EL SISTEMA ══ -->
-  <section id="sistema">
+  <section class="contraste" id="sistema">
     <div class="wrap">
       <h2 class="centro">Así funciona el sistema</h2>
       <ol class="pasos">
@@ -649,7 +627,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   </section>
 
   <!-- ══ CÓMO TRABAJAMOS + META ══ -->
-  <section class="contraste">
+  <section>
     <div class="wrap">
       <h2>Cómo trabajamos con usted</h2>
       <div class="trabajo-grid">
@@ -674,7 +652,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   </section>
 
   <!-- ══ COFEPRIS ══ -->
-  <section>
+  <section class="contraste">
     <div class="wrap cofe">
       <div>
         <span class="ico" aria-hidden="true">
@@ -691,7 +669,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
 
 
   <!-- ══ PARA QUIÉN ES ══ -->
-  <section class="contraste">
+  <section>
     <div class="wrap" style="max-width:920px">
       <h2 class="centro">¿Es para su consultorio?</h2>
       <div class="quien">
@@ -708,7 +686,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   </section>
 
   <!-- ══ PREGUNTAS FRECUENTES ══ -->
-  <section>
+  <section class="contraste">
     <div class="wrap angosto">
       <h2 class="centro">Preguntas frecuentes</h2>
       <div class="faq">
