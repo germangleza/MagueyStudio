@@ -365,11 +365,11 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   .paso p{font-size:15px;color:var(--tinta-suave);}
 
   /* ===== CÓMO TRABAJAMOS + GARANTÍA ===== */
-  .trabajo-grid{display:grid;gap:28px;margin-top:28px;align-items:start;}
+  .trabajo-grid{display:grid;gap:28px;margin-top:28px;align-items:center;}
   .timeline{list-style:none;position:relative;padding-left:34px;}
-  .timeline::before{content:"";position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:rgba(155,181,88,.55);}
   .timeline li{position:relative;padding-bottom:26px;}
   .timeline li:last-child{padding-bottom:0;}
+  .timeline li:not(:last-child)::after{content:"";position:absolute;left:-24px;top:21px;bottom:-3px;width:2px;background:rgba(155,181,88,.55);}
   .timeline li::before{
     content:"";position:absolute;left:-30px;top:5px;
     width:14px;height:14px;border-radius:50%;
