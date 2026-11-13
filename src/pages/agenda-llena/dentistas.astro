@@ -133,7 +133,7 @@ const pasos = [
 
 const etapas = [
   {
-    t: 'Días 1 a 14: instalamos.',
+    t: 'En 14 días instalamos el sistema.',
     d: 'Landing, Google Maps, campañas por tratamiento, agente y capacitación a su equipo. El día 14 todo funciona.',
   },
   {
@@ -396,20 +396,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   .cifra span{font-size:14px;color:var(--tinta-suave);}
   .jarmar-txt{margin-top:28px;}
 
-  /* ===== REPORTE ===== */
-  .reporte-grid{display:grid;gap:28px;align-items:center;}
-  .reporte{
-    background:var(--blanco);border:1px solid var(--linea);border-radius:var(--radio);
-    padding:22px;box-shadow:var(--sombra);max-width:440px;width:100%;margin-inline:auto;
-  }
-  .reporte-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px;}
-  .reporte-head span{font-family:Georgia, serif;color:var(--agave);font-size:18px;}
-  .tag{font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;background:var(--crema-2);color:var(--tinta-suave);padding:4px 9px;border-radius:999px;border:1px dashed rgba(47,93,70,.3);}
-  .metricas{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-  .metrica{background:var(--crema);border-radius:10px;padding:14px;}
-  .metrica small{display:block;font-size:12px;color:var(--tinta-suave);margin-bottom:2px;}
-  .metrica b{font-family:Georgia, serif;font-weight:normal;font-size:28px;color:var(--agave);}
-
   /* ===== PARA QUIÉN ===== */
   .quien{display:grid;gap:14px;margin-top:28px;}
   .quien-col{border-radius:var(--radio);padding:22px;background:var(--blanco);border:1px solid var(--linea);}
@@ -552,7 +538,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
     .hero-grid{grid-template-columns:1.1fr .9fr;gap:56px;}
     .pasos{grid-template-columns:repeat(4,1fr);}
     .trabajo-grid{grid-template-columns:1.15fr .85fr;gap:48px;}
-    .reporte-grid{grid-template-columns:1fr 1fr;gap:56px;}
     .sticky-cta{display:none;}
     footer{padding-bottom:40px;}
   }
@@ -704,31 +689,9 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
     </div>
   </section>
 
-  <!-- ══ LO QUE VE CADA MES ══ -->
-  <section class="contraste">
-    <div class="wrap reporte-grid">
-      <div>
-        <h2>Lo que ve cada mes</h2>
-        <p class="lead">Un reporte simple: mensajes que llegaron, valoraciones agendadas, pacientes que asistieron y tratamientos aceptados. Sabe exactamente qué le deja cada peso que invierte.</p>
-      </div>
-      <!-- [MOCKUP] números claramente ficticios -->
-      <div class="reporte" role="img" aria-label="Ejemplo de reporte mensual con cuatro métricas: mensajes, valoraciones, asistencias y tratamientos aceptados. Números de ejemplo.">
-        <div class="reporte-head">
-          <span>Reporte del mes</span>
-          <span class="tag">Ejemplo</span>
-        </div>
-        <div class="metricas">
-          <div class="metrica"><small>Mensajes</small><b>000</b></div>
-          <div class="metrica"><small>Valoraciones</small><b>00</b></div>
-          <div class="metrica"><small>Asistencias</small><b>00</b></div>
-          <div class="metrica"><small>Tratamientos aceptados</small><b>$00,000</b></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ══ PARA QUIÉN ES ══ -->
-  <section>
+  <section class="contraste">
     <div class="wrap" style="max-width:920px">
       <h2 class="centro">¿Es para su consultorio?</h2>
       <div class="quien">
@@ -745,7 +708,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   </section>
 
   <!-- ══ PREGUNTAS FRECUENTES ══ -->
-  <section class="contraste">
+  <section>
     <div class="wrap angosto">
       <h2 class="centro">Preguntas frecuentes</h2>
       <div class="faq">
@@ -806,24 +769,11 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
             </select>
             <p class="error">Elija una opción.</p>
           </div>
-          <div class="fila-2">
-            <div class="campo">
+          <div class="campo">
               <label for="f-whatsapp">WhatsApp</label>
               <input id="f-whatsapp" name="whatsapp" type="tel" inputmode="numeric" placeholder="10 dígitos" autocomplete="tel-national" maxlength="14" required>
               <p class="error">Escriba su WhatsApp a 10 dígitos.</p>
             </div>
-            <div class="campo">
-              <label for="f-valoraciones">Valoraciones de especialidad al mes hoy</label>
-              <select id="f-valoraciones" name="valoraciones" required>
-                <option value="" selected disabled>Elija una opción</option>
-                <option>Menos de 5</option>
-                <option>5–15</option>
-                <option>16–30</option>
-                <option>Más de 30</option>
-              </select>
-              <p class="error">Elija una opción.</p>
-            </div>
-          </div>
           <div class="campo">
             <fieldset>
               <legend>¿Puede invertir $10,000 al mes en anuncios?</legend>
@@ -962,7 +912,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
       marcar(el, ok);
       if (!ok && !primerError) primerError = el;
     });
-    ['sillones', 'tratamiento', 'valoraciones'].forEach(function (n) {
+    ['sillones', 'tratamiento'].forEach(function (n) {
       var el = form.elements[n];
       d[n] = el.value;
       var ok = !!d[n];
@@ -990,7 +940,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
       'Ciudad: ' + d.ciudad,
       'Sillones: ' + d.sillones,
       'Tratamiento a impulsar: ' + d.tratamiento,
-      'Valoraciones de especialidad al mes: ' + d.valoraciones,
       'Inversión $10k/mes en anuncios: ' + d.inversion,
       'Fuente: ' + fuente
     ];
