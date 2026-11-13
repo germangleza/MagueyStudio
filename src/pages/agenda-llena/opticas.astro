@@ -97,7 +97,7 @@ const comparativa = [
 const pasos = [
   {
     t: 'Atrae.',
-    d: 'Campañas, landing y Google Maps para que te encuentren quienes buscan examen de la vista o lentes en tu ciudad.',
+    d: 'Página, Google Maps y campañas para que te encuentren quienes buscan examen de la vista o lentes en tu ciudad.',
     icon: 'atrae',
   },
   {
@@ -119,7 +119,7 @@ const pasos = [
 
 const etapas = [
   {
-    t: 'Días 1 a 14: instalamos.',
+    t: 'En 14 días instalamos el sistema.',
     d: 'Landing, Google Maps, campañas, agente y capacitación a tu equipo. El día 14 todo funciona.',
   },
   {
@@ -133,8 +133,8 @@ const etapas = [
 ];
 
 const cifras = [
-  { n: '5% a 7%', l: 'de mensajes convertidos en citas' },
-  { n: '6x a 9x', l: 'ventas sobre inversión en anuncios' },
+  { n: '+7%', l: 'de mensajes convertidos en citas' },
+  { n: '+6x', l: 'ventas sobre inversión en anuncios' },
   { n: 'Segundos', l: 'tiempo de respuesta en WhatsApp' },
 ];
 
@@ -316,8 +316,10 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
     padding:20px;
   }
   .ph b{display:block;color:var(--agave);font-size:12px;letter-spacing:.1em;margin-bottom:6px;}
-  .ph-hero{aspect-ratio:4/5;max-width:340px;margin-inline:auto;width:100%;border-radius:32px;}
-  .ph-jarmar{aspect-ratio:16/9;margin-top:32px;}
+  .hero-img{width:100%;max-width:290px;height:auto;margin-inline:auto;filter:drop-shadow(0 24px 40px rgba(31,42,36,.22));}
+  .grafica{margin:32px auto 0;background:var(--blanco);border:1px solid var(--linea);border-radius:var(--radio);padding:16px 16px 18px;box-shadow:var(--sombra);}
+  .grafica img{width:100%;height:auto;border-radius:8px;}
+  .grafica figcaption{margin-top:12px;text-align:center;font-family:Georgia, serif;font-size:19px;color:var(--agave);}
 
 
   /* ===== QUÉ CAMBIA: comparativa ===== */
@@ -381,20 +383,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   .cifra strong{display:block;font-family:Georgia, serif;font-weight:normal;font-size:clamp(34px, 9vw, 44px);color:var(--agave);line-height:1.1;margin-bottom:6px;}
   .cifra span{font-size:14px;color:var(--tinta-suave);}
   .jarmar-txt{margin-top:28px;}
-
-  /* ===== REPORTE ===== */
-  .reporte-grid{display:grid;gap:28px;align-items:center;}
-  .reporte{
-    background:var(--blanco);border:1px solid var(--linea);border-radius:var(--radio);
-    padding:22px;box-shadow:var(--sombra);max-width:440px;width:100%;margin-inline:auto;
-  }
-  .reporte-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px;}
-  .reporte-head span{font-family:Georgia, serif;color:var(--agave);font-size:18px;}
-  .tag{font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;background:var(--crema-2);color:var(--tinta-suave);padding:4px 9px;border-radius:999px;border:1px dashed rgba(47,93,70,.3);}
-  .metricas{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-  .metrica{background:var(--crema);border-radius:10px;padding:14px;}
-  .metrica small{display:block;font-size:12px;color:var(--tinta-suave);margin-bottom:2px;}
-  .metrica b{font-family:Georgia, serif;font-weight:normal;font-size:28px;color:var(--agave);}
 
   /* ===== PARA QUIÉN ===== */
   .quien{display:grid;gap:14px;margin-top:28px;}
@@ -513,7 +501,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
     .hero-grid{grid-template-columns:1.1fr .9fr;gap:56px;}
     .pasos{grid-template-columns:repeat(4,1fr);}
     .trabajo-grid{grid-template-columns:1.15fr .85fr;gap:48px;}
-    .reporte-grid{grid-template-columns:1fr 1fr;gap:56px;}
     .sticky-cta{display:none;}
     footer{padding-bottom:40px;}
   }
@@ -545,9 +532,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
         </p>
         <a class="cta js-cta" href="#diagnostico">Quiero mi diagnóstico gratis</a>
       </div>
-      <div class="ph ph-hero" role="img" aria-label="Celular con una conversación de WhatsApp en la que el agente agenda un examen de la vista a las 11:42 p.m.">
-        <div><b>[FOTO]</b>Mockup de celular con una conversación de WhatsApp donde el agente agenda un examen de la vista; hora visible 11:42 p.m.</div>
-      </div>
+      <img class="hero-img" src="/agenda-llena/opticas-whatsapp.webp" width="560" height="1138" fetchpriority="high" alt="Conversación de WhatsApp en la que el agente de IA de una óptica agenda un examen de la vista a las 11:42 p.m.">
     </div>
   </section>
 
@@ -649,40 +634,19 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
           ))}
         </div>
         <p class="lead angosto centro jarmar-txt">
-          En Ópticas Jarmar, negocio familiar donde participamos, convertimos entre 5% y 7% de los mensajes en citas, con ventas de entre 6 y 9 veces la inversión en anuncios.
+          En Ópticas Jarmar, negocio familiar donde participamos, convertimos +7% de los mensajes en citas, con ventas de entre 6 y 9 veces la inversión en anuncios.
         </p>
-        <div class="ph ph-jarmar angosto" role="img" aria-label="Fachada de Ópticas Jarmar">
-          <div><b>[FOTO]</b>Fachada o interior de Ópticas Jarmar</div>
-        </div>
+        <figure class="grafica angosto">
+          <img src="/agenda-llena/jarmar-resultados.webp" width="910" height="322" loading="lazy" decoding="async" alt="Gráfica de resultados de Ópticas Jarmar de febrero a octubre de 2026, con tendencia al alza.">
+          <figcaption>Mes a mes logramos mejores resultados.</figcaption>
+        </figure>
       </div>
     </section>
   )}
 
-  <!-- ══ 10. LO QUE VES CADA MES ══ -->
-  <section>
-    <div class="wrap reporte-grid">
-      <div>
-        <h2>Lo que ves cada mes</h2>
-        <p class="lead">Un reporte simple: mensajes que llegaron, citas agendadas, pacientes que asistieron y ventas. Sabes exactamente qué te deja cada peso que inviertes.</p>
-      </div>
-      <!-- [MOCKUP] números claramente ficticios -->
-      <div class="reporte" role="img" aria-label="Ejemplo de reporte mensual con cuatro métricas: mensajes, citas, asistencias y ventas. Números de ejemplo.">
-        <div class="reporte-head">
-          <span>Reporte del mes</span>
-          <span class="tag">Ejemplo</span>
-        </div>
-        <div class="metricas">
-          <div class="metrica"><small>Mensajes</small><b>000</b></div>
-          <div class="metrica"><small>Citas</small><b>00</b></div>
-          <div class="metrica"><small>Asistencias</small><b>00</b></div>
-          <div class="metrica"><small>Ventas</small><b>$00,000</b></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ══ 11. PARA QUIÉN ES ══ -->
-  <section class="contraste">
+  <section>
     <div class="wrap" style="max-width:920px">
       <h2 class="centro">¿Es para tu óptica?</h2>
       <div class="quien">
@@ -703,7 +667,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   </section>
 
   <!-- ══ 12. PREGUNTAS FRECUENTES ══ -->
-  <section>
+  <section class="contraste">
     <div class="wrap angosto">
       <h2 class="centro">Preguntas frecuentes</h2>
       <div class="faq">
@@ -755,24 +719,11 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
               <p class="error">Elige una opción.</p>
             </div>
           </div>
-          <div class="fila-2">
-            <div class="campo">
+          <div class="campo">
               <label for="f-whatsapp">WhatsApp</label>
               <input id="f-whatsapp" name="whatsapp" type="tel" inputmode="numeric" placeholder="10 dígitos" autocomplete="tel-national" maxlength="14" required>
               <p class="error">Escribe tu WhatsApp a 10 dígitos.</p>
             </div>
-            <div class="campo">
-              <label for="f-examenes">Exámenes de la vista por semana hoy</label>
-              <select id="f-examenes" name="examenes" required>
-                <option value="" selected disabled>Elige una opción</option>
-                <option>Menos de 10</option>
-                <option>10–25</option>
-                <option>26–50</option>
-                <option>Más de 50</option>
-              </select>
-              <p class="error">Elige una opción.</p>
-            </div>
-          </div>
           <div class="campo">
             <fieldset>
               <legend>¿Puedes invertir $10,000 al mes en anuncios?</legend>
@@ -911,7 +862,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
       marcar(el, ok);
       if (!ok && !primerError) primerError = el;
     });
-    ['sucursales', 'examenes'].forEach(function (n) {
+    ['sucursales'].forEach(function (n) {
       var el = form.elements[n];
       d[n] = el.value;
       var ok = !!d[n];
@@ -938,7 +889,6 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
       'Óptica: ' + d.optica,
       'Ciudad: ' + d.ciudad,
       'Sucursales: ' + d.sucursales,
-      'Exámenes por semana: ' + d.examenes,
       'Inversión $10k/mes en anuncios: ' + d.inversion,
       'Fuente: ' + fuente
     ];
