@@ -21,6 +21,11 @@ const WHATSAPP_NUMBER = (env.WHATSAPP_NUMBER || '5215560663926').replace(/\D/g, 
 const META_PIXEL_ID = (env.META_PIXEL_ID || '').trim();
 const GA4_ID = (env.GA4_ID || '').trim();
 const AVISO_DE_PRIVACIDAD_URL = env.AVISO_DE_PRIVACIDAD_URL || '/aviso-de-privacidad';
+// Leads: cada envío se guarda en Formspree (campo "landing" = de qué página llegó).
+const FORMSPREE_URL = env.FORMSPREE_URL || 'https://formspree.io/f/xjywwadk';
+// Agenda de Google Calendar (citas). La duración de 30 min se configura en Google Calendar.
+const CALENDAR_URL = env.CALENDAR_URL || 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2FZUG8MLJWCu9zXCFUlQTrone4EQpN2qgC8_yGHxnTlp2oCISY8z5o0BbvaXshbqSvchRwF0nB?gv=true';
+const LANDING = 'Ópticas';
 const SHOW_CASE_JARMAR = String(env.SHOW_CASE_JARMAR ?? 'true').toLowerCase() !== 'false';
 
 const SITE_URL = 'https://magueystudio.mx';
@@ -139,7 +144,7 @@ const cifras = [
   { n: 'Segundos', l: 'tiempo de respuesta en WhatsApp' },
 ];
 
-const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
+const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID, FORMSPREE_URL, CALENDAR_URL, LANDING };
 ---
 <!doctype html>
 <html lang="es-MX">
@@ -462,7 +467,12 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
   .confirmacion h3{margin-bottom:10px;}
   .confirmacion p{font-size:16px;}
   .form-card.enviado form{display:none;}
-  .form-card.enviado .confirmacion{display:block;}
+  .form-card.ruta-agenda .conf-agenda,.form-card.ruta-wa .conf-wa{display:block;}
+  .form-card.ruta-agenda{max-width:860px;padding-inline:12px;}
+  .conf-agenda h3,.conf-agenda > p{padding-inline:8px;}
+  .agenda-embed{margin-top:16px;border-radius:12px;overflow:hidden;background:var(--blanco);border:1px solid var(--linea);}
+  .conf-agenda .alt{margin-top:14px;font-size:14px;color:var(--tinta-suave);}
+
 
   /* ===== FOOTER ===== */
   footer{padding-block:36px 110px;border-top:1px solid var(--linea);font-size:14px;color:var(--tinta-suave);}
@@ -737,7 +747,7 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
     <div class="wrap">
       <div class="angosto centro">
         <h2>Que tu agenda no dependa de la suerte.</h2>
-        <p class="sub">Déjanos tus datos y agendamos tu diagnóstico gratis por WhatsApp.</p>
+        <p class="sub">Déjanos tus datos y agenda tu diagnóstico gratis: una llamada de 30 minutos.</p>
       </div>
 
       <div class="form-card" id="form-card">
@@ -787,11 +797,17 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
           </div>
 
           <button class="cta" type="submit">Quiero mi diagnóstico gratis</button>
-          <p class="micro">Te escribimos por WhatsApp para agendar. Sin compromiso.</p>
+          <p class="micro">Llamada de diagnóstico de 30 min. Sin compromiso.</p>
           <p class="aviso">Al enviar aceptas nuestro <a href={AVISO_DE_PRIVACIDAD_URL}>aviso de privacidad</a>.</p>
         </form>
 
-        <div class="confirmacion" role="status" aria-live="polite">
+        <div class="confirmacion conf-agenda" role="status" aria-live="polite">
+          <h3>¡Listo! Elige el horario de tu llamada.</h3>
+          <p>Diagnóstico gratis de 30 minutos.</p>
+          <div class="agenda-embed" id="agenda-embed"></div>
+          <p class="alt">¿Prefieres que te escribamos? <a id="wa-alt" href={waBase} target="_blank" rel="noopener">Escríbenos por WhatsApp</a>.</p>
+        </div>
+        <div class="confirmacion conf-wa" role="status" aria-live="polite">
           <h3>¡Listo!</h3>
           <p>Te abrimos WhatsApp para agendar. Si no se abrió, <a id="wa-fallback" href={waBase} target="_blank" rel="noopener">toca aquí</a>.</p>
         </div>
@@ -949,8 +965,47 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID };
 
     track('Lead', 'generate_lead');
 
+    // Guarda el lead en Formspree (no bloquea al usuario si falla).
+    var lead = {
+      landing: cfg.LANDING,
+      ruta: d.inversion === 'Sí' ? 'Calendario' : 'WhatsApp',
+      _subject: 'Lead Agenda Llena · ' + cfg.LANDING + ' · ' + (d.inversion === 'Sí' ? 'Calendario' : 'WhatsApp (sistema base)'),
+      pagina: location.href.split('#')[0]
+    };
+    Object.keys(d).forEach(function (k) { lead[k] = d[k]; });
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) { lead[k] = utm[k] || ''; });
+    if (d.inversion !== 'Sí') lead.perfil = 'Sistema base';
+    try {
+      fetch(cfg.FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(lead),
+        keepalive: true
+      }).catch(function () {});
+    } catch (e) {}
+
+    var card = document.getElementById('form-card');
+
+    // "Sí" a la inversión → agenda la llamada en el calendario.
+    if (d.inversion === 'Sí') {
+      document.getElementById('wa-alt').href = url;
+      var cont = document.getElementById('agenda-embed');
+      if (!cont.firstChild) {
+        var fr = document.createElement('iframe');
+        fr.src = cfg.CALENDAR_URL;
+        fr.title = 'Agenda tu llamada de diagnóstico';
+        fr.loading = 'eager';
+        fr.style.cssText = 'display:block;width:100%;border:0;height:' + (window.innerWidth >= 768 ? 700 : 760) + 'px';
+        cont.appendChild(fr);
+      }
+      card.classList.add('enviado', 'ruta-agenda');
+      card.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      return;
+    }
+
+    // "Todavía no" → WhatsApp con perfil "sistema base".
     document.getElementById('wa-fallback').href = url;
-    document.getElementById('form-card').classList.add('enviado');
+    card.classList.add('enviado', 'ruta-wa');
 
     var win = window.open(url, '_blank');
     if (win) { try { win.opener = null; } catch (e) {} }
