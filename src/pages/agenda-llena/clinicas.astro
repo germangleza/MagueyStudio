@@ -434,7 +434,12 @@ const cfg = { WHATSAPP_NUMBER, META_PIXEL_ID, GA4_ID, FORMSPREE_URL, CALENDAR_UR
   .herramientas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px;list-style:none;padding:0;}
   .herramientas li{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:var(--blanco);border:1px solid var(--linea);border-radius:999px;font-weight:600;font-size:15px;box-shadow:0 2px 8px rgba(31,42,36,.05);}
   .herramientas svg{width:20px;height:20px;flex:none;}
-  @media (max-width:480px){ .herramientas li{padding:10px 16px;font-size:14px;} }
+  @media (max-width:480px){
+    .herramientas{gap:14px 10px;}
+    .herramientas li{padding:13px 20px;font-size:16px;gap:12px;}
+    .herramientas li:first-child{margin-inline:calc(50% - 90px);}
+    .herramientas svg{width:22px;height:22px;}
+  }
 
   /* ===== FAQ ===== */
   .faq{margin-top:24px;display:grid;gap:10px;}
